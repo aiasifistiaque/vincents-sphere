@@ -27,6 +27,49 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 50vh;
-	color: white;
+
+	color: whitesmoke;
+	padding: 5% $padding-horizontal;
+	width: 100%;
+	flex-wrap: wrap;
+
+	.footer-address-section {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+
+		h3 {
+			margin: 0.5em 0;
+			padding: 0;
+		}
+
+		p {
+			margin: 0.5em 0;
+			padding: 0;
+		}
+	}
+
+	.footer-link-section {
+		align-items: flex-start;
+		justify-content: space-evenly;
+		display: flex;
+		flex: 2;
+		flex-wrap: wrap;
+
+		.footer-sections {
+			display: flex;
+			flex-direction: column;
+			margin: 2em;
+
+			a {
+				margin: 0.5em 0;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.display-card-image {
+	height: 300px;
+	width: 300px;
 }

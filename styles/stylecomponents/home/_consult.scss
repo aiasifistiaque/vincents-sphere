@@ -5,9 +5,13 @@
 	justify-content: center;
 	min-height: 100vh;
 	padding: 0 $padding-horizontal;
-	font-size: 2em;
+	font-size: 1.8em;
 	font-weight: 300;
 	text-align: center;
+
+	@media only screen and(max-width: $medium-screen) {
+		font-size: 1.5em;
+	}
 }
 
 .custom-button {
@@ -20,7 +24,7 @@
 	p {
 		padding: 0;
 		margin: 0;
-		font-size: 0.5em;
+		font-size: 16px;
 		padding: 1em 2em;
 		color: $color-light;
 		font-weight: 500;

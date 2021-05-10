@@ -3,13 +3,17 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	//min-height: 100vh;
 	text-align: center;
-	padding: 2em 0 0 0;
+	padding: 3em 0 0 0;
 
 	h3 {
 		font-size: 3em;
 		font-weight: 500;
+
+		@media only screen and(max-width: $medium-screen) {
+			font-size: 2em;
+		}
 	}
 
 	h4 {
@@ -23,12 +27,22 @@
 	align-items: center;
 	justify-content: center;
 
+	.arrow-icon {
+		height: 40px;
+
+		@media only screen and(max-width: $medium-screen) {
+			height: 30px;
+		}
+	}
+
 	.arrows {
-		font-size: 1em;
-		//background-color: rgba(0, 0, 0, 0.02);
 		padding: 4em 1em;
 		margin: 0;
 		transition: 0.3s;
+
+		@media only screen and(max-width: $medium-screen) {
+			padding: 2em 0.5em;
+		}
 
 		&:hover {
 			cursor: pointer;
@@ -56,12 +70,17 @@
 	justify-content: center;
 	text-align: center;
 	margin: 0em 2em;
-	min-width: 300px;
+	min-width: 250px;
 	box-sizing: border-box;
 	padding: 0 0 1em 0;
 	transition: 0.2s;
 	cursor: pointer;
 	border: 0px solid rgba(0, 0, 0, 0.01);
+
+	@media only screen and(max-width: $medium-screen) {
+		min-width: 200px;
+		margin: 0em 1em;
+	}
 
 	&:hover {
 		border: 10px solid rgba(0, 0, 0, 0.005);

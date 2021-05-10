@@ -21,7 +21,7 @@ const Sections = ({ section }) => {
 			<h4>{section.subtitle}</h4>
 			<div className='section-arrows'>
 				<div onClick={() => scroll(-scrollDist)} className='arrows'>
-					<FontAwesomeIcon icon={faChevronLeft} style={{ height: 50 }} />
+					<FontAwesomeIcon icon={faChevronLeft} className='arrow-icon' />
 				</div>
 
 				<div className='section-container' ref={scrollRef}>
@@ -33,7 +33,7 @@ const Sections = ({ section }) => {
 					))}
 				</div>
 				<div className='arrows' onClick={() => scroll(scrollDist)}>
-					<FontAwesomeIcon icon={faChevronRight} style={{ height: 50 }} />
+					<FontAwesomeIcon icon={faChevronRight} className='arrow-icon' />
 				</div>
 			</div>
 		</div>

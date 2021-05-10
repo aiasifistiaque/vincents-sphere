@@ -4,7 +4,7 @@
 	background-color: #cccccc;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100% 100vh;
+	background-size: 100% 100%;
 	padding: 5% $padding-horizontal;
 	display: flex;
 	align-items: start;
@@ -12,6 +12,14 @@
 	flex-direction: column;
 	color: $color-light;
 	text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+	@media only screen and(max-width: $medium-screen) {
+		min-height: 60vh;
+	}
+
+	@media only screen and(max-width: $small-screen) {
+		min-height: 55vh;
+	}
 
 	h1 {
 		font-size: 5em;
@@ -22,5 +30,15 @@
 	h3 {
 		font-size: 4em;
 		font-weight: 200;
+	}
+
+	@media only screen and(max-width: $medium-screen) {
+		h1 {
+			font-size: 3em;
+		}
+
+		h3 {
+			font-size: 2em;
+		}
 	}
 }
