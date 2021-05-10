@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import NavBar from './nav/Navbar';
 import Footer from './Footer';
+import NavBar from './nav/NavBar';
 
 const Page = ({ children, title }) => {
 	return (
