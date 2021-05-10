@@ -1,0 +1,34 @@
+$nav-item-padding: 0.3em 1em;
+
+.nav-brand-item {
+	display: flex;
+	color: $color-light;
+	font-size: 2em;
+	font-weight: 300;
+	padding: $nav-item-padding;
+	cursor: pointer;
+	margin: 0;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.nav-item {
+	display: flex;
+	color: $color-light;
+	margin: 0 0.2em;
+	padding: $nav-item-padding;
+	cursor: pointer;
+	transition: 0.5s;
+
+	&:hover {
+		background-color: $primary-hover;
+	}
+
+	p {
+		padding: 0;
+		margin: 0;
+	}
+}

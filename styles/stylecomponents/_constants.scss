@@ -1,0 +1,25 @@
+//screen sizes
+$small: 600px;
+$medium: 768px;
+$large: 992x;
+$extra-large: 1200px;
+
+//screen breakpoints
+$small-screen: 600px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$x-large-screen: 1200px;
+
+//colors
+$color-primary: #000;
+$primary-hover: rgba(black, 0.1);
+$color-background: #fff;
+$color-light: #fff;
+$white-text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+$color-black: #000;
+$button-hover: rgba(black, 0.5);
+
+//margins and padding
+$padding-horizontal: 5%;
+$padding-horizontal-half: $padding-horizontal/2;
+$card-width: 300px;

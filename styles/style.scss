@@ -1,0 +1,32 @@
+@import './stylecomponents/constants';
+@import './stylecomponents//primary/nav';
+@import './stylecomponents/page';
+@import './stylecomponents/home/hero';
+@import './stylecomponents/home/sections';
+@import './stylecomponents//home/consult';
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.footer {
+	background-color: $color-black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 50vh;
+	color: white;
+}
