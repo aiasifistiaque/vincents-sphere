@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { sizes } from '../../constants';
+import Link from 'next/link';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
@@ -28,7 +29,7 @@ const Sections = ({ section }) => {
 					{section.products.map((product, i) => (
 						<>
 							<ProductsOnDisplay key={i} product={product} />
-							<ProductsOnDisplay key={i} product={product} />
+							<ProductsOnDisplay key={i + 100} product={product} />
 						</>
 					))}
 				</div>
@@ -42,16 +43,18 @@ const Sections = ({ section }) => {
 
 const ProductsOnDisplay = ({ product }) => {
 	return (
-		<div className='section-card'>
-			<Image
-				src={product.image}
-				alt={product.name}
-				width={sizes.displayCard.width}
-				height={sizes.displayCard.height}
-			/>
-			<h6>{product.name}</h6>
-			<p>{product.size}</p>
-		</div>
+		<Link href='/product/1'>
+			<div className='section-card'>
+				<Image
+					src={product.image}
+					alt={product.name}
+					width={sizes.displayCard.width}
+					height={sizes.displayCard.height}
+				/>
+				<h6>{product.name}</h6>
+				<p>{product.size}</p>
+			</div>
+		</Link>
 	);
 };
 

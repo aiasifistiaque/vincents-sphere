@@ -1,0 +1,59 @@
+.order-details-page {
+	display: flex;
+	padding: 15vh 5%;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+
+	h3 {
+		margin: 10px 0 15px 0;
+	}
+}
+
+.order-details {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-height: 70vh;
+	justify-content: space-evenly;
+	padding: 5%;
+}
+
+.order-details-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	align-items: center;
+}
+
+.order-summary {
+	padding: 10%;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+	border-radius: 25px;
+	background-color: white;
+	min-width: 300px;
+	align-items: center;
+}
+
+@mixin badge {
+	padding: 5px 10px;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 0;
+
+	p {
+		margin: 0;
+		padding: 0;
+		font-weight: 600;
+	}
+}
+
+.positive-badge {
+	@include badge;
+	background-color: rgba(teal, 0.05);
+}
+
+.negative-badge {
+	@include badge;
+	color: crimson;
+	background-color: rgba(crimson, 0.05);
+}

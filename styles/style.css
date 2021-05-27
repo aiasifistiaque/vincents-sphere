@@ -299,23 +299,6 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .footer {
   background-color: #252628;
   display: -webkit-box;
@@ -390,8 +373,539 @@ a {
   cursor: pointer;
 }
 
+.product-page .product-card-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10vh 0;
+  color: #393131;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.page-product .product-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 5vh 200px 0 64px;
+}
+
+.page-product .product-details h1 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.page-product .product-details h2 {
+  margin: 0;
+  padding: 0;
+  margin: 36px 0;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.page-product .product-details h4 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.page-product .product-details h5 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.page-product .product-details p {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 16px 0;
+}
+
+.page-product .product-details h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.page-product .product-details .prod-page-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page-product .product-details .prod-page-button-container .prod-page-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #393131;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-right: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 150px;
+  height: 50px;
+}
+
+.page-product .product-details .prod-page-button-container .prod-page-button:hover {
+  background-color: rgba(57, 49, 49, 0.8);
+}
+
+.page-product .product-details .prod-page-button-container .prod-page-button p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.login-page {
+  margin: 15vh 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.login-page .login-form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-page .login-form h3 {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+}
+
+.login-page .login-form input {
+  height: 45px;
+  width: 25em;
+  padding: 0 0.8em;
+  margin-bottom: 1.5em;
+  border: none;
+  background-color: #f5f0f0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+  .login-page .login-form input {
+    width: 15em;
+  }
+}
+
+.login-page .login-form a {
+  color: dodgerblue;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.login-page .login-form .login-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #393131;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-right: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 45px;
+  width: 8em;
+  margin-bottom: 0.8em;
+}
+
+.login-page .login-form .login-button:hover {
+  background-color: rgba(57, 49, 49, 0.8);
+}
+
+.login-page .login-form .login-button p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.cart-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15vh 5%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.shopping-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  padding: 5%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px 0;
+}
+
+.delete-from-cart {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: crimson;
+  padding: 8px 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.delete-from-cart:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.delete-from-cart p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.checkout-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5%;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  background-color: whitesmoke;
+}
+
+.checkout-form .checkout-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.checkout-form .checkout-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.checkout-form .checkout-button p {
+  margin: 0;
+}
+
+.order-details-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15vh 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+.order-details-page h3 {
+  margin: 10px 0 15px 0;
+}
+
+.order-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 70vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 5%;
+}
+
+.order-details-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order-summary {
+  padding: 10%;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  background-color: white;
+  min-width: 300px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.positive-badge {
+  padding: 5px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0;
+  background-color: rgba(0, 128, 128, 0.05);
+}
+
+.positive-badge p {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+.negative-badge {
+  padding: 5px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0;
+  color: crimson;
+  background-color: rgba(220, 20, 60, 0.05);
+}
+
+.negative-badge p {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .display-card-image {
   height: 300px;
   width: 300px;
+}
+
+.about-page {
+  margin: 15vh 5%;
+}
+
+.about-page h3 {
+  margin-bottom: 1.5em;
+}
+
+.about-page p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.all-products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 15vh 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-page {
+  margin: 15vh 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-page h3 {
+  margin-bottom: 2em;
+}
+
+.my-orders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5em 0;
+}
+
+.order-table {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: scroll;
+}
+
+.order-table th,
+.order-table td {
+  padding: 10px 2em;
+}
+
+.admin-panel-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  padding: 15vh 10px;
+}
+
+.admin-panel-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
 }
 /*# sourceMappingURL=style.css.map */

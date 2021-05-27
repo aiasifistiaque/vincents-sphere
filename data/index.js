@@ -90,3 +90,33 @@ export const sectionData = {
 	satinscrunchies: satinScrinchies,
 	satinmask: satinMask,
 };
+
+export const dummyItem = {
+	name: 'For You A Thousand Times Over',
+	image: '/candles/For You A Thousand Times Over.jpg',
+	description: '',
+	size: '9oz',
+	price: 850,
+	description: [
+		{
+			tag: 'p',
+			details:
+				'From little green aliens of unknown species to large beasts such as the formidable Rancor, from Light Sabers, an elegant weapon of a more civilized age, to the blasters, from the swift Starfighters to the terrifying Death Stars, Star Wars has it all. ',
+		},
+		{
+			tag: 'p',
+			details:
+				'The universe created by George Lucas, the worldwide pop-culture phenomenon, Star Wars has a place in our hearts like no other. ',
+		},
+		{
+			tag: 'p',
+			details: 'And 4th May is Star Wars Day! ',
+		},
+		{
+			tag: 'p',
+			details:
+				'In that honor, and as fans of Star Wars, Vincents Sphere is proud to present its limited edition "Star Wars Themed Candle: MAY THE FORCE BE WITH YOU featuring our current favorite, Grogu aka Baby Yoda',
+		},
+	],
+	notes: 'Spring Flowers, Natural Patchouli & White Cedar',
+};
