@@ -1,6 +1,6 @@
 //
 
-export const backend = 'http://vincent-backend.herokuapp.com/api';
+export const backend = 'https://vincent-backend.herokuapp.com/api';
 export const dev = 'http://localhost:5000/api';
 
 const server = backend;
