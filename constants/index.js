@@ -25,8 +25,8 @@ export const categories = [
 	},
 
 	{
-		name: 'Satin Mask ',
-		title: 'Satin Masks',
+		name: 'Satin Mask',
+		title: 'Satin Mask',
 		subtitle: 'To keep your hair healthy, silky & smooth',
 	},
 	{

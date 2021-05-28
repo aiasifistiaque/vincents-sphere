@@ -11,21 +11,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import Loading from '../Loading';
 import Page from '../Page';
 import getCategoryProduct from '../../store/actions/productActions/getCategoryProduct';
+import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
 	const scrollDist = 350;
 
-	const dispatch = useDispatch();
-
-	const getProducts = useSelector(state => state.categoryProduct);
-	const { products, loading, error } = getProducts;
-
-	console.log(products);
-
-	useEffect(() => {
-		dispatch(getCategoryProduct(section.name));
-	}, [dispatch]);
+	const { products, loading } = useGetCategoryProducts(section.name);
 
 	const scroll = scrollOffset => {
 		scrollRef.current.scrollLeft += scrollOffset;
