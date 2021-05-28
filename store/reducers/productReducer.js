@@ -27,3 +27,17 @@ export const getAProductReducer = (state = { product: {} }, action) => {
 			return state;
 	}
 };
+
+export const getCategoryProductReducer = (state = { products: [] }, action) => {
+	switch (action.type) {
+		case 'GET_CATEGORY_PRODUCT_REQUEST':
+			return { loading: true, products: [] };
+		case 'GET_CATEGORY_PRODUCT_SUCCESS':
+			return { loading: false, products: action.payload };
+		case 'GET_CATEGORY_PRODUCT_FAIL':
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};

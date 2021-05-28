@@ -1,12 +1,13 @@
 import React from 'react';
 import AdminPageLayout from '../components/admin/AdminPageLayout';
+import ProductList from '../components/admin/ProductList';
 
-const admin = () => {
+const adproducts = () => {
 	return (
 		<AdminPageLayout>
-			<p>alskdjaskldj</p>
+			<ProductList />
 		</AdminPageLayout>
 	);
 };
 
-export default admin;
+export default adproducts;

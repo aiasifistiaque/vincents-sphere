@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import {
 	faChevronLeft,
@@ -7,14 +7,31 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { sizes } from '../../constants';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import Loading from '../Loading';
+import Page from '../Page';
+import getCategoryProduct from '../../store/actions/productActions/getCategoryProduct';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
 	const scrollDist = 350;
 
+	const dispatch = useDispatch();
+
+	const getProducts = useSelector(state => state.categoryProduct);
+	const { products, loading, error } = getProducts;
+
+	console.log(products);
+
+	useEffect(() => {
+		dispatch(getCategoryProduct(section.name));
+	}, [dispatch]);
+
 	const scroll = scrollOffset => {
 		scrollRef.current.scrollLeft += scrollOffset;
 	};
+
+	if (loading) return <Loading />;
 
 	return (
 		<div className='home-sections'>
@@ -26,12 +43,19 @@ const Sections = ({ section }) => {
 				</div>
 
 				<div className='section-container' ref={scrollRef}>
-					{section.products.map((product, i) => (
-						<>
-							<ProductsOnDisplay key={i} product={product} />
-							<ProductsOnDisplay key={i + 100} product={product} />
-						</>
-					))}
+					{products.map((product, i) =>
+						i < 5 ? (
+							<ProductsOnDisplay product={product} />
+						) : (
+							i == 5 && (
+								<Link href={`cat/${section.name}`}>
+									<div className='view-more'>
+										<h3>View More</h3>
+									</div>
+								</Link>
+							)
+						)
+					)}
 				</div>
 				<div className='arrows' onClick={() => scroll(scrollDist)}>
 					<FontAwesomeIcon icon={faChevronRight} className='arrow-icon' />
@@ -43,7 +67,7 @@ const Sections = ({ section }) => {
 
 const ProductsOnDisplay = ({ product }) => {
 	return (
-		<Link href='/product/1'>
+		<Link href={`/product/${product._id}`}>
 			<div className='section-card'>
 				<Image
 					src={product.image}

@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
-import { getAllProductsReducer, getAProductReducer } from './productReducer';
+import {
+	getAllProductsReducer,
+	getAProductReducer,
+	getCategoryProductReducer,
+} from './productReducer';
 import { cartReducer } from './cartReducer';
 import { userLoginReducer, userSignupReducer } from './userReducer';
+import { getAllOrdersReducer, getAnOrderReducer } from './orderReducer';
 
 const rootReducer = combineReducers({
 	auth: authReducer,
@@ -11,6 +16,9 @@ const rootReducer = combineReducers({
 	cart: cartReducer,
 	token: userLoginReducer,
 	signup: userSignupReducer,
+	getAllOrders: getAllOrdersReducer,
+	getAnOrder: getAnOrderReducer,
+	categoryProduct: getCategoryProductReducer,
 	// createTest: createTestReducer,
 });
 

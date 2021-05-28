@@ -1,12 +1,12 @@
 import React from 'react';
 import AdminPageLayout from '../components/admin/AdminPageLayout';
 
-const admin = () => {
+const adusers = () => {
 	return (
 		<AdminPageLayout>
-			<p>alskdjaskldj</p>
+			<p>users</p>
 		</AdminPageLayout>
 	);
 };
 
-export default admin;
+export default adusers;

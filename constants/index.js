@@ -13,15 +13,36 @@ export const sizes = {
 };
 
 export const categories = [
-	'Bathsalt',
-	'Candles',
-	'Dream Catcher',
-	'Satin Mask ',
-	'Satin Scrunchie',
+	{
+		name: 'Candles',
+		title: 'Handicrafted Scented Candles',
+		subtitle: 'With over hundreds of candles to choose from',
+	},
+	{
+		name: 'Bathsalt',
+		title: 'Aroma Therapy Bath Salts',
+		subtitle: 'To soothe your mind, body & spirit',
+	},
+
+	{
+		name: 'Satin Mask ',
+		title: 'Satin Masks',
+		subtitle: 'To keep your hair healthy, silky & smooth',
+	},
+	{
+		name: 'Satin Scrunchie',
+		title: 'Satin Scrunchies',
+		subtitle: 'To keep your hair healthy, silky & smooth',
+	},
+	{
+		name: 'Dream Catcher',
+		title: 'Dream Catcher',
+		subtitle: 'For a healthy sleep',
+	},
 ];
 
 export const api = {
-	productByCategory: `${server}/categories/cat`,
+	productcategories: `${server}/categories/cat`,
 	products: `${server}/products`,
 	login: `${server}/login`,
 	register: `${server}/register`,
@@ -32,6 +53,7 @@ export const api = {
 	createProduct: `${server}/products/createproduct`,
 	getAllOrders: `${server}/order/getallorders`,
 	payment: `${server}/payment`,
+
 	config: {
 		headers: {
 			'Content-Type': 'application/json',
