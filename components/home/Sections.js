@@ -30,11 +30,17 @@ const Sections = ({ section }) => {
 			<h3>{section.title}</h3>
 			<h4>{section.subtitle}</h4>
 			<div className='section-arrows'>
-				<div onClick={() => scroll(-scrollDist)} className='arrows'>
-					<FontAwesomeIcon icon={faChevronLeft} className='arrow-icon' />
-				</div>
+				{products.length > 1 && (
+					<div onClick={() => scroll(-scrollDist)} className='arrows'>
+						<FontAwesomeIcon icon={faChevronLeft} className='arrow-icon' />
+					</div>
+				)}
 
-				<div className='section-container' ref={scrollRef}>
+				<div
+					className={
+						products.length > 1 ? 'section-container' : 'single-section'
+					}
+					ref={scrollRef}>
 					{products.map((product, i) =>
 						i < 5 ? (
 							<ProductsOnDisplay product={product} />
@@ -49,9 +55,11 @@ const Sections = ({ section }) => {
 						)
 					)}
 				</div>
-				<div className='arrows' onClick={() => scroll(scrollDist)}>
-					<FontAwesomeIcon icon={faChevronRight} className='arrow-icon' />
-				</div>
+				{products.length > 1 && (
+					<div className='arrows' onClick={() => scroll(scrollDist)}>
+						<FontAwesomeIcon icon={faChevronRight} className='arrow-icon' />
+					</div>
+				)}
 			</div>
 		</div>
 	);
