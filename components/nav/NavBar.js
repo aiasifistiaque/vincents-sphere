@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBrand from './NavBrand';
 import NavLogged from './NavLogged';
 import { useSelector } from 'react-redux';
+import { categories } from '../../constants';
+import Link from 'next/link';
 
 export default function NavBar() {
 	const { cartItems } = useSelector(state => state.cart);
@@ -32,7 +34,7 @@ export default function NavBar() {
 						alignItems: 'center',
 					}}>
 					<NavItem href='/'>Home</NavItem>
-					<NavItem href='/allproducts'>Categories</NavItem>
+					<NavDropdown />
 					<NavItem href='/'>Gift Box</NavItem>
 					<NavItem href='/about'>About us</NavItem>
 					<NavItem href='/'>Contact</NavItem>
@@ -45,3 +47,26 @@ export default function NavBar() {
 		</Navbar>
 	);
 }
+
+export const NavDropdown = ({ children }) => {
+	return (
+		<div className='nav-dropdown'>
+			<p>Categories</p>
+			<div class='nav-dropdown-content'>
+				{categories.map((cat, i) => (
+					<NavCatItem href={`/cat/${cat.name}`}>{cat.name}</NavCatItem>
+				))}
+			</div>
+		</div>
+	);
+};
+
+export const NavCatItem = ({ children, href }) => {
+	return (
+		<Link href={href}>
+			<div className='nav-cat-item'>
+				<p>{children}</p>
+			</div>
+		</Link>
+	);
+};

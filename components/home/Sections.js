@@ -27,8 +27,11 @@ const Sections = ({ section }) => {
 
 	return (
 		<div className='home-sections'>
-			<h3>{section.title}</h3>
-			<h4>{section.subtitle}</h4>
+			<div className='home-section-headers'>
+				<h3>{section.title}</h3>
+				<h4>{section.subtitle}</h4>
+			</div>
+
 			<div className='section-arrows'>
 				{products.length > 1 && (
 					<div onClick={() => scroll(-scrollDist)} className='arrows'>
@@ -54,6 +57,14 @@ const Sections = ({ section }) => {
 							)
 						)
 					)}
+					<div
+						style={{
+							margin: '0 50px',
+							width: '10em',
+						}}>
+						<p style={{ color: 'transparent' }}>{'aslkd  '}</p>
+						<br />
+					</div>
 				</div>
 				{products.length > 1 && (
 					<div className='arrows' onClick={() => scroll(scrollDist)}>
@@ -72,11 +83,14 @@ const ProductsOnDisplay = ({ product }) => {
 				<Image
 					src={product.image}
 					alt={product.name}
-					width={sizes.displayCard.width}
-					height={sizes.displayCard.height}
+					width={400}
+					height={400}
 				/>
-				<h6>{product.name}</h6>
-				<p>{product.size}</p>
+				<div className='section-card-text'>
+					<p className='section-sub-category'>{product.subCategory}</p>
+					<h6>{product.name}</h6>
+					<h6 className='section-size-text'>{product.size}</h6>
+				</div>
 			</div>
 		</Link>
 	);
