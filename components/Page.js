@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from './Footer';
 import NavBar from './nav/NavBar';
+import BNavbar from './nav/BNavbar';
 
 const Page = ({ children, title }) => {
 	return (
@@ -10,7 +11,7 @@ const Page = ({ children, title }) => {
 				<title>{title || 'Vincents Sphere'}</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<NavBar />
+			<BNavbar />
 			<main className='page'>{children}</main>
 			<Footer />
 		</div>
