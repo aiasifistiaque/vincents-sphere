@@ -5,10 +5,11 @@ import useIsLoggedIn from '../hooks/useIsLoggedIn';
 import Router from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import userLoginAction from '../store/actions/userActions/userLoginAction';
+import ButtonLoading from '../components/ButtonLoading';
 
 const login = () => {
-	const [email, setEmail] = useState();
-	const [password, setPassword] = useState();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [validationError, setValidationError] = useState(false);
 	const [validationErrorText, setValidationErrorText] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -58,8 +59,9 @@ const login = () => {
 						onChange={e => setPassword(e.target.value)}
 					/>
 					<div className='login-button' onClick={loginButtonPressed}>
-						<p>login</p>
+						{tokenSelector.loading ? <ButtonLoading /> : <p>login</p>}
 					</div>
+					<p style={{ color: 'crimson' }}>{tokenSelector.error}</p>
 					<p>
 						New Customer?{' '}
 						<Link href='/signup'>

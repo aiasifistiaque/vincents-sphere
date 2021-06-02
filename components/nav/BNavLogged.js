@@ -19,8 +19,7 @@ const BNavLogged = () => {
 		return (
 			<>
 				<Nav.Link href='/profile'>Profile</Nav.Link>
-
-				<Nav.Link className='nav-item' onClick={() => dispatch(logoutAction())}>
+				<Nav.Link href='#' onClick={() => dispatch(logoutAction())}>
 					logout
 				</Nav.Link>
 			</>

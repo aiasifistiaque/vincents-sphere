@@ -2,6 +2,7 @@ $nav-item-padding: 0.4em 1em;
 
 .nav-brand-item {
 	display: flex;
+	flex: 1;
 	color: $color-light;
 	font-size: 2em;
 	font-weight: 300;
@@ -15,7 +16,7 @@ $nav-item-padding: 0.4em 1em;
 	}
 }
 
-.nav-item {
+.nav-item-custom {
 	display: flex;
 	color: $color-light;
 	margin: 0 0.2em;
@@ -28,13 +29,6 @@ $nav-item-padding: 0.4em 1em;
 	align-items: center;
 	justify-content: center;
 
-	@media only screen and (max-width: $medium-screen) {
-		margin: 0.5em;
-		align-items: center;
-		justify-content: flex-start;
-		width: 80%;
-	}
-
 	&:hover {
 		background-color: $primary-hover;
 	}
@@ -46,7 +40,7 @@ $nav-item-padding: 0.4em 1em;
 	}
 }
 
-.nav-dropdown {
+.nav-dropdown-custom {
 	color: $color-light;
 	margin: 0 0.2em;
 	padding: $nav-item-padding;
@@ -55,7 +49,7 @@ $nav-item-padding: 0.4em 1em;
 	display: inline-block;
 
 	&:hover {
-		.nav-dropdown-content {
+		.nav-dropdown-content-custom {
 			display: block;
 		}
 	}
@@ -66,7 +60,7 @@ $nav-item-padding: 0.4em 1em;
 	}
 }
 
-.nav-dropdown-content {
+.nav-dropdown-content-custom {
 	background-color: #212529;
 	display: none;
 	position: absolute;

@@ -1,21 +1,17 @@
-import React, { useRef, useEffect } from 'react';
-import Image from 'next/image';
+import React, { useRef } from 'react';
 import {
 	faChevronLeft,
 	faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { sizes } from '../../constants';
 import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
 import Loading from '../Loading';
-import Page from '../Page';
-import getCategoryProduct from '../../store/actions/productActions/getCategoryProduct';
 import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
+import ProductsOnDisplay from './ProductsOnDisplay';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
-	const scrollDist = 350;
+	const scrollDist = 280;
 
 	const { products, loading } = useGetCategoryProducts(section.name);
 
@@ -73,26 +69,6 @@ const Sections = ({ section }) => {
 				)}
 			</div>
 		</div>
-	);
-};
-
-const ProductsOnDisplay = ({ product }) => {
-	return (
-		<Link href={`/product/${product._id}`}>
-			<div className='section-card'>
-				<Image
-					src={product.image}
-					alt={product.name}
-					width={400}
-					height={400}
-				/>
-				<div className='section-card-text'>
-					<p className='section-sub-category'>{product.subCategory}</p>
-					<h6>{product.name}</h6>
-					<h6 className='section-size-text'>{product.size}</h6>
-				</div>
-			</div>
-		</Link>
 	);
 };
 

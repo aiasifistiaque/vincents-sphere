@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import NavItem from './NavItem';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBrand from './NavBrand';
-import NavLogged from './NavLogged';
 import { useSelector } from 'react-redux';
 import { categories } from '../../constants';
-import Link from 'next/link';
 import BNavLogged from './BNavLogged';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export default function BNavbar() {
 	const { cartItems } = useSelector(state => state.cart);
@@ -22,7 +22,19 @@ export default function BNavbar() {
 	const length = cartItems.length;
 
 	return (
-		<Navbar expand='lg' bg='dark' fixed='top' variant='dark'>
+		<Navbar
+			expand='lg'
+			//bg='dark'
+			fixed='top'
+			variant='dark'
+			style={{
+				alignItems: 'center',
+				backgroundColor: '#252628',
+				flex: 1,
+				display: 'flex',
+				justifyContent: 'space-between',
+				padding: '5px 3%',
+			}}>
 			<NavBrand />
 
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -30,44 +42,59 @@ export default function BNavbar() {
 				<Nav
 					style={{
 						display: 'flex',
+						justifyContent: 'space-between',
+
 						flex: 1,
-						justifyContent: 'flex-end',
-						alignItems: 'center',
 					}}>
-					<Nav.Link href='/'>Home</Nav.Link>
-					<NavDropdown />
-					<Nav.Link href='/'>Gift Box</Nav.Link>
-					<Nav.Link href='/about'>About us</Nav.Link>
-					<Nav.Link href='/'>Contact</Nav.Link>
+					<BNavItem href='/'>Home</BNavItem>
+					<NavDropdown
+						title='Categories'
+						id='basic-nav-dropdown'
+						style={{ backgroundColor: '#252628', color: 'red' }}>
+						{categories.map((cat, i) => (
+							<NavDropdown.Item
+								key={i}
+								href={`/cat/${cat.name}`}
+								style={{ padding: '15px' }}>
+								{cat.name}
+							</NavDropdown.Item>
+						))}
+					</NavDropdown>
+					<BNavItem href='/'>Gift Box</BNavItem>
+					<BNavItem href='/about'>About us</BNavItem>
+					<BNavItem href='/'>Contact</BNavItem>
 					<BNavLogged />
-					<Nav.Link href='/cart'>
-						Cart ({length}) Tk.{totalPrice}
-					</Nav.Link>
+
+					<BNavItem href='/cart'>
+						<div className='v-nav-icon-container'>
+							<FontAwesomeIcon icon={faShoppingCart} className='v-cart-icon' />
+							<span>
+								({length}) ৳ {totalPrice}
+							</span>
+						</div>
+					</BNavItem>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
 	);
 }
 
-export const NavDropdown = ({ children }) => {
+const DropDown = () => {
 	return (
-		<div className='nav-dropdown'>
-			<p>Categories</p>
-			<div class='nav-dropdown-content'>
-				{categories.map((cat, i) => (
-					<NavCatItem href={`/cat/${cat.name}`}>{cat.name}</NavCatItem>
-				))}
-			</div>
-		</div>
+		<NavDropdown title='Categories' id='collasible-nav-dropdown'>
+			{categories.map((cat, i) => (
+				<Link href={`/cat/${cat.name}`}>
+					<NavDropdown.Item key={i}>{cat.name}</NavDropdown.Item>
+				</Link>
+			))}
+		</NavDropdown>
 	);
 };
 
-export const NavCatItem = ({ children, href }) => {
+const BNavItem = ({ children, href }) => {
 	return (
 		<Link href={href}>
-			<div className='nav-cat-item'>
-				<p>{children}</p>
-			</div>
+			<Nav.Link href={href || '#'}>{children}</Nav.Link>
 		</Link>
 	);
 };
