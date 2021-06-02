@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Footer from './Footer';
-import NavBar from './nav/NavBar';
 import BNavbar from './nav/BNavbar';
 
 const Page = ({ children, title }) => {
@@ -16,6 +15,10 @@ const Page = ({ children, title }) => {
 			<Footer />
 		</div>
 	);
+};
+
+export const LoadingPage = ({ children }) => {
+	return <main className='page'>{children}</main>;
 };
 
 export default Page;

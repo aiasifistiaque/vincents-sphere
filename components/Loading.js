@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from './Page';
+import Page, { LoadingPage } from './Page';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -20,10 +20,10 @@ const useStyles = makeStyles(theme => ({
 export default function Loading() {
 	const classes = useStyles();
 	return (
-		<Page>
+		<LoadingPage>
 			<div className={classes.root}>
 				<CircularProgress color='black' />
 			</div>
-		</Page>
+		</LoadingPage>
 	);
 }

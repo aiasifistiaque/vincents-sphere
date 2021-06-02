@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Page from '../../components/Page';
 import { dummyItem } from '../../data';
@@ -7,16 +7,39 @@ import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
 import Loading from '../../components/Loading';
 import { addToCart } from '../../store/actions/cartActions/cartActions';
+import ProdQtyButton from '../../components/product/ProdQtyButton';
 
 const Product = () => {
 	const router = useRouter();
+	const [item, setItem] = useState({});
+	const [itemPresent, setItemPresent] = useState(false);
+	const [addLoading, setAddLoading] = useState(true);
+
 	const { id } = router.query;
+
 	const dispatch = useDispatch();
+
 	const { product, loading } = useSelector(state => state.getAProduct);
+	const { cartItems } = useSelector(state => state.cart);
 
 	useEffect(() => {
 		if (id != undefined) dispatch(getAProduct(id));
 	}, [id]);
+
+	console.log(cartItems);
+
+	useEffect(() => {
+		const index = cartItems.findIndex(item => item.product === id);
+		if (index == -1) {
+			setItemPresent(false);
+			setAddLoading(false);
+		} else {
+			const item = cartItems[index];
+			setItem(item);
+			setItemPresent(true);
+			setAddLoading(false);
+		}
+	}, [cartItems, id]);
 
 	if (loading) return <Loading />;
 
@@ -37,9 +60,22 @@ const Product = () => {
 					<hr />
 					<p>{product.description}</p>
 					<h2>{product.price} BDT</h2>
+
 					<div className='prod-page-button-container'>
-						<QuantityButton title='Quantity' />
-						<ProdPageButton title='Add to Cart' product={product} />
+						{addLoading ? (
+							<p>loading</p>
+						) : itemPresent ? (
+							<ProdQtyButton product={product}>{item.qty}</ProdQtyButton>
+						) : (
+							<ProdPageButton title='Add to Cart' product={product} />
+						)}
+						{
+							// <div
+							// className='delete-from-cart'
+							// onClick={() => dispatch(removeFromCart(id))}>
+							// <p>Delete</p>
+							// </div>
+						}
 					</div>
 				</div>
 			</div>
@@ -54,14 +90,6 @@ const ProdPageButton = ({ title, fun, product }) => {
 		<div
 			className='prod-page-button'
 			onClick={() => dispatch(addToCart(product, 1))}>
-			<p>{title}</p>
-		</div>
-	);
-};
-
-const QuantityButton = ({ title, fun }) => {
-	return (
-		<div className='prod-page-button'>
 			<p>{title}</p>
 		</div>
 	);

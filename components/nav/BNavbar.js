@@ -12,14 +12,16 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 export default function BNavbar() {
 	const { cartItems } = useSelector(state => state.cart);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [length, setLength] = useState(0);
 
 	useEffect(() => {
 		let total = 0;
+		let len = 0;
 		cartItems.map(x => (total += x.price));
 		setTotalPrice(total);
+		cartItems.map(x => (len += x.qty));
+		setLength(len);
 	}, [cartItems]);
-
-	const length = cartItems.length;
 
 	return (
 		<Navbar

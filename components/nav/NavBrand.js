@@ -1,11 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const NavBrand = () => {
 	return (
-		<Link href='/'>
-			<h2 className='nav-brand-item'>Vincents Sphere</h2>
-		</Link>
+		<div className='nav-brand-logo'>
+			<Link href='/'>
+				<Image src='/vlogo.png' height={50} width={50} />
+			</Link>
+		</div>
 	);
 };
 

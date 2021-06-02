@@ -18,6 +18,22 @@
   padding: 0;
 }
 
+.nav-brand-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  margin: 5px 1.6%;
+}
+
 .nav-item-custom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,6 +128,21 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .home-hero {
@@ -682,6 +713,47 @@
   margin: 0;
   padding: 0;
   color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.prod-qty-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 150px;
+  height: 50px;
+  border: 0.05px solid rgba(0, 0, 0, 0.1);
+  margin-right: 25px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.prod-qty-button .v-plus-minus {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: black;
+  cursor: pointer;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.prod-qty-button .v-plus-minus:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prod-qty-button p {
+  margin: 0;
+  padding: 0;
   font-size: 18px;
   font-weight: 300;
 }

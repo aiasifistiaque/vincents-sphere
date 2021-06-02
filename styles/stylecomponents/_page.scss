@@ -9,3 +9,10 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.container-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
