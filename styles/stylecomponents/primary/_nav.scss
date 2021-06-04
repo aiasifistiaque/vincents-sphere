@@ -4,9 +4,12 @@ $nav-item-padding: 0.4em 1em;
 	letter-spacing: 2px;
 	font-size: 0.9em;
 	@include n-m-p;
+	//transition: 0s;
+	//border-bottom: 0 solid white
 
 	&:hover {
-		background-color: #2c2b2b;
+		//background-color: #2c2b2b;
+		border-bottom: 1px solid white;
 	}
 }
 

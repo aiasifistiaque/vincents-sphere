@@ -48,7 +48,9 @@ export default function BNavbar() {
 							<NavDropdown.Item
 								key={i}
 								href={`/cat/${cat.name}`}
-								style={{ padding: '10px 15px' }}>
+								style={{
+									padding: '10px 15px',
+								}}>
 								{cat.name}
 							</NavDropdown.Item>
 						))}
