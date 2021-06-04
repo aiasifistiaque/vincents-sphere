@@ -1,0 +1,35 @@
+//@include
+
+@mixin n-m-p {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin btn-general {
+	display: inline-flex;
+	min-width: 150px;
+	height: 50px;
+	border: 0.05px solid rgba(black, 0.1);
+	margin-right: 10px;
+	padding: 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+@mixin v-flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin btn-hover {
+	&:hover {
+		background-color: rgba(black, 0.2);
+		color: black;
+		border: none;
+
+		p {
+			color: black;
+		}
+	}
+}

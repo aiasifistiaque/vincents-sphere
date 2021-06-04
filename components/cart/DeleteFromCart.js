@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from '../../store/actions/cartActions/cartActions';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const DeleteFromCart = ({ product }) => {
 	const dispatch = useDispatch();
@@ -9,7 +11,7 @@ const DeleteFromCart = ({ product }) => {
 		<div
 			className='delete-from-cart'
 			onClick={() => dispatch(removeFromCart(product.product))}>
-			<p>Delete</p>
+			<FontAwesomeIcon icon={faTrashAlt} style={{ height: 20 }} />
 		</div>
 	);
 };

@@ -52,7 +52,7 @@ const Footer = () => {
 const FooterAddressSection = () => {
 	return (
 		<div className='footer-address-section'>
-			<h3>Vinecnt's Sphere</h3>
+			<h5>Vinecnt's Sphere</h5>
 			<p>phone: 0000000000</p>
 			<p>email: vincent@gmail.com</p>
 		</div>
@@ -72,7 +72,7 @@ const FooterLinkSection = () => {
 const FooterSections = ({ data }) => {
 	return (
 		<div className='footer-sections'>
-			<h3>{data.header}</h3>
+			<h5>{data.header}</h5>
 			{data.items.map((item, i) => (
 				<a key={i}>{item.name}</a>
 			))}

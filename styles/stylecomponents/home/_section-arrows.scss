@@ -1,0 +1,38 @@
+.section-arrows {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	//padding: 0 5%;
+
+	.arrow-icon {
+		height: 20px;
+		color: $black-color;
+
+		@media only screen and(max-width: $medium-screen) {
+			height: 15px;
+		}
+	}
+
+	.arrows {
+		padding: 1% 1.35%;
+		border-radius: 500px;
+		transition: 0.3s;
+		background-color: rgba(white, 0.6);
+		backdrop-filter: blur(5px);
+		z-index: 9;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media only screen and(max-width: $medium-screen) {
+			padding: 2% 2.5%;
+		}
+
+		&:hover {
+			cursor: pointer;
+			background-color: rgba(white, 1);
+		}
+	}
+}

@@ -8,80 +8,91 @@
 
 .page-product {
 	display: flex;
-	//align-items: center;
-	padding: 10vh 0;
+	padding: 12vh 0 0 0;
+	flex: 1;
 	color: $black-color;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	//margin: -2% -5%;
+	box-sizing: border-box;
+
+	@media only screen and(max-width:$large-screen) {
+		flex-direction: column;
+	}
+
+	.product-image {
+		margin: 1% 4%;
+		box-sizing: border-box;
+
+		@media only screen and(max-width:$large-screen) {
+			min-width: 250px;
+		}
+	}
 
 	.product-details {
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		padding: 5vh 200px 0 64px;
+		margin: 2% 4%;
+		box-sizing: border-box;
+
+		@media only screen and(min-width:$large-screen) {
+			margin-right: 15%;
+		}
 
 		h1 {
-			margin: 0;
-			padding: 0;
+			@include n-m-p;
 			margin-bottom: 16px;
 		}
 
 		h2 {
-			margin: 0;
-			padding: 0;
+			@include n-m-p;
 			margin: 36px 0;
 			font-size: 34px;
 			font-weight: 400;
 		}
 
 		h4 {
-			margin: 0;
-			padding: 0;
+			@include n-m-p;
 			margin-bottom: 16px;
 			font-size: 24px;
 		}
 
 		h5 {
-			margin: 0;
-			padding: 0;
+			@include n-m-p;
 			margin-bottom: 16px;
 			font-size: 20px;
 			font-weight: 300;
 		}
 
 		p {
-			margin: 0;
-			padding: 0;
-			font-size: 20px;
+			@include n-m-p;
+			font-size: 1.2em;
 			font-weight: 300;
 			margin: 16px 0;
+			line-height: 2;
 		}
 
 		h3 {
-			margin: 0;
-			padding: 0;
+			@include n-m-p;
 		}
 
 		.prod-page-button-container {
 			display: flex;
 
 			.prod-page-button {
-				display: inline-flex;
+				@include btn-general;
+				border-radius: none;
 				background-color: $black-color;
-				cursor: pointer;
 				transition: 0.2s;
-				margin-right: 25px;
 				align-items: center;
 				justify-content: center;
-				min-width: 150px;
-				height: 50px;
+				border-radius: 0;
 
-				&:hover {
-					background-color: rgba(#393131, 0.8);
-				}
+				@include btn-hover;
 
 				p {
-					margin: 0;
-					padding: 0;
+					@include n-m-p;
 					color: white;
 					font-size: 18px;
 					font-weight: 300;
@@ -92,32 +103,35 @@
 }
 
 .prod-qty-button {
-	display: inline-flex;
-	min-width: 150px;
-	height: 50px;
-	border: 0.05px solid rgba(black, 0.1);
-	margin-right: 25px;
-	padding: 0;
-	border-radius: 4px;
+	@include btn-general;
+	cursor: default;
 
 	.v-plus-minus {
 		flex: 1;
 		background-color: black;
 		cursor: pointer;
 		color: white;
-		align-items: center;
-		justify-content: center;
-		display: flex;
-
-		&:hover {
-			background-color: rgba(black, 0.6);
-		}
+		@include v-flex-center;
+		@include btn-hover;
 	}
 
 	p {
-		margin: 0;
-		padding: 0;
+		@include n-m-p;
 		font-size: 18px;
 		font-weight: 300;
+	}
+}
+
+.prod-fav-button {
+	@include btn-general;
+	min-width: 50px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0;
+	transition: 0.2s;
+	border: 1px solid $black-color;
+
+	.icon {
+		height: 25px;
 	}
 }

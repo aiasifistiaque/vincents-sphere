@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import CheckoutButton from './CheckoutButton';
+import ContinueShoppingButton from './ContinueShoppingButton';
 
 function Checkout() {
 	const { cartItems } = useSelector(state => state.cart);
@@ -19,13 +21,9 @@ function Checkout() {
 	return (
 		<div className='checkout-form'>
 			<h5>Subtotal {length} Items</h5>
-
 			<p>Total price: Tk. {totalPrice}</p>
-			<Link href='/checkout'>
-				<div className='checkout-button'>
-					<p>Proceed to checkout</p>
-				</div>
-			</Link>
+			{cartItems.length > 0 && <CheckoutButton />}
+			<ContinueShoppingButton />
 		</div>
 	);
 }

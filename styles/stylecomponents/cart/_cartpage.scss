@@ -1,16 +1,26 @@
 .cart-page {
 	display: flex;
-	align-items: center;
-	margin: 15vh 5%;
 	flex: 1;
+	align-items: flex-start;
+	margin: 15vh 0%;
 	flex-wrap: wrap;
+	box-sizing: border-box;
+	overflow: auto;
+
+	// @media only screen and (max-width: $medium-screen) {
+	// 	flex-direction: column;
+	// 	align-items: center;
+	// }
 }
 
 .shopping-cart {
+	box-sizing: border-box;
+	min-width: 300px;
 	display: flex;
 	flex: 6;
-	padding: 5%;
+	padding: 1% 5%;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .cart-item {
@@ -18,15 +28,65 @@
 	align-items: center;
 	justify-content: space-around;
 	margin: 10px 0;
+	flex: 1;
+	background-color: white;
+	padding: 10px 20px;
+	box-shadow: 0 0 20px rgba($black-color, 0.05);
+	border-radius: 4px;
+
+	div {
+		flex: 1;
+		text-align: left;
+	}
+
+	p,
+	h6 {
+		@include n-m-p;
+	}
+}
+
+.checkout-form {
+	display: flex;
+	flex: 3;
+	min-width: 320px;
+	flex-direction: column;
+	margin: 4%;
+	padding: 50px;
+	//border: 1px solid rgba(black, 0.2);
+	border-radius: 30px;
+	box-shadow: 4px 4px 10px rgba(black, 0.2);
+	background-color: white;
+
+	.checkout-button {
+		display: inline-flex;
+		padding: 10px 20px;
+		margin: 5px 0;
+		background-color: rgba(black, 0.9);
+		color: white;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: 0.1s;
+
+		&:hover {
+			background-color: rgba(black, 0.2);
+			color: black;
+			border: none;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
 }
 
 .delete-from-cart {
 	display: inline-flex;
-	background-color: crimson;
-	padding: 8px 18px;
-
+	//background-color: red;
+	padding: 10px;
+	border-radius: 4px;
 	cursor: pointer;
-	color: white;
+	color: black;
 
 	&:hover {
 		background-color: rgba(black, 0.2);
@@ -40,32 +100,25 @@
 	}
 }
 
-.checkout-form {
-	display: flex;
-	flex: 2;
-	flex-direction: column;
-	padding: 5%;
-	//border: 1px solid rgba(black, 0.2);
-	border-radius: 30px;
-	box-shadow: 0 0 25px rgba(black, 0.2);
-	background-color: whitesmoke;
+.cart-qty-button {
+	@include btn-general;
+	cursor: default;
+	height: 30px;
+	min-width: 90px;
 
-	.checkout-button {
-		display: inline-flex;
-		padding: 10px 20px;
-		background-color: rgba(black, 0.9);
-		color: white;
-		align-items: center;
-		justify-content: center;
+	.v-plus-minus {
+		flex: 1;
+		background-color: black;
 		cursor: pointer;
+		color: white;
+		width: 10px;
+		@include v-flex-center;
+		@include btn-hover;
+	}
 
-		&:hover {
-			background-color: rgba(black, 0.2);
-			color: black;
-		}
-
-		p {
-			margin: 0;
-		}
+	p {
+		@include n-m-p;
+		font-size: 18px;
+		font-weight: 300;
 	}
 }

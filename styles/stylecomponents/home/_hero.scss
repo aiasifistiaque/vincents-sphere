@@ -1,10 +1,10 @@
 .home-hero {
 	min-height: 100vh;
 	background-image: url('../../../public/hero.jpg');
-	background-color: #cccccc;
-	background-position: center;
+	background-color: #313234;
+	background-position: cover;
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: 100% 100vh;
 	padding: 5% $padding-horizontal;
 	display: flex;
 	align-items: start;
@@ -12,6 +12,7 @@
 	flex-direction: column;
 	color: $color-light;
 	text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	flex: 1;
 
 	@media only screen and(max-width: $medium-screen) {
 		min-height: 60vh;

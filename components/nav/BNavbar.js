@@ -52,7 +52,10 @@ export default function BNavbar() {
 					<NavDropdown
 						title='Categories'
 						id='basic-nav-dropdown'
-						style={{ backgroundColor: '#252628', color: 'red' }}>
+						style={{
+							backgroundColor: '#252628',
+							color: 'red',
+						}}>
 						{categories.map((cat, i) => (
 							<NavDropdown.Item
 								key={i}
@@ -64,7 +67,7 @@ export default function BNavbar() {
 					</NavDropdown>
 					<BNavItem href='/'>Gift Box</BNavItem>
 					<BNavItem href='/about'>About us</BNavItem>
-					<BNavItem href='/'>Contact</BNavItem>
+
 					<BNavLogged />
 
 					<BNavItem href='/cart'>
@@ -80,18 +83,6 @@ export default function BNavbar() {
 		</Navbar>
 	);
 }
-
-const DropDown = () => {
-	return (
-		<NavDropdown title='Categories' id='collasible-nav-dropdown'>
-			{categories.map((cat, i) => (
-				<Link href={`/cat/${cat.name}`}>
-					<NavDropdown.Item key={i}>{cat.name}</NavDropdown.Item>
-				</Link>
-			))}
-		</NavDropdown>
-	);
-};
 
 const BNavItem = ({ children, href }) => {
 	return (

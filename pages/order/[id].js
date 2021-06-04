@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import useGetSingleOrder from '../../hooks/useGetSingleOrder';
 import Page from '../../components/Page';
-import Image from 'next/image';
 import Loading from '../../components/Loading';
 
 const order = () => {
@@ -29,35 +28,45 @@ const OrderDetails = ({ order }) => {
 	const address = `${shipping.address}, ${shipping.city}, ${shipping.postalCode}, ${shipping.country}`;
 	return (
 		<div className='order-details'>
-			<div>
+			<OrderItemContainer>
 				<h3>Shipping</h3>
 				<p>Name: {order.user.name}</p>
 				<p>Email: {order.user.email}</p>
 				<p>Address: {address}</p>
-			</div>
+			</OrderItemContainer>
 
-			<div>
+			<OrderItemContainer>
 				<h3>Payment Method</h3>
 				<p>Method: {order.paymentMethod}</p>
-			</div>
-			<div>
+			</OrderItemContainer>
+			<OrderItemContainer>
 				<h3>Order Items</h3>
 				{order.orderItems.map((item, i) => (
 					<OrderDetailsItem item={item} i={i} />
 				))}
-			</div>
+			</OrderItemContainer>
 		</div>
 	);
+};
+
+const OrderItemContainer = ({ children }) => {
+	return <div className='order-item-container'>{children}</div>;
 };
 
 const OrderDetailsItem = ({ item }) => {
 	return (
 		<div className='order-details-item'>
 			<img src={item.image} width={50} height={50} />
-
-			<p>{item.name}</p>
-
-			<p>Tk. {item.price}</p>
+			<LeftContainer flex={3}>
+				<p>
+					{item.name} x {item.qty}
+				</p>
+			</LeftContainer>
+			<LeftContainer>
+				<p>
+					Tk. {item.price / item.qty} x {item.qty}
+				</p>
+			</LeftContainer>
 		</div>
 	);
 };
@@ -96,6 +105,20 @@ const NegativeBadge = ({ children }) => {
 	return (
 		<div className='negative-badge'>
 			<p>{children}</p>
+		</div>
+	);
+};
+
+export const LeftContainer = ({ children, flex }) => {
+	return (
+		<div
+			style={{
+				display: 'flex',
+				alignItems: 'center',
+				flex: flex || 1,
+				margin: '0 10px',
+			}}>
+			{children}
 		</div>
 	);
 };

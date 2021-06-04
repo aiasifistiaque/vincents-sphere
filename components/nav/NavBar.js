@@ -37,7 +37,6 @@ export default function NavBar() {
 					<NavDropdown />
 					<NavItem href='/'>Gift Box</NavItem>
 					<NavItem href='/about'>About us</NavItem>
-					<NavItem href='/'>Contact</NavItem>
 					<NavLogged />
 					<NavItem href='/cart'>
 						Cart ({length}) Tk.{totalPrice}

@@ -4,10 +4,11 @@
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	background-image: url('../../public/bg.jpg');
+	//background-image: url('../../public/bg.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-color: #f9f9f9;
 }
 
 .container-center {

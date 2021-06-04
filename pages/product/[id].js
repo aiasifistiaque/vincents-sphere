@@ -6,8 +6,12 @@ import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
 import Loading from '../../components/Loading';
-import { addToCart } from '../../store/actions/cartActions/cartActions';
 import ProdQtyButton from '../../components/product/ProdQtyButton';
+import ProductSection from '../../components/product/ProductSection';
+import {
+	ProdFavButton,
+	ProdPageButton,
+} from '../../components/product/ProdButtons';
 
 const Product = () => {
 	const router = useRouter();
@@ -46,12 +50,15 @@ const Product = () => {
 	return (
 		<Page>
 			<div className='page-product'>
-				<Image
-					src={product.image || dummyItem.image}
-					alt={product.name}
-					width={600}
-					height={600}
-				/>
+				<div className='product-image'>
+					<Image
+						src={product.image || dummyItem.image}
+						alt={product.name}
+						width={600}
+						height={500}
+					/>
+				</div>
+
 				<div className='product-details'>
 					<h1>{product.name}</h1>
 
@@ -69,29 +76,12 @@ const Product = () => {
 						) : (
 							<ProdPageButton title='Add to Cart' product={product} />
 						)}
-						{
-							// <div
-							// className='delete-from-cart'
-							// onClick={() => dispatch(removeFromCart(id))}>
-							// <p>Delete</p>
-							// </div>
-						}
+						<ProdFavButton />
 					</div>
 				</div>
 			</div>
+			<ProductSection category={product.category} />
 		</Page>
-	);
-};
-
-const ProdPageButton = ({ title, fun, product }) => {
-	const dispatch = useDispatch();
-
-	return (
-		<div
-			className='prod-page-button'
-			onClick={() => dispatch(addToCart(product, 1))}>
-			<p>{title}</p>
-		</div>
 	);
 };
 
