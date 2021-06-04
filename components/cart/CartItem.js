@@ -26,7 +26,7 @@ const CartItem = ({ product, index }) => {
 				</h6>
 			</Containers>
 			<Containers flex={2}>
-				<p>Tk. {product.price}</p>
+				<p>৳{product.price}</p>
 			</Containers>
 			<Containers flex={0}>
 				<CartQtyButton product={product}>{product.qty}</CartQtyButton>

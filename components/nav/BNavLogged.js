@@ -4,6 +4,7 @@ import NavItem from './NavItem';
 import { useDispatch } from 'react-redux';
 import logoutAction from '../../store/actions/userActions/userLogoutAction';
 import { Nav } from 'react-bootstrap';
+import Link from 'next/link';
 
 const BNavLogged = () => {
 	const { loading, isLoggedIn } = useIsLoggedIn();
@@ -18,19 +19,32 @@ const BNavLogged = () => {
 	if (isLoggedIn)
 		return (
 			<>
-				<Nav.Link href='/profile'>Profile</Nav.Link>
-				<Nav.Link href='#' onClick={() => dispatch(logoutAction())}>
+				<BNavItem href='/profile'>Profile</BNavItem>
+				<BNavItem href='#' onClick={() => dispatch(logoutAction())}>
 					logout
-				</Nav.Link>
+				</BNavItem>
 			</>
 		);
 	else
 		return (
 			<>
-				<Nav.Link href='/login'>Log In</Nav.Link>
-				<Nav.Link href='/signup'>Register</Nav.Link>
+				<BNavItem href='/login'>Log In</BNavItem>
+				<BNavItem href='/signup'>Register</BNavItem>
 			</>
 		);
+};
+
+const BNavItem = ({ children, href }) => {
+	return (
+		<Link href={href}>
+			<Nav.Link
+				href={href || '#'}
+				className='v-navitem'
+				style={{ color: 'whitesmoke' }}>
+				{children}
+			</Nav.Link>
+		</Link>
+	);
 };
 
 export default BNavLogged;

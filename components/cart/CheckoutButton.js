@@ -5,7 +5,7 @@ const CheckoutButton = () => {
 	return (
 		<Link href='/checkout'>
 			<div className='checkout-button'>
-				<p>Proceed to checkout</p>
+				<p>Checkout</p>
 			</div>
 		</Link>
 	);

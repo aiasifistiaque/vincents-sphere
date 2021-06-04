@@ -83,7 +83,7 @@
 			.prod-page-button {
 				@include btn-general;
 				border-radius: none;
-				background-color: $black-color;
+				background-color: black;
 				transition: 0.2s;
 				align-items: center;
 				justify-content: center;
@@ -94,8 +94,10 @@
 				p {
 					@include n-m-p;
 					color: white;
-					font-size: 18px;
-					font-weight: 300;
+					font-size: 15px;
+					font-weight: 400;
+					letter-spacing: 2px;
+					text-transform: uppercase;
 				}
 			}
 		}

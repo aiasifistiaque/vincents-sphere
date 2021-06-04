@@ -61,3 +61,7 @@ export const api = {
 		},
 	},
 };
+
+export const general = {
+	takaSymbol: '৳',
+};

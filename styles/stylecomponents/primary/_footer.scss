@@ -13,6 +13,7 @@
 		display: flex;
 		flex: 1;
 		flex-direction: column;
+		letter-spacing: 2px;
 
 		h3 {
 			margin: 0.5em 0;
@@ -32,6 +33,7 @@
 		display: flex;
 		flex: 2;
 		flex-wrap: wrap;
+		letter-spacing: 2px;
 
 		.footer-sections {
 			display: flex;

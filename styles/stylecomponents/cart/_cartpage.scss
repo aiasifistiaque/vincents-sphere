@@ -6,6 +6,7 @@
 	flex-wrap: wrap;
 	box-sizing: border-box;
 	overflow: auto;
+	letter-spacing: 2px;
 
 	// @media only screen and (max-width: $medium-screen) {
 	// 	flex-direction: column;
@@ -21,6 +22,12 @@
 	padding: 1% 5%;
 	flex-direction: column;
 	overflow: hidden;
+	@media only screen and(max-width:$medium-screen) {
+		padding: 1% 0%;
+		h3 {
+			margin: 0 4%;
+		}
+	}
 }
 
 .cart-item {
@@ -42,6 +49,15 @@
 	p,
 	h6 {
 		@include n-m-p;
+	}
+
+	@media only screen and(max-width:$medium-screen) {
+		h6 {
+			font-size: 0.9em;
+		}
+		p {
+			font-size: 0.9em;
+		}
 	}
 }
 

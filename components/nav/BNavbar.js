@@ -26,41 +26,29 @@ export default function BNavbar() {
 	return (
 		<Navbar
 			expand='lg'
-			//bg='dark'
 			fixed='top'
 			variant='dark'
-			style={{
-				alignItems: 'center',
-				backgroundColor: '#252628',
-				flex: 1,
-				display: 'flex',
-				justifyContent: 'space-between',
-				padding: '5px 3%',
-			}}>
+			//bg='v-navbar'
+			className='v-navbar'>
 			<NavBrand />
 
-			<Navbar.Toggle aria-controls='basic-navbar-nav' />
-			<Navbar.Collapse id='basic-navbar-nav'>
-				<Nav
-					style={{
-						display: 'flex',
-						justifyContent: 'space-between',
+			<Navbar.Toggle
+				aria-controls='basic-navbar-nav'
+				style={{ margin: '0 4%' }}
+			/>
 
-						flex: 1,
-					}}>
+			<Navbar.Collapse id='basic-navbar-nav' className='v-nav-collapse'>
+				<Nav className='v-nav'>
 					<BNavItem href='/'>Home</BNavItem>
 					<NavDropdown
-						title='Categories'
+						title={<span style={{ color: 'whitesmoke' }}>Categories</span>}
 						id='basic-nav-dropdown'
-						style={{
-							backgroundColor: '#252628',
-							color: 'red',
-						}}>
+						className='nav-dd'>
 						{categories.map((cat, i) => (
 							<NavDropdown.Item
 								key={i}
 								href={`/cat/${cat.name}`}
-								style={{ padding: '15px' }}>
+								style={{ padding: '10px 15px' }}>
 								{cat.name}
 							</NavDropdown.Item>
 						))}
@@ -87,7 +75,12 @@ export default function BNavbar() {
 const BNavItem = ({ children, href }) => {
 	return (
 		<Link href={href}>
-			<Nav.Link href={href || '#'}>{children}</Nav.Link>
+			<Nav.Link
+				href={href || '#'}
+				className='v-navitem'
+				style={{ color: 'whitesmoke' }}>
+				{children}
+			</Nav.Link>
 		</Link>
 	);
 };

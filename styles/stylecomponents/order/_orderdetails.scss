@@ -3,13 +3,14 @@
 	padding: 15vh 0%;
 	//align-items: center;
 	flex-wrap: wrap-reverse;
+	letter-spacing: 2px;
 
 	h3 {
 		margin: 10px 0 15px 0;
 	}
 }
 
-$order-page-shadow: 0 0 25px rgba(black, 0.1);
+$order-page-shadow: $box-shadow-one;
 
 .order-details {
 	display: flex;

@@ -14,9 +14,12 @@
 		align-items: center;
 		justify-content: center;
 		padding: 0 5%;
+		color: $color-black;
+		letter-spacing: 2px;
+		text-align: center;
 
 		h3 {
-			font-size: 3em;
+			font-size: 2.5em;
 			font-weight: 500;
 			@include n-m-p;
 
