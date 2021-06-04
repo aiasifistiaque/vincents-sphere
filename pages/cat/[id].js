@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Page from '../../components/Page';
-import ProductCard from '../../components/ProductCard';
 import { useSelector, useDispatch } from 'react-redux';
-import getAllProducts from '../../store/actions/productActions/getAllProducts';
 import Loading from '../../components/Loading';
 import { useRouter } from 'next/router';
 import getCategoryProduct from '../../store/actions/productActions/getCategoryProduct';
+import CatProductsOnDIsplay from '../../components/cat/CatProductsOnDIsplay';
+import { categories } from '../../constants';
 
 const cat = () => {
 	const dispatch = useDispatch();
+	const [cat, setCat] = useState({});
 
 	const router = useRouter();
 	const { id } = router.query;
@@ -17,23 +18,28 @@ const cat = () => {
 	const { products, loading, error } = getProducts;
 
 	useEffect(() => {
-		if (id != undefined) dispatch(getCategoryProduct(id));
+		if (id != undefined) {
+			dispatch(getCategoryProduct(id));
+			if (id == 'Candles') setCat(categories[0]);
+			else if (id == 'Bathsalt') setCat(categories[1]);
+			else if (id == 'Satin Mask') setCat(categories[2]);
+			else if (id == 'Satin Scrunchie') setCat(categories[3]);
+			else if (id == 'Dream Catcher') setCat(categories[4]);
+		}
 	}, [id]);
 
 	if (loading) return <Loading />;
 
 	return (
 		<Page>
-			<div style={{ margin: '15vh 10% 0 10%' }}>
-				<h1 style={{ margin: '20px 0', padding: 0, textAlign: 'center' }}>
-					{id}
-				</h1>
-				<hr />
+			<div className='category-page'>
+				<h1>{cat.title}</h1>
+				<h4>{cat.subtitle}</h4>
 			</div>
 
 			<div className='all-products'>
 				{products.map((product, i) => (
-					<ProductCard key={i} product={product} />
+					<CatProductsOnDIsplay key={i} product={product} />
 				))}
 			</div>
 		</Page>

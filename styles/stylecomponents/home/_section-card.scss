@@ -38,7 +38,7 @@
 		h6 {
 			display: flex;
 			margin: 1px 0;
-			font-weight: 400;
+			font-weight: 500;
 			padding: 0;
 			flex-grow: 1;
 			font-size: 1.15em;
@@ -50,6 +50,12 @@
 			font-weight: 300;
 		}
 
+		.card-price {
+			@include n-m-p;
+			font-weight: 500;
+			margin: 0.75em 0 0 0;
+		}
+
 		.section-sub-category {
 			margin: 1px 0;
 			font-size: 0.8em;
@@ -59,8 +65,9 @@
 
 		.section-size-text {
 			margin: 1px 0;
-			color: rgba(0, 0, 0, 0.6);
-			font-size: 1em;
+			color: rgba(0, 0, 0, 0.5);
+			font-size: 0.9em;
+			font-weight: 500;
 		}
 	}
 }

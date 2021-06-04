@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import Page from '../components/Page';
 import Checkout from '../components/cart/Checkout';
 import CartItem from '../components/cart/CartItem';
-import ContinueShoppingButton from '../components/cart/ContinueShoppingButton';
 
 function cart() {
 	const { cartItems } = useSelector(state => state.cart);

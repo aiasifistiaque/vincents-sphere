@@ -8,6 +8,7 @@ import Link from 'next/link';
 import Loading from '../Loading';
 import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
 import ProductsOnDisplay from './ProductsOnDisplay';
+import EndSectionPlaceHolder from './EndSectionPlaceHolder';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
@@ -53,16 +54,7 @@ const Sections = ({ section }) => {
 							)
 						)
 					)}
-					{products.length > 1 && (
-						<div
-							style={{
-								margin: '0 50px',
-								width: '10em',
-							}}>
-							<p style={{ color: 'transparent' }}>{'aslkd  '}</p>
-							<br />
-						</div>
-					)}
+					<EndSectionPlaceHolder length={products.length} />
 				</div>
 				{products.length > 1 && (
 					<div className='arrows' onClick={() => scroll(scrollDist)}>

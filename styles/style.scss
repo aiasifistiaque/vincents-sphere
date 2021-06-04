@@ -10,6 +10,7 @@
 @import './stylecomponents/login/loginpage';
 @import './stylecomponents/cart/cartpage';
 @import './stylecomponents//order/orderdetails';
+@import './stylecomponents/cat/categorypage';
 
 html,
 body {
@@ -45,14 +46,6 @@ a {
 		line-height: 1.5em;
 		margin-bottom: 1.2em;
 	}
-}
-
-.all-products {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 15vh 5%;
-	align-items: center;
-	justify-content: center;
 }
 
 .profile-page {
