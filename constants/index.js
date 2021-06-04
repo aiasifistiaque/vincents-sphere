@@ -3,7 +3,7 @@
 export const backend = 'https://vincent-backend.herokuapp.com/api';
 export const dev = 'http://localhost:5000/api';
 
-const server = dev;
+const server = backend;
 
 export const sizes = {
 	displayCard: {
