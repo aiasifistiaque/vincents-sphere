@@ -1,23 +1,26 @@
 .footer {
 	background-color: $color-black;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	color: whitesmoke;
-	padding: 5% $padding-horizontal;
-	width: 100%;
+	align-items: flex-start;
+	justify-content: space-between;
+	color: black;
+	padding: 80px $padding-horizontal;
 	flex-wrap: wrap;
+	background-color: whitesmoke;
 
 	.footer-address-section {
 		display: flex;
 		flex: 1;
 		flex-direction: column;
 		letter-spacing: 2px;
+		min-width: 300px;
+		margin-bottom: 2em;
+		//background-color: dodgerblue;
 
 		h3 {
 			margin: 0.5em 0;
 			padding: 0;
+			margin-bottom: 1em;
 		}
 
 		p {
@@ -28,23 +31,58 @@
 	}
 
 	.footer-link-section {
+		//background-color: red;
 		align-items: flex-start;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		display: flex;
 		flex: 2;
 		flex-wrap: wrap;
 		letter-spacing: 2px;
-
 		.footer-sections {
 			display: flex;
 			flex-direction: column;
-			margin: 2em;
+			margin-bottom: 2em;
+			min-width: 200px;
 
 			a {
-				font-size: 0.9em;
+				font-size: 0.8em;
 				margin: 0.5em 0;
 				cursor: pointer;
+				&:hover {
+					text-decoration-line: underline;
+					color: $color-pink;
+				}
+			}
+			h5 {
+				font-size: 1.1em;
+				margin-bottom: 1em;
+			}
+
+			@media only screen and (max-width: $medium-screen) {
+				h5 {
+					font-size: 0.9em;
+				}
+				a {
+					font-size: 0.7em;
+				}
 			}
 		}
+	}
+}
+
+.v-footer-icon {
+	color: black;
+	height: 1em;
+	margin-right: 1em;
+}
+
+.footer-mail {
+	color: black;
+	cursor: pointer;
+	text-decoration-line: none;
+
+	&:hover {
+		text-decoration-line: underline;
+		color: $color-pink;
 	}
 }

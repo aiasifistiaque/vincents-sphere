@@ -1,6 +1,6 @@
 //@include
 
-$profile-page-box-padding: 1.5em 2em;
+$profile-page-box-padding: 1.5em;
 
 @mixin profile-page-general {
 	background-color: white;
@@ -12,12 +12,13 @@ $profile-page-box-padding: 1.5em 2em;
 }
 
 .profile-page {
-	margin: 15vh 5%;
+	margin: 15vh 4%;
 	display: flex;
 	flex: 1;
 	flex-wrap: wrap;
 	flex-direction: column;
 	letter-spacing: 2px;
+	box-sizing: border-box;
 
 	h3 {
 		@include n-m-p;

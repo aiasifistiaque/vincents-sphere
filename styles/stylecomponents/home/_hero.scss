@@ -16,14 +16,6 @@
 	color: white;
 	//letter-spacing: 2px;
 
-	@media only screen and(max-width: $medium-screen) {
-		//min-height: 60vh;
-	}
-
-	@media only screen and(max-width: $small-screen) {
-		//min-height: 55vh;
-	}
-
 	text-transform: uppercase;
 
 	h1 {
@@ -36,19 +28,32 @@
 	h2 {
 		font-size: 1.8em;
 		font-weight: 200;
+		letter-spacing: 5px;
 		margin: 0;
 		padding: 0;
-		letter-spacing: 5px;
 	}
 
 	@media only screen and(max-width: $medium-screen) {
+		background-size: 100% 60vh;
+		min-height: 60vh;
 		h1 {
-			font-size: 2em;
+			font-size: 1.5em;
+		}
+
+		h2 {
+			font-size: 1.2em;
+
+			letter-spacing: 2px;
 		}
 
 		h3 {
-			font-size: 1.5em;
+			font-size: 0.5em;
 		}
+		padding: 2% 8%;
+	}
+
+	@media only screen and(max-width: $small-screen) {
+		min-height: 50vh;
 	}
 
 	.hero-action-button {

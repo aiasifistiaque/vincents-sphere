@@ -7,6 +7,7 @@ import useAddNewOrder from '../hooks/useAddNewOrder';
 
 const checkout = () => {
 	const [address, setAddress] = useState('');
+	const [phone, setPhone] = useState('');
 	const [city, setCity] = useState('');
 	const [postCode, setPostCode] = useState('');
 	const [paymentMethod, setPaymentMethod] = useState('cash');
@@ -52,6 +53,14 @@ const checkout = () => {
 						placeholder='city'
 						value={city}
 						onChange={e => setCity(e.target.value)}
+					/>
+					<label>Phone Number</label>
+					<input
+						type='number'
+						placeholder='phone'
+						value={phone}
+						onChange={e => setPhone(e.target.value)}
+						required
 					/>
 					<label>Post Code</label>
 					<input

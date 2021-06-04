@@ -35,6 +35,7 @@
 		flex: 1;
 		margin: 2% 4%;
 		box-sizing: border-box;
+		color: black;
 
 		@media only screen and(min-width:$large-screen) {
 			margin-right: 15%;
@@ -43,13 +44,14 @@
 		h1 {
 			@include n-m-p;
 			margin-bottom: 16px;
+			font-weight: 600;
 		}
 
 		h2 {
 			@include n-m-p;
-			margin: 36px 0;
-			font-size: 34px;
-			font-weight: 400;
+			margin: 1em 0;
+			font-size: 2em;
+			font-weight: 500;
 		}
 
 		h4 {
@@ -67,73 +69,16 @@
 
 		p {
 			@include n-m-p;
-			font-size: 1.2em;
+			font-size: 1.1em;
 			font-weight: 300;
 			margin: 16px 0;
-			line-height: 2;
+			line-height: 1.8;
 		}
 
 		h3 {
 			@include n-m-p;
 		}
-
-		.prod-page-button-container {
-			display: flex;
-
-			.prod-page-button {
-				@include btn-general;
-				border-radius: none;
-				background-color: black;
-				transition: 0.2s;
-				align-items: center;
-				justify-content: center;
-				border-radius: 0;
-
-				@include btn-hover;
-
-				p {
-					@include n-m-p;
-					color: white;
-					font-size: 15px;
-					font-weight: 400;
-					letter-spacing: 2px;
-					text-transform: uppercase;
-				}
-			}
-		}
 	}
 }
 
-.prod-qty-button {
-	@include btn-general;
-	cursor: default;
-
-	.v-plus-minus {
-		flex: 1;
-		background-color: black;
-		cursor: pointer;
-		color: white;
-		@include v-flex-center;
-		@include btn-hover;
-	}
-
-	p {
-		@include n-m-p;
-		font-size: 18px;
-		font-weight: 300;
-	}
-}
-
-.prod-fav-button {
-	@include btn-general;
-	min-width: 50px;
-	align-items: center;
-	justify-content: center;
-	border-radius: 0;
-	transition: 0.2s;
-	border: 1px solid $black-color;
-
-	.icon {
-		height: 25px;
-	}
-}
+@import './prodbuttons';

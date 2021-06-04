@@ -12,7 +12,6 @@ const BNavLogged = () => {
 	const logout = () => {
 		localStorage.removeItem('token');
 	};
-	const dispatch = useDispatch();
 
 	if (loading) return null;
 
@@ -20,9 +19,7 @@ const BNavLogged = () => {
 		return (
 			<>
 				<BNavItem href='/profile'>Profile</BNavItem>
-				<BNavItem href='#' onClick={() => dispatch(logoutAction())}>
-					logout
-				</BNavItem>
+				<BNavItem logout>logout</BNavItem>
 			</>
 		);
 	else
@@ -34,7 +31,14 @@ const BNavLogged = () => {
 		);
 };
 
-const BNavItem = ({ children, href }) => {
+const BNavItem = ({ children, href, logout }) => {
+	const dispatch = useDispatch();
+	if (logout)
+		return (
+			<div className='v-navitem' onClick={() => dispatch(logoutAction())}>
+				{children}
+			</div>
+		);
 	return (
 		<Link href={href}>
 			<Nav.Link

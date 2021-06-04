@@ -1,0 +1,60 @@
+//@include
+
+.prod-page-button-container {
+	display: flex;
+
+	.prod-page-button {
+		@include btn-general;
+		border-radius: none;
+		background-color: black;
+		transition: 0.2s;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0;
+
+		@include btn-hover;
+
+		p {
+			@include n-m-p;
+			color: white;
+			font-size: 0.9em;
+			font-weight: 500;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.prod-qty-button {
+	@include btn-general;
+	cursor: default;
+
+	.v-plus-minus {
+		flex: 1;
+		background-color: black;
+		cursor: pointer;
+		color: white;
+		@include v-flex-center;
+		@include btn-hover;
+	}
+
+	p {
+		@include n-m-p;
+		font-size: 18px;
+		font-weight: 300;
+	}
+}
+
+.prod-fav-button {
+	@include btn-general;
+	min-width: 50px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0;
+	transition: 0.2s;
+	border: 1px solid $black-color;
+
+	.icon {
+		height: 25px;
+	}
+}

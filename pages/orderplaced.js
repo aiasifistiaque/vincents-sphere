@@ -14,16 +14,17 @@ const orderplaced = () => {
 		<Page>
 			<div
 				style={{
-					display: 'flex',
 					flex: 1,
+					margin: '15vh 4%',
+					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'center',
 					flexDirection: 'column',
 				}}>
-				<h2>Order has been placed successfully</h2>
+				<h2 style={{ margin: '.5em' }}>Order has been placed successfully</h2>
 				<Link href='/'>
 					<div className='login-button'>
-						<p>go back</p>
+						<p>Go back</p>
 					</div>
 				</Link>
 			</div>

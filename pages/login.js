@@ -43,7 +43,7 @@ const login = () => {
 		<Page>
 			<div className='login-page'>
 				<div className='login-form'>
-					<h3>Log In</h3>
+					<h3>Login</h3>
 					<label>Email</label>
 					<input
 						type='text'
@@ -59,7 +59,7 @@ const login = () => {
 						onChange={e => setPassword(e.target.value)}
 					/>
 					<div className='login-button' onClick={loginButtonPressed}>
-						{tokenSelector.loading ? <ButtonLoading /> : <p>login</p>}
+						{tokenSelector.loading ? <ButtonLoading /> : <p>Login</p>}
 					</div>
 					<p style={{ color: 'crimson' }}>{tokenSelector.error}</p>
 					<p>

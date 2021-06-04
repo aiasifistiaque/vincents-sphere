@@ -12,6 +12,7 @@ import {
 	ProdFavButton,
 	ProdPageButton,
 } from '../../components/product/ProdButtons';
+import { general } from '../../constants';
 
 const Product = () => {
 	const router = useRouter();
@@ -66,7 +67,10 @@ const Product = () => {
 					<h5>Notes: {product.note}</h5>
 					<hr />
 					<p>{product.description}</p>
-					<h2>{product.price} BDT</h2>
+					<h2>
+						{general.takaSymbol}
+						{product.price}
+					</h2>
 
 					<div className='prod-page-button-container'>
 						{addLoading ? (
