@@ -5,11 +5,12 @@ import NavBrand from './NavBrand';
 import { useSelector } from 'react-redux';
 import { categories } from '../../constants';
 import BNavLogged from './BNavLogged';
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import BNavItem from './BNavItem';
+import NavSearch from './NavSearch';
 
-export default function BNavbar() {
+export default function BNavbar({ searchActive, searchOn, searchOff }) {
 	const { cartItems } = useSelector(state => state.cart);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [length, setLength] = useState(0);
@@ -31,6 +32,8 @@ export default function BNavbar() {
 			//bg='v-navbar'
 			className='v-navbar'>
 			<NavBrand />
+
+			<NavSearch active={searchActive} on={searchOn} off={searchOff} />
 
 			<Navbar.Toggle
 				aria-controls='basic-navbar-nav'
@@ -55,7 +58,6 @@ export default function BNavbar() {
 							</NavDropdown.Item>
 						))}
 					</NavDropdown>
-					<BNavItem href='/'>Gift Box</BNavItem>
 					<BNavItem href='/about'>About us</BNavItem>
 
 					<BNavLogged />
@@ -63,9 +65,10 @@ export default function BNavbar() {
 					<BNavItem href='/cart'>
 						<div className='v-nav-icon-container'>
 							<FontAwesomeIcon icon={faShoppingCart} className='v-cart-icon' />
-							<span>
-								({length}) ৳ {totalPrice}
-							</span>
+							<div className='cart-badge'>
+								<span>{length}</span>
+							</div>
+							{<span> ৳{totalPrice}</span>}
 						</div>
 					</BNavItem>
 				</Nav>
@@ -73,16 +76,3 @@ export default function BNavbar() {
 		</Navbar>
 	);
 }
-
-const BNavItem = ({ children, href }) => {
-	return (
-		<Link href={href}>
-			<Nav.Link
-				href={href || '#'}
-				className='v-navitem'
-				style={{ color: 'whitesmoke' }}>
-				{children}
-			</Nav.Link>
-		</Link>
-	);
-};

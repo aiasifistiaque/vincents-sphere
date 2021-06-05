@@ -5,7 +5,7 @@ import { dummyItem } from '../../data';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
-import Loading from '../../components/Loading';
+import PageLoading from '../../components/PageLoading';
 import ProdQtyButton from '../../components/product/ProdQtyButton';
 import ProductSection from '../../components/product/ProductSection';
 import {
@@ -46,7 +46,7 @@ const Product = () => {
 		}
 	}, [cartItems, id]);
 
-	if (loading) return <Loading />;
+	if (loading) return <PageLoading />;
 
 	return (
 		<Page>

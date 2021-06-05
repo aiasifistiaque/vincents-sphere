@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import getCategoryProduct from '../../store/actions/productActions/getCategoryProduct';
 import CatProductsOnDIsplay from '../../components/cat/CatProductsOnDIsplay';
 import { categories } from '../../constants';
+import PageLoading from '../../components/PageLoading';
 
 const cat = () => {
 	const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const cat = () => {
 		}
 	}, [id]);
 
-	if (loading) return <Loading />;
+	if (loading) return <PageLoading />;
 
 	return (
 		<Page>

@@ -61,7 +61,7 @@ const FooterAddressSection = () => {
 			</p>
 			<a className='footer-mail' href='mailto:asifistiaque.ai@gmail.com'>
 				<FontAwesomeIcon icon={faEnvelope} className='v-footer-icon' />
-				rahman.mauli@gamil.com
+				rahman.mauli@gmail.com
 			</a>
 		</div>
 	);
