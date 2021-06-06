@@ -3,7 +3,7 @@ import React from 'react';
 const Consult = () => {
 	return (
 		<div className='consult'>
-			<p>Cant decide which one to get?</p>
+			<h6>Cant decide which one to get?</h6>
 			<p>
 				Let us help you choose the best products for you and your loved oned.
 			</p>
@@ -12,9 +12,11 @@ const Consult = () => {
 	);
 };
 
-const ConsultButton = ({ onClick, text }) => {
+const ConsultButton = ({ text }) => {
 	return (
-		<div className='custom-button'>
+		<div
+			className='custom-button'
+			onClick={() => window.open('https://www.facebook.com/vincentssphere')}>
 			<p>{text}</p>
 		</div>
 	);

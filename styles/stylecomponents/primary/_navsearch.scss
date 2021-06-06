@@ -104,6 +104,10 @@
 	//border-radius: 4px;
 	padding: 0 15px;
 	border: 1px solid black;
+	letter-spacing: 2px;
+	&:focus {
+		outline: 2px solid black;
+	}
 }
 
 .search-bar-button {

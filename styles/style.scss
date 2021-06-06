@@ -15,6 +15,7 @@
 @import './stylecomponents/profile/profilepage';
 @import './stylecomponents/primary/navsearch';
 @import './stylecomponents/primary/searchprod';
+@import './stylecomponents/primary/footericons';
 
 html,
 body {
@@ -116,4 +117,21 @@ a {
 	margin-bottom: 1px;
 	height: 16px;
 	margin-right: 10px;
+}
+
+.terms {
+	padding: 15vh 5%;
+	line-height: 2em;
+	h1 {
+		margin: 0;
+		font-size: 2em;
+		margin-bottom: 2em;
+	}
+	h3 {
+		font-size: 1.5em;
+		margin: 2em 0 0.5em 0;
+	}
+	li {
+		margin: 2em 0;
+	}
 }

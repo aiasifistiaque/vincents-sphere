@@ -47,14 +47,14 @@ const login = () => {
 					<label>Email</label>
 					<input
 						type='text'
-						placeholder='email'
+						placeholder='email *'
 						value={email}
 						onChange={e => setEmail(e.target.value)}
 					/>
 					<label>Password</label>
 					<input
 						type='password'
-						placeholder='password'
+						placeholder='password *'
 						value={password}
 						onChange={e => setPassword(e.target.value)}
 					/>

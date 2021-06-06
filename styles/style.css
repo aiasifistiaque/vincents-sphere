@@ -451,7 +451,7 @@ div {
       -ms-flex-pack: start;
           justify-content: flex-start;
   text-align: left;
-  margin: 1em 0.8em 1em 0;
+  margin: 1em 0.5em;
   min-width: 380px;
   box-sizing: border-box;
   padding: 0 0 10px 0;
@@ -463,6 +463,9 @@ div {
   -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -707,16 +710,29 @@ div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 0 5%;
   font-size: 1.8em;
   font-weight: 300;
+  text-align: left;
   text-align: center;
+}
+
+.consult h6 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.consult p {
+  font-size: 1em;
+  font-weight: 200;
+  margin: 0.1em 0;
 }
 
 @media only screen and (max-width: 768px) {
   .consult {
-    font-size: 1.5em;
+    font-size: 1.3em;
+    min-height: 50vh;
   }
 }
 
@@ -729,6 +745,13 @@ div {
   transition: 0.2s;
   cursor: pointer;
   margin: 1em 0;
+  border: 2px solid black;
+  color: whitesmoke;
+}
+
+.custom-button:hover {
+  background-color: white;
+  color: black;
 }
 
 .custom-button p {
@@ -738,14 +761,36 @@ div {
   padding: 1em 2em;
   color: #fff;
   font-weight: 500;
+  color: inherit;
 }
 
-.custom-button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+.footer-full {
+  background-color: black;
+}
+
+.footer-c {
+  background-color: inherit;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 4%;
+}
+
+.footer-c p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  letter-spacing: 3px;
 }
 
 .footer {
-  background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,10 +801,10 @@ div {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: black;
-  padding: 80px 5%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-color: whitesmoke;
+  padding: 80px 5%;
 }
 
 .footer .footer-address-section {
@@ -824,6 +869,9 @@ div {
   font-size: 0.8em;
   margin: 0.5em 0;
   cursor: pointer;
+  color: black;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .footer .footer-link-section .footer-sections a:hover {
@@ -1179,9 +1227,34 @@ div {
   padding: 0 0.8em;
   margin: 0.2em 0 1.5em 0;
   border: none;
-  background-color: #f5f0f0;
+  background-color: white;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+.login-page .login-form input::-webkit-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input:-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input::-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input::placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input:focus {
+  outline: 2px solid black;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1616,6 +1689,7 @@ div {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 1% 4% 4% 4%;
+  background-color: violet;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1941,6 +2015,11 @@ div {
   border: none;
   padding: 0 15px;
   border: 1px solid black;
+  letter-spacing: 2px;
+}
+
+.search-bar-input:focus {
+  outline: 2px solid black;
 }
 
 .search-bar-button {
@@ -2115,6 +2194,60 @@ div {
   color: black;
 }
 
+.footer-section-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2em;
+  min-width: 200px;
+}
+
+.footer-section-icons h5 {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-section-icons h5 {
+    font-size: 0.9em;
+  }
+  .footer-section-icons a {
+    font-size: 0.7em;
+  }
+}
+
+.footer-section-icons .footer-icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-section-icons .footer-icons-container .footer-icons {
+  color: black;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 15px;
+  border-radius: 2px;
+}
+
+.footer-section-icons .footer-icons-container .footer-icons:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.footer-section-icons .footer-icons-container .footer-icons:hover {
+  color: #fb3290;
+}
+
 html,
 body {
   padding: 0;
@@ -2233,5 +2366,25 @@ a {
   margin-bottom: 1px;
   height: 16px;
   margin-right: 10px;
+}
+
+.terms {
+  padding: 15vh 5%;
+  line-height: 2em;
+}
+
+.terms h1 {
+  margin: 0;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+.terms h3 {
+  font-size: 1.5em;
+  margin: 2em 0 0.5em 0;
+}
+
+.terms li {
+  margin: 2em 0;
 }
 /*# sourceMappingURL=style.css.map */

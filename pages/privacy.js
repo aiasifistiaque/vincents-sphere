@@ -4,7 +4,7 @@ import Page from '../components/Page';
 const privacy = () => {
 	return (
 		<Page>
-			<div style={{ padding: '15vh 4%' }}>
+			<div className='terms'>
 				<h1>PRIVACY POLICY</h1>
 				<p>
 					This privacy policy discloses the privacy practices for

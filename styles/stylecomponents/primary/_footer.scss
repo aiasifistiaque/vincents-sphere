@@ -1,12 +1,31 @@
+//@include
+
+.footer-full {
+	background-color: black;
+}
+
+.footer-c {
+	background-color: inherit;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 4%;
+	p {
+		@include n-m-p;
+		font-size: 0.8em;
+		letter-spacing: 3px;
+	}
+}
+
 .footer {
-	background-color: $color-black;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	color: black;
-	padding: 80px $padding-horizontal;
 	flex-wrap: wrap;
 	background-color: whitesmoke;
+	padding: 80px $padding-horizontal;
 
 	.footer-address-section {
 		display: flex;
@@ -48,6 +67,8 @@
 				font-size: 0.8em;
 				margin: 0.5em 0;
 				cursor: pointer;
+				color: black;
+				text-decoration-line: none;
 				&:hover {
 					text-decoration-line: underline;
 					color: $color-pink;

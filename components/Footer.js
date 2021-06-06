@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
+import FooterSectionIcons from './nav/FooterSectionIcons';
 
 const footerData = [
 	{
@@ -29,24 +31,22 @@ const footerData = [
 			},
 			{
 				name: 'Terms of Service',
-				to: '/temrs',
+				to: '/terms',
 			},
-		],
-	},
-	{
-		header: 'Social',
-		items: [
-			{ name: 'Facebook', to: '' },
-			{ name: 'Instagram', to: '' },
 		],
 	},
 ];
 
 const Footer = () => {
 	return (
-		<div className='footer'>
-			<FooterAddressSection />
-			<FooterLinkSection />
+		<div className='footer-full'>
+			<div className='footer'>
+				<FooterAddressSection />
+				<FooterLinkSection />
+			</div>
+			<div className='footer-c'>
+				<p>Copyright © 2021, Vincent's Sphere | All rights reserved.</p>
+			</div>
 		</div>
 	);
 };
@@ -73,6 +73,7 @@ const FooterLinkSection = () => {
 			{footerData.map((data, i) => (
 				<FooterSections data={data} key={i} />
 			))}
+			<FooterSectionIcons />
 		</div>
 	);
 };
@@ -82,7 +83,9 @@ const FooterSections = ({ data }) => {
 		<div className='footer-sections'>
 			<h5>{data.header}</h5>
 			{data.items.map((item, i) => (
-				<a key={i}>{item.name}</a>
+				<Link href={item.to || '/'}>
+					<a key={i}>{item.name}</a>
+				</Link>
 			))}
 		</div>
 	);
