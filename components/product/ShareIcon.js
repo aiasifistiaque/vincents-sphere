@@ -21,7 +21,7 @@ const ShareIcon = ({ className, product }) => {
 					{
 						display: 'popup',
 						method: 'share',
-						href: 'https://developers.facebook.com/docs/',
+						href: `${window.location.href}/product/${product._id}`,
 					},
 					function (response) {}
 				)
