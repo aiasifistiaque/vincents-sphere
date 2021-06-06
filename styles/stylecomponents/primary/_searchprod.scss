@@ -1,0 +1,86 @@
+//@at-root
+
+@mixin spc-con-gen {
+	display: flex;
+	flex: 5;
+	min-width: 350px;
+	width: 60%;
+	letter-spacing: 2px;
+}
+
+.search-prod-container {
+	@include spc-con-gen();
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	overflow-y: scroll;
+	//padding-top: 10px;
+	box-shadow: 0 0 5px rgba(black, 0.1);
+}
+
+.spc-not-found {
+	@include spc-con-gen();
+	align-items: center;
+	justify-content: center;
+	font-weight: 400;
+	font-size: 1.2em;
+}
+
+.search-prod-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100px;
+	padding: 5px 10px;
+	margin: 5px 0 0 0;
+	width: 100%;
+	box-sizing: border-box;
+	min-width: 350px;
+
+	cursor: pointer;
+	&:hover {
+		background-color: whitesmoke;
+	}
+}
+
+.spc-image-container {
+	min-width: 40px;
+}
+
+.spc-image {
+	border-radius: 500px;
+	min-width: 50px;
+}
+
+.spc-section {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	justify-content: flex-start;
+	margin: 15px;
+	box-sizing: border-box;
+	color: black;
+
+	.spc-name {
+		font-weight: 500;
+	}
+
+	p {
+		@include n-m-p;
+		letter-spacing: 2px;
+		@media only screen and (max-width: $medium-screen) {
+			font-size: 0.8em;
+		}
+	}
+}
+
+.spc-icon {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	flex: 0.2;
+	justify-content: flex-end;
+	margin: 20px;
+	box-sizing: border-box;
+	color: black;
+}

@@ -44,6 +44,7 @@ export const categories = [
 export const api = {
 	productcategories: `${server}/categories/cat`,
 	products: `${server}/products`,
+	search: `${server}/search`,
 	login: `${server}/login`,
 	register: `${server}/register`,
 	order: `${server}/order`,
