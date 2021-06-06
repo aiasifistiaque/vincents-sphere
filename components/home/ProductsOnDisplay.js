@@ -7,6 +7,7 @@ import {
 	faShare,
 	faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+import ShareIcon from '../product/ShareIcon';
 
 const ProductsOnDisplay = ({ product }) => {
 	const [fav, setFav] = useState(false);
@@ -34,7 +35,7 @@ const ProductsOnDisplay = ({ product }) => {
 						className={fav ? 'v-pc-icons favd' : 'v-pc-icons'}
 						onClick={() => setFav(!fav)}
 					/>
-					<FontAwesomeIcon icon={faShare} className='v-pc-icons' />
+					<ShareIcon className='v-pc-icons' product={product} />
 				</div>
 				<Link href={`/product/${product._id}`}>
 					<FontAwesomeIcon icon={faChevronRight} className='v-pc-icons' />

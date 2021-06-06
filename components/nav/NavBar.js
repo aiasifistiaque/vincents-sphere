@@ -51,7 +51,7 @@ export const NavDropdown = ({ children }) => {
 	return (
 		<div className='nav-dropdown'>
 			<p>Categories</p>
-			<div class='nav-dropdown-content'>
+			<div className='nav-dropdown-content'>
 				{categories.map((cat, i) => (
 					<NavCatItem href={`/cat/${cat.name}`}>{cat.name}</NavCatItem>
 				))}

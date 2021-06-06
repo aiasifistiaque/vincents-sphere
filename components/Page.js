@@ -6,11 +6,18 @@ import Search from './Search';
 
 const Page = ({ children, title }) => {
 	const [searchActive, setSearchActive] = useState(false);
+
 	return (
 		<div>
 			<Head>
 				<title>{title || 'Vincents Sphere'}</title>
 				<link rel='icon' href='/favicon.ico' />
+
+				<script
+					async
+					defer
+					crossorigin='anonymous'
+					src='https://connect.facebook.net/en_US/sdk.js'></script>
 			</Head>
 			<BNavbar
 				searchActive={searchActive}

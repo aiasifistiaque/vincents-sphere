@@ -69,7 +69,7 @@ const Search = ({ active, off }) => {
 				<FontAwesomeIcon icon={faTimes} className='sc-close-icon' />
 			</div>
 
-			<div class='sb-input-container'>
+			<div className='sb-input-container'>
 				<input
 					type='text'
 					value={searchString}
