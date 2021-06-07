@@ -25,13 +25,11 @@ const ShareIcon = ({ className, product }) => {
 				FB.ui(
 					{
 						display: 'popup',
-						method: 'share',
+						method: 'feed',
 						href: `${window.location.href}/product/${product._id}`,
 						title: product.name,
 						caption: product.category,
 						description: product.description || '',
-						picture:
-							'https://vincents-sphere.vercel.app/_next/image?url=%2Fwinter%20essentials%202020%2Fstarbucks%208oz%20price%20700%20taka.jpg',
 					},
 					function (response) {}
 				)
