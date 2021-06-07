@@ -30,7 +30,8 @@ const ShareIcon = ({ className, product }) => {
 						title: product.name,
 						caption: product.category,
 						description: product.description || '',
-						picture: { 'https://vincents-sphere.vercel.app/_next/image?url=%2Fwinter%20essentials%202020%2Fstarbucks%208oz%20price%20700%20taka.jpg&w=828&q=75' },
+						picture:
+							'https://vincents-sphere.vercel.app/_next/image?url=%2Fwinter%20essentials%202020%2Fstarbucks%208oz%20price%20700%20taka.jpg',
 					},
 					function (response) {}
 				)
