@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ShareIcon from '../../../frontend/components/product/ShareIcon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -8,6 +7,7 @@ import {
 	removeFromFav,
 	addToFav,
 } from '../../store/actions/cartActions/cartActions';
+import ShareIcon from './ShareIcon';
 
 const CardIconSection = ({ product }) => {
 	const dispatch = useDispatch();
