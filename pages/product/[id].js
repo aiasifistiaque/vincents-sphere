@@ -13,6 +13,7 @@ import {
 	ProdPageButton,
 } from '../../components/product/ProdButtons';
 import { general } from '../../constants';
+import Head from 'next/head';
 
 const Product = () => {
 	const router = useRouter();
@@ -50,6 +51,11 @@ const Product = () => {
 
 	return (
 		<Page>
+			<Head>
+				<meta property='og:title' content={product.title} key='title' />
+				<meta name='og:description' content={product.description} />
+				<meta name='description' content={product.description} />
+			</Head>
 			<div className='page-product'>
 				<div className='product-image'>
 					<Image

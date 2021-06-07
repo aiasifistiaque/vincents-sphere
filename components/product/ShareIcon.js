@@ -27,9 +27,7 @@ const ShareIcon = ({ className, product }) => {
 						display: 'popup',
 						method: 'share',
 						href: `${window.location.href}/product/${product._id}`,
-						title: product.name,
-						caption: product.category,
-						description: product.description || '',
+						hashtag: product.category,
 					},
 					function (response) {}
 				)
