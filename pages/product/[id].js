@@ -54,7 +54,7 @@ const Product = () => {
 			<Head>
 				<title>{product.name}</title>
 				<link rel='icon' href='/favicon.ico' />
-				<meta property='og:image' content={`%PUBLIC_URL%/${product.image}`} />
+				<meta property='og:image' content={product.image} />
 				<meta property='title' content={product.title} key='title' />
 				<meta property='og:title' content={product.title} key='title' />
 				<meta name='og:description' content={product.description} />
