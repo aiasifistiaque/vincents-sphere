@@ -14,7 +14,13 @@ function cart() {
 					<h3>Shopping Cart</h3>
 
 					{cartItems.length == 0 ? (
-						<h3 style={{ fontSize: 26, fontWeight: '300', margin: '10px 0' }}>
+						<h3
+							style={{
+								fontSize: 22,
+								fontWeight: '400',
+								margin: '10px 4%',
+								textAlign: 'center',
+							}}>
 							Cart is empty
 						</h3>
 					) : (

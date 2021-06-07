@@ -14,7 +14,7 @@
 	}
 
 	.optn {
-		background-color: red;
+		//background-color: red;
 	}
 
 	h1 {
@@ -42,6 +42,7 @@
 	cursor: pointer;
 	letter-spacing: 2px;
 	display: flex;
+	background-color: white;
 
 	&:focus {
 		outline: 2px solid black;
@@ -49,7 +50,7 @@
 }
 
 .select-items {
-	background-color: red;
+	//background-color: red;
 }
 
 .all-products-explore {

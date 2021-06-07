@@ -7,7 +7,10 @@ const ProductsOnDisplay = ({ product }) => {
 	return (
 		<div className='section-card'>
 			<Link href={`/product/${product._id}`}>
-				<div style={{ cursor: 'pointer' }}>
+				<div
+					style={{
+						cursor: 'pointer',
+					}}>
 					<Image
 						src={product.image}
 						alt={product.name}

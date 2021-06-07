@@ -20,8 +20,8 @@ const ShareIcon = ({ className, product }) => {
 				FB.ui(
 					{
 						display: 'popup',
-						method: 'share',
-						href: `${window.location.href}/product/${product._id}`,
+						method: 'feed',
+						link: `${window.location.href}/product/${product._id}`,
 					},
 					function (response) {}
 				)
