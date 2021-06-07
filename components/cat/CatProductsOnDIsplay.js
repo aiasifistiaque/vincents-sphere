@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faHeart,
-	faShare,
-	faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
+import CardIconSection from '../product/CardIconSection';
 
 const CatProductsOnDIsplay = ({ product }) => {
-	const [fav, setFav] = useState(false);
 	return (
 		<div className='section-card' style={{ marginLeft: 0 }}>
 			<Link href={`/product/${product._id}`}>
 				<div style={{ cursor: 'pointer' }}>
 					<Image
-						src={product.image}
+						src={product.image || '/hero.jpg'}
 						alt={product.name}
 						width={400}
 						height={350}
@@ -28,19 +22,7 @@ const CatProductsOnDIsplay = ({ product }) => {
 					</div>
 				</div>
 			</Link>
-			<div className='v-pc-icon-contaner'>
-				<div style={{ display: 'flex' }}>
-					<FontAwesomeIcon
-						icon={faHeart}
-						className={fav ? 'v-pc-icons favd' : 'v-pc-icons'}
-						onClick={() => setFav(!fav)}
-					/>
-					<FontAwesomeIcon icon={faShare} className='v-pc-icons' />
-				</div>
-				<Link href={`/product/${product._id}`}>
-					<FontAwesomeIcon icon={faChevronRight} className='v-pc-icons' />
-				</Link>
-			</div>
+			<CardIconSection product={product} />
 		</div>
 	);
 };

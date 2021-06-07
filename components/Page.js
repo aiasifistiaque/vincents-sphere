@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 import BNavbar from './nav/BNavbar';
 import Search from './Search';
 
@@ -28,8 +28,8 @@ const Page = ({ children, title }) => {
 
 			<main onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>
+				<Footer />
 			</main>
-			<Footer />
 		</div>
 	);
 };

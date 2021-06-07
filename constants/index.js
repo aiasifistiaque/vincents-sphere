@@ -54,6 +54,7 @@ export const api = {
 	createProduct: `${server}/products/createproduct`,
 	getAllOrders: `${server}/order/getallorders`,
 	payment: `${server}/payment`,
+	explore: `${server}/explore`,
 
 	config: {
 		headers: {

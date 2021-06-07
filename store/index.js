@@ -15,11 +15,19 @@ const tokenFromStorage =
 		? JSON.parse(localStorage.getItem('vincenttoken'))
 		: null;
 
+const favItemsFromStorage =
+	!ISSERVER && localStorage.getItem('vincentfav')
+		? JSON.parse(localStorage.getItem('vincentfav'))
+		: [];
+
+console.log(favItemsFromStorage);
+
 const initialState = {
 	cart: {
 		cartItems: cartItemsFromStorage,
 	},
 	token: tokenFromStorage,
+	favItems: { favItems: favItemsFromStorage },
 };
 
 const store = createStore(

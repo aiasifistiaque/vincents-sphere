@@ -1,0 +1,95 @@
+//@include
+
+.explore-page {
+	display: flex;
+	margin: 15vh 4% 1% 4%;
+	flex-direction: column;
+	align-items: center;
+	padding: 0;
+	text-transform: uppercase;
+	justify-content: center;
+	align-items: center;
+
+	select {
+	}
+
+	.optn {
+		background-color: red;
+	}
+
+	h1 {
+		margin: 1px 0;
+		padding: 0;
+		text-align: center;
+		font-weight: 400;
+		color: black;
+	}
+
+	h4 {
+		margin-top: 5px;
+		padding: 0;
+		text-align: center;
+		font-weight: 300;
+		//color: $color-pink;
+	}
+}
+
+.custom-select {
+	width: 300px;
+	height: 50px;
+	border-radius: 0;
+	padding: 0 20px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	display: flex;
+
+	&:focus {
+		outline: 2px solid black;
+	}
+}
+
+.select-items {
+	background-color: red;
+}
+
+.all-products-explore {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1% 4%;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	//overflow-y: scroll;
+	//background-color: yellow;
+}
+
+.load-more-button {
+	display: inline-flex;
+	background-color: $color-black;
+	transition: 0.2s;
+	cursor: pointer;
+	margin: 1em 4% 10vh 5%;
+	border: 2px solid black;
+	color: whitesmoke;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		background-color: white;
+		color: black;
+	}
+	p {
+		padding: 0;
+		margin: 0;
+		font-size: 16px;
+		padding: 1em 2em;
+		color: $color-light;
+		font-weight: 500;
+		color: inherit;
+	}
+}
+
+.explore-card {
+	//margin: 1em;
+	min-width: 300px;
+}

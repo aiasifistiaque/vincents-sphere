@@ -1,0 +1,51 @@
+.about-page {
+	margin: 15vh 5%;
+	letter-spacing: 2px;
+
+	h3 {
+		font-size: 2em;
+		margin-bottom: 1.5em;
+	}
+
+	p {
+		font-size: 1.1em;
+		line-height: 1.5em;
+		margin-bottom: 1.2em;
+	}
+}
+
+.about-team {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-bottom: 4em;
+	flex-wrap: wrap;
+
+	h6 {
+		font-size: 1em;
+		text-align: center;
+	}
+	p {
+		font-size: 0.8em;
+		font-weight: 700;
+		text-align: center;
+	}
+}
+
+.team-container {
+	margin: 0 2em;
+	//background-color: red;
+}
+
+.team-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2em 0;
+}
+
+.team-img {
+	border-radius: 500px;
+	align-self: center;
+}

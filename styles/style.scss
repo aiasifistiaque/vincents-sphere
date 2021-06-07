@@ -16,6 +16,8 @@
 @import './stylecomponents/primary/navsearch';
 @import './stylecomponents/primary/searchprod';
 @import './stylecomponents/primary/footericons';
+@import './stylecomponents/cat/explorepage';
+@import './stylecomponents/about/aboutpage';
 
 html,
 body {
@@ -37,22 +39,6 @@ a {
 .display-card-image {
 	height: 300px;
 	width: 300px;
-}
-
-.about-page {
-	margin: 15vh 5%;
-	letter-spacing: 2px;
-
-	h3 {
-		font-size: 2em;
-		margin-bottom: 1.5em;
-	}
-
-	p {
-		font-size: 1.1em;
-		line-height: 1.5em;
-		margin-bottom: 1.2em;
-	}
 }
 
 .view-more {

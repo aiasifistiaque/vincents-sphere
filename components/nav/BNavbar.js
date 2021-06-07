@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { categories } from '../../constants';
 import BNavLogged from './BNavLogged';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
 import BNavItem from './BNavItem';
 import NavSearch from './NavSearch';
 
@@ -59,6 +59,8 @@ export default function BNavbar({ searchActive, searchOn, searchOff }) {
 						))}
 					</NavDropdown>
 					<BNavItem href='/about'>About us</BNavItem>
+
+					<BNavItem href='/wishlist'>Wishlist</BNavItem>
 
 					<BNavLogged />
 

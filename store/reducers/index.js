@@ -8,6 +8,7 @@ import {
 import { cartReducer } from './cartReducer';
 import { userLoginReducer, userSignupReducer } from './userReducer';
 import { getAllOrdersReducer, getAnOrderReducer } from './orderReducer';
+import { favItemReducer } from './favItemReducer';
 
 const rootReducer = combineReducers({
 	auth: authReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
 	getAllOrders: getAllOrdersReducer,
 	getAnOrder: getAnOrderReducer,
 	categoryProduct: getCategoryProductReducer,
+	favItems: favItemReducer,
 	// createTest: createTestReducer,
 });
 

@@ -14,6 +14,7 @@
   letter-spacing: 2px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
 }
 
 .container-center {
@@ -311,7 +312,7 @@ div {
 
 @media only screen and (max-width: 768px) {
   .home-hero {
-    background-size: 100% 60vh;
+    background-size: 120% 60vh;
     min-height: 60vh;
     padding: 2% 8%;
   }
@@ -330,6 +331,7 @@ div {
 @media only screen and (max-width: 600px) {
   .home-hero {
     min-height: 50vh;
+    background-size: 200% 50vh;
   }
 }
 
@@ -561,6 +563,7 @@ div {
   width: 2.3em;
   margin: 0.2em;
   padding: 0.5em;
+  color: black;
   cursor: pointer;
 }
 
@@ -570,7 +573,7 @@ div {
 }
 
 .favd {
-  color: crimson;
+  color: #fb3290;
 }
 
 .home-sections {
@@ -747,6 +750,12 @@ div {
   margin: 1em 0;
   border: 2px solid black;
   color: whitesmoke;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .custom-button:hover {
@@ -1178,6 +1187,40 @@ div {
   height: 25px;
 }
 
+.login-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: black;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-right: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 45px;
+  width: 8em;
+  margin-bottom: 0.8em;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #e5e5e5;
+  color: black;
+}
+
+.login-button p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 17px;
+  font-weight: 400;
+}
+
 .login-page {
   margin: 15vh 5%;
   display: -webkit-box;
@@ -1267,40 +1310,6 @@ div {
   color: dodgerblue;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-}
-
-.login-button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  background-color: black;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  margin-right: 25px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 45px;
-  width: 8em;
-  margin-bottom: 0.8em;
-  color: white;
-}
-
-.login-button:hover {
-  background-color: #e5e5e5;
-  color: black;
-}
-
-.login-button p {
-  margin: 0;
-  padding: 0;
-  color: inherit;
-  font-size: 17px;
-  font-weight: 400;
 }
 
 .cart-page {
@@ -1689,7 +1698,6 @@ div {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 1% 4% 4% 4%;
-  background-color: violet;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2248,6 +2256,188 @@ div {
   color: #fb3290;
 }
 
+.explore-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15vh 4% 1% 4%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  text-transform: uppercase;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+}
+
+.explore-page .optn {
+  background-color: red;
+}
+
+.explore-page h1 {
+  margin: 1px 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 400;
+  color: black;
+}
+
+.explore-page h4 {
+  margin-top: 5px;
+  padding: 0;
+  text-align: center;
+  font-weight: 300;
+}
+
+.custom-select {
+  width: 300px;
+  height: 50px;
+  border-radius: 0;
+  padding: 0 20px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.custom-select:focus {
+  outline: 2px solid black;
+}
+
+.select-items {
+  background-color: red;
+}
+
+.all-products-explore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1% 4%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+.load-more-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 1em 4% 10vh 5%;
+  border: 2px solid black;
+  color: whitesmoke;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.load-more-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.load-more-button p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  padding: 1em 2em;
+  color: #fff;
+  font-weight: 500;
+  color: inherit;
+}
+
+.explore-card {
+  min-width: 300px;
+}
+
+.about-page {
+  margin: 15vh 5%;
+  letter-spacing: 2px;
+}
+
+.about-page h3 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.about-page p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.about-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 4em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.about-team h6 {
+  font-size: 1em;
+  text-align: center;
+}
+
+.about-team p {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.team-container {
+  margin: 0 2em;
+}
+
+.team-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em 0;
+}
+
+.team-img {
+  border-radius: 500px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 html,
 body {
   padding: 0;
@@ -2268,22 +2458,6 @@ a {
 .display-card-image {
   height: 300px;
   width: 300px;
-}
-
-.about-page {
-  margin: 15vh 5%;
-  letter-spacing: 2px;
-}
-
-.about-page h3 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
-}
-
-.about-page p {
-  font-size: 1.1em;
-  line-height: 1.5em;
-  margin-bottom: 1.2em;
 }
 
 .view-more {

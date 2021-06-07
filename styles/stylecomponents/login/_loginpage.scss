@@ -1,3 +1,5 @@
+@import './loginbutton';
+
 .login-page {
 	margin: 15vh 5%;
 	display: flex;
@@ -48,32 +50,5 @@
 			color: dodgerblue;
 			text-decoration-line: underline;
 		}
-	}
-}
-
-.login-button {
-	display: inline-flex;
-	background-color: $color-black;
-	cursor: pointer;
-	transition: 0.2s;
-	margin-right: 25px;
-	align-items: center;
-	justify-content: center;
-	height: 45px;
-	width: 8em;
-	margin-bottom: 0.8em;
-	color: white;
-
-	&:hover {
-		background-color: #e5e5e5;
-		color: black;
-	}
-
-	p {
-		margin: 0;
-		padding: 0;
-		color: inherit;
-		font-size: 17px;
-		font-weight: 400;
 	}
 }

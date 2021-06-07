@@ -19,7 +19,7 @@ const GiftSection = () => {
 		<div className='home-sections'>
 			<div className='home-section-headers'>
 				<h3>Gift Box</h3>
-				<h4>For the special occassions</h4>
+				<h4>Contact us for customized Gift Box</h4>
 			</div>
 
 			<div className='gift-section'>

@@ -64,3 +64,29 @@ export const savePaymentMethod = data => dispatch => {
 
 	localStorage.setItem('paymentMethod', JSON.stringify(data));
 };
+
+export const addToFav = product => async (dispatch, getState) => {
+	//const { data } = await axios.get(`/api/products/${id}`);
+
+	dispatch({
+		type: 'ADD_FAV_ITEM',
+		payload: product._id,
+	});
+
+	localStorage.setItem(
+		'vincentfav',
+		JSON.stringify(getState().favItems.favItems)
+	);
+};
+
+export const removeFromFav = product => (dispatch, getState) => {
+	dispatch({
+		type: 'REMOVE_FAV_ITEM',
+		payload: product._id,
+	});
+
+	localStorage.setItem(
+		'vincentfav',
+		JSON.stringify(getState().favItems.favItems)
+	);
+};

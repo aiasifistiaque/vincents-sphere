@@ -80,7 +80,7 @@ const Product = () => {
 						) : (
 							<ProdPageButton title='Add to Cart' product={product} />
 						)}
-						<ProdFavButton />
+						<ProdFavButton product={product} />
 					</div>
 				</div>
 			</div>

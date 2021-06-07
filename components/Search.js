@@ -100,7 +100,7 @@ const Search = ({ active, off }) => {
 			) : (
 				<div className='search-prod-container'>
 					{products.map((product, i) => (
-						<SearchProducts product={product} />
+						<SearchProducts product={product} key={i} />
 					))}
 				</div>
 			)}

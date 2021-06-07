@@ -1,10 +1,13 @@
 import React from 'react';
 import Page from '../components/Page';
+import { teamMembers } from '../data/aboutData';
+import Image from 'next/image';
 
 const about = () => {
 	return (
 		<Page>
 			<div className='about-page'>
+				<OurTeam />
 				<h3>About Us</h3>
 				<p>
 					Vincent's Sphere is your #1 stop for all kinds of Handcrafted Goodies.
@@ -30,6 +33,28 @@ const about = () => {
 				</p>
 			</div>
 		</Page>
+	);
+};
+
+const OurTeam = () => {
+	return (
+		<div className='about-team'>
+			{teamMembers.map((item, i) => (
+				<div className='team-container'>
+					<div className='team-image'>
+						<Image
+							src={item.image}
+							height={200}
+							width={200}
+							className='team-img'
+						/>
+					</div>
+
+					<h6>{item.name}</h6>
+					<p>{item.post}</p>
+				</div>
+			))}
+		</div>
 	);
 };
 

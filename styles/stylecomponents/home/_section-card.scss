@@ -78,27 +78,4 @@
 	}
 }
 
-.v-pc-icon-contaner {
-	display: flex;
-	flex: 1;
-	padding: 0 5px;
-	justify-content: space-between;
-	width: 100%;
-}
-
-.v-pc-icons {
-	height: 2.2em;
-	width: 2.3em;
-	margin: 0.2em;
-	padding: 0.5em;
-	cursor: pointer;
-
-	&:hover {
-		border-radius: 500px;
-		background-color: whitesmoke;
-	}
-}
-
-.favd {
-	color: crimson;
-}
+@import './section-icons';

@@ -43,7 +43,7 @@ const Sections = ({ section }) => {
 					ref={scrollRef}>
 					{products.map((product, i) =>
 						i < 5 ? (
-							<ProductsOnDisplay product={product} />
+							<ProductsOnDisplay product={product} key={i} />
 						) : (
 							i == 5 && (
 								<Link href={`cat/${section.name}`}>
