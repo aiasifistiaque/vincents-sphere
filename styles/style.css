@@ -292,6 +292,7 @@ div {
       -ms-flex: 1;
           flex: 1;
   color: white;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
