@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Page from '../../components/Page';
+import Page, { ProductPage } from '../../components/Page';
 import { dummyItem } from '../../data';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
@@ -50,8 +50,11 @@ const Product = () => {
 	if (loading) return <PageLoading />;
 
 	return (
-		<Page>
+		<ProductPage>
 			<Head>
+				<title>{product.name}</title>
+				<link rel='icon' href={product.image} />
+				<meta property='title' content={product.title} key='title' />
 				<meta property='og:title' content={product.title} key='title' />
 				<meta name='og:description' content={product.description} />
 				<meta name='description' content={product.description} />
@@ -91,7 +94,7 @@ const Product = () => {
 				</div>
 			</div>
 			<ProductSection category={product.category} />
-		</Page>
+		</ProductPage>
 	);
 };
 

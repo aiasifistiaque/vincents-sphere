@@ -38,4 +38,24 @@ export const LoadingPage = ({ children }) => {
 	return <main className='page'>{children}</main>;
 };
 
+export const ProductPage = ({ children, title }) => {
+	const [searchActive, setSearchActive] = useState(false);
+
+	return (
+		<div>
+			<BNavbar
+				searchActive={searchActive}
+				searchOn={() => setSearchActive(true)}
+				searchOff={() => setSearchActive(false)}
+			/>
+			<Search active={searchActive} off={() => setSearchActive(false)} />
+
+			<div onClick={() => setSearchActive(false)}>
+				<div className='page'>{children}</div>
+				<Footer />
+			</div>
+		</div>
+	);
+};
+
 export default Page;
