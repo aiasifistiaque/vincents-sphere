@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { frontend } from '../../constants';
 
 const ShareIcon = ({ className, product }) => {
+	const link = product.image.substring(1);
+	const size = '&w=828&q=75';
+	const src = `${frontend}_next/image?url=%2F${link}${size}`;
+	console.log(src);
 	useEffect(() => {
 		FB.init({
 			appId: 777093836325354,
@@ -25,7 +30,7 @@ const ShareIcon = ({ className, product }) => {
 						title: product.name,
 						caption: product.category,
 						description: product.description || '',
-						picture: product.image,
+						picture: { src },
 					},
 					function (response) {}
 				)

@@ -2,7 +2,10 @@
 
 export const backend = 'https://vincent-backend.herokuapp.com/api';
 export const dev = 'http://localhost:5000/api';
+const domain = '';
+const frontDev = 'https://vincents-sphere.vercel.app/';
 
+export const frontend = frontDev;
 const server = backend;
 
 export const sizes = {
