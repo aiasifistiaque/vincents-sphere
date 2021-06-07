@@ -6,7 +6,7 @@ import { frontend } from '../../constants';
 const ShareIcon = ({ className, product }) => {
 	const link = product.image;
 	const size = '&w=828&q=75';
-	const src = `${frontend}_next/image?url=%2F${link}${size}`;
+	const src = `${frontend}_next/image?url=%2F${product.image}${size}`;
 	console.log(src);
 	useEffect(() => {
 		FB.init({
@@ -30,7 +30,7 @@ const ShareIcon = ({ className, product }) => {
 						title: product.name,
 						caption: product.category,
 						description: product.description || '',
-						picture: { src },
+						picture: { 'https://vincents-sphere.vercel.app/_next/image?url=%2Fwinter%20essentials%202020%2Fstarbucks%208oz%20price%20700%20taka.jpg&w=828&q=75' },
 					},
 					function (response) {}
 				)
