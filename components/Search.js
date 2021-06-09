@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,22 +17,6 @@ const Search = ({ active, off }) => {
 	const [products, setProducts] = useState([]);
 	const [searchString, setSearchString] = useState('');
 	const [initial, setInitial] = useState(true);
-	const [notFount, setNotFound] = useState(true);
-
-	const searchPressed = () => {
-		setInitial(false);
-		setLoading(true);
-		axios
-			.post(`${api.search}`, { searchString: searchString }, api.config)
-			.then(function (response) {
-				console.log(response);
-				setProducts(response.data.products);
-				setLoading(false);
-			})
-			.catch(function (error) {
-				setLoading(false);
-			});
-	};
 
 	useEffect(() => {
 		setProducts([]);
@@ -58,6 +42,18 @@ const Search = ({ active, off }) => {
 		}
 	}, [searchString]);
 
+	const inputRef = useRef(null);
+
+	useEffect(() => {
+		inputRef.current.focus();
+		if (active) {
+			inputRef.current.focus();
+			setTimeout(function () {
+				inputRef.current.focus();
+			}, 50);
+		}
+	}, [active]);
+
 	return (
 		<motion.div
 			animate={active ? 'open' : 'closed'}
@@ -71,6 +67,8 @@ const Search = ({ active, off }) => {
 
 			<div className='sb-input-container'>
 				<input
+					autoFocus='true'
+					ref={inputRef}
 					type='text'
 					value={searchString}
 					onChange={e => setSearchString(e.target.value)}
@@ -79,13 +77,20 @@ const Search = ({ active, off }) => {
 				/>
 
 				{searchString.length < 1 ? (
-					<div className='search-bar-button'>
+					<div
+						className='search-bar-button'
+						onClick={() => {
+							inputRef.current.focus();
+						}}>
 						<FontAwesomeIcon icon={faSearch} className='search-icon-dd' />
 					</div>
 				) : (
 					<div
 						className='search-bar-button'
-						onClick={() => setSearchString('')}>
+						onClick={() => {
+							setSearchString('');
+							inputRef.current.focus();
+						}}>
 						<FontAwesomeIcon icon={faTimes} className='sc-close-icon' />
 					</div>
 				)}

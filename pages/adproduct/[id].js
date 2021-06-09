@@ -1,14 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AdminPageLayout from '../../components/admin/AdminPageLayout';
 import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
 import Image from 'next/image';
 import Loading from '../../components/Loading';
-import { general } from '../../constants';
+import { CustomButton } from '../../components';
+import HeadingContainer from '../../components/admin/HeadingContainer';
+import ProductEdit from '../../components/admin/ProductEdit';
+import AdminProductDetails from '../../components/admin/AdminProductDetails';
 
 const adproduct = () => {
 	const router = useRouter();
+	const [edit, setEdit] = useState(false);
 	const { id } = router.query;
 	const dispatch = useDispatch();
 	const { product, loading } = useSelector(state => state.getAProduct);
@@ -21,9 +25,12 @@ const adproduct = () => {
 
 	return (
 		<AdminPageLayout>
-			<h1 style={{ fontSize: '.8em', margin: '0 1em' }}>
-				Product ID: {product._id}
-			</h1>
+			<HeadingContainer>
+				<h1 style={{ fontSize: '.8em' }}>Product ID: {product._id}</h1>
+				{!edit && (
+					<CustomButton onClick={() => setEdit(true)}>Edit</CustomButton>
+				)}
+			</HeadingContainer>
 
 			<div className='admin-product' style={{ padding: 0, margin: 0 }}>
 				<div className='admin-product-image'>
@@ -32,21 +39,14 @@ const adproduct = () => {
 						alt={product.name}
 						width={400}
 						height={350}
+						className='v-image'
 					/>
 				</div>
-
-				<div className='admin-product-details'>
-					<h1>{product.name}</h1>
-
-					<h4>{product.size}</h4>
-					<h5>Notes: {product.note}</h5>
-					<hr />
-					<p>{product.description}</p>
-					<h2>
-						Price: {general.takaSymbol}
-						{product.price}
-					</h2>
-				</div>
+				{edit ? (
+					<ProductEdit product={product} cancel={() => setEdit(false)} />
+				) : (
+					<AdminProductDetails product={product} />
+				)}
 			</div>
 		</AdminPageLayout>
 	);

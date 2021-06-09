@@ -1,0 +1,29 @@
+//@at-root
+
+.a-navbar {
+	background-color: black;
+	align-items: center;
+	//padding: 0 3%;
+	height: 10vh;
+	display: flex;
+	color: whitesmoke;
+}
+
+.a-navitem {
+	@include nav-item-hover;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.a-nav-collapse {
+	padding: 0% 4.5%;
+	background-color: black;
+}
+
+.a-nav {
+	display: flex;
+	flex: 4;
+	justify-content: space-between;
+	//color: black;
+}

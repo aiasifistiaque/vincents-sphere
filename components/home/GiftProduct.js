@@ -12,6 +12,7 @@ const GiftProduct = ({ product }) => {
 						alt={product.name}
 						width={600}
 						height={500}
+						className='v-image'
 					/>
 					<div className='gift-card-text'>
 						<h3>{product.name}</h3>

@@ -39,7 +39,7 @@
 
 		h2 {
 			@include n-m-p;
-			margin: 1em 0;
+			margin: 0.4em 0;
 			font-size: 1.5em;
 			font-weight: 500;
 		}
@@ -67,6 +67,11 @@
 
 		h3 {
 			@include n-m-p;
+		}
+		h6 {
+			@include n-m-p;
+			font-size: 1.2em;
+			font-weight: 600;
 		}
 		@media only screen and(max-width:$medium-screen) {
 			p {

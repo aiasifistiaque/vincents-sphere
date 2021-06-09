@@ -54,6 +54,8 @@ export const api = {
 	userorder: `${server}/order/userorder`,
 	allusers: `${server}/profile/getallusers`,
 	profile: `${server}/profile`,
+	anUser: `${server}/profile/getanuser`,
+	editRole: `${server}/profile/editrole`,
 	getAllUsers: `${server}/profile/getallusers`,
 	createProduct: `${server}/products/createproduct`,
 	getAllOrders: `${server}/order/getallorders`,

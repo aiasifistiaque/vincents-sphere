@@ -45,7 +45,7 @@ const AdminUserList = () => {
 							<AText>{user.email}</AText>
 							<AText>Role: {user.role}</AText>
 							<AText>Joined: {getUnixToDate(user.createdAt)}</AText>
-							<AButton onClick={() => Router.push(`/adorder/${user._id}`)}>
+							<AButton onClick={() => Router.push(`/aduser/${user._id}`)}>
 								Details
 							</AButton>
 						</AdminListCard>

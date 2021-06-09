@@ -19,6 +19,7 @@ const WishProducts = ({ id }) => {
 						alt={product.name}
 						width={300}
 						height={250}
+						className='v-image'
 					/>
 					<div className='section-card-text'>
 						<p className='section-sub-category'>{product.subCategory}</p>

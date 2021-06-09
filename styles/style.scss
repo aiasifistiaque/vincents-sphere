@@ -18,6 +18,7 @@
 @import './stylecomponents/primary/footericons';
 @import './stylecomponents/cat/explorepage';
 @import './stylecomponents/about/aboutpage';
+@import './stylecomponents/admin/adminav';
 
 html,
 body {
@@ -124,4 +125,9 @@ a {
 
 .page-vertical-padding {
 	padding: 15vh 0;
+}
+
+.v-image {
+	object-fit: cover;
+	background-color: #313234;
 }

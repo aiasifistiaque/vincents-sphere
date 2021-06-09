@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
 					alt={product.name}
 					width={300}
 					height={300}
+					className='v-image'
 				/>
 				<h6>{product.name}</h6>
 				<h6 style={{ fontSize: 16 }}>{product.subCategory}</h6>

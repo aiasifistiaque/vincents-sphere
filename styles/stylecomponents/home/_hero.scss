@@ -5,7 +5,7 @@
 	background-color: #313234;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100% 90vh;
+	background-size: cover;
 	padding: 10% 8%;
 	display: flex;
 	align-items: start;
@@ -36,7 +36,7 @@
 	}
 
 	@media only screen and(max-width: $medium-screen) {
-		background-size: 120% 60vh;
+		//background-size: 120% 60vh;
 		min-height: 60vh;
 		h1 {
 			font-size: 1.5em;
@@ -56,7 +56,7 @@
 
 	@media only screen and(max-width: $small-screen) {
 		min-height: 50vh;
-		background-size: 180% 50vh;
+		//background-size: 180% 50vh;
 	}
 
 	.hero-action-button {

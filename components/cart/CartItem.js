@@ -16,7 +16,7 @@ const CartItem = ({ product, index }) => {
 					src={product.image}
 					height={80}
 					width={100}
-					style={{ objectFit: 'contain' }}
+					className='v-image'
 				/>
 			</div>
 

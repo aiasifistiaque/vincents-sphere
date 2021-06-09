@@ -66,7 +66,8 @@ const Product = () => {
 						src={product.image || dummyItem.image}
 						alt={product.name}
 						width={600}
-						height={525}
+						height={500}
+						className='product-image-item v-image'
 					/>
 				</div>
 

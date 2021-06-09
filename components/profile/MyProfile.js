@@ -11,6 +11,7 @@ const MyProfile = () => {
 			<h3>profile</h3>
 			<h5>{user.name}</h5>
 			<p>{user.email}</p>
+			<p>Role: {user.role}</p>
 			{user.role == 'admin' && (
 				<Link href='/admin'>
 					<div className='admin-panel-button'>

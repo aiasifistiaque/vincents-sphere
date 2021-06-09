@@ -1,6 +1,6 @@
 //@at-root
 
-.login-button {
+@mixin general-button-data {
 	display: inline-flex;
 	background-color: $color-black;
 	cursor: pointer;
@@ -12,6 +12,7 @@
 	width: 8em;
 	margin-bottom: 0.8em;
 	color: white;
+	box-sizing: border-box;
 
 	&:hover {
 		background-color: #e5e5e5;
@@ -24,5 +25,29 @@
 		color: inherit;
 		font-size: 17px;
 		font-weight: 400;
+	}
+}
+
+.login-button {
+	@include general-button-data();
+}
+
+.long-button {
+	@include general-button-data();
+	width: 10em;
+	margin: 0;
+}
+
+.black-button {
+	@include general-button-data();
+}
+
+.cancel-button {
+	@include general-button-data();
+	background-color: crimson;
+	//border: 2px solid crimson;
+	&:hover {
+		background-color: rgba(crimson, 0.1);
+		color: crimson;
 	}
 }

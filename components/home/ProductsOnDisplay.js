@@ -16,6 +16,7 @@ const ProductsOnDisplay = ({ product }) => {
 						alt={product.name}
 						width={400}
 						height={400}
+						className='v-image'
 					/>
 					<div className='section-card-text'>
 						<p className='section-sub-category'>{product.subCategory}</p>
