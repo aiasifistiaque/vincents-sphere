@@ -5,13 +5,12 @@
 	min-height: 100vh;
 	flex-direction: column;
 	//background-image: url('../../public/bg.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+
 	background-color: #f9f9f9;
 	letter-spacing: 2px;
 	box-sizing: border-box;
 	width: 100%;
+	border-radius: 0;
 }
 
 .container-center {

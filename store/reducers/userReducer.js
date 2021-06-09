@@ -28,3 +28,17 @@ export const userSignupReducer = (state = {}, action) => {
 			return { loading: false };
 	}
 };
+
+export const getAllUserReducer = (state = { users: [] }, action) => {
+	switch (action.type) {
+		case 'ALL_USER_REQUEST':
+			return { loading: true, users: [] };
+		case 'ALL_USER_SUCCESS':
+			return { loading: false, users: action.payload };
+		case 'ALL_USER_FAIL':
+			return { loading: false, users: action.payload };
+
+		default:
+			return state;
+	}
+};

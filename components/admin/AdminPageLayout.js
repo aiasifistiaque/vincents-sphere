@@ -1,26 +1,27 @@
 import React from 'react';
-import Page from '../Page';
 import useGetProfile from '../../hooks/useGetProfile';
 import Sidebar from './Sidebar';
-import Loading from '../Loading';
+import PageLoading from '../PageLoading';
+import AdminPage from '../AdminPage';
 
-const AdminPageLayout = ({ children }) => {
+const AdminPageLayout = ({ children, select }) => {
 	const { user, loading } = useGetProfile();
-	if (loading) return <Loading />;
+	if (loading) return <PageLoading />;
 
 	return (
-		<Page>
+		<AdminPage>
 			{user.role != 'admin' ? (
 				<div className='loading'>
 					<h2>Not Authorized to view this page</h2>
 				</div>
 			) : (
 				<div className='admin-page'>
-					<Sidebar />
+					<Sidebar select={select} />
+
 					<div className='admin-panel-main'>{children}</div>
 				</div>
 			)}
-		</Page>
+		</AdminPage>
 	);
 };
 

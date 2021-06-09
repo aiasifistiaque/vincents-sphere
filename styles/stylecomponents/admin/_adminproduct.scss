@@ -1,0 +1,146 @@
+.admin-product {
+	display: flex;
+	padding: 12vh 0 0 0;
+	flex: 1;
+	color: $black-color;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	box-sizing: border-box;
+	//flex-direction: column;
+
+	@media only screen and(max-width:$large-screen) {
+		flex-direction: column;
+	}
+
+	.admin-product-image {
+		margin: 1em;
+		box-sizing: border-box;
+		//background-color: red;
+
+		@media only screen and(max-width:$large-screen) {
+			min-width: 250px;
+		}
+	}
+
+	.admin-product-details {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		margin: 1em;
+		box-sizing: border-box;
+		color: black;
+
+		h1 {
+			@include n-m-p;
+			margin-bottom: 16px;
+			font-weight: 600;
+			font-size: 2em;
+		}
+
+		h2 {
+			@include n-m-p;
+			margin: 1em 0;
+			font-size: 1.5em;
+			font-weight: 500;
+		}
+
+		h4 {
+			@include n-m-p;
+			margin-bottom: 16px;
+			font-size: 24px;
+		}
+
+		h5 {
+			@include n-m-p;
+			margin-bottom: 16px;
+			font-size: 20px;
+			font-weight: 300;
+		}
+
+		p {
+			@include n-m-p;
+			font-size: 1.1em;
+			font-weight: 300;
+			margin: 16px 0;
+			line-height: 1.8;
+		}
+
+		h3 {
+			@include n-m-p;
+		}
+		@media only screen and(max-width:$medium-screen) {
+			p {
+				font-size: 0.8em;
+			}
+			h1 {
+				font-size: 1.3em;
+			}
+			h2 {
+				font-size: 1.1em;
+			}
+			h4 {
+				font-size: 1em;
+			}
+			h5 {
+				font-size: 0.9em;
+			}
+		}
+	}
+}
+
+.order-summary-edit {
+	flex: 4;
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin order-btn {
+	display: inline-flex;
+	background-color: black;
+	color: whitesmoke;
+	cursor: pointer;
+	margin: 4%;
+	min-height: 50px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	//outline: 2px solid black;
+	border: 2px solid black;
+	//transition: 0.2s;
+	&:hover {
+		background-color: white;
+		color: black;
+	}
+	p {
+		@include n-m-p;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+}
+
+.edit-order-button {
+	@include order-btn();
+}
+
+.save-order-button {
+	@include order-btn();
+	background-color: black;
+	border: 2px solid black;
+
+	&:hover {
+		background-color: white;
+		color: black;
+	}
+}
+
+.cancel-order-button {
+	@include order-btn();
+	background-color: crimson;
+	border: 2px solid crimson;
+
+	margin-top: 0;
+	&:hover {
+		background-color: white;
+		color: crimson;
+	}
+}

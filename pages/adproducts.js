@@ -1,11 +1,12 @@
 import React from 'react';
 import AdminPageLayout from '../components/admin/AdminPageLayout';
 import ProductList from '../components/admin/ProductList';
+import ProductListUpdated from '../components/admin/ProductListUpdated';
 
 const adproducts = () => {
 	return (
-		<AdminPageLayout>
-			<ProductList />
+		<AdminPageLayout select='products'>
+			<ProductListUpdated />
 		</AdminPageLayout>
 	);
 };

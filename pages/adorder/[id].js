@@ -1,106 +1,103 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useGetSingleOrder from '../../hooks/useGetSingleOrder';
 import Loading from '../../components/Loading';
 import AdminPageLayout from '../../components/admin/AdminPageLayout';
+import { OrderDetails as OD, OrderSummary as OS } from '../../components/order';
+import OrderEdit from '../../components/order/OrderEdit';
+import axios from 'axios';
+import { api } from '../../constants';
 
 const adorder = () => {
 	const router = useRouter();
 	const { id } = router.query;
-	const { order, loading } = useGetSingleOrder(id);
+	const [reload, setReload] = useState(false);
+	const { order, loading } = useGetSingleOrder(id, reload);
+	const [edit, setEdit] = useState(false);
+	const [value, setValue] = useState('');
+	const [paid, setPaid] = useState();
+
+	const editOrder = async () => {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				authorization: JSON.parse(localStorage.getItem('vincenttoken')),
+			},
+		};
+		try {
+			const { data } = await axios.put(
+				api.order,
+				{
+					id: order._id,
+					status: value || order.status,
+					paid: paid || order.isPaid,
+				},
+				config
+			);
+			if (data) {
+				setReload(!reload);
+				setEdit(false);
+			} else {
+				colsole.log(data);
+			}
+		} catch (e) {
+			console.log(e);
+		}
+	};
+
 	if (loading) return <Loading />;
+
 	return (
 		<AdminPageLayout>
-			<div
-				className='order-details-page'
-				style={{
-					padding: 0,
-					margin: 0,
-				}}>
+			<div className='order-details-page'>
 				<div style={{ flex: 6 }}>
-					<OrderDetails order={order} />
+					<OD order={order} />
 				</div>
-				<div style={{ flex: 4 }}>
-					<OrderSummary order={order} />
+				<div className='order-summary-edit'>
+					{edit ? (
+						<OrderEdit
+							order={order}
+							status={order.status}
+							setSortValue={e => setValue(e)}
+							paid={order.isPaid}
+							setPaid={e => setPaid(e)}
+						/>
+					) : (
+						<OS order={order} />
+					)}
+
+					{edit ? (
+						<EditingButton
+							cancelEdit={() => setEdit(false)}
+							saveEdit={editOrder}
+						/>
+					) : (
+						<EditButton setEdit={() => setEdit(true)} />
+					)}
 				</div>
 			</div>
 		</AdminPageLayout>
 	);
 };
 
-const OrderDetails = ({ order }) => {
-	const shipping = order.shippingAddress;
-	const address = `${shipping.address}, ${shipping.city}, ${shipping.postalCode}, ${shipping.country}`;
+const EditButton = ({ setEdit }) => {
 	return (
-		<div className='order-details'>
-			<div>
-				<h3>Shipping</h3>
-				<p>Name: {order.user.name}</p>
-				<p>Email: {order.user.email}</p>
-				<p>Address: {address}</p>
+		<div className='edit-order-button' onClick={setEdit}>
+			<p>edit</p>
+		</div>
+	);
+};
+
+const EditingButton = ({ cancelEdit, saveEdit }) => {
+	return (
+		<>
+			<div className='save-order-button' onClick={saveEdit}>
+				<p>save</p>
 			</div>
-
-			<div>
-				<h3>Payment Method</h3>
-				<p>Method: {order.paymentMethod}</p>
+			<div className='cancel-order-button' onClick={cancelEdit}>
+				<p>cancel</p>
 			</div>
-			<div>
-				<h3>Order Items</h3>
-				{order.orderItems.map((item, i) => (
-					<OrderDetailsItem item={item} i={i} />
-				))}
-			</div>
-		</div>
-	);
-};
-
-const OrderDetailsItem = ({ item }) => {
-	return (
-		<div className='order-details-item'>
-			<img src={item.image} width={50} height={50} />
-
-			<p>{item.name}</p>
-
-			<p>Tk. {item.price}</p>
-		</div>
-	);
-};
-
-const OrderSummary = ({ order }) => {
-	return (
-		<div className='order-summary'>
-			<h3>Order Summary</h3>
-			<p>Items: Tk. {order.totalPrice}</p>
-			<p>VAT: Tk. {order.vat}</p>
-			<p>Shipping: Tk. {order.shippingPrice}</p>
-			<p>Total: Tk. {order.totalPrice}</p>
-			{order.isPaid ? (
-				<PositiveBadge>Paid</PositiveBadge>
-			) : (
-				<NegativeBadge>Not Paid</NegativeBadge>
-			)}
-			{order.isDelivered ? (
-				<PositiveBadge>Delivered</PositiveBadge>
-			) : (
-				<NegativeBadge>Not Delivered</NegativeBadge>
-			)}
-		</div>
-	);
-};
-
-const PositiveBadge = ({ children }) => {
-	return (
-		<div className='positive-badge'>
-			<p>{children}</p>
-		</div>
-	);
-};
-
-const NegativeBadge = ({ children }) => {
-	return (
-		<div className='negative-badge'>
-			<p>{children}</p>
-		</div>
+		</>
 	);
 };
 

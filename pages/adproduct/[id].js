@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
 import Image from 'next/image';
 import Loading from '../../components/Loading';
+import { general } from '../../constants';
 
 const adproduct = () => {
 	const router = useRouter();
@@ -20,22 +21,31 @@ const adproduct = () => {
 
 	return (
 		<AdminPageLayout>
-			<div className='page-product' style={{ padding: 0, margin: 0 }}>
-				<h2 style={{ marginBottom: 25 }}>Product id: {product._id}</h2>
-				<Image
-					src={product.image}
-					alt={product.name}
-					width={600}
-					height={600}
-				/>
-				<div className='product-details'>
+			<h1 style={{ fontSize: '.8em', margin: '0 1em' }}>
+				Product ID: {product._id}
+			</h1>
+
+			<div className='admin-product' style={{ padding: 0, margin: 0 }}>
+				<div className='admin-product-image'>
+					<Image
+						src={product.image}
+						alt={product.name}
+						width={400}
+						height={350}
+					/>
+				</div>
+
+				<div className='admin-product-details'>
 					<h1>{product.name}</h1>
 
 					<h4>{product.size}</h4>
 					<h5>Notes: {product.note}</h5>
 					<hr />
 					<p>{product.description}</p>
-					<h2>{product.price} BDT</h2>
+					<h2>
+						Price: {general.takaSymbol}
+						{product.price}
+					</h2>
 				</div>
 			</div>
 		</AdminPageLayout>

@@ -6,7 +6,11 @@ import {
 	getCategoryProductReducer,
 } from './productReducer';
 import { cartReducer } from './cartReducer';
-import { userLoginReducer, userSignupReducer } from './userReducer';
+import {
+	userLoginReducer,
+	userSignupReducer,
+	getAllUserReducer,
+} from './userReducer';
 import { getAllOrdersReducer, getAnOrderReducer } from './orderReducer';
 import { favItemReducer } from './favItemReducer';
 
@@ -21,6 +25,7 @@ const rootReducer = combineReducers({
 	getAnOrder: getAnOrderReducer,
 	categoryProduct: getCategoryProductReducer,
 	favItems: favItemReducer,
+	getAllUsers: getAllUserReducer,
 	// createTest: createTestReducer,
 });
 

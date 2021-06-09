@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { api } from '../../../constants';
 
-const getAllOrders = () => async dispatch => {
+const getAllOrders = sort => async dispatch => {
 	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
 	try {
@@ -14,7 +14,7 @@ const getAllOrders = () => async dispatch => {
 			},
 		};
 
-		const { data } = await axios.post(api.getAllOrders, { body: '' }, config);
+		const { data } = await axios.post(api.getAllOrders, { sort: sort }, config);
 
 		dispatch({ type: 'GET_ALL_ORDERS_SUCCESS', payload: data });
 	} catch (error) {

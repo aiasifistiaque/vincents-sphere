@@ -1,4 +1,5 @@
 //@include
+@import './adminproduct';
 
 .admin-page {
 	display: flex;
@@ -9,30 +10,101 @@
 	display: flex;
 	flex-direction: column;
 	flex: 10;
+	overflow-y: scroll;
+	margin-left: 15%;
+
+	@media only screen and (max-width: $medium-screen) {
+		margin-left: 25%;
+	}
 }
 
 .admin-panel-sidebar {
 	display: flex;
+	position: fixed;
 	flex-direction: column;
-	background-color: rgba(black, 0.05);
-	flex: 3;
+	background-color: #f0f0f0;
+	//flex: 3;
 	padding: 10px 0;
 	transition: 0.2s;
 	padding: 15vh 0;
 	min-height: 100vh;
+	z-index: 10;
+	width: 15%;
 
 	p {
 		padding: 0;
 		margin: 0;
 	}
 
+	h6 {
+		padding: 0 25px;
+		font-weight: 900;
+		color: rgba(black, 0.3);
+		text-transform: uppercase;
+		margin: 0;
+		font-size: 0.9em;
+		margin-bottom: 1em;
+	}
+
 	.sidebar-item {
-		padding: 15px 25px;
-		margin: 10px 0;
+		padding: 25px;
+		//margin: 10px 0;
 		cursor: pointer;
 
 		&:hover {
 			background-color: white;
 		}
 	}
+
+	.sidebar-item-select {
+		padding: 25px;
+		//margin: 10px 0;
+		cursor: pointer;
+		background-color: rgba(black, 1);
+		color: whitesmoke;
+	}
+
+	@media only screen and (max-width: $medium-screen) {
+		flex: 1;
+		width: 25%;
+		//display: hidden;
+		h6 {
+			padding: 0 5px;
+			font-size: 0.8em;
+		}
+		.sidebar-item {
+			padding: 25px 5px;
+			p {
+				font-size: 0.8em;
+			}
+		}
+		.sidebar-item-select {
+			padding: 25px 5px;
+			p {
+				font-size: 0.8em;
+			}
+		}
+	}
 }
+
+.admin-footer {
+	background-color: black;
+	color: whitesmoke;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 4%;
+	p {
+		@include n-m-p;
+		font-size: 0.8em;
+		letter-spacing: 3px;
+	}
+	margin-left: 15%;
+
+	@media only screen and (max-width: $medium-screen) {
+		margin-left: 25%;
+	}
+}
+
+@import './admincard';
+@import './dashboard';

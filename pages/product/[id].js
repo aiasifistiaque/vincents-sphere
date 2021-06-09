@@ -66,7 +66,7 @@ const Product = () => {
 						src={product.image || dummyItem.image}
 						alt={product.name}
 						width={600}
-						height={500}
+						height={525}
 					/>
 				</div>
 
@@ -78,7 +78,7 @@ const Product = () => {
 					<hr />
 					<p>{product.description}</p>
 					<h2>
-						{general.takaSymbol}
+						Price: {general.takaSymbol}
 						{product.price}
 					</h2>
 

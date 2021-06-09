@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { api } from '../constants';
 
-export default function useGetSingleOrder(id) {
+export default function useGetSingleOrder(id, reload) {
 	const [loading, setLoading] = useState(true);
 	const [order, setOrder] = useState({});
 
@@ -21,7 +21,7 @@ export default function useGetSingleOrder(id) {
 				.then(function () {
 					setLoading(false);
 				});
-	}, [id]);
+	}, [id, reload]);
 
 	return { order, loading };
 }

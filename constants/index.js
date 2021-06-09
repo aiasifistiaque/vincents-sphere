@@ -52,12 +52,14 @@ export const api = {
 	register: `${server}/register`,
 	order: `${server}/order`,
 	userorder: `${server}/order/userorder`,
+	allusers: `${server}/profile/getallusers`,
 	profile: `${server}/profile`,
 	getAllUsers: `${server}/profile/getallusers`,
 	createProduct: `${server}/products/createproduct`,
 	getAllOrders: `${server}/order/getallorders`,
 	payment: `${server}/payment`,
 	explore: `${server}/explore`,
+	dashboard: `${server}/dashboard`,
 
 	config: {
 		headers: {
