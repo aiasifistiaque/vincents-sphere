@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
 import BNavItem from './BNavItem';
 import NavSearch from './NavSearch';
+import AdminNavSearch from './AdminNavSearch';
 
 export default function ANavBar({ searchActive, searchOn, searchOff }) {
 	const { cartItems } = useSelector(state => state.cart);
@@ -32,7 +33,7 @@ export default function ANavBar({ searchActive, searchOn, searchOff }) {
 			className='a-navbar'>
 			<NavBrand />
 
-			<NavSearch active={searchActive} on={searchOn} off={searchOff} />
+			<AdminNavSearch active={searchActive} on={searchOn} off={searchOff} />
 
 			<Navbar.Toggle
 				aria-controls='basic-navbar-nav'

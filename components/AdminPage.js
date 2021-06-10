@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Search from './Search';
 import AdminFooter from './admin/AdminFooter';
 import ANavBar from './nav/ANavBar';
+import AdminSearch from './AdminSearch';
 
 const AdminPage = ({ children, title }) => {
 	const [searchActive, setSearchActive] = useState(false);
@@ -19,7 +20,7 @@ const AdminPage = ({ children, title }) => {
 				searchOn={() => setSearchActive(true)}
 				searchOff={() => setSearchActive(false)}
 			/>
-			<Search active={searchActive} off={() => setSearchActive(false)} />
+			<AdminSearch active={searchActive} off={() => setSearchActive(false)} />
 
 			<main onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>

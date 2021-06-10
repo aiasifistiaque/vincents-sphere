@@ -42,3 +42,25 @@ export const getAllUserReducer = (state = { users: [] }, action) => {
 			return state;
 	}
 };
+
+export const getSingleUserReducer = (
+	state = { user: {}, orders: [], role: '' },
+	action
+) => {
+	switch (action.type) {
+		case 'SINGLE_USER_REQUEST':
+			return { loading: true, user: {}, orders: [], role: '' };
+		case 'SINGLE_USER_SUCCESS':
+			return {
+				loading: false,
+				user: action.payload.user,
+				orders: action.payload.orders,
+				role: action.payload.user.role,
+			};
+		case 'SINGLE_USER_FAIL':
+			return { loading: false, user: {}, orders: [], role: '' };
+
+		default:
+			return state;
+	}
+};
