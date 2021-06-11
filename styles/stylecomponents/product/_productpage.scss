@@ -8,11 +8,13 @@
 
 .page-product {
 	display: flex;
-	padding: 12vh 4% 0 4%;
+	padding: 12vh 4% 5% 4%;
 	flex: 1;
 	color: $black-color;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	background-color: white;
+
 	//align-items: center;
 	//margin: -2% -5%;
 	box-sizing: border-box;
@@ -24,8 +26,7 @@
 	.product-image {
 		box-sizing: border-box;
 		margin: 1em;
-		background-color: #313234;
-		display: flex;
+		//display: flex;
 
 		@media only screen and(max-width:$large-screen) {
 			min-width: 250px;
@@ -97,6 +98,7 @@
 
 .product-image-item {
 	object-fit: cover;
+	background-color: #313234;
 }
 
 @import './prodbuttons';

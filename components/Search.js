@@ -6,6 +6,7 @@ import axios from 'axios';
 import { api } from '../constants';
 import SearchProducts from './search/SearchProducts';
 import SearchLoading from './search/SearchLoading';
+import SearchProductContainer from './search/SearchProductContainer';
 
 const Search = ({ active, off }) => {
 	const variants = {
@@ -103,11 +104,11 @@ const Search = ({ active, off }) => {
 			) : products.length < 1 ? (
 				<div className='spc-not-found'>No Products Found</div>
 			) : (
-				<div className='search-prod-container'>
+				<SearchProductContainer>
 					{products.map((product, i) => (
 						<SearchProducts product={product} key={i} />
 					))}
-				</div>
+				</SearchProductContainer>
 			)}
 		</motion.div>
 	);

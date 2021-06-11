@@ -27,3 +27,17 @@ export const getAnOrderReducer = (state = { order: {} }, action) => {
 			return state;
 	}
 };
+
+export const adminSearchOrderReducer = (state = { order: {} }, action) => {
+	switch (action.type) {
+		case 'ADMIN_SEARCH_ORDER_REQUEST':
+			return { loading: true, order: {} };
+		case 'ADMIN_SEARCH_ORDER_SUCCESS':
+			return { loading: false, order: action.payload };
+		case 'ADMIN_SEARCH_ORDER_FAIL':
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};

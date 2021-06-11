@@ -4,6 +4,7 @@ import {
 	getAllProductsReducer,
 	getAProductReducer,
 	getCategoryProductReducer,
+	adminSearchProductReducer,
 } from './productReducer';
 import { cartReducer } from './cartReducer';
 import {
@@ -11,8 +12,14 @@ import {
 	userSignupReducer,
 	getAllUserReducer,
 	getSingleUserReducer,
+	emailUserReducer,
+	adminSearchUserReducer,
 } from './userReducer';
-import { getAllOrdersReducer, getAnOrderReducer } from './orderReducer';
+import {
+	getAllOrdersReducer,
+	getAnOrderReducer,
+	adminSearchOrderReducer,
+} from './orderReducer';
 import { favItemReducer } from './favItemReducer';
 
 const rootReducer = combineReducers({
@@ -28,6 +35,13 @@ const rootReducer = combineReducers({
 	favItems: favItemReducer,
 	getAllUsers: getAllUserReducer,
 	singleUser: getSingleUserReducer,
+	emailUser: emailUserReducer,
+
+	//admin search
+	adminSearchOrder: adminSearchOrderReducer,
+	adminSearchProduct: adminSearchProductReducer,
+	adminSearchUser: adminSearchUserReducer,
+
 	// createTest: createTestReducer,
 });
 

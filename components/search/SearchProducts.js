@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const SearchProducts = ({ product }) => {
+const SearchProducts = ({ product, admin }) => {
 	return (
-		<Link href={`/product/${product._id}`}>
+		<Link
+			href={admin ? `/adproduct/${product._id}` : `/product/${product._id}`}>
 			<div className='search-prod-card'>
 				<div className='spc-image-container'>
 					<Image

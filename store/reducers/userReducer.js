@@ -64,3 +64,47 @@ export const getSingleUserReducer = (
 			return state;
 	}
 };
+
+export const adminSearchUserReducer = (
+	state = { user: {}, orders: [], role: '' },
+	action
+) => {
+	switch (action.type) {
+		case 'ADMIN_SEARCH_USER_REQUEST':
+			return { loading: true, user: {}, orders: [], role: '' };
+		case 'ADMIN_SEARCH_USER_SUCCESS':
+			return {
+				loading: false,
+				user: action.payload.user,
+				orders: action.payload.orders,
+				role: action.payload.user.role,
+			};
+		case 'ADMIN_SEARCH_USER_FAIL':
+			return { loading: false, user: {}, orders: [], role: '' };
+
+		default:
+			return state;
+	}
+};
+
+export const emailUserReducer = (
+	state = { user: {}, orders: [], role: '' },
+	action
+) => {
+	switch (action.type) {
+		case 'EMAIL_USER_REQUEST':
+			return { loading: true, user: {}, orders: [], role: '' };
+		case 'EMAIL_USER_SUCCESS':
+			return {
+				loading: false,
+				user: action.payload.user,
+				orders: action.payload.orders,
+				role: action.payload.user.role,
+			};
+		case 'EMAIL_USER_FAIL':
+			return { loading: false, user: {}, orders: [], role: '' };
+
+		default:
+			return state;
+	}
+};

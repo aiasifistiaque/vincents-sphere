@@ -5,7 +5,7 @@ import Link from 'next/link';
 const GiftProduct = ({ product }) => {
 	return (
 		<div className='section-card'>
-			<Link href={`/`}>
+			<Link href={`/giftbox`}>
 				<div style={{ cursor: 'pointer' }}>
 					<Image
 						src={product.image}
