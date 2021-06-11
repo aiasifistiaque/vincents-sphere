@@ -70,7 +70,7 @@ const giftbox = () => {
 				<div className='product-details'>
 					<h1>Gift Box</h1>
 
-					<h5>Note: Note: Personalized Gift Boxes</h5>
+					<h5 style={{ fontWeight: '400' }}>Note: Personalized Gift Boxes</h5>
 					<p style={{ margin: 0, padding: 0 }}>
 						For the very special occasions
 					</p>

@@ -13,6 +13,7 @@ import {
 } from './AdminListCard';
 import AdminSort from './AdminSort';
 import { productSort } from '../../data/sortData';
+import { LongButton } from '..';
 
 const ProductListUpdated = () => {
 	const dispatch = useDispatch();
@@ -31,6 +32,12 @@ const ProductListUpdated = () => {
 				<h3>All Products</h3>
 				<p>Total Products: {products.length || 'LOADING...'}</p>
 			</AdminSort>
+
+			<div style={styles.adButtonContainer}>
+				<LongButton onClick={() => Router.push('addproduct')}>
+					Add Product
+				</LongButton>
+			</div>
 
 			{loading ? (
 				<Loading />
@@ -65,6 +72,14 @@ const ProductListUpdated = () => {
 			)}
 		</div>
 	);
+};
+
+const styles = {
+	adButtonContainer: {
+		display: 'flex',
+		marginBottom: '1em',
+		justifyContent: 'flex-end',
+	},
 };
 
 export default ProductListUpdated;

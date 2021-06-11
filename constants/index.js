@@ -1,12 +1,14 @@
 //
 
 export const backend = 'https://vincent-backend.herokuapp.com/api';
+export const backendFile = 'https://vincent-backend.herokuapp.com';
+
 export const dev = 'http://localhost:5000/api';
 const domain = '';
 const frontDev = 'https://vincents-sphere.vercel.app/';
 
 export const frontend = frontDev;
-const server = backend;
+const server = dev;
 
 export const sizes = {
 	displayCard: {
@@ -63,6 +65,7 @@ export const api = {
 	payment: `${server}/payment`,
 	explore: `${server}/explore`,
 	dashboard: `${server}/dashboard`,
+	upload: `${server}/upload`,
 
 	config: {
 		headers: {

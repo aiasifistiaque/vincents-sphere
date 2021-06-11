@@ -1,0 +1,63 @@
+//@at-root
+
+@mixin product-add-input {
+	display: flex;
+	width: 25em;
+	padding: 0 0.8em;
+	margin: 0.2em 0 1.5em 0;
+	box-shadow: 0 0 5px rgba(black, 0.05);
+	border: 1px solid rgba(black, 0.1);
+	letter-spacing: 2px;
+	align-items: center;
+	justify-content: center;
+
+	&::placeholder {
+		letter-spacing: 2px;
+		text-transform: capitalize;
+	}
+
+	&:focus {
+		outline: 2px solid black;
+	}
+
+	@media only screen and (max-width: $medium-screen) {
+		width: 15em;
+	}
+}
+
+.ad-prod-header {
+	@include product-add-input();
+	border: none;
+	box-shadow: none;
+	justify-content: flex-start;
+	padding: 0;
+	margin: 0.5em 0;
+}
+
+.add-product {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	flex-direction: column;
+	width: 35em;
+
+	@media only screen and (max-width: $medium-screen) {
+		width: 100%;
+	}
+
+	.v-custom-input {
+		@include product-add-input();
+		height: 45px;
+	}
+
+	.v-custom-textarea {
+		@include product-add-input();
+	}
+
+	.v-custom-imageupload {
+		@include product-add-input();
+		border: none;
+		padding: 0;
+	}
+}

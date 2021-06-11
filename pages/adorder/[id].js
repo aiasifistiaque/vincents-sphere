@@ -2,20 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useGetSingleOrder from '../../hooks/useGetSingleOrder';
 import Loading from '../../components/Loading';
+import { useSelector, useDispatch } from 'react-redux';
 import AdminPageLayout from '../../components/admin/AdminPageLayout';
 import { OrderDetails as OD, OrderSummary as OS } from '../../components/order';
 import OrderEdit from '../../components/order/OrderEdit';
 import axios from 'axios';
 import { api } from '../../constants';
+import getAnOrder from '../../store/actions/orderActions/getAnOrder';
 
 const adorder = () => {
+	const dispatch = useDispatch();
 	const router = useRouter();
 	const { id } = router.query;
-	const [reload, setReload] = useState(false);
-	const { order, loading } = useGetSingleOrder(id, reload);
+	const { order, loading } = useSelector(state => state.getAnOrder);
+	const [thisOrder, setThisOrder] = useState({});
 	const [edit, setEdit] = useState(false);
 	const [value, setValue] = useState('');
 	const [paid, setPaid] = useState();
+
+	useEffect(() => {
+		if (id != undefined) dispatch(getAnOrder(id));
+	}, [id]);
+
+	useEffect(() => {
+		if (!loading) {
+			setThisOrder(order);
+		}
+	}, [loading]);
 
 	const editOrder = async () => {
 		const config = {
@@ -35,7 +48,10 @@ const adorder = () => {
 				config
 			);
 			if (data) {
-				setReload(!reload);
+				setThisOrder(data);
+				//dispatch(getAnOrder(id));
+				console.log('order', order);
+				console.log('data', data);
 				setEdit(false);
 			} else {
 				colsole.log(data);
@@ -51,19 +67,19 @@ const adorder = () => {
 		<AdminPageLayout>
 			<div className='order-details-page'>
 				<div style={{ flex: 6 }}>
-					<OD order={order} />
+					<OD order={thisOrder} />
 				</div>
 				<div className='order-summary-edit'>
 					{edit ? (
 						<OrderEdit
-							order={order}
-							status={order.status}
+							order={thisOrder}
+							status={thisOrder.status}
 							setSortValue={e => setValue(e)}
-							paid={order.isPaid}
+							paid={thisOrder.isPaid}
 							setPaid={e => setPaid(e)}
 						/>
 					) : (
-						<OS order={order} />
+						<OS order={thisOrder} />
 					)}
 
 					{edit ? (

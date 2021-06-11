@@ -5,10 +5,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
 import Image from 'next/image';
 import Loading from '../../components/Loading';
-import { CustomButton } from '../../components';
+import { CustomButton, LongButton, CancelButton } from '../../components';
 import HeadingContainer from '../../components/admin/HeadingContainer';
 import ProductEdit from '../../components/admin/ProductEdit';
 import AdminProductDetails from '../../components/admin/AdminProductDetails';
+import { CustomInput, CustomUpload } from '../../components/admin/CustomInputs';
 
 const adproduct = () => {
 	const router = useRouter();
@@ -16,6 +17,8 @@ const adproduct = () => {
 	const { id } = router.query;
 	const dispatch = useDispatch();
 	const { product, loading } = useSelector(state => state.getAProduct);
+	const [change, setChange] = useState(false);
+	const [image, setImage] = useState();
 
 	useEffect(() => {
 		if (id != undefined) dispatch(getAProduct(id));
@@ -41,7 +44,27 @@ const adproduct = () => {
 						height={350}
 						className='v-image'
 					/>
+					<div style={{ margin: '1em 0' }}>
+						{/* {change ? (
+							<div style={{ display: 'flex', flexDirection: 'column' }}>
+								<CustomUpload value={image} setValue={e => setImage(e)}>
+									Select
+								</CustomUpload>
+								<div style={{ margin: '1em 0 0 0' }}>
+									<CustomButton>Change</CustomButton>
+								</div>
+								<CancelButton onClick={() => setChange(false)}>
+									Cancel
+								</CancelButton>
+							</div>
+						) : (
+							<LongButton onClick={() => setChange(true)}>
+								Change Photo
+							</LongButton>
+						)} */}
+					</div>
 				</div>
+
 				{edit ? (
 					<ProductEdit product={product} cancel={() => setEdit(false)} />
 				) : (

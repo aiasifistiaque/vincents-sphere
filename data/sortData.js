@@ -3,6 +3,9 @@
 export const productSort = [
 	'Newest',
 	'Oldest',
+	'Visible',
+	'Hidden',
+	'Archived',
 	'Name Asc',
 	'Name Dsc',
 	'Category',

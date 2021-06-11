@@ -1919,9 +1919,16 @@ div {
 }
 
 .admin-product .admin-product-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media only screen and (max-width: 992px) {
@@ -3479,6 +3486,236 @@ div {
 
 .panel-hidden {
   visibility: hidden;
+}
+
+.ad-prod-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25em;
+  padding: 0 0.8em;
+  margin: 0.2em 0 1.5em 0;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0;
+  margin: 0.5em 0;
+}
+
+.ad-prod-header::-webkit-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.ad-prod-header:-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.ad-prod-header::-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.ad-prod-header::placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.ad-prod-header:focus {
+  outline: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .ad-prod-header {
+    width: 15em;
+  }
+}
+
+.add-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 35em;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-product {
+    width: 100%;
+  }
+}
+
+.add-product .v-custom-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25em;
+  padding: 0 0.8em;
+  margin: 0.2em 0 1.5em 0;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 45px;
+}
+
+.add-product .v-custom-input::-webkit-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-input:-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-input::-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-input::placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-input:focus {
+  outline: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-product .v-custom-input {
+    width: 15em;
+  }
+}
+
+.add-product .v-custom-textarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25em;
+  padding: 0 0.8em;
+  margin: 0.2em 0 1.5em 0;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-product .v-custom-textarea::-webkit-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-textarea:-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-textarea::-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-textarea::placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-textarea:focus {
+  outline: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-product .v-custom-textarea {
+    width: 15em;
+  }
+}
+
+.add-product .v-custom-imageupload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25em;
+  padding: 0 0.8em;
+  margin: 0.2em 0 1.5em 0;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  padding: 0;
+}
+
+.add-product .v-custom-imageupload::-webkit-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-imageupload:-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-imageupload::-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-imageupload::placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.add-product .v-custom-imageupload:focus {
+  outline: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-product .v-custom-imageupload {
+    width: 15em;
+  }
 }
 
 html,

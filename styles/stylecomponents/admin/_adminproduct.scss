@@ -13,8 +13,10 @@
 	}
 
 	.admin-product-image {
+		display: flex;
 		margin: 1em;
 		box-sizing: border-box;
+		flex-direction: column;
 		//background-color: red;
 
 		@media only screen and(max-width:$large-screen) {
