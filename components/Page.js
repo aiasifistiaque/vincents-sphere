@@ -10,7 +10,7 @@ const Page = ({ children, title }) => {
 	return (
 		<div>
 			<Head>
-				<title>{title || 'Vincents Sphere'}</title>
+				<title>{title || "Vincent's Sphere"}</title>
 				<link rel='icon' href='/favicon.ico' />
 
 				<script

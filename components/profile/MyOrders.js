@@ -38,7 +38,7 @@ const MyOrders = () => {
 								{
 									//<td>{order.createdAt}</td>
 								}
-								<td>Tk. {order.totalPrice}</td>
+								<td>৳ {order.totalPrice}</td>
 								<td>{order.isPaid ? 'yes' : 'no'}</td>
 								<td>{order.isDelivered ? 'yes' : 'no'}</td>
 								<td

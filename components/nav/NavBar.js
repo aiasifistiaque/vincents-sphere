@@ -39,7 +39,7 @@ export default function NavBar() {
 					<NavItem href='/about'>About us</NavItem>
 					<NavLogged />
 					<NavItem href='/cart'>
-						Cart ({length}) Tk.{totalPrice}
+						Cart ({length}) ৳{totalPrice}
 					</NavItem>
 				</Nav>
 			</Navbar.Collapse>

@@ -38,7 +38,7 @@ const ProductList = () => {
 								key={i}
 								style={{ border: '1px solid rgba(0,0,0,.1)', height: 10 }}>
 								<td>{product.name}</td>
-								<td>Tk. {product.price}</td>
+								<td>৳ {product.price}</td>
 								<td>{product.category}</td>
 								<td>{product.countInStock}</td>
 								<td

@@ -41,7 +41,7 @@ export const OrderDetailsItem = ({ item }) => {
 			</LeftContainer>
 			<LeftContainer>
 				<p>
-					Tk. {item.price / item.qty} x {item.qty}
+					৳ {item.price / item.qty} x {item.qty}
 				</p>
 			</LeftContainer>
 		</div>
@@ -52,10 +52,10 @@ export const OrderSummary = ({ order }) => {
 	return (
 		<div className='order-summary'>
 			<h3>Order Summary</h3>
-			<p>Items: Tk. {order.totalPrice}</p>
-			<p>VAT: Tk. {order.vat}</p>
-			<p>Shipping: Tk. {order.shippingPrice}</p>
-			<p>Total: Tk. {order.totalPrice}</p>
+			<p>Items: ৳ {order.totalPrice}</p>
+			<p>VAT: ৳ {order.vat}</p>
+			<p>Shipping: ৳ {order.shippingPrice}</p>
+			<p>Total: ৳ {order.totalPrice}</p>
 			{order.isPaid ? (
 				<PositiveBadge>Paid</PositiveBadge>
 			) : (

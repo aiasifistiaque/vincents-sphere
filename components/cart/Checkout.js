@@ -21,7 +21,7 @@ function Checkout() {
 	return (
 		<div className='checkout-form'>
 			<h5>Subtotal {length} Items</h5>
-			<p>Total price: Tk. {totalPrice}</p>
+			<p>Total price: ৳ {totalPrice}</p>
 			{cartItems.length > 0 && <CheckoutButton />}
 			<ContinueShoppingButton />
 		</div>

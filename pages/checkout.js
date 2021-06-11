@@ -17,7 +17,7 @@ const checkout = () => {
 
 	const { orderLoading, success, error, errorMsg } = useAddNewOrder(
 		submit,
-		{ address: address, city: city, postalCode: postCode },
+		{ address: address, city: city, postalCode: postCode, phone: phone },
 		paymentMethod
 	);
 

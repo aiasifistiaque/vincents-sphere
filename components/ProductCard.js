@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
 				<h6>{product.name}</h6>
 				<h6 style={{ fontSize: 16 }}>{product.subCategory}</h6>
 				<p>{product.size}</p>
-				<p>Tk. {product.price}</p>
+				<p>৳ {product.price}</p>
 			</div>
 		</Link>
 	);
