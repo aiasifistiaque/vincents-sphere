@@ -35,7 +35,7 @@ const Page = ({ children, title }) => {
 };
 
 export const LoadingPage = ({ children }) => {
-	return <main className='page'>{children}</main>;
+	return <div className='page'>{children}</div>;
 };
 
 export const ProductPage = ({ children, title }) => {

@@ -9,7 +9,7 @@ export default function useGetCategoryProducts(id) {
 	useEffect(() => {
 		if (id != undefined)
 			axios
-				.get(`${api.productcategories}/${id}`)
+				.get(`${api.homeproductcategories}/${id}`)
 				.then(function (response) {
 					setProducts(response.data);
 					setLoading(false);
