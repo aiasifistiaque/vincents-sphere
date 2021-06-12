@@ -563,7 +563,7 @@ div {
 }
 
 .v-pc-icons {
-  height: 2.2em;
+  height: 35px;
   width: 2.3em;
   margin: 0.2em;
   padding: 0.5em;
@@ -3918,31 +3918,6 @@ a {
 .display-card-image {
   height: 300px;
   width: 300px;
-}
-
-.view-more {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 40px 25px;
-  -webkit-transition: 1s;
-  transition: 1s;
-  cursor: pointer;
-}
-
-.view-more:hover {
-  padding: 50px 25px;
-  border-radius: 4px;
-}
-
-.view-more h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 1.5em;
 }
 
 .page-section-card {

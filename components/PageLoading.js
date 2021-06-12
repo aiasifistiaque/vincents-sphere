@@ -29,7 +29,7 @@ export default function PageLoading() {
 					alignItems: 'center',
 					justifyContent: 'center',
 				}}>
-				<CircularProgress color='black' />
+				<CircularProgress style={{ color: 'black' }} />
 			</div>
 		</Page>
 	);
@@ -46,7 +46,7 @@ export function AdminPageLoading() {
 					alignItems: 'center',
 					justifyContent: 'center',
 				}}>
-				<CircularProgress color='black' />
+				<CircularProgress style={{ color: 'black' }} />
 			</div>
 		</AdminPage>
 	);

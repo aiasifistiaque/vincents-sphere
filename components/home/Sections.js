@@ -46,14 +46,7 @@ const Sections = ({ section }) => {
 						i < 5 ? (
 							<ProductsOnDisplay product={product} key={i} />
 						) : (
-							i == 5 && (
-								// <Link href={`cat/${section.name}`}>
-								// 	<div className='view-more'>
-								// 		<h3>View More</h3>
-								// 	</div>
-								// 	</Link>
-								<SectionViewMore product={product} key={i} />
-							)
+							i == 5 && <SectionViewMore product={product} key={i} />
 						)
 					)}
 					<EndSectionPlaceHolder length={products.length} />

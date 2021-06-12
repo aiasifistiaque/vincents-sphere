@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from './footer/Footer';
 import BNavbar from './nav/BNavbar';
 import Search from './Search';
+import FbChat from './FbChat';
 
 const Page = ({ children, title }) => {
 	const [searchActive, setSearchActive] = useState(false);
