@@ -21,7 +21,7 @@ const editUserRoleAction = (id, role) => async dispatch => {
 			config
 		);
 
-		dispatch({ type: 'SINGLE_USER_SUCCESS', payload: data });
+		if (edit) dispatch({ type: 'SINGLE_USER_SUCCESS', payload: data });
 	} catch (error) {
 		dispatch({
 			type: 'SINGLE_USER_FAIL',

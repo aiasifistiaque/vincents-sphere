@@ -61,17 +61,20 @@ const login = () => {
 					<div className='login-button' onClick={loginButtonPressed}>
 						{tokenSelector.loading ? <ButtonLoading /> : <p>Login</p>}
 					</div>
-					<p style={{ color: 'crimson' }}>{tokenSelector.error}</p>
+					{validationError ? (
+						<p style={{ color: 'crimson' }}>{validationErrorText}</p>
+					) : (
+						<p style={{ color: 'crimson' }}>
+							{tokenSelector.error && 'Email/Password invalid'}
+						</p>
+					)}
+
 					<p>
 						New Customer?{' '}
 						<Link href='/signup'>
 							<a style={{ color: 'dodgerblue', cursor: 'pointer' }}>Register</a>
 						</Link>
 					</p>
-
-					{validationError && (
-						<p style={{ color: 'crimson' }}>{validationErrorText}</p>
-					)}
 				</div>
 			</div>
 		</Page>

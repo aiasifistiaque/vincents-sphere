@@ -27,3 +27,18 @@ export const CancelButton = ({ onClick, children, style }) => {
 		</div>
 	);
 };
+
+export const ErrorText = ({ children }) => {
+	return (
+		<p
+			style={{
+				margin: 0,
+				padding: 0,
+				color: 'crimson',
+				fontSize: '.7em',
+				fontWeight: '700',
+			}}>
+			{children}
+		</p>
+	);
+};

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Page from '../components/Page';
-import CatProductsOnDIsplay from '../components/cat/CatProductsOnDIsplay';
 import { api } from '../constants';
-import PageLoading from '../components/PageLoading';
-import ButtonLoading from '../components/ButtonLoading';
 import axios from 'axios';
-import ExploreProducts from '../components/product/ExploreProducts';
-import Loading from '../components/Loading';
+import ExploreSelect from '../components/explore/ExploreSelect';
+import ExplorePageMain from '../components/explore/ExplorePageMain';
 
 const explore = () => {
 	const [products, setProducts] = useState([]);
@@ -36,60 +33,30 @@ const explore = () => {
 			});
 	}, [page, sort]);
 
-	//if (loading) return <PageLoading />;
-
 	return (
 		<Page>
 			<div className='explore-page'>
-				<h1>Explore</h1>
-				<h4>Page: {page}</h4>
-				<select
-					class='custom-select'
-					value={sort}
+				<div>
+					<h3>Explore</h3>
+					<h5>Page: {page + 1}</h5>
+				</div>
+
+				<ExploreSelect
+					sort={sort}
 					onChange={e => {
 						setPage(0);
 						setProducts([]);
 						setLoading(true);
 						setSort(e.target.value);
-					}}>
-					<option
-						value='nameAsc'
-						className='optn'
-						style={{ backgroundColor: 'red' }}>
-						Sort: Name Asc
-					</option>
-					<option value='nameDec' className='optn'>
-						Sort: Name Dsc
-					</option>
-					<option value='newest' className='optn'>
-						Sort: Newest
-					</option>
-					<option value='oldest' className='optn'>
-						Sort: Oldest
-					</option>
-				</select>
+					}}
+				/>
 			</div>
-			{loading ? (
-				<Loading />
-			) : (
-				<>
-					<div className='all-products-explore'>
-						{products.map((product, i) => (
-							<ExploreProducts key={i} product={product} />
-						))}
-					</div>
-					<div
-						className='load-more-button'
-						style={{
-							width: 200,
-							alignSelf: 'center',
-							justifyContent: 'center',
-						}}
-						onClick={() => setPage(page + 1)}>
-						{loading ? <ButtonLoading /> : <p>Load More</p>}
-					</div>
-				</>
-			)}
+
+			<ExplorePageMain
+				loading={loading}
+				products={products}
+				onLoadMore={() => setPage(page + 1)}
+			/>
 		</Page>
 	);
 };

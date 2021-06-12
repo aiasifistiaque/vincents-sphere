@@ -3,6 +3,7 @@ import Page from '../components/Page';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import signupAction from '../store/actions/userActions/signupAction';
+import { ErrorText, CustomButton } from '../components';
 
 const signup = () => {
 	const signupSelector = useSelector(state => state.signup);
@@ -17,7 +18,12 @@ const signup = () => {
 
 	const registerUser = () => {
 		setValidationError(false);
-		if (name.length < 4 || email.length < 3 || password.length < 4) {
+
+		if (password != confirm) {
+			setValidationError(true);
+			setValidationErrorText('Passwords do not match');
+			return;
+		} else if (name.length < 4 || email.length < 3 || password.length < 4) {
 			setValidationError(true);
 			setValidationErrorText('there was an error');
 		} else {
@@ -59,20 +65,27 @@ const signup = () => {
 						value={confirm}
 						onChange={e => setConfirm(e.target.value)}
 					/>
-					<div className='login-button' onClick={registerUser}>
-						<p>Register</p>
-					</div>
+
+					{signupSelector.loading ? (
+						<CustomButton>loading...</CustomButton>
+					) : (
+						<div className='login-button' onClick={registerUser}>
+							<p>Register</p>
+						</div>
+					)}
+
 					<p>
 						Have an account?{' '}
 						<Link href='/login'>
 							<a style={{ color: 'dodgerblue', cursor: 'pointer' }}>Login</a>
 						</Link>
 					</p>
-					{validationError && (
-						<p style={{ color: 'tomato' }}>{validationErrorText}</p>
-					)}
-					<p>{signupSelector.error}</p>
 				</div>
+				{validationError ? (
+					<ErrorText>{validationErrorText}</ErrorText>
+				) : (
+					<ErrorText>{signupSelector.error}</ErrorText>
+				)}
 			</div>
 		</Page>
 	);

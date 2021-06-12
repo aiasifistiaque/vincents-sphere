@@ -15,7 +15,7 @@ const wishlist = () => {
 				{favItems.length == 0 ? (
 					<h3>No items in list</h3>
 				) : (
-					favItems.map((id, i) => <WishProducts key={i} id={id} />)
+					favItems.map((id, i) => <WishProducts key={id} id={id} />)
 				)}
 			</div>
 		</Page>

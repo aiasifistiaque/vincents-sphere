@@ -14,8 +14,7 @@ const checkout = () => {
 	const [submit, setSubmit] = useState(false);
 
 	const { loading, isLoggedIn } = useIsLoggedIn();
-
-	const { orderLoading, success, error, errorMsg } = useAddNewOrder(
+	const { id, orderLoading, success, error, errorMsg } = useAddNewOrder(
 		submit,
 		{ address: address, city: city, postalCode: postCode, phone: phone },
 		paymentMethod
@@ -26,10 +25,13 @@ const checkout = () => {
 	}, [loading]);
 
 	useEffect(() => {
+		//setLoading(true);
 		if (!orderLoading) setSubmit(false);
 		if (success) {
 			localStorage.setItem('vincentcart', JSON.stringify([]));
-			Router.replace('/orderplaced');
+			Router.replace(`/order/${id}?status=new`);
+		} else {
+			//setLoading(false);
 		}
 	}, [orderLoading, success]);
 
@@ -71,8 +73,10 @@ const checkout = () => {
 					/>
 					<label>Payment Method</label>
 					<input type='text' placeholder='cash on delivery' disabled />
-					<div className='login-button' onClick={() => setSubmit(true)}>
-						<p>Confirm</p>
+					<div
+						className='login-button'
+						onClick={() => (!orderLoading ? setSubmit(true) : null)}>
+						<p>{orderLoading ? 'loading...' : 'Confirm'}</p>
 					</div>
 					{error && <p style={{ color: 'crimson' }}>{errorMsg}</p>}
 				</div>

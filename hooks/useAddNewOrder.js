@@ -10,6 +10,7 @@ const useAddNewOrder = (submit, address, paymentMethod) => {
 	const [success, setSuccess] = useState(false);
 	const [errorMsg, setErrorMsg] = useState('');
 	const [error, setError] = useState(false);
+	const [id, setId] = useState();
 
 	useEffect(() => {
 		setLoading(true);
@@ -74,12 +75,14 @@ const useAddNewOrder = (submit, address, paymentMethod) => {
 							});
 					}
 					if (paymentMethod == 'cash') {
+						setId(res.data._id);
 						setSuccess(true);
 						setError(false);
 						setLoading(false);
 					}
 				})
 				.catch(e => {
+					setLoading(false);
 					setSuccess(false);
 					setError(true);
 					setErrorMsg('there was an error try again');
@@ -90,7 +93,7 @@ const useAddNewOrder = (submit, address, paymentMethod) => {
 		}
 	}, [submit]);
 
-	return { orderLoading, success, error, errorMsg };
+	return { id, orderLoading, success, error, errorMsg };
 };
 
 const payWithSsl = (res, config) => {

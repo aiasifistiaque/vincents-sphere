@@ -5,7 +5,7 @@ const EndSectionPlaceHolder = ({ length }) => {
 		return (
 			<div
 				style={{
-					margin: '0 50px',
+					margin: '0 10px',
 					width: '10em',
 				}}>
 				<p style={{ color: 'transparent' }}>{'aslkd  '}</p>

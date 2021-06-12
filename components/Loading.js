@@ -21,7 +21,13 @@ export default function Loading() {
 	const classes = useStyles();
 	return (
 		<LoadingPage>
-			<div className={classes.root}>
+			<div
+				style={{
+					display: 'flex',
+					flex: 1,
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}>
 				<CircularProgress color='black' />
 			</div>
 		</LoadingPage>

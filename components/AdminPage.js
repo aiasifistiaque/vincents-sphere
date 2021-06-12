@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-
-import Search from './Search';
 import AdminFooter from './admin/AdminFooter';
 import ANavBar from './nav/ANavBar';
 import AdminSearch from './AdminSearch';

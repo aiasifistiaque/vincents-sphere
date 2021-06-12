@@ -14,30 +14,10 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	background-color: white;
-
-	//align-items: center;
-	//margin: -2% -5%;
 	box-sizing: border-box;
 
 	@media only screen and(max-width:$large-screen) {
 		flex-direction: column;
-	}
-
-	.product-image {
-		box-sizing: border-box;
-		margin: 1em;
-		//display: flex;
-
-		@media only screen and(max-width:$large-screen) {
-			min-width: 250px;
-		}
-		@media only screen and(max-width:$medium-screen) {
-			margin: 0;
-			min-width: 100%;
-			margin: -5vh -5% 0 -5%;
-			overflow: hidden;
-			box-sizing: border-box;
-		}
 	}
 
 	.product-details {
@@ -96,9 +76,5 @@
 	}
 }
 
-.product-image-item {
-	object-fit: cover;
-	background-color: #313234;
-}
-
+@import './productimage';
 @import './prodbuttons';

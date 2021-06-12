@@ -112,13 +112,15 @@ a {
 	padding: 15vh 5%;
 	line-height: 2em;
 	h1 {
-		margin: 0;
-		font-size: 2em;
-		margin-bottom: 2em;
+		margin: 1em 0;
+	}
+	h2 {
+		margin: 1em 0;
+		padding: 0;
 	}
 	h3 {
 		font-size: 1.5em;
-		margin: 2em 0 0.5em 0;
+		margin: 1.5em 0 0.5em 0;
 	}
 	li {
 		margin: 2em 0;
@@ -132,4 +134,8 @@ a {
 .v-image {
 	object-fit: cover;
 	background-color: #313234;
+}
+
+.opacity-5 {
+	opacity: 0.5;
 }

@@ -16,8 +16,12 @@ $nav-item-padding: 0.4em 1em;
 	align-items: center;
 	//padding: 0 3%;
 	height: 10vh;
+	min-height: 4em;
 	display: flex;
 	color: whitesmoke;
+	@media only screen and (max-width: $medium-screen) {
+		min-height: 4em;
+	}
 }
 
 .v-nav {

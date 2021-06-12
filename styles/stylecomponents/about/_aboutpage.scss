@@ -30,6 +30,7 @@
 		font-size: 0.8em;
 		font-weight: 700;
 		text-align: center;
+		@include n-m-p;
 	}
 }
 
@@ -49,4 +50,20 @@
 	border-radius: 500px;
 	align-self: center;
 	object-fit: cover;
+}
+
+.team-icons-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0.5em 0;
+}
+
+.team-icons {
+	margin: 0 0.3em;
+	cursor: pointer;
+	color: black;
+	&:hover {
+		color: $color-pink;
+	}
 }

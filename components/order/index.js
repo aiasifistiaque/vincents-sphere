@@ -2,15 +2,23 @@ import React from 'react';
 import { general } from '../../constants';
 export { OrderSummary } from './OrderSummary';
 
-export const OrderDetails = ({ order }) => {
+export const OrderDetails = ({ order, status }) => {
 	const shipping = order.shippingAddress;
 	const address = `${shipping.address}, ${shipping.city}, ${shipping.postalCode}, ${shipping.country}`;
 	return (
 		<div className='order-details'>
+			{status == 'new' && (
+				<OrderItemContainer>
+					<h3 style={{ textAlign: 'center', color: 'dodgerblue' }}>
+						Order Successfully Placed
+					</h3>
+				</OrderItemContainer>
+			)}
 			<OrderItemContainer>
 				<h3>Shipping</h3>
 				<p>Name: {order.user.name}</p>
 				<p>Email: {order.user.email}</p>
+				<p>Phone: {shipping.phone}</p>
 				<p>Address: {address}</p>
 			</OrderItemContainer>
 

@@ -2,6 +2,11 @@ import React from 'react';
 import Page from '../components/Page';
 import { teamMembers } from '../data/aboutData';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faFacebookSquare,
+	faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
 const about = () => {
 	return (
@@ -44,14 +49,28 @@ const OurTeam = () => {
 					<div className='team-image'>
 						<Image
 							src={item.image}
-							height={200}
-							width={200}
+							height={300}
+							width={300}
 							className='team-img'
 						/>
 					</div>
 
 					<h6>{item.name}</h6>
 					<p>{item.post}</p>
+					<div className='team-icons-container'>
+						<FontAwesomeIcon
+							icon={faFacebookSquare}
+							className='team-icons'
+							height={22}
+							onClick={() => {}}
+						/>
+						<FontAwesomeIcon
+							icon={faInstagram}
+							className='team-icons'
+							height={23}
+							onClick={() => {}}
+						/>
+					</div>
 				</div>
 			))}
 		</div>

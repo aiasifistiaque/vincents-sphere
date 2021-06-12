@@ -30,6 +30,7 @@ const AdUserProfile = ({ user, edit, onEdit, cancel, editUserRole }) => {
 						onChange={e => {
 							setValue(e.target.value);
 						}}>
+						<option value='user'>Make User</option>
 						<option value='admin'>Make Admin</option>
 						<option value='manager'>Make Manager</option>
 					</select>

@@ -13,8 +13,8 @@ export const footerData = [
 				to: '/about',
 			},
 			{
-				name: 'Contact',
-				to: '/contact',
+				name: 'Explore',
+				to: '/explore',
 			},
 		],
 	},

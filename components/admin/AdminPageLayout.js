@@ -1,12 +1,12 @@
 import React from 'react';
 import useGetProfile from '../../hooks/useGetProfile';
 import Sidebar from './Sidebar';
-import PageLoading from '../PageLoading';
+import PageLoading, { AdminPageLoading } from '../PageLoading';
 import AdminPage from '../AdminPage';
 
 const AdminPageLayout = ({ children, select }) => {
 	const { user, loading } = useGetProfile();
-	if (loading) return <PageLoading />;
+	if (loading) return <AdminPageLoading />;
 
 	return (
 		<AdminPage>

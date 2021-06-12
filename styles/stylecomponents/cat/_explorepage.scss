@@ -2,13 +2,18 @@
 
 .explore-page {
 	display: flex;
-	margin: 15vh 4% 1% 4%;
-	flex-direction: column;
+	margin: 15vh 7% 0 7%;
 	align-items: center;
 	padding: 0;
 	text-transform: uppercase;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+
+	@media only screen and (max-width: $medium-screen) {
+		justify-content: center;
+		text-align: center;
+	}
 
 	select {
 	}
@@ -17,20 +22,18 @@
 		//background-color: red;
 	}
 
-	h1 {
-		margin: 1px 0;
-		padding: 0;
-		text-align: center;
+	h3 {
+		@include n-m-p;
 		font-weight: 400;
 		color: black;
+		text-align: inherit;
 	}
 
-	h4 {
-		margin-top: 5px;
-		padding: 0;
-		text-align: center;
+	h5 {
+		@include n-m-p;
 		font-weight: 300;
-		//color: $color-pink;
+		margin-bottom: 1em;
+		text-align: inherit;
 	}
 }
 
@@ -42,7 +45,6 @@
 	cursor: pointer;
 	letter-spacing: 2px;
 	display: flex;
-	//background-color: whitesmoke;
 
 	&:focus {
 		outline: 2px solid black;
@@ -50,19 +52,13 @@
 	}
 }
 
-.select-items {
-	//background-color: red;
-}
-
 .all-products-explore {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 1% 4%;
+	margin: 0 4%;
 	align-items: center;
 	justify-content: center;
 	padding: 0;
-	//overflow-y: scroll;
-	//background-color: yellow;
 }
 
 .load-more-button {

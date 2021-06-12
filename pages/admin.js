@@ -9,11 +9,11 @@ const admin = () => {
 		<AdminPageLayout select='dash'>
 			<DashboardContainer>
 				<ItemCount option='all orders'>Total Orders</ItemCount>
-				<ItemCount option='pending orders'>Pedning Orders</ItemCount>
+				<ItemCount option='pending orders'>Pending Orders</ItemCount>
 				<ItemCount option='completed orders'>Completed Orders</ItemCount>
 				<ItemCount option='all products'>Total Products</ItemCount>
-				<ItemAmount option='pending orders'>Amount due</ItemAmount>
-				<ItemAmount option='completed orders'>Amount received</ItemAmount>
+				<ItemAmount option='pending orders'>Amount Due</ItemAmount>
+				<ItemAmount option='completed orders'>Amount Received</ItemAmount>
 				<ItemCount option='all users'>Total Users</ItemCount>
 				<ItemCount option='admin users'>Total Admin</ItemCount>
 			</DashboardContainer>

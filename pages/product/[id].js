@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Page, { ProductPage } from '../../components/Page';
+import { ProductPage } from '../../components/Page';
 import { dummyItem } from '../../data';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,16 +13,16 @@ import {
 	ProdPageButton,
 } from '../../components/product/ProdButtons';
 import { general } from '../../constants';
-import Head from 'next/head';
+import PictureFullScreen from '../../components/product/PictureFullScreen';
 
 const Product = () => {
 	const router = useRouter();
 	const [item, setItem] = useState({});
 	const [itemPresent, setItemPresent] = useState(false);
 	const [addLoading, setAddLoading] = useState(true);
+	const [openPic, setOpenPic] = useState(false);
 
 	const { id } = router.query;
-
 	const dispatch = useDispatch();
 
 	const { product, loading } = useSelector(state => state.getAProduct);
@@ -31,8 +31,6 @@ const Product = () => {
 	useEffect(() => {
 		if (id != undefined) dispatch(getAProduct(id));
 	}, [id]);
-
-	console.log(cartItems);
 
 	useEffect(() => {
 		const index = cartItems.findIndex(item => item.product === id);
@@ -51,15 +49,16 @@ const Product = () => {
 
 	return (
 		<ProductPage>
-			<Head>
-				<title>{product.name}</title>
-				<link rel='icon' href='/favicon.ico' />
-				<meta property='og:image' content={product.image} />
-				<meta property='title' content={product.title} key='title' />
-				<meta property='og:title' content={product.title} key='title' />
-				<meta name='og:description' content={product.description} />
-				<meta name='description' content={product.description} />
-			</Head>
+			{
+				//<ProductMeta product={product} />
+			}
+
+			<PictureFullScreen
+				open={openPic}
+				close={() => setOpenPic(false)}
+				product={product}
+			/>
+
 			<div className='page-product'>
 				<div className='product-image'>
 					<Image
@@ -68,20 +67,12 @@ const Product = () => {
 						width={600}
 						height={500}
 						className='product-image-item v-image'
+						onClick={() => setOpenPic(true)}
 					/>
 				</div>
 
 				<div className='product-details'>
-					<h1>{product.name}</h1>
-
-					<h4>{product.size}</h4>
-					<h5>Notes: {product.note}</h5>
-					<hr />
-					<p>{product.description}</p>
-					<h2>
-						Price: {general.takaSymbol}
-						{product.price}
-					</h2>
+					<ProductDetails product={product} />
 
 					<div className='prod-page-button-container'>
 						{addLoading ? (
@@ -95,8 +86,25 @@ const Product = () => {
 					</div>
 				</div>
 			</div>
+
 			<ProductSection category={product.category} />
 		</ProductPage>
+	);
+};
+
+const ProductDetails = ({ product }) => {
+	return (
+		<>
+			<h1>{product.name}</h1>
+			<h4>Size: {product.size}</h4>
+			<h5>Notes: {product.note}</h5>
+			<hr />
+			<p>{product.description}</p>
+			<h2>
+				Price: {general.takaSymbol}
+				{product.price}
+			</h2>
+		</>
 	);
 };
 

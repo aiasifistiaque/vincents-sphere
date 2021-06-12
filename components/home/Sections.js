@@ -9,6 +9,7 @@ import Loading from '../Loading';
 import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
 import ProductsOnDisplay from './ProductsOnDisplay';
 import EndSectionPlaceHolder from './EndSectionPlaceHolder';
+import SectionViewMore from './SectionViewMore';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
@@ -46,11 +47,12 @@ const Sections = ({ section }) => {
 							<ProductsOnDisplay product={product} key={i} />
 						) : (
 							i == 5 && (
-								<Link href={`cat/${section.name}`}>
-									<div className='view-more'>
-										<h3>View More</h3>
-									</div>
-								</Link>
+								// <Link href={`cat/${section.name}`}>
+								// 	<div className='view-more'>
+								// 		<h3>View More</h3>
+								// 	</div>
+								// 	</Link>
+								<SectionViewMore product={product} key={i} />
 							)
 						)
 					)}
