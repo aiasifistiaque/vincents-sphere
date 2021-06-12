@@ -592,6 +592,8 @@ div {
           box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
   background-size: cover;
   background-position: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {
@@ -624,6 +626,8 @@ div {
           justify-content: center;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .view-more-inner p {
@@ -632,6 +636,8 @@ div {
   font-weight: 50;
   text-transform: uppercase;
   letter-spacing: 5px;
+  margin: 0;
+  text-align: center;
 }
 
 .view-more-inner:hover {

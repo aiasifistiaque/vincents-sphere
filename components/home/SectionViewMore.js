@@ -8,7 +8,9 @@ const SectionViewMore = ({ product }) => {
 			className='view-more-card'>
 			<Link href={`/cat/${product.category}`}>
 				<div className='view-more-inner'>
-					<p>View More</p>
+					<p>
+						View More <br /> {product.category}
+					</p>
 				</div>
 			</Link>
 		</div>
