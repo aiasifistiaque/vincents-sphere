@@ -39,7 +39,8 @@ const ProductSection = ({ category }) => {
 					}
 					ref={scrollRef}>
 					{products.map(
-						(product, i) => i < 5 && <ProductsOnDisplay product={product} />
+						(product, i) =>
+							i < 5 && <ProductsOnDisplay product={product} key={i} />
 					)}
 					<div
 						style={{

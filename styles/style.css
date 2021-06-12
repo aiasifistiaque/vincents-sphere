@@ -283,7 +283,7 @@ div {
   display: flex;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: start;
+          align-items: flex-start;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -718,7 +718,7 @@ div {
   padding: 10px 4%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   margin: 5% 0;
   overflow: hidden;
   scroll-behavior: smooth;
@@ -747,6 +747,15 @@ div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+  .single-section {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .gift-section {
@@ -3244,6 +3253,7 @@ div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: white;
 }
 
 .custom-select:focus {

@@ -22,7 +22,9 @@ const OrderStatusSelect = ({ sortValue, setSortValue }) => {
 				setSortValue(e.target.value);
 			}}>
 			{sortItems.map((option, i) => (
-				<option value={option}>{option}</option>
+				<option value={option} key={i}>
+					{option}
+				</option>
 			))}
 		</select>
 	);

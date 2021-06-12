@@ -20,7 +20,7 @@ export default function SearchLoading() {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<CircularProgress color='black' />
+			<CircularProgress style={{ color: 'black' }} />
 		</div>
 	);
 }

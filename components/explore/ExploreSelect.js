@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExploreSelect = ({ sort, onChange }) => {
 	return (
-		<select class='custom-select' value={sort} onChange={e => onChange(e)}>
+		<select className='custom-select' value={sort} onChange={e => onChange(e)}>
 			<option value='nameAsc' className='optn'>
 				Sort: Name Asc
 			</option>

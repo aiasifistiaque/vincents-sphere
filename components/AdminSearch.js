@@ -54,7 +54,7 @@ const AdminSearch = ({ active, off }) => {
 
 			<div className='sb-input-container'>
 				<input
-					autoFocus='true'
+					autoFocus={true}
 					ref={inputRef}
 					type='text'
 					value={searchString}

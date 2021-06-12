@@ -21,7 +21,6 @@ const useGetMyOrders = () => {
 			.post(`${api.userorder}`, { body: '' }, config)
 			.then(function (response) {
 				setOrders(response.data);
-				console.log('res', response.data);
 				setLoading(false);
 			})
 			.catch(function (error) {

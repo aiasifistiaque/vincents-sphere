@@ -46,7 +46,7 @@ const ProductListUpdated = () => {
 			) : (
 				<AdminListContainer>
 					{products.map((product, i) => (
-						<AdminListCard>
+						<AdminListCard key={i}>
 							<Image
 								src={product.image}
 								height={100}

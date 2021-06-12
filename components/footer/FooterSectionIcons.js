@@ -25,6 +25,7 @@ const FooterSectionIcons = () => {
 			<div className='footer-icons-container'>
 				{data.map((item, i) => (
 					<FontAwesomeIcon
+						key={i}
 						icon={item.icon}
 						className='footer-icons'
 						onClick={() => window.open(item.to)}

@@ -28,7 +28,7 @@ export default function Loading() {
 					alignItems: 'center',
 					justifyContent: 'center',
 				}}>
-				<CircularProgress color='black' />
+				<CircularProgress style={{ color: 'black' }} />
 			</div>
 		</LoadingPage>
 	);

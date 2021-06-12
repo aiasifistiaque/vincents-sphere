@@ -41,7 +41,6 @@ export const CustomUpload = ({ value, setValue, children }) => {
 				accept='image/*'
 				value={value != undefined ? value.target.value : ''}
 				onChange={e => {
-					//console.log(e.target.files[0]);
 					setValue(e);
 				}}
 			/>

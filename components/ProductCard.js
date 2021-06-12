@@ -1,25 +1,26 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { sizes } from '../constants';
+import { useRouter } from 'next/router';
 
 const ProductCard = ({ product }) => {
+	const router = useRouter();
 	return (
-		<Link href={`/product/${product._id}`}>
-			<div className='page-section-card'>
-				<Image
-					src={product.image}
-					alt={product.name}
-					width={300}
-					height={300}
-					className='v-image'
-				/>
-				<h6>{product.name}</h6>
-				<h6 style={{ fontSize: 16 }}>{product.subCategory}</h6>
-				<p>{product.size}</p>
-				<p>৳ {product.price}</p>
-			</div>
-		</Link>
+		<div
+			className='page-section-card'
+			onClick={() => router.push(`/product/${product._id}`)}>
+			<Image
+				src={product.image}
+				alt={product.name}
+				width={300}
+				height={300}
+				className='v-image'
+			/>
+			<h6>{product.name}</h6>
+			<h6 style={{ fontSize: 16 }}>{product.subCategory}</h6>
+			<p>{product.size}</p>
+			<p>৳ {product.price}</p>
+		</div>
 	);
 };
 

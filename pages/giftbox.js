@@ -89,10 +89,10 @@ const giftbox = () => {
 					</p>
 					<hr />
 					{boxes.map((box, i) => (
-						<div style={{ margin: '1.5em 0' }}>
+						<div style={{ margin: '1.5em 0' }} key={i}>
 							<h6>{box.title}</h6>
 							{box.products.map((prod, i) => (
-								<p style={{ margin: 0, padding: 0, fontSize: '.9em' }}>
+								<p key={i} style={{ margin: 0, padding: 0, fontSize: '.9em' }}>
 									{prod}
 								</p>
 							))}

@@ -33,7 +33,6 @@ const Search = ({ active, off }) => {
 			axios
 				.post(`${api.search}`, { searchString: searchString }, api.config)
 				.then(function (response) {
-					console.log(response);
 					setProducts(response.data.products);
 					setLoading(false);
 				})
@@ -68,7 +67,7 @@ const Search = ({ active, off }) => {
 
 			<div className='sb-input-container'>
 				<input
-					autoFocus='true'
+					autoFocus={true}
 					ref={inputRef}
 					type='text'
 					value={searchString}

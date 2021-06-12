@@ -97,10 +97,9 @@ const useAddNewOrder = (submit, address, paymentMethod) => {
 };
 
 const payWithSsl = (res, config) => {
-	console.log(res);
 	axios
 		.post(api.payment, {}, config)
-		.then(res => console.log(res))
+		.then(res => console.log('asd'))
 		.catch(e => console.log(e));
 };
 

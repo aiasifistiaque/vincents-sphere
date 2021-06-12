@@ -8,15 +8,16 @@ import {
 	addToFav,
 } from '../../store/actions/cartActions/cartActions';
 import ShareIcon from './ShareIcon';
+import { useRouter } from 'next/router';
 
 const CardIconSection = ({ product }) => {
 	const dispatch = useDispatch();
+	const router = useRouter();
 
 	const { favItems } = useSelector(state => state.favItems);
 	const [fav, setFav] = useState(false);
 
 	useEffect(() => {
-		//console.log(favItems);
 		if (favItems.find(x => x == product._id)) {
 			setFav(true);
 		} else setFav(false);
@@ -27,6 +28,7 @@ const CardIconSection = ({ product }) => {
 			<div style={{ display: 'flex' }}>
 				<FontAwesomeIcon
 					icon={faHeart}
+					height={35}
 					className={fav ? 'v-pc-icons favd' : 'v-pc-icons'}
 					onClick={() =>
 						fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product))
@@ -34,9 +36,12 @@ const CardIconSection = ({ product }) => {
 				/>
 				<ShareIcon className='v-pc-icons' product={product} />
 			</div>
-			<Link href={`/product/${product._id}`}>
-				<FontAwesomeIcon icon={faChevronRight} className='v-pc-icons' />
-			</Link>
+			<FontAwesomeIcon
+				icon={faChevronRight}
+				height={35}
+				className='v-pc-icons'
+				onClick={() => router.push(`/product/${product._id}`)}
+			/>
 		</div>
 	);
 };

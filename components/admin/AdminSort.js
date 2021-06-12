@@ -18,7 +18,9 @@ const Sort = ({ value, setValue, data }) => {
 				setValue(e.target.value);
 			}}>
 			{data.map((option, i) => (
-				<option value={option}>Sort: {option}</option>
+				<option key={i} value={option}>
+					Sort: {option}
+				</option>
 			))}
 		</select>
 	);

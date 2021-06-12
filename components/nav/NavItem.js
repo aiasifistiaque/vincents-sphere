@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const NavItem = ({ children, href }) => {
+	const router = useRouter();
 	return (
-		<Link href={href}>
-			<div className='nav-item'>
-				<p>{children}</p>
-			</div>
-		</Link>
+		<div className='nav-item' onClick={() => router.push(href)}>
+			<p>{children}</p>
+		</div>
 	);
 };
 

@@ -48,7 +48,7 @@
 
 .section-container {
 	@include section;
-	justify-content: start;
+	justify-content: flex-start;
 	margin: $padding-horizontal 0;
 	overflow: hidden;
 	scroll-behavior: smooth;
@@ -63,6 +63,11 @@
 .single-section {
 	@include section;
 	justify-content: center;
+	overflow: hidden;
+
+	@media only screen and(max-width: $medium-screen) {
+		justify-content: flex-start;
+	}
 }
 
 .gift-section {

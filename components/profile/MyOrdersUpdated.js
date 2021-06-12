@@ -3,13 +3,13 @@ import Loading from '../Loading';
 import useGetMyOrders from '../../hooks/useGetMyOrders';
 import { getUnixToDate } from '../../functions';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const MyOrdersUpdated = () => {
 	const { orders, loading } = useGetMyOrders();
+	const router = useRouter();
 
 	if (loading) return <Loading />;
-
-	console.log(orders[0]);
 
 	return (
 		<div className='my-orders'>
@@ -27,11 +27,11 @@ const MyOrdersUpdated = () => {
 						<p>Total: ৳{order.totalPrice}</p>
 						<p>Paid: {order.isPaid ? 'yes' : 'no'}</p>
 						<p>Delivered: {order.isDelivered ? 'yes' : 'no'}</p>
-						<Link href={`/order/${order._id}`}>
-							<div className='admin-panel-button'>
-								<p>View Details</p>
-							</div>
-						</Link>
+						<div
+							className='admin-panel-button'
+							onClick={() => router.push(`/order/${order._id}`)}>
+							<p>View Details</p>
+						</div>
 					</div>
 				))
 			)}

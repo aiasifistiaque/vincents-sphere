@@ -12,6 +12,7 @@ const Page = ({ children, title }) => {
 			<Head>
 				<title>{title || "Vincent's Sphere"}</title>
 				<link rel='icon' href='/favicon.ico' />
+				<meta property='og:title' content="Vincent's Sphere" key='title' />
 
 				<script
 					async

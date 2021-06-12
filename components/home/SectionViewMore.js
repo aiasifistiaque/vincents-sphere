@@ -1,18 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const SectionViewMore = ({ product }) => {
+	const router = useRouter();
 	return (
 		<div
 			style={{ backgroundImage: `url('${product.image}')` }}
 			className='view-more-card'>
-			<Link href={`/cat/${product.category}`}>
-				<div className='view-more-inner'>
-					<p>
-						View More <br /> {product.category}
-					</p>
-				</div>
-			</Link>
+			<div
+				className='view-more-inner'
+				onClick={() => router.push(`/cat/${product.category}`)}>
+				<p>
+					View More <br /> {product.category}
+				</p>
+			</div>
 		</div>
 	);
 };

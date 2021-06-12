@@ -24,7 +24,7 @@ const GiftSection = () => {
 
 			<div className='gift-section'>
 				{products.map((product, i) => (
-					<GiftProduct product={product} />
+					<GiftProduct product={product} key={i} />
 				))}
 			</div>
 		</div>

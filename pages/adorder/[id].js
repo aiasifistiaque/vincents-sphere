@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import useGetSingleOrder from '../../hooks/useGetSingleOrder';
 import Loading from '../../components/Loading';
 import { useSelector, useDispatch } from 'react-redux';
 import AdminPageLayout from '../../components/admin/AdminPageLayout';
@@ -49,9 +48,7 @@ const adorder = () => {
 			);
 			if (data) {
 				setThisOrder(data);
-				//dispatch(getAnOrder(id));
-				console.log('order', order);
-				console.log('data', data);
+
 				setEdit(false);
 			} else {
 				colsole.log(data);

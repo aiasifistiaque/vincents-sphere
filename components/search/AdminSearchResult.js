@@ -70,7 +70,6 @@ export const ResUserById = ({ id }) => {
 	else if (isEmpty(user)) return <div>no results found</div>;
 	else if (error) return <div>no results found</div>;
 	else {
-		console.log(user);
 		return (
 			<SearchProductContainer>
 				<SearchProductCard href={`/aduser/${user._id}`}>
@@ -98,7 +97,6 @@ export const ResUserByMail = ({ id }) => {
 	else if (isEmpty(user)) return <div>no results found</div>;
 	else if (error) return <div>no results found</div>;
 	else {
-		console.log(user);
 		return (
 			<SearchProductContainer>
 				<SearchProductCard href={`/aduser/${user._id}`}>

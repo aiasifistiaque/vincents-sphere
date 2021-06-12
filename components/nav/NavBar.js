@@ -61,11 +61,10 @@ export const NavDropdown = ({ children }) => {
 };
 
 export const NavCatItem = ({ children, href }) => {
+	const router = useRouter();
 	return (
-		<Link href={href}>
-			<div className='nav-cat-item'>
-				<p>{children}</p>
-			</div>
-		</Link>
+		<div className='nav-cat-item' onClick={() => router.push(href)}>
+			<p>{children}</p>
+		</div>
 	);
 };

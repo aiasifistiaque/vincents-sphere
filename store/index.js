@@ -20,8 +20,6 @@ const favItemsFromStorage =
 		? JSON.parse(localStorage.getItem('vincentfav'))
 		: [];
 
-console.log(favItemsFromStorage);
-
 const initialState = {
 	cart: {
 		cartItems: cartItemsFromStorage,

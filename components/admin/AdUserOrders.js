@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { getUnixToDate } from '../../functions';
+import { useRouter } from 'next/router';
 
 const AdUserOrders = ({ orders }) => {
+	const router = useRouter();
 	return (
 		<div className='my-orders'>
 			<p>Total Orders: {orders.length}</p>
@@ -22,11 +24,11 @@ const AdUserOrders = ({ orders }) => {
 						<p>Total: ৳{order.totalPrice}</p>
 						<p>Paid: {order.isPaid ? 'yes' : 'no'}</p>
 						<p>Status: {order.status}</p>
-						<Link href={`/adorder/${order._id}`}>
-							<div className='admin-panel-button'>
-								<p>View Details</p>
-							</div>
-						</Link>
+						<div
+							className='admin-panel-button'
+							onClick={() => router.push(`/adorder/${order._id}`)}>
+							<p>View Details</p>
+						</div>
 					</div>
 				))
 			)}

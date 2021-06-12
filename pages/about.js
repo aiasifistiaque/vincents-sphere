@@ -45,7 +45,7 @@ const OurTeam = () => {
 	return (
 		<div className='about-team'>
 			{teamMembers.map((item, i) => (
-				<div className='team-container'>
+				<div className='team-container' key={i}>
 					<div className='team-image'>
 						<Image
 							src={item.image}

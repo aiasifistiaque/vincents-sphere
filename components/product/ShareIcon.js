@@ -7,7 +7,6 @@ const ShareIcon = ({ className, product }) => {
 	const link = product.image;
 	const size = '&w=828&q=75';
 	const src = `${frontend}_next/image?url=%2F${product.image}${size}`;
-	console.log(src);
 	useEffect(() => {
 		FB.init({
 			appId: 777093836325354,
@@ -19,6 +18,7 @@ const ShareIcon = ({ className, product }) => {
 	return (
 		<FontAwesomeIcon
 			icon={faShare}
+			height={35}
 			className={className}
 			style={{ color: 'black' }}
 			onClick={() =>
