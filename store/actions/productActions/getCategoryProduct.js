@@ -1,10 +1,14 @@
 import axios from 'axios';
 import { api } from '../../../constants';
 
-const getCategoryProduct = id => async dispatch => {
+const getCategoryProduct = (id, page) => async dispatch => {
 	try {
 		dispatch({ type: 'GET_CATEGORY_PRODUCT_REQUEST' });
-		const { data } = await axios.get(`${api.productcategories}/${id}`);
+		const { data } = await axios.post(
+			`${api.productcategories}/${id}`,
+			{ page: page },
+			api.config
+		);
 
 		dispatch({ type: 'GET_CATEGORY_PRODUCT_SUCCESS', payload: data });
 	} catch (error) {

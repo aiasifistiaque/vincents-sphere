@@ -47,6 +47,7 @@ const Product = () => {
 	return (
 		<ProductPage title={product.name}>
 			<Head>
+				<title>{product.name}</title>
 				<meta property='og:title' content={product.name} key='title' />
 			</Head>
 			{

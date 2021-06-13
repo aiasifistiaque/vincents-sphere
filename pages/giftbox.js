@@ -1,57 +1,8 @@
 import React from 'react';
 import { ProductPage } from '../components/Page';
 import Image from 'next/image';
-import { CustomButton, LongButton } from '../components';
-
-const boxes = [
-	{
-		title: 'MOTHER’S DAY SPECIAL 2021',
-		products: [
-			'Best Mom Ever Scented Candle',
-			'Lavender Bath Salt',
-			'Chocolates',
-			'Dream Catcher',
-			'Satin Mask',
-			'Sheet Mask',
-		],
-	},
-	{
-		title: "WOMEN'S DAY SPECIAL BOX 2021",
-		products: [
-			'Who Runs The World/ Girls Just Wanna Have Fun Scented Candles',
-			'Lavender Bath Salt',
-			'Satin Scrunchies',
-			'Satin Mask',
-			'Sheet Mask',
-			'Hand Cream',
-		],
-	},
-	{
-		title: 'VALENTINES DAY SPECIAL BOX 2021',
-		products: [
-			'Scented Candle of your choice',
-			'Bath Salt of your choice',
-			'Satin mask',
-			'Satin Scrunchies',
-			'Brownies',
-			'Pinata Heart',
-			'Chocolate Coated Cookies',
-		],
-	},
-	{
-		title: 'READYMADE GIFT BOXES',
-		products: [
-			'Scented Candle of your choice',
-			'Bath Salt of your choice',
-			'Satin mask',
-			'Satin Scrunchies',
-			'Sheet Mask',
-			"Victoria's Secret Mist",
-			'Dream Catcher',
-			'Reversible Octo Plushie',
-		],
-	},
-];
+import { LongButton } from '../components';
+import { giftBoxes } from '../data/giftData';
 
 const giftbox = () => {
 	return (
@@ -69,7 +20,6 @@ const giftbox = () => {
 
 				<div className='product-details'>
 					<h1>Gift Box</h1>
-
 					<h5 style={{ fontWeight: '400' }}>Note: Personalized Gift Boxes</h5>
 					<p style={{ margin: 0, padding: 0 }}>
 						For the very special occasions
@@ -88,7 +38,8 @@ const giftbox = () => {
 						customizable.
 					</p>
 					<hr />
-					{boxes.map((box, i) => (
+					giftBoxe
+					{giftBoxes.map((box, i) => (
 						<div style={{ margin: '1.5em 0' }} key={i}>
 							<h6>{box.title}</h6>
 							{box.products.map((prod, i) => (

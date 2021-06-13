@@ -467,12 +467,9 @@ div {
   min-width: 380px;
   box-sizing: border-box;
   padding: 0 0 10px 0;
-  border: 0px solid rgba(112, 74, 74, 0.01);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   background-color: white;
-  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   -ms-flex-item-align: center;
       align-self: center;
@@ -482,16 +479,13 @@ div {
 }
 
 .section-card:hover {
-  z-index: 6;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 }
 
 @media only screen and (max-width: 768px) {
   .section-card {
     min-width: 300px;
-  }
-  .section-card:hover {
-    -webkit-transform: none;
-            transform: none;
   }
 }
 
@@ -547,6 +541,8 @@ div {
   margin: 2px 0;
   font-size: 0.75em;
   font-weight: 500;
+  -webkit-text-decoration-color: #fb3290;
+          text-decoration-color: #fb3290;
   color: #fb3290;
   text-transform: uppercase;
 }
@@ -4141,5 +4137,34 @@ a {
 .shr-icon:hover {
   color: black;
   background-color: whitesmoke;
+}
+
+.agree-signup-terms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25em;
+}
+
+@media only screen and (max-width: 768px) {
+  .agree-signup-terms {
+    width: 15em;
+  }
+}
+
+.agree-signup-terms p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+}
+
+.agree-signup-terms span {
+  cursor: pointer;
+  color: #fb3290;
+}
+
+.agree-signup-terms span:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 /*# sourceMappingURL=style.css.map */

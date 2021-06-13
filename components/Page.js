@@ -38,7 +38,7 @@ export const ProductPage = ({ children, title }) => {
 	return (
 		<div>
 			<Head>
-				<title>{title || "Vincent's Sphere"}</title>
+				<title>{"Vincent's Sphere"}</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<BNavbar

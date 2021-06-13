@@ -10,12 +10,16 @@ const explore = () => {
 	const [loading, setLoading] = useState(true);
 	const [page, setPage] = useState(0);
 	const [sort, setSort] = useState('newest');
+	const [end, setEnd] = useState(false);
+	const [btnLoading, setBtnLoading] = useState(false);
 
 	useEffect(() => {
+		setBtnLoading(true);
 		page == 0 && setLoading(true);
 		axios
 			.post(`${api.explore}`, { page: page, sort: sort }, api.config)
 			.then(res => {
+				if (res.data.products.length == 0) setEnd(true);
 				let newProducts = [];
 				if (products.length > 0) {
 					newProducts = products.concat(res.data.products);
@@ -26,10 +30,12 @@ const explore = () => {
 				setProducts(newProducts);
 				setLoading(false);
 				setPage(res.data.page);
+				setBtnLoading(false);
 			})
 			.catch(function (error) {
 				setLoading(false);
 				console.log(error.message);
+				setBtnLoading(false);
 			});
 	}, [page, sort]);
 
@@ -54,8 +60,10 @@ const explore = () => {
 
 			<ExplorePageMain
 				loading={loading}
+				btnLoading={btnLoading}
 				products={products}
 				onLoadMore={() => setPage(page + 1)}
+				end={end}
 			/>
 		</Page>
 	);

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import signupAction from '../store/actions/userActions/signupAction';
 import { ErrorText, CustomButton } from '../components';
+import AgreeTerms from '../components/AgreeTerms';
 
 const signup = () => {
 	const signupSelector = useSelector(state => state.signup);
@@ -73,9 +74,11 @@ const signup = () => {
 							<p>Register</p>
 						</div>
 					)}
+					<AgreeTerms />
+					<br />
 
 					<p>
-						Have an account?{' '}
+						Already Have an account?{' '}
 						<Link href='/login'>
 							<a style={{ color: 'dodgerblue', cursor: 'pointer' }}>Login</a>
 						</Link>

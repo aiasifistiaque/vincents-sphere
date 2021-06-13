@@ -120,11 +120,34 @@ a {
 }
 
 .shr-icon {
-	//margin-right: 8px;
+	//smargin-right: 8px;
 	padding: 5px;
 	border-radius: 4px;
 	&:hover {
 		color: black;
 		background-color: whitesmoke;
+	}
+}
+
+.agree-signup-terms {
+	display: flex;
+	width: 25em;
+
+	@media only screen and (max-width: $medium-screen) {
+		width: 15em;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+		font-size: 0.7em;
+	}
+	span {
+		cursor: pointer;
+		color: $color-pink;
+
+		&:hover {
+			text-decoration-line: underline;
+		}
 	}
 }

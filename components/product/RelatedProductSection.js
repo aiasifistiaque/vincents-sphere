@@ -6,15 +6,14 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loading from '../Loading';
 import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
-import ProductsOnDisplay from './ProductsOnDisplay';
-import EndSectionPlaceHolder from './EndSectionPlaceHolder';
-import SectionViewMore from './SectionViewMore';
+import ProductsOnDisplay from '../home/ProductsOnDisplay';
+import RelatedProductsOnDisplay from '../home/RelatedProductsOnDisplay';
 
-const Sections = ({ section }) => {
+const RelatedProductSection = ({ category, id }) => {
 	const scrollRef = useRef(null);
-	const scrollDist = 310;
+	const scrollDist = 280;
 
-	const { products, loading } = useGetCategoryProducts(section.name);
+	const { products, loading } = useGetCategoryProducts(category);
 
 	const scroll = scrollOffset => {
 		scrollRef.current.scrollLeft += scrollOffset;
@@ -24,11 +23,8 @@ const Sections = ({ section }) => {
 
 	return (
 		<div className='home-sections'>
-			<div className='home-section-headers'>
-				<h3>
-					<span>{section.title}</span>
-				</h3>
-				<h4>{section.subtitle}</h4>
+			<div style={{ display: 'flex', width: '92%' }}>
+				<h3 style={{ textAlign: 'left' }}>Related Produts</h3>
 			</div>
 
 			<div className='section-arrows'>
@@ -43,14 +39,21 @@ const Sections = ({ section }) => {
 						products.length > 1 ? 'section-container' : 'single-section'
 					}
 					ref={scrollRef}>
-					{products.map((product, i) =>
-						i < 5 ? (
-							<ProductsOnDisplay product={product} key={i} />
-						) : (
-							i == 5 && <SectionViewMore product={product} key={i} />
-						)
+					{products.map(
+						(product, i) =>
+							i < 5 &&
+							product._id != id && (
+								<RelatedProductsOnDisplay product={product} key={i} />
+							)
 					)}
-					<EndSectionPlaceHolder length={products.length} />
+					<div
+						style={{
+							margin: '0 50px',
+							width: '10em',
+						}}>
+						<p style={{ color: 'transparent' }}>{'aslkd  '}</p>
+						<br />
+					</div>
 				</div>
 				{products.length > 1 && (
 					<div className='arrows' onClick={() => scroll(scrollDist)}>
@@ -62,4 +65,4 @@ const Sections = ({ section }) => {
 	);
 };
 
-export default Sections;
+export default RelatedProductSection;

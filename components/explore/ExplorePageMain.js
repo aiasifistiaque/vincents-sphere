@@ -1,9 +1,16 @@
 import React from 'react';
 import Loading from '../Loading';
 import ExploreProducts from '../product/ExploreProducts';
-import ButtonLoading from '../ButtonLoading';
+import LoadMoreButton from './LoadMoreButton';
+import EndOfResult from './EndOfResult';
 
-const ExplorePageMain = ({ loading, products, onLoadMore }) => {
+const ExplorePageMain = ({
+	loading,
+	products,
+	onLoadMore,
+	end,
+	btnLoading,
+}) => {
 	if (loading) return <Loading />;
 	else
 		return (
@@ -13,16 +20,11 @@ const ExplorePageMain = ({ loading, products, onLoadMore }) => {
 						<ExploreProducts key={i} product={product} />
 					))}
 				</div>
-				<div
-					className='load-more-button'
-					style={{
-						width: 200,
-						alignSelf: 'center',
-						justifyContent: 'center',
-					}}
-					onClick={onLoadMore}>
-					{loading ? <ButtonLoading /> : <p>Load More</p>}
-				</div>
+				{end ? (
+					<EndOfResult />
+				) : (
+					<LoadMoreButton loading={btnLoading} onClick={onLoadMore} />
+				)}
 			</>
 		);
 };

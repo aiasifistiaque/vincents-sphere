@@ -6,6 +6,7 @@ import Router from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import userLoginAction from '../store/actions/userActions/userLoginAction';
 import ButtonLoading from '../components/ButtonLoading';
+import AgreeTerms from '../components/AgreeTerms';
 
 const login = () => {
 	const [email, setEmail] = useState('');
@@ -61,6 +62,7 @@ const login = () => {
 					<div className='login-button' onClick={loginButtonPressed}>
 						{tokenSelector.loading ? <ButtonLoading /> : <p>Login</p>}
 					</div>
+					<AgreeTerms />
 					{validationError ? (
 						<p style={{ color: 'crimson' }}>{validationErrorText}</p>
 					) : (

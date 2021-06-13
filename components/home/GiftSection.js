@@ -1,18 +1,6 @@
 import React from 'react';
 import GiftProduct from './GiftProduct';
-
-const products = [
-	{
-		name: "Women's Day Special",
-		image: '/giftbox/Womens Day Special.jpg',
-		to: '',
-	},
-	{
-		name: "Valentine's Day Special",
-		image: '/giftbox/Valentines Day Special.jpg',
-		to: '',
-	},
-];
+import { giftHomeData } from '../../data/giftData';
 
 const GiftSection = () => {
 	return (
@@ -23,7 +11,7 @@ const GiftSection = () => {
 			</div>
 
 			<div className='gift-section'>
-				{products.map((product, i) => (
+				{giftHomeData.map((product, i) => (
 					<GiftProduct product={product} key={i} />
 				))}
 			</div>
