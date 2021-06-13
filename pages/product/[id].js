@@ -12,8 +12,10 @@ import {
 	ProdFavButton,
 	ProdPageButton,
 } from '../../components/product/ProdButtons';
-import { general } from '../../constants';
 import PictureFullScreen from '../../components/product/PictureFullScreen';
+import ProductDetails from '../../components/product/ProductDetails';
+import ProductDetailsUpdated from '../../components/product/ProductDetailsUpdated';
+import UpdatedProductDetails from '../../components/product/UpdatedProductDetails';
 
 const Product = () => {
 	const router = useRouter();
@@ -72,39 +74,18 @@ const Product = () => {
 				</div>
 
 				<div className='product-details'>
-					<ProductDetails product={product} />
-
-					<div className='prod-page-button-container'>
-						{addLoading ? (
-							<p>loading</p>
-						) : itemPresent ? (
-							<ProdQtyButton product={product}>{item.qty}</ProdQtyButton>
-						) : (
-							<ProdPageButton title='Add to Cart' product={product} />
-						)}
-						<ProdFavButton product={product} />
-					</div>
+					<ProductDetailsUpdated
+						product={product}
+						itemPresent={itemPresent}
+						addLoading={addLoading}
+						item={item}
+					/>
 				</div>
+				<UpdatedProductDetails product={product} />
 			</div>
 
-			<ProductSection category={product.category} />
+			<ProductSection category={product.category} id={product._id} />
 		</ProductPage>
-	);
-};
-
-const ProductDetails = ({ product }) => {
-	return (
-		<>
-			<h1>{product.name}</h1>
-			<h4>Size: {product.size}</h4>
-			<h5>Notes: {product.note}</h5>
-			<hr />
-			<p>{product.description}</p>
-			<h2>
-				Price: {general.takaSymbol}
-				{product.price}
-			</h2>
-		</>
 	);
 };
 

@@ -411,9 +411,7 @@ div {
 .section-arrows .arrows {
   padding: 1% 1.35%;
   border-radius: 500px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: white;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   z-index: 9;
@@ -426,17 +424,24 @@ div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.section-arrows .arrows:hover {
+  background-color: white;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 @media only screen and (max-width: 768px) {
   .section-arrows .arrows {
     padding: 3.5% 4.2%;
   }
-}
-
-.section-arrows .arrows:hover {
-  cursor: pointer;
-  background-color: white;
+  .section-arrows .arrows:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .section-card {
@@ -472,17 +477,22 @@ div {
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.section-card:hover {
+  z-index: 6;
 }
 
 @media only screen and (max-width: 768px) {
   .section-card {
     min-width: 300px;
   }
-}
-
-.section-card:hover {
-  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  .section-card:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .section-card .section-card-text {
@@ -701,7 +711,8 @@ div {
 }
 
 .home-sections .home-section-headers h4 {
-  font-weight: 200;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .section-container {
@@ -781,6 +792,106 @@ div {
 .gift-card-text {
   text-align: center;
   padding: 1em;
+}
+
+.new-gift-section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  flex: 1;
+  padding: 0 4%;
+}
+
+.new-gift-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-position: center;
+  background-size: cover;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 300px;
+  min-height: 70vh;
+  margin: 1em;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.new-gift-card:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+@media only screen and (max-width: 768px) {
+  .new-gift-card:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.new-gift-card-text {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 70vh;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
+.new-gift-card-text h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  letter-spacing: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .new-gift-card-text h2 {
+    font-size: 2em;
+  }
 }
 
 .consult {
@@ -1334,6 +1445,7 @@ div {
   cursor: pointer;
   color: default;
   min-width: 50px;
+  padding: 0 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1343,7 +1455,8 @@ div {
   border-radius: 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  border: 1px solid #393131;
+  border: 0.5px solid whitesmoke;
+  background-color: whitesmoke;
 }
 
 .prod-fav-button p {
@@ -1352,8 +1465,14 @@ div {
   color: inherit;
 }
 
+.prod-fav-button:hover {
+  background-color: #d5d5d5;
+  border: 1px solid #d5d5d5;
+}
+
 .prod-fav-button .icon {
   height: 25px;
+  margin-right: 10px;
 }
 
 .login-button {

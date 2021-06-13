@@ -4,7 +4,6 @@ import {
 	faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
 import Loading from '../Loading';
 import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
 import ProductsOnDisplay from './ProductsOnDisplay';
@@ -13,12 +12,15 @@ import SectionViewMore from './SectionViewMore';
 
 const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
-	const scrollDist = 280;
+	const scrollDist = 310;
 
 	const { products, loading } = useGetCategoryProducts(section.name);
 
 	const scroll = scrollOffset => {
+		//scrollRef.current.scrollIntoView({ behavior: 'smooth' });
 		scrollRef.current.scrollLeft += scrollOffset;
+		//scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+		//scrollRef.current.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	if (loading) return <Loading />;
@@ -26,7 +28,9 @@ const Sections = ({ section }) => {
 	return (
 		<div className='home-sections'>
 			<div className='home-section-headers'>
-				<h3>{section.title}</h3>
+				<h3>
+					<span>{section.title}</span>
+				</h3>
 				<h4>{section.subtitle}</h4>
 			</div>
 

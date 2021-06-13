@@ -38,6 +38,7 @@ export const ProdFavButton = ({ product }) => {
 				fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product))
 			}>
 			<FontAwesomeIcon icon={faHeart} className={fav ? 'icon favd' : 'icon'} />
+			<span>Add to Wishlist</span>
 		</div>
 	);
 };

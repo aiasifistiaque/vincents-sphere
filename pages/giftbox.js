@@ -59,7 +59,7 @@ const giftbox = () => {
 			<div className='page-product'>
 				<div className='product-image'>
 					<Image
-						src="/giftbox/Women's Day Special.jpg"
+						src='/giftbox/Womens Day Special.jpg'
 						alt="Women's Day Special"
 						width={600}
 						height={500}

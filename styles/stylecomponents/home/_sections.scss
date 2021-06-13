@@ -30,7 +30,8 @@
 		}
 
 		h4 {
-			font-weight: 200;
+			font-weight: 300;
+			color: rgba(black, 0.7);
 		}
 	}
 }
@@ -81,3 +82,5 @@
 	text-align: center;
 	padding: 1em;
 }
+
+@import './giftsection';

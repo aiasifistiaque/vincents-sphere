@@ -8,7 +8,7 @@ import Loading from '../Loading';
 import useGetCategoryProducts from '../../hooks/useGetCategoryProducts';
 import ProductsOnDisplay from '../home/ProductsOnDisplay';
 
-const ProductSection = ({ category }) => {
+const ProductSection = ({ category, id }) => {
 	const scrollRef = useRef(null);
 	const scrollDist = 280;
 
@@ -40,7 +40,10 @@ const ProductSection = ({ category }) => {
 					ref={scrollRef}>
 					{products.map(
 						(product, i) =>
-							i < 5 && <ProductsOnDisplay product={product} key={i} />
+							i < 5 &&
+							product._id != id && (
+								<ProductsOnDisplay product={product} key={i} />
+							)
 					)}
 					<div
 						style={{

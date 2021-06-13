@@ -1,0 +1,71 @@
+.new-gift-section {
+	width: 100%;
+	display: flex;
+	flex: 1;
+	box-sizing: border-box;
+	justify-content: center;
+	flex-wrap: wrap;
+	cursor: pointer;
+	align-items: center;
+	flex: 1;
+	padding: 0 4%;
+}
+
+.new-gift-card {
+	display: flex;
+	flex: 1;
+	background-position: center;
+	background-size: cover;
+	justify-content: center;
+	align-items: center;
+	min-width: 300px;
+	min-height: 70vh;
+	margin: 1em;
+	transition: 0.1s;
+
+	&:hover {
+		transform: scale(1.08);
+	}
+
+	&:hover {
+		@media only screen and (max-width: $medium-screen) {
+			transform: none;
+		}
+	}
+}
+
+.new-gift-card-text {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	//background-color: rgba(black, 0.3);
+	flex: 1;
+	padding: 10%;
+	//min-height: 60vh;
+	transition: 0.3s;
+	flex-direction: column;
+	min-height: 70vh;
+
+	&:hover {
+		//background-color: rgba(black, 0.6);
+		//text-shadow: none;
+		//backdrop-filter: blur(1px);
+	}
+	text-shadow: 2px 2px 10px rgba(black, 0.8);
+	text-transform: uppercase;
+
+	h2 {
+		@include n-m-p;
+		font-size: 2.5em;
+		font-weight: 600;
+		text-align: center;
+		text-transform: capitalize;
+		color: white;
+		letter-spacing: 4px;
+
+		@media only screen and (max-width: $medium-screen) {
+			font-size: 2em;
+		}
+	}
+}

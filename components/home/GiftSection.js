@@ -4,11 +4,11 @@ import GiftProduct from './GiftProduct';
 const products = [
 	{
 		name: "Women's Day Special",
-		image: "/giftbox/Women's Day Special.jpg",
+		image: '/giftbox/Womens Day Special.jpg',
 		to: '',
 	},
 	{
-		name: 'Valentines Day Special',
+		name: "Valentine's Day Special",
 		image: '/giftbox/Valentines Day Special.jpg',
 		to: '',
 	},
