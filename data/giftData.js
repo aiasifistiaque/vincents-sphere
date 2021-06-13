@@ -3,12 +3,12 @@
 export const giftHomeData = [
 	{
 		name: "Women's Day Special",
-		image: '/giftbox/Womens Day Special.jpg',
+		image: '/giftbox/Womens Day Special.jpeg',
 		to: '',
 	},
 	{
 		name: "Valentine's Day Special",
-		image: '/giftbox/Valentines Day Special.jpg',
+		image: '/giftbox/Valentines Day Special.jpeg',
 		to: '',
 	},
 ];
