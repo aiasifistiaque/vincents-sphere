@@ -12,13 +12,6 @@ const Page = ({ children, title }) => {
 			<Head>
 				<title>{title || "Vincent's Sphere"}</title>
 				<link rel='icon' href='/favicon.ico' />
-				<meta property='og:title' content="Vincent's Sphere" key='title' />
-
-				<script
-					async
-					defer
-					crossorigin='anonymous'
-					src='https://connect.facebook.net/en_US/sdk.js'></script>
 			</Head>
 			<BNavbar
 				searchActive={searchActive}
@@ -44,6 +37,10 @@ export const ProductPage = ({ children, title }) => {
 
 	return (
 		<div>
+			<Head>
+				<title>{title || "Vincent's Sphere"}</title>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 			<BNavbar
 				searchActive={searchActive}
 				searchOn={() => setSearchActive(true)}

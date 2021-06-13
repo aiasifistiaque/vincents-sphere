@@ -6,16 +6,11 @@ import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import getAProduct from '../../store/actions/productActions/getAProduct';
 import PageLoading from '../../components/PageLoading';
-import ProdQtyButton from '../../components/product/ProdQtyButton';
 import ProductSection from '../../components/product/ProductSection';
-import {
-	ProdFavButton,
-	ProdPageButton,
-} from '../../components/product/ProdButtons';
 import PictureFullScreen from '../../components/product/PictureFullScreen';
-import ProductDetails from '../../components/product/ProductDetails';
 import ProductDetailsUpdated from '../../components/product/ProductDetailsUpdated';
 import UpdatedProductDetails from '../../components/product/UpdatedProductDetails';
+import Head from 'next/head';
 
 const Product = () => {
 	const router = useRouter();
@@ -50,7 +45,10 @@ const Product = () => {
 	if (loading) return <PageLoading />;
 
 	return (
-		<ProductPage>
+		<ProductPage title={product.name}>
+			<Head>
+				<meta property='og:title' content={product.name} key='title' />
+			</Head>
 			{
 				//<ProductMeta product={product} />
 			}

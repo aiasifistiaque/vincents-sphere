@@ -2,37 +2,23 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { frontend } from '../../constants';
+import { FacebookShareButton } from 'react-share';
 
 const ShareIcon = ({ className, product }) => {
 	const link = product.image;
 	const size = '&w=828&q=75';
 	const src = `${frontend}_next/image?url=%2F${product.image}${size}`;
-	useEffect(() => {
-		FB.init({
-			appId: 777093836325354,
-			autoLogAppEvents: true,
-			xfbml: true,
-			version: 'v10.0',
-		});
-	}, []);
+	const url = `https://vincentsphere.com/product/${product._id}`;
+
 	return (
-		<FontAwesomeIcon
-			icon={faShare}
-			height={35}
-			className={className}
-			style={{ color: 'black' }}
-			onClick={() =>
-				FB.ui(
-					{
-						display: 'popup',
-						method: 'share',
-						href: `${window.location.href}/product/${product._id}`,
-						hashtag: product.category,
-					},
-					function (response) {}
-				)
-			}
-		/>
+		<FacebookShareButton url={url} size={35} description={product.description}>
+			<FontAwesomeIcon
+				icon={faShare}
+				height={35}
+				className={className}
+				style={{ color: 'black' }}
+			/>
+		</FacebookShareButton>
 	);
 };
 
