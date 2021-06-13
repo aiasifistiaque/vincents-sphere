@@ -15,7 +15,10 @@ const explore = () => {
 
 	useEffect(() => {
 		setBtnLoading(true);
-		page == 0 && setLoading(true);
+		if (page == 0) {
+			setLoading(true);
+			setEnd(false);
+		}
 		axios
 			.post(`${api.explore}`, { page: page, sort: sort }, api.config)
 			.then(res => {
