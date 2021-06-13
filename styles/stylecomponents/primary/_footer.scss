@@ -16,6 +16,15 @@
 		font-size: 0.8em;
 		letter-spacing: 3px;
 	}
+	a {
+		color: $color-pink;
+		text-decoration-line: none;
+		//font-weight: 700;
+		&:hover {
+			color: $color-pink;
+			text-decoration-line: underline;
+		}
+	}
 }
 
 .footer {

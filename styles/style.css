@@ -991,6 +991,18 @@ div {
   letter-spacing: 3px;
 }
 
+.footer-c a {
+  color: #fb3290;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.footer-c a:hover {
+  color: #fb3290;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4164,6 +4176,39 @@ a {
 }
 
 .agree-signup-terms span:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.thinkcrypt {
+  background-color: black;
+  padding: 0.5em 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  letter-spacing: 2px;
+}
+
+.thinkcrypt p {
+  color: whitesmoke;
+  font-size: 0.8em;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.thinkcrypt a {
+  color: #fb3290;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  font-weight: 700;
+}
+
+.thinkcrypt a:hover {
+  color: #fb3290;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }

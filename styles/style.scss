@@ -151,3 +151,27 @@ a {
 		}
 	}
 }
+
+.thinkcrypt {
+	background-color: black;
+	padding: 0.5em 4%;
+	display: flex;
+	justify-content: flex-end;
+	letter-spacing: 2px;
+	p {
+		color: whitesmoke;
+		font-size: 0.8em;
+		font-weight: 500;
+		padding: 0;
+		margin: 0;
+	}
+	a {
+		color: $color-pink;
+		text-decoration-line: none;
+		font-weight: 700;
+		&:hover {
+			color: $color-pink;
+			text-decoration-line: underline;
+		}
+	}
+}
