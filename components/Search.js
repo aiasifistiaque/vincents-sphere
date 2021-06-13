@@ -9,6 +9,7 @@ import SearchLoading from './search/SearchLoading';
 import SearchProductContainer from './search/SearchProductContainer';
 
 const Search = ({ active, off }) => {
+	const [dis, setDis] = useState('none');
 	const variants = {
 		open: { opacity: 1, y: 0 },
 		closed: { opacity: 1, y: '-100%' },
@@ -49,6 +50,7 @@ const Search = ({ active, off }) => {
 		if (active) {
 			inputRef.current.focus();
 			setTimeout(function () {
+				setDis('flex');
 				inputRef.current.focus();
 			}, 50);
 		}
@@ -58,6 +60,7 @@ const Search = ({ active, off }) => {
 		<motion.div
 			animate={active ? 'open' : 'closed'}
 			variants={variants}
+			style={{ display: dis }}
 			className={
 				active ? 'search-panel panel-visible' : 'search-panel panel-hidden'
 			}>
