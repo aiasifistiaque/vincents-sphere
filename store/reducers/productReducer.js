@@ -1,11 +1,18 @@
 //
 
-export const getAllProductsReducer = (state = { products: [] }, action) => {
+export const getAllProductsReducer = (
+	state = { products: [], count: 0 },
+	action
+) => {
 	switch (action.type) {
 		case 'GET_ALL_PRODUCTS_REQUEST':
-			return { loading: true, products: [] };
+			return { loading: true, products: [], count: 0 };
 		case 'GET_ALL_PRODUCTS_SUCCESS':
-			return { loading: false, products: action.payload };
+			return {
+				loading: false,
+				products: action.payload.products,
+				count: action.payload.count,
+			};
 		case 'GET_ALL_PRODUCTS_FAIL':
 			return { loading: false, error: action.payload };
 

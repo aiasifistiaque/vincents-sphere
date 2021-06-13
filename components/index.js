@@ -20,6 +20,14 @@ export const LongButton = ({ onClick, children, style }) => {
 	);
 };
 
+export const TextButton = ({ onClick, children, style }) => {
+	return (
+		<div className='text-button' onClick={onClick} style={style}>
+			<p>{children}</p>
+		</div>
+	);
+};
+
 export const CancelButton = ({ onClick, children, style }) => {
 	return (
 		<div className='cancel-button' onClick={onClick} style={style}>

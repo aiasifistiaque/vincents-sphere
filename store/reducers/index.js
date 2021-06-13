@@ -19,6 +19,7 @@ import {
 	getAllOrdersReducer,
 	getAnOrderReducer,
 	adminSearchOrderReducer,
+	getUserOrderReducer,
 } from './orderReducer';
 import { favItemReducer } from './favItemReducer';
 
@@ -36,6 +37,7 @@ const rootReducer = combineReducers({
 	getAllUsers: getAllUserReducer,
 	singleUser: getSingleUserReducer,
 	emailUser: emailUserReducer,
+	userOrders: getUserOrderReducer,
 
 	//admin search
 	adminSearchOrder: adminSearchOrderReducer,

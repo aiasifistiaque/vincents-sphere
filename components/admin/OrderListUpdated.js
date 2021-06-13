@@ -13,32 +13,69 @@ import { getUnixToDate } from '../../functions';
 import { general } from '../../constants';
 import AdminSort from './AdminSort';
 import { orderSort } from '../../data/sortData';
+import LoadMoreSection from '../explore/LoadMoreSection';
+import NetworkError from '../NetworkError';
+import TotalCount from '../explore/TotalCount';
 
 const OrderListUpdated = () => {
 	const dispatch = useDispatch();
 	const [sort, setSort] = useState('Newest');
 
 	const getOrders = useSelector(state => state.getAllOrders);
-	const { orders, loading, error } = getOrders;
+	const { orders, loading, error, count } = getOrders;
+
+	const [page, setPage] = useState(0);
+	const [end, setEnd] = useState(false);
+	const [total, setTotal] = useState([]);
 
 	useEffect(() => {
-		dispatch(getAllOrders(sort));
-	}, [dispatch, sort]);
+		dispatch(getAllOrders(sort, page));
+	}, [dispatch, sort, page]);
+
+	useEffect(() => {
+		if (page == 0) {
+			setEnd(false);
+			setTotal([]);
+		}
+		let newOrders = [];
+		if (total.length > 0 && page > 0) {
+			newOrders = total.concat(orders);
+			setTotal(newOrders);
+		} else {
+			setTotal(orders);
+		}
+
+		if (!loading && orders.length == 0) setEnd(true);
+	}, [orders]);
+
+	if (error) return <NetworkError />;
 
 	return (
 		<div className='my-orders'>
-			<AdminSort sortData={orderSort} value={sort} setValue={e => setSort(e)}>
+			<AdminSort
+				sortData={orderSort}
+				value={sort}
+				setValue={e => {
+					setEnd(false);
+					setPage(0);
+					setTotal([]);
+					setSort(e);
+				}}>
 				<h3>ALL ORDERS</h3>
-				<p>Total Orders: {orders.length || 'LOADING...'}</p>
+
+				<p>
+					Total Orders:{' '}
+					{!loading ? `${total.length} of ${count}` : 'LOADING...'}
+				</p>
 			</AdminSort>
 
-			{loading ? (
+			{loading && page == 0 ? (
 				<Loading />
-			) : orders.length == 0 ? (
+			) : total.length == 0 ? (
 				<p>no current orders</p>
 			) : (
 				<AdminListContainer>
-					{orders.map((order, i) => (
+					{total.map((order, i) => (
 						<AdminListCard
 							key={i}
 							style={{ border: '1px solid rgba(0,0,0,.1)', height: 10 }}>
@@ -55,6 +92,14 @@ const OrderListUpdated = () => {
 							</AButton>
 						</AdminListCard>
 					))}
+					<div>
+						<TotalCount loading={loading} item={total} count={count} />
+						<LoadMoreSection
+							end={end}
+							loading={loading}
+							onClick={() => setPage(page + 1)}
+						/>
+					</div>
 				</AdminListContainer>
 			)}
 		</div>

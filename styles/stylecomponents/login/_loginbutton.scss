@@ -38,6 +38,21 @@
 	margin: 0;
 }
 
+.text-button {
+	display: flex;
+	//width: 10em;
+	margin: 0.5em 0;
+	color: dodgerblue;
+	cursor: pointer;
+	&:hover {
+		text-decoration-line: underline;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}
+
 .black-button {
 	@include general-button-data();
 }

@@ -29,12 +29,16 @@ export const userSignupReducer = (state = {}, action) => {
 	}
 };
 
-export const getAllUserReducer = (state = { users: [] }, action) => {
+export const getAllUserReducer = (state = { users: [], count: 0 }, action) => {
 	switch (action.type) {
 		case 'ALL_USER_REQUEST':
-			return { loading: true, users: [] };
+			return { loading: true, users: [], count: 0 };
 		case 'ALL_USER_SUCCESS':
-			return { loading: false, users: action.payload };
+			return {
+				loading: false,
+				users: action.payload.user,
+				count: action.payload.count,
+			};
 		case 'ALL_USER_FAIL':
 			return { loading: false, users: action.payload };
 

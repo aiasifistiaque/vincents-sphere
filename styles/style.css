@@ -1557,6 +1557,25 @@ div {
   font-weight: 400;
 }
 
+.text-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5em 0;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.text-button:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.text-button p {
+  margin: 0;
+  padding: 0;
+}
+
 .black-button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

@@ -1,12 +1,40 @@
 //
 
-export const getAllOrdersReducer = (state = { orders: [] }, action) => {
+export const getAllOrdersReducer = (
+	state = { orders: [], count: 0 },
+	action
+) => {
 	switch (action.type) {
 		case 'GET_ALL_ORDERS_REQUEST':
-			return { loading: true, orders: [] };
+			return { loading: true, orders: [], count: 0 };
 		case 'GET_ALL_ORDERS_SUCCESS':
-			return { loading: false, orders: action.payload };
+			return {
+				loading: false,
+				orders: action.payload.orders,
+				count: action.payload.count,
+			};
 		case 'GET_ALL_ORDERS_FAIL':
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};
+
+export const getUserOrderReducer = (
+	state = { orders: [], count: 0 },
+	action
+) => {
+	switch (action.type) {
+		case 'USER_ORDERS_REQUEST':
+			return { loading: true, orders: [], count: 0 };
+		case 'USER_ORDERS_SUCCESS':
+			return {
+				loading: false,
+				orders: action.payload.orders,
+				count: action.payload.count,
+			};
+		case 'USER_ORDERS_FAIL':
 			return { loading: false, error: action.payload };
 
 		default:

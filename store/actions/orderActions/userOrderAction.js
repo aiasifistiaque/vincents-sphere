@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { api } from '../../../constants';
 
-const getAllProducts = (sort, page) => async dispatch => {
+const userOrdersAction = (select, page) => async dispatch => {
 	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
 	try {
-		dispatch({ type: 'GET_ALL_PRODUCTS_REQUEST' });
+		dispatch({ type: 'USER_ORDERS_REQUEST' });
 
 		const config = {
 			headers: {
@@ -15,15 +15,15 @@ const getAllProducts = (sort, page) => async dispatch => {
 		};
 
 		const { data } = await axios.post(
-			api.products,
-			{ sort: (sort && sort) || '', page: page },
+			api.userorder,
+			{ status: select, page: page },
 			config
 		);
 
-		dispatch({ type: 'GET_ALL_PRODUCTS_SUCCESS', payload: data });
+		dispatch({ type: 'USER_ORDERS_SUCCESS', payload: data });
 	} catch (error) {
 		dispatch({
-			type: 'GET_ALL_PRODUCTS_FAIL',
+			type: 'USER_ORDERS_FAIL',
 			payload:
 				error.response && error.response.data.message
 					? error.response.data.message
@@ -32,4 +32,4 @@ const getAllProducts = (sort, page) => async dispatch => {
 	}
 };
 
-export default getAllProducts;
+export default userOrdersAction;

@@ -3,7 +3,7 @@
 import { api } from '../../../constants';
 import axios from 'axios';
 
-const getAllUserAction = sort => async dispatch => {
+const getAllUserAction = (sort, page) => async dispatch => {
 	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
 	try {
@@ -15,7 +15,7 @@ const getAllUserAction = sort => async dispatch => {
 
 		const { data } = await axios.post(
 			api.allusers,
-			{ body: '', sort: sort },
+			{ body: '', sort: sort, page: page },
 			config
 		);
 

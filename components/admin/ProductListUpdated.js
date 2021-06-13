@@ -14,23 +14,59 @@ import {
 import AdminSort from './AdminSort';
 import { productSort } from '../../data/sortData';
 import { LongButton } from '..';
+import NetworkError from '../NetworkError';
+import LoadMoreSection from '../explore/LoadMoreSection';
+import TotalCount from '../explore/TotalCount';
 
 const ProductListUpdated = () => {
 	const dispatch = useDispatch();
 	const [sort, setSort] = useState('Newest');
 
 	const getProducts = useSelector(state => state.getAllProducts);
-	const { products, loading, error } = getProducts;
+	const { products, loading, error, count } = getProducts;
+
+	const [page, setPage] = useState(0);
+	const [end, setEnd] = useState(false);
+	const [total, setTotal] = useState([]);
 
 	useEffect(() => {
-		dispatch(getAllProducts(sort));
-	}, [dispatch, sort]);
+		dispatch(getAllProducts(sort, page));
+	}, [dispatch, page, sort]);
+
+	useEffect(() => {
+		if (page == 0) {
+			setEnd(false);
+			setTotal([]);
+		}
+		let newOrders = [];
+		if (total.length > 0 && page > 0) {
+			newOrders = total.concat(products);
+			setTotal(newOrders);
+		} else {
+			setTotal(products);
+		}
+
+		if (!loading && products.length == 0) setEnd(true);
+	}, [products]);
+
+	if (error) return <NetworkError />;
 
 	return (
 		<div className='my-orders'>
-			<AdminSort sortData={productSort} value={sort} setValue={e => setSort(e)}>
+			<AdminSort
+				sortData={productSort}
+				value={sort}
+				setValue={e => {
+					setSort(e);
+					setTotal([]);
+					setPage(0);
+				}}>
 				<h3>All Products</h3>
-				<p>Total Products: {products.length || 'LOADING...'}</p>
+
+				<p>
+					Total Products:{' '}
+					{loading ? 'LOADING...' : `${total.length} of ${count}`}
+				</p>
 			</AdminSort>
 
 			<div style={styles.adButtonContainer}>
@@ -39,13 +75,13 @@ const ProductListUpdated = () => {
 				</LongButton>
 			</div>
 
-			{loading ? (
+			{page == 0 && loading ? (
 				<Loading />
-			) : products.length == 0 ? (
+			) : total.length == 0 ? (
 				<p>no current products</p>
 			) : (
 				<AdminListContainer>
-					{products.map((product, i) => (
+					{total.map((product, i) => (
 						<AdminListCard key={i}>
 							<Image
 								src={product.image}
@@ -68,6 +104,14 @@ const ProductListUpdated = () => {
 							</AButton>
 						</AdminListCard>
 					))}
+					<div>
+						<TotalCount item={total} loading={loading} count={count} />
+						<LoadMoreSection
+							onClick={() => setPage(page + 1)}
+							loading={loading}
+							end={end}
+						/>
+					</div>
 				</AdminListContainer>
 			)}
 		</div>
