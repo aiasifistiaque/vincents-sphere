@@ -4,8 +4,11 @@ import useIsLoggedIn from '../hooks/useIsLoggedIn';
 import Loading from '../components/Loading';
 import Router from 'next/router';
 import useAddNewOrder from '../hooks/useAddNewOrder';
+import { useDispatch } from 'react-redux';
+import { emptyCart } from '../store/actions/cartActions/cartActions';
 
 const checkout = () => {
+	const dispatch = useDispatch();
 	const [address, setAddress] = useState('');
 	const [phone, setPhone] = useState('');
 	const [city, setCity] = useState('');
@@ -21,14 +24,15 @@ const checkout = () => {
 	);
 
 	useEffect(() => {
-		if (!isLoggedIn && !loading) Router.push('/login');
+		if (!isLoggedIn && !loading) Router.push('/login?page=cart');
 	}, [loading]);
 
 	useEffect(() => {
 		//setLoading(true);
 		if (!orderLoading) setSubmit(false);
 		if (success) {
-			localStorage.setItem('vincentcart', JSON.stringify([]));
+			//localStorage.setItem('vincentcart', JSON.stringify([]));
+			dispatch(emptyCart());
 			Router.replace(`/order/${id}?status=new`);
 		} else {
 			//setLoading(false);
@@ -36,6 +40,8 @@ const checkout = () => {
 	}, [orderLoading, success]);
 
 	if (loading) return <Loading />;
+
+	if (!isLoggedIn) return <Loading />;
 
 	return (
 		<Page>

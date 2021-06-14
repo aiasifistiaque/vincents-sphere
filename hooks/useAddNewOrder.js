@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { api } from '../constants';
 import useGetCart from './useGetCart';
-import Router from 'next/router';
 
 const useAddNewOrder = (submit, address, paymentMethod) => {
 	const [orderLoading, setLoading] = useState(true);

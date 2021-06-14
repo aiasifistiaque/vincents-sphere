@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Page from '../components/Page';
 import Link from 'next/link';
 import useIsLoggedIn from '../hooks/useIsLoggedIn';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import userLoginAction from '../store/actions/userActions/userLoginAction';
 import ButtonLoading from '../components/ButtonLoading';
 import AgreeTerms from '../components/AgreeTerms';
 
 const login = () => {
+	const router = useRouter();
+	const status = router.query.page;
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [validationError, setValidationError] = useState(false);
@@ -19,6 +21,9 @@ const login = () => {
 
 	useEffect(() => {
 		if (isLoggedIn) {
+			if (router.query.page == 'cart') {
+				Router.replace('/cart');
+			}
 			Router.replace('/');
 		}
 	}, [isLoggedIn]);
@@ -35,7 +40,13 @@ const login = () => {
 			setValidationError(true);
 			setValidationErrorText('password is required');
 		} else {
-			dispatch(userLoginAction(email, password, '/'));
+			dispatch(
+				userLoginAction(
+					email,
+					password,
+					router.query.page == 'cart' ? '/cart' : '/'
+				)
+			);
 			setLoading(tokenSelector.loading);
 		}
 	};

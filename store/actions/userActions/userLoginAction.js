@@ -24,7 +24,7 @@ const userLoginAction = (email, password, redirect) => async dispatch => {
 
 		localStorage.setItem('vincenttoken', JSON.stringify(data));
 
-		document.location.href = '/';
+		document.location.href = redirect;
 	} catch (error) {
 		dispatch({
 			type: 'USER_LOGIN_FAIL',

@@ -45,12 +45,12 @@ export const OrderDetailsItem = ({ item }) => {
 		<div className='order-details-item'>
 			<img src={item.image} width={50} height={50} />
 			<LeftContainer flex={3}>
-				<p>
+				<p style={{ margin: 0, padding: 0 }}>
 					{item.name} x {item.qty}
 				</p>
 			</LeftContainer>
 			<LeftContainer>
-				<p>
+				<p style={{ margin: 0, padding: 0 }}>
 					{general.takaSymbol}
 					{item.price / item.qty} x {item.qty}
 				</p>
