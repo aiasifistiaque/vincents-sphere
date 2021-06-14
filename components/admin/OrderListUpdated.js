@@ -16,6 +16,8 @@ import { orderSort } from '../../data/sortData';
 import LoadMoreSection from '../explore/LoadMoreSection';
 import NetworkError from '../NetworkError';
 import TotalCount from '../explore/TotalCount';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const OrderListUpdated = () => {
 	const dispatch = useDispatch();
@@ -78,7 +80,18 @@ const OrderListUpdated = () => {
 					{total.map((order, i) => (
 						<AdminListCard
 							key={i}
-							style={{ border: '1px solid rgba(0,0,0,.1)', height: 10 }}>
+							seen={order.seen != 1 ? true : false}
+							style={{
+								border: '1px solid rgba(0,0,0,.3)',
+								height: 10,
+							}}>
+							{order.seen != 1 && (
+								<FontAwesomeIcon
+									icon={faCircle}
+									height={10}
+									style={{ margin: '0 1em' }}
+								/>
+							)}
 							<AText>ID- {order._id}</AText>
 							<AText>Order Date: {getUnixToDate(order.createdAt)}</AText>
 							<AText>

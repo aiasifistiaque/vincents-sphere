@@ -24,23 +24,12 @@ export default function Home() {
 			<Hero />
 
 			<br />
-
 			<Story />
 
 			<SectionTitle>Featured</SectionTitle>
-			{wnd == 'windowset' && (
-				<MessengerCustomerChat
-					pageId='110218757538456'
-					appId='777093836325354'
-					htmlRef={w}
-				/>
-			)}
-			<p>windot {wnd}</p>
-
 			{categories.map((category, i) => (
 				<Sections section={category} key={i} />
 			))}
-
 			<GiftSectionUpdated />
 			<Consult />
 		</Page>

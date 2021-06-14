@@ -39,22 +39,27 @@
 @mixin section {
 	width: 100%;
 	display: flex;
-	//flex: 1;
 	align-items: stretch;
 	white-space: nowrap;
 	box-sizing: border-box;
 	padding: 10px 4%;
-	//min-height: 100%;
 }
 
 .section-container {
 	@include section;
 	justify-content: flex-start;
 	margin: $padding-horizontal 0;
-	overflow: hidden;
+	overflow: scroll;
 	scroll-behavior: smooth;
 	margin: 0 -9%;
 	box-sizing: border-box;
+
+	&::-webkit-scrollbar {
+		width: 0 !important;
+	}
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 
 	@media only screen and(max-width: $medium-screen) {
 		margin: 0 -12%;

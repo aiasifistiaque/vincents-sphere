@@ -11,6 +11,7 @@ import PictureFullScreen from '../../components/product/PictureFullScreen';
 import ProductDetailsUpdated from '../../components/product/ProductDetailsUpdated';
 import UpdatedProductDetails from '../../components/product/UpdatedProductDetails';
 import Head from 'next/head';
+import ReviewSection from '../../components/review/ReviewSection';
 
 const Product = () => {
 	const router = useRouter();
@@ -80,7 +81,11 @@ const Product = () => {
 						item={item}
 					/>
 				</div>
+			</div>
+
+			<div className='product-details-reviews-container'>
 				<UpdatedProductDetails product={product} />
+				<ReviewSection product={product} />
 			</div>
 
 			<ProductSection category={product.category} id={product._id} />

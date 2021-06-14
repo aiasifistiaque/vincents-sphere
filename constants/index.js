@@ -60,13 +60,17 @@ export const api = {
 	anUser: `${server}/profile/getanuser`,
 	userByMail: `${server}/profile/getuserbymail`,
 	editRole: `${server}/profile/editrole`,
+
 	getAllUsers: `${server}/profile/getallusers`,
 	createProduct: `${server}/products/createproduct`,
 	getAllOrders: `${server}/order/getallorders`,
+	changeSeen: `${server}/order/changeSeen`,
 	payment: `${server}/payment`,
 	explore: `${server}/explore`,
 	dashboard: `${server}/dashboard`,
 	upload: `${server}/upload`,
+
+	review: `${server}/review`,
 
 	config: {
 		headers: {

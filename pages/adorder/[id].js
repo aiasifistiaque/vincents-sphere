@@ -29,6 +29,27 @@ const adorder = () => {
 		}
 	}, [loading]);
 
+	useEffect(() => {
+		const config = {
+			headers: {
+				'Content-Type': 'application/json',
+				authorization: JSON.parse(localStorage.getItem('vincenttoken')),
+			},
+		};
+		id != undefined &&
+			axios
+				.put(
+					api.changeSeen,
+					{
+						id: id,
+						seen: 1,
+					},
+					config
+				)
+				.then(res => console.log(res))
+				.catch(e => console.log(e));
+	}, [id]);
+
 	const editOrder = async () => {
 		const config = {
 			headers: {

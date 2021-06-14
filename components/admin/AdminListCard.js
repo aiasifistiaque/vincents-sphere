@@ -1,7 +1,13 @@
 import React from 'react';
 
-export const AdminListCard = ({ children }) => {
-	return <div className='ad-prod-card'>{children}</div>;
+export const AdminListCard = ({ children, seen }) => {
+	return (
+		<div
+			className='ad-prod-card'
+			style={{ backgroundColor: seen ? 'rgba(30,144,255,.1)' : 'white' }}>
+			{children}
+		</div>
+	);
 };
 
 export const AdminListContainer = ({ children }) => {

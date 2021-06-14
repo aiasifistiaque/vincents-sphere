@@ -2,10 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
-import { api } from '../constants';
-import SearchProducts from './search/SearchProducts';
-import SearchLoading from './search/SearchLoading';
 import AdminSearchSelect from './search/AdminSearchSelect';
 import {
 	ResOrderById,
@@ -13,7 +9,6 @@ import {
 	ResUserById,
 	ResUserByMail,
 } from './search/AdminSearchResult';
-import SearchProductContainer from './search/SearchProductContainer';
 
 const AdminSearch = ({ active, off }) => {
 	const variants = {

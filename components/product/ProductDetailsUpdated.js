@@ -1,8 +1,10 @@
 import React from 'react';
 import { general } from '../../constants';
 import ProdButtons from '../../pages/product/ProdButtons';
+import ReviewStar from '../review/ReviewStar';
 
 const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
+	console.log(product);
 	return (
 		<div
 			style={{
@@ -14,6 +16,17 @@ const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
 			}}>
 			<h1>{product.name}</h1>
 			<h4>Size: {product.size}</h4>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+				}}>
+				<ReviewStar stars={product.rating} />
+				<p className='num-review-text' style={{ fontWeight: '600' }}>
+					{product.numReviews} Reviews
+				</p>
+			</div>
+
 			<div>
 				<h5>Notes: {product.note}</h5>
 
