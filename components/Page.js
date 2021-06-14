@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from './footer/Footer';
 import BNavbar from './nav/BNavbar';
 import Search from './Search';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Page = ({ children, title }) => {
 	const [searchActive, setSearchActive] = useState(false);
@@ -18,10 +19,17 @@ const Page = ({ children, title }) => {
 				searchOn={() => setSearchActive(true)}
 				searchOff={() => setSearchActive(false)}
 			/>
+
+			<MessengerCustomerChat
+				pageId='110218757538456'
+				appId='777093836325354'
+				htmlRef='Vincent'
+			/>
 			<Search active={searchActive} off={() => setSearchActive(false)} />
 
 			<main onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>
+
 				<Footer />
 			</main>
 		</div>

@@ -298,8 +298,8 @@ div {
           flex: 1;
   color: white;
   letter-spacing: 2px;
-  border-radius: 0;
   text-transform: uppercase;
+  border-bottom: 5px solid black;
 }
 
 .home-hero h1 {
@@ -4042,6 +4042,98 @@ div {
   .add-product .v-custom-imageupload {
     width: 15em;
   }
+}
+
+.story-section {
+  margin: 8%;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+@media only screen and (max-width: 768px) {
+  .story-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.story-image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 320px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em 0;
+}
+
+.story-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em 2%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.story-text h2 {
+  border: 5px solid #fb3290;
+  width: 100px;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.story-text h2 span {
+  display: none;
+}
+
+.story-text h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 5%;
+}
+
+.story-text p {
+  margin: 0;
+  padding: 0;
+  margin: 1em 0;
+  text-align: justify;
+}
+
+.featured-text {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+  margin: 2em 8% 2em 8%;
+  text-align: center;
+  line-height: 0.2;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.featured-text span {
+  background-color: #f9f9f9;
+  padding: 5px 10%;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 html,
