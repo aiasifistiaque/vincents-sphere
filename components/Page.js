@@ -52,12 +52,14 @@ const Page = ({ children, title }) => {
 						padding: '0 4%',
 						justifyContent: 'flex-end',
 					}}>
-					{typeof window !== 'undefiend' && (
+					{typeof window !== 'undefiend' ? (
 						<MessengerCustomerChat
 							pageId='110218757538456'
 							appId='777093836325354'
 							htmlRef='https://vincentsphere.com'
 						/>
+					) : (
+						<p>loading</p>
 					)}
 				</div>
 
