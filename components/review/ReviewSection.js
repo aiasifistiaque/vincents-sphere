@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { TextButton } from '..';
 import NewReview from './NewReview';
 import ReviewStar from './ReviewStar';
-import getUnixToDate from '../../../backend/functions/unixToDate';
 import Image from 'next/image';
+import { getUnixToDate } from '../../functions';
 
 const ReviewSection = ({ product }) => {
 	const total = product.numReviews;
