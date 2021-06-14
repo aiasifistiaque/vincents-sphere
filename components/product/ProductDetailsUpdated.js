@@ -4,7 +4,7 @@ import ProdButtons from '../../pages/product/ProdButtons';
 import ReviewStar from '../review/ReviewStar';
 
 const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
-	console.log(product);
+	//console.log(product);
 	return (
 		<div
 			style={{
@@ -50,6 +50,7 @@ const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
 				addLoading={addLoading}
 				product={product}
 				item={item}
+				stock={product.countInStock || 0}
 			/>
 		</div>
 	);

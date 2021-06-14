@@ -5,11 +5,10 @@ import {
 	ProdFavButton,
 } from '../../components/product/ProdButtons';
 
-const ProdButtons = ({ itemPresent, addLoading, item, product }) => {
-	if (product == undefined) return null;
+const ProdButtons = ({ itemPresent, addLoading, item, product, stock }) => {
 	return (
 		<div className='prod-page-button-container'>
-			{product.countInStock > 0 ? (
+			{stock > 0 ? (
 				addLoading ? (
 					<p>loading</p>
 				) : itemPresent ? (
