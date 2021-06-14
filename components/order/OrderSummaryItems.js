@@ -1,5 +1,6 @@
 import React from 'react';
 import { general } from '../../constants';
+import getUnixToDate from '../../functions/unixToDate';
 
 const OrderSummaryItems = ({ order, edit }) => {
 	return (
@@ -8,6 +9,7 @@ const OrderSummaryItems = ({ order, edit }) => {
 			<p style={{ fontSize: '1em', wordBreak: 'break-word' }}>
 				ID- {order._id}
 			</p>
+			<p>Date: {getUnixToDate(order.createdAt)}</p>
 			<p>
 				Items: {general.takaSymbol}
 				{order.totalPrice}

@@ -1,6 +1,8 @@
 //@at-root
 
 @mixin general-button-data {
+	@include btn-text-unselect;
+
 	display: inline-flex;
 	background-color: $color-black;
 	cursor: pointer;
@@ -34,11 +36,14 @@
 
 .long-button {
 	@include general-button-data();
+
 	width: 10em;
 	margin: 0;
 }
 
 .text-button {
+	@include btn-text-unselect;
+
 	display: flex;
 	//width: 10em;
 	margin: 0.5em 0;

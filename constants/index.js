@@ -60,6 +60,7 @@ export const api = {
 	anUser: `${server}/profile/getanuser`,
 	userByMail: `${server}/profile/getuserbymail`,
 	editRole: `${server}/profile/editrole`,
+	editUser: `${server}/profile/edituser`,
 
 	getAllUsers: `${server}/profile/getallusers`,
 	createProduct: `${server}/products/createproduct`,

@@ -18,6 +18,7 @@ import NetworkError from '../NetworkError';
 import TotalCount from '../explore/TotalCount';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import unixToDateMonth from '../../functions/unixToDateMonth';
 
 const OrderListUpdated = () => {
 	const dispatch = useDispatch();
@@ -93,7 +94,7 @@ const OrderListUpdated = () => {
 								/>
 							)}
 							<AText>ID- {order._id}</AText>
-							<AText>Order Date: {getUnixToDate(order.createdAt)}</AText>
+							<AText>Date: {unixToDateMonth(order.createdAt)}</AText>
 							<AText>
 								Total: {general.takaSymbol}
 								{order.totalPrice}

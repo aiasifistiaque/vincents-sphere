@@ -5,6 +5,7 @@ import { api } from '../constants';
 const useGetProfile = () => {
 	const [loading, setLoading] = useState(true);
 	const [user, setUser] = useState([]);
+	const [error, setError] = useState(false);
 
 	useEffect(() => {
 		setLoading(true);
@@ -24,6 +25,7 @@ const useGetProfile = () => {
 				setLoading(false);
 			})
 			.catch(function (error) {
+				setError(true);
 				setLoading(false);
 				console.log(error.message);
 			})
@@ -31,7 +33,7 @@ const useGetProfile = () => {
 				setLoading(false);
 			});
 	}, []);
-	return { user, loading };
+	return { user, loading, error };
 };
 
 export default useGetProfile;

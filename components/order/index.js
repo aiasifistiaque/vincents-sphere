@@ -19,6 +19,7 @@ export const OrderDetails = ({ order, status }) => {
 				<p>Name: {order.user.name}</p>
 				<p>Email: {order.user.email}</p>
 				<p>Phone: {shipping.phone}</p>
+
 				<p>Address: {address}</p>
 			</OrderItemContainer>
 

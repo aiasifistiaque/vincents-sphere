@@ -34,11 +34,16 @@ const CartQtyButton = ({ product, children }) => {
 			<Center>
 				<p>{children}</p>
 			</Center>
-			<div
-				className='v-plus-minus'
-				onClick={() => dispatch(addToCart(prod, children + 1))}>
-				<p>+</p>
-			</div>
+			{children < product.countInStock && (
+				<div
+					className='v-plus-minus'
+					onClick={() => {
+						children < product.countInStock &&
+							dispatch(addToCart(prod, children + 1));
+					}}>
+					<p>+</p>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -3,9 +3,9 @@ import { TextButton } from '..';
 import NewReview from './NewReview';
 import ReviewStar from './ReviewStar';
 import Image from 'next/image';
-import { getUnixToDate } from '../../functions';
 import axios from 'axios';
 import { api } from '../../constants';
+import getUnixToDate from '../../functions/unixToDate';
 
 const ReviewSection = ({ product }) => {
 	//const total = product.numReviews;

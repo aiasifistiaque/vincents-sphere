@@ -30,12 +30,29 @@
 	cursor: default;
 
 	.v-plus-minus {
+		@include btn-text-unselect;
 		flex: 1;
 		background-color: black;
 		cursor: pointer;
 		color: white;
 		@include v-flex-center;
 		@include btn-hover;
+	}
+
+	p {
+		@include n-m-p;
+		font-size: 18px;
+		font-weight: 300;
+	}
+
+	.v-plus-minus-disabled {
+		@include btn-text-unselect;
+		flex: 1;
+		background-color: #d5d5d5;
+		cursor: pointer;
+		color: black;
+		@include v-flex-center;
+		cursor: not-allowed;
 	}
 
 	p {

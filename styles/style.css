@@ -352,6 +352,10 @@ div {
   border-radius: 4px;
   cursor: pointer;
   color: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-color: black;
   margin: 2em 0;
   border-radius: 0px;
@@ -1351,6 +1355,10 @@ div {
   border-radius: 4px;
   cursor: pointer;
   color: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   border-radius: none;
   background-color: black;
   -webkit-transition: 0.2s;
@@ -1402,6 +1410,10 @@ div {
   border-radius: 4px;
   cursor: pointer;
   color: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: default;
 }
 
@@ -1412,6 +1424,10 @@ div {
 }
 
 .prod-qty-button .v-plus-minus {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1446,6 +1462,36 @@ div {
   font-weight: 300;
 }
 
+.prod-qty-button .v-plus-minus-disabled {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #d5d5d5;
+  cursor: pointer;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: not-allowed;
+}
+
+.prod-qty-button p {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .prod-fav-button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1458,6 +1504,10 @@ div {
   border-radius: 4px;
   cursor: pointer;
   color: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   min-width: 50px;
   padding: 0 10px;
   -webkit-box-align: center;
@@ -1490,6 +1540,10 @@ div {
 }
 
 .login-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1526,6 +1580,10 @@ div {
 }
 
 .long-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1564,6 +1622,10 @@ div {
 }
 
 .text-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1583,6 +1645,10 @@ div {
 }
 
 .black-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1619,6 +1685,10 @@ div {
 }
 
 .cancel-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1929,6 +1999,10 @@ div {
   border-radius: 4px;
   cursor: pointer;
   color: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: default;
   height: 30px;
   min-width: 90px;
@@ -4300,6 +4374,55 @@ div {
   padding: 0;
   color: rgba(0, 0, 0, 0.7);
   font-weight: 700;
+}
+
+.edit-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  padding: 15vh 10%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.edit-pro-input-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+  margin-bottom: 10px;
+}
+
+.edit-pro-input-div input {
+  width: 100%;
+  min-width: 300px;
+  margin-bottom: 1em;
+  height: 50px;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border: none;
+}
+
+.edit-pro-input-div input:focus {
+  outline: 2px solid black;
 }
 
 html,

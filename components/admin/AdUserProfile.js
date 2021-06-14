@@ -24,6 +24,7 @@ const AdUserProfile = ({ user, edit, onEdit, cancel, editUserRole }) => {
 				}}>
 				Email: {user.email}
 			</p>
+			<p>Phone: {user.phone || 'Not Set'}</p>
 			<p>Role: {user.role}</p>
 			{profile.loading ? (
 				<ButtonLoading />

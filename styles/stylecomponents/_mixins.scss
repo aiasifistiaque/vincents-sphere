@@ -5,6 +5,13 @@
 	padding: 0;
 }
 
+@mixin btn-text-unselect {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 @mixin btn-general {
 	display: inline-flex;
 	min-width: 150px;
@@ -15,6 +22,10 @@
 	border-radius: 4px;
 	cursor: pointer;
 	color: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
 	p {
 		margin: 0;

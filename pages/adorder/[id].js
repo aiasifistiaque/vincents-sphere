@@ -8,6 +8,7 @@ import OrderEdit from '../../components/order/OrderEdit';
 import axios from 'axios';
 import { api } from '../../constants';
 import getAnOrder from '../../store/actions/orderActions/getAnOrder';
+import { TextButton } from '../../components';
 
 const adorder = () => {
 	const dispatch = useDispatch();
@@ -106,7 +107,21 @@ const adorder = () => {
 							saveEdit={editOrder}
 						/>
 					) : (
-						<EditButton setEdit={() => setEdit(true)} />
+						<>
+							<EditButton setEdit={() => setEdit(true)} />
+							<div
+								style={{
+									display: 'flex',
+									margin: '0 1em',
+
+									justifyContent: 'flex-end',
+								}}>
+								<TextButton
+									onClick={() => router.push(`/aduser/${order.user._id}`)}>
+									Customer Details
+								</TextButton>
+							</div>
+						</>
 					)}
 				</div>
 			</div>

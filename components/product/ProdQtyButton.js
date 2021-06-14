@@ -23,9 +23,17 @@ const ProdQtyButton = ({ children, product }) => {
 			<Center>
 				<p>{children}</p>
 			</Center>
+
 			<div
-				className='v-plus-minus'
-				onClick={() => dispatch(addToCart(product, children + 1))}>
+				className={
+					children >= product.countInStock
+						? 'v-plus-minus-disabled'
+						: 'v-plus-minus'
+				}
+				onClick={() => {
+					children < product.countInStock &&
+						dispatch(addToCart(product, children + 1));
+				}}>
 				<p>+</p>
 			</div>
 		</div>

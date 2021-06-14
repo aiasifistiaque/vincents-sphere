@@ -37,7 +37,7 @@ const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
 			{product.countInStock == 0 ? (
 				<p style={{ color: 'crimson' }}>Out of stock</p>
 			) : (
-				<p>Available In Stock</p>
+				<p>In Stock: {product.countInStock}</p>
 			)}
 
 			<h4 style={{ margin: '1em 0' }}>
