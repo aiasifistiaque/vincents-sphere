@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Footer from './footer/Footer';
 import BNavbar from './nav/BNavbar';
@@ -8,12 +8,32 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 const Page = ({ children, title }) => {
 	const [searchActive, setSearchActive] = useState(false);
 
+	useEffect(() => {
+		window.fbAsyncInit = function () {
+			FB.init({
+				xfbml: true,
+				version: 'v6.0',
+			});
+		};
+
+		(function (d, s, id) {
+			var js,
+				fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		})(document, 'script', 'facebook-jssdk');
+	}, []);
+
 	return (
 		<div>
 			<Head>
 				<title>{title || "Vincent's Sphere"}</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
+
 			<BNavbar
 				searchActive={searchActive}
 				searchOn={() => setSearchActive(true)}
@@ -24,6 +44,22 @@ const Page = ({ children, title }) => {
 
 			<main onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>
+				<div
+					style={{
+						display: 'flex',
+						flex: 1,
+						alignSelf: 'flex-end',
+						padding: '0 4%',
+						justifyContent: 'flex-end',
+					}}>
+					{typeof window !== 'undefiend' && (
+						<MessengerCustomerChat
+							pageId='110218757538456'
+							appId='777093836325354'
+							htmlRef='https://vincentsphere.com'
+						/>
+					)}
+				</div>
 
 				<Footer />
 			</main>

@@ -48,13 +48,6 @@ const Story = () => {
 				<LongButton onClick={() => router.push('/about')}>
 					Learn More
 				</LongButton>
-				<div style={{ backgroundColor: 'red' }}>
-					<MessengerCustomerChat
-						pageId='110218757538456'
-						appId='777093836325354'
-						htmlRef={loc}
-					/>
-				</div>
 			</div>
 		</div>
 	);
