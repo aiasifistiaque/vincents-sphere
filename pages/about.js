@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Page from '../components/Page';
-import { teamMembers } from '../data/aboutData';
+import { teamMembers, teamMembersSmall } from '../data/aboutData';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -42,9 +42,22 @@ const about = () => {
 };
 
 const OurTeam = () => {
+	const [items, setItem] = useState([]);
+	useEffect(() => {
+		window != 'undefiner' && window.innerWidth < 1200
+			? setItem(teamMembersSmall)
+			: setItem(teamMembers);
+
+		function handleResize() {
+			window.innerWidth < 1200
+				? setItem(teamMembersSmall)
+				: setItem(teamMembers);
+		}
+		window.addEventListener('resize', handleResize);
+	}, []);
 	return (
 		<div className='about-team'>
-			{teamMembers.map((item, i) => (
+			{items.map((item, i) => (
 				<div className='team-container' key={i}>
 					<div className='team-image'>
 						<Image
