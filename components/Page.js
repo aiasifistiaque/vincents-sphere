@@ -20,11 +20,6 @@ const Page = ({ children, title }) => {
 				searchOff={() => setSearchActive(false)}
 			/>
 
-			<MessengerCustomerChat
-				pageId='110218757538456'
-				appId='777093836325354'
-				htmlRef='Vincent'
-			/>
 			<Search active={searchActive} off={() => setSearchActive(false)} />
 
 			<main onClick={() => setSearchActive(false)}>

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { LongButton } from '../index';
 import { useRouter } from 'next/router';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Story = () => {
+	const [loc, setLoc] = useState('');
+	useEffect(() => {
+		setLoc(window.location.pathname);
+	}, []);
 	const router = useRouter();
 	return (
 		<div className='story-section'>
@@ -43,6 +48,13 @@ const Story = () => {
 				<LongButton onClick={() => router.push('/about')}>
 					Learn More
 				</LongButton>
+				<div style={{ backgroundColor: 'red' }}>
+					<MessengerCustomerChat
+						pageId='110218757538456'
+						appId='777093836325354'
+						htmlRef={loc}
+					/>
+				</div>
 			</div>
 		</div>
 	);
