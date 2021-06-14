@@ -1,48 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { LongButton } from '..';
-import axios from 'axios';
-import { api } from '../../constants';
 
-const ReviewInputs = ({ product }) => {
-	console.log(product);
-	const [value, setValue] = useState('');
-	const [star, setStar] = useState(1);
-	const [loading, setLoading] = useState(false);
-	const [success, setSuccess] = useState(false);
-	const [alreadyReviewed, setAlreadyReviewed] = useState(false);
-
-	const postReview = () => {
-		if (loading) return;
-		setLoading(true);
-		const token = JSON.parse(localStorage.getItem('vincenttoken'));
-
-		const config = {
-			headers: {
-				'Content-Type': 'application/json',
-				authorization: token,
-			},
-		};
-
-		axios
-			.put(
-				api.review,
-				{ rating: star, comment: value, id: product._id },
-				config
-			)
-			.then(res => {
-				console.log(res);
-				setSuccess(true);
-				setLoading(false);
-			})
-			.catch(e => {
-				console.log(e.response.data);
-				if (e.response.data == 'Product Already Reviewed') {
-					setAlreadyReviewed(true);
-				}
-				setLoading(false);
-			});
-	};
-
+const ReviewInputs = ({
+	product,
+	value,
+	loading,
+	success,
+	alreadyReviewed,
+	postReview,
+	star,
+	setStar,
+	setValue,
+}) => {
 	if (success)
 		return (
 			<div className='review-posted'>

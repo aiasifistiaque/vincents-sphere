@@ -34,6 +34,12 @@ const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
 				<ThisText>Sub Category:{product.subCategory}</ThisText>
 			</div>
 
+			{product.countInStock == 0 ? (
+				<p style={{ color: 'crimson' }}>Out of stock</p>
+			) : (
+				<p>Available In Stock</p>
+			)}
+
 			<h4 style={{ margin: '1em 0' }}>
 				Price: {general.takaSymbol}
 				{product.price}
