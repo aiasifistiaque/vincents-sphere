@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Page from '../components/Page';
 import Hero from '../components/home/Hero';
 import Sections from '../components/home/Sections';
@@ -7,18 +7,8 @@ import { categories } from '../constants';
 import GiftSectionUpdated from '../components/home/GiftSectionUpdated';
 import Story from '../components/home/Story';
 import SectionTitle from '../components/home/SectionTitle';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 export default function Home() {
-	const [wnd, setInd] = useState('');
-	const [w, setw] = useState();
-	useEffect(() => {
-		function handleload() {
-			typeof window != 'undefined' && setInd('windowset');
-			typeof window != 'undefined' && setw(window.location.pathname);
-		}
-		window.addEventListener('load', handleload);
-	}, []);
 	return (
 		<Page>
 			<Hero />
