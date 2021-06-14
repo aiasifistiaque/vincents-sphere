@@ -8,7 +8,7 @@ const domain = '';
 const frontDev = 'https://vincents-sphere.vercel.app/';
 
 export const frontend = frontDev;
-const server = dev;
+const server = backend;
 
 export const sizes = {
 	displayCard: {
