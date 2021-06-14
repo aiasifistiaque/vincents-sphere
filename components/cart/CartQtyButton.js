@@ -17,6 +17,8 @@ const CartQtyButton = ({ product, children }) => {
 		countInStock: product.countInStock,
 	};
 
+	if (product == undefined) return null;
+
 	return (
 		<div className='cart-qty-button'>
 			{children > 1 && (

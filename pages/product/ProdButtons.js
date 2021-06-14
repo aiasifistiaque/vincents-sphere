@@ -6,12 +6,7 @@ import {
 } from '../../components/product/ProdButtons';
 
 const ProdButtons = ({ itemPresent, addLoading, item, product }) => {
-	if (addLoading)
-		return (
-			<div className='prod-page-button-container'>
-				<p>loading</p>
-			</div>
-		);
+	if (product == undefined) return null;
 	return (
 		<div className='prod-page-button-container'>
 			{product.countInStock > 0 ? (
