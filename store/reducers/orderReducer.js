@@ -1,7 +1,7 @@
 //
 
 export const getAllOrdersReducer = (
-	state = { orders: [], count: 0 },
+	state = { orders: [], count: 0, loading: true },
 	action
 ) => {
 	switch (action.type) {
@@ -22,7 +22,7 @@ export const getAllOrdersReducer = (
 };
 
 export const getUserOrderReducer = (
-	state = { orders: [], count: 0 },
+	state = { orders: [], count: 0, loading: true },
 	action
 ) => {
 	switch (action.type) {
@@ -42,7 +42,10 @@ export const getUserOrderReducer = (
 	}
 };
 
-export const getAnOrderReducer = (state = { order: {} }, action) => {
+export const getAnOrderReducer = (
+	state = { order: {}, loading: true },
+	action
+) => {
 	switch (action.type) {
 		case 'GET_AN_ORDER_REQUEST':
 			return { loading: true, order: {} };
@@ -56,7 +59,10 @@ export const getAnOrderReducer = (state = { order: {} }, action) => {
 	}
 };
 
-export const adminSearchOrderReducer = (state = { order: {} }, action) => {
+export const adminSearchOrderReducer = (
+	state = { order: {}, loading: true },
+	action
+) => {
 	switch (action.type) {
 		case 'ADMIN_SEARCH_ORDER_REQUEST':
 			return { loading: true, order: {} };

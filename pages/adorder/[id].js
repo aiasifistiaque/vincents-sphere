@@ -9,6 +9,8 @@ import axios from 'axios';
 import { api } from '../../constants';
 import getAnOrder from '../../store/actions/orderActions/getAnOrder';
 import { TextButton } from '../../components';
+import Link from 'next/link';
+import ProductWrapper from '../../components/product/ProductWrapper';
 
 const adorder = () => {
 	const dispatch = useDispatch();
@@ -116,10 +118,12 @@ const adorder = () => {
 
 									justifyContent: 'flex-end',
 								}}>
-								<TextButton
-									onClick={() => router.push(`/aduser/${order.user._id}`)}>
-									Customer Details
-								</TextButton>
+								<Link href={`/aduser/${order.user._id}`} passHref>
+									<ProductWrapper>
+										{' '}
+										<TextButton onClick={() => {}}>Customer Details</TextButton>
+									</ProductWrapper>
+								</Link>
 							</div>
 						</>
 					)}

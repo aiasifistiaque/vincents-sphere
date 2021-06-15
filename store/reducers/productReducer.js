@@ -1,12 +1,12 @@
 //
 
 export const getAllProductsReducer = (
-	state = { products: [], count: 0 },
+	state = { products: [], count: 0, loading: true },
 	action
 ) => {
 	switch (action.type) {
 		case 'GET_ALL_PRODUCTS_REQUEST':
-			return { loading: true, products: [], count: 0 };
+			return { loading: true, products: [], count: 0, loading: true };
 		case 'GET_ALL_PRODUCTS_SUCCESS':
 			return {
 				loading: false,
@@ -21,7 +21,10 @@ export const getAllProductsReducer = (
 	}
 };
 
-export const getAProductReducer = (state = { product: {} }, action) => {
+export const getAProductReducer = (
+	state = { product: {}, loading: true },
+	action
+) => {
 	switch (action.type) {
 		case 'GET_A_PRODUCT_REQUEST':
 			return { loading: true, product: {} };
@@ -35,7 +38,10 @@ export const getAProductReducer = (state = { product: {} }, action) => {
 	}
 };
 
-export const adminSearchProductReducer = (state = { product: {} }, action) => {
+export const adminSearchProductReducer = (
+	state = { product: {}, loading: true },
+	action
+) => {
 	switch (action.type) {
 		case 'ADMIN_SEARCH_PRODUCT_REQUEST':
 			return { loading: true, product: {} };
@@ -49,7 +55,10 @@ export const adminSearchProductReducer = (state = { product: {} }, action) => {
 	}
 };
 
-export const getCategoryProductReducer = (state = { products: [] }, action) => {
+export const getCategoryProductReducer = (
+	state = { products: [], loading: true },
+	action
+) => {
 	switch (action.type) {
 		case 'GET_CATEGORY_PRODUCT_REQUEST':
 			return { loading: true, products: [] };
