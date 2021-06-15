@@ -59,3 +59,27 @@ export const ErrorText = ({ children }) => {
 		</div>
 	);
 };
+
+export const SuccessText = ({ children }) => {
+	return (
+		<div
+			style={{
+				backgroundColor: 'rgba(46,139,87,.1)',
+				padding: '10px 20px',
+				marginBottom: '10px',
+				maxWidth: 300,
+			}}>
+			<p
+				style={{
+					margin: 0,
+					padding: 0,
+					color: 'seagreen',
+					fontSize: '.7em',
+					fontWeight: '700',
+					textTransform: 'capitalize',
+				}}>
+				{children}
+			</p>
+		</div>
+	);
+};

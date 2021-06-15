@@ -55,12 +55,17 @@ export const api = {
 	register: `${server}/register`,
 	order: `${server}/order`,
 	userorder: `${server}/order/userorder`,
+
 	allusers: `${server}/profile/getallusers`,
 	profile: `${server}/profile`,
 	anUser: `${server}/profile/getanuser`,
 	userByMail: `${server}/profile/getuserbymail`,
 	editRole: `${server}/profile/editrole`,
 	editUser: `${server}/profile/edituser`,
+	sendOtp: `${server}/profile/sendotp`,
+	verifyOtp: `${server}/profile/verifyotp`,
+	resetPassword: `${server}/profile/resetpassword`,
+	changePassword: `${server}/profile/changePassword`,
 
 	getAllUsers: `${server}/profile/getallusers`,
 	createProduct: `${server}/products/createproduct`,

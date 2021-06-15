@@ -7,6 +7,7 @@ import { LongButton } from '../components';
 import axios from 'axios';
 import { api } from '../constants';
 import { useRouter } from 'next/router';
+import AdminPanelButton from '../components/buttons/AdminPanelButton';
 
 const editprofile = () => {
 	const { user, loading, error } = useGetProfile();
@@ -56,6 +57,19 @@ const editprofile = () => {
 		<Page>
 			<div className='edit-profile'>
 				<div className='edit-pro-input-div'>
+					<div
+						style={{
+							justifyContent: 'space-between',
+							display: 'flex',
+							alignItems: 'center',
+							marginBottom: '1em',
+						}}>
+						<h4>Edit Profile</h4>
+						<AdminPanelButton href='/editpassword'>
+							Change Password
+						</AdminPanelButton>
+					</div>
+
 					<label>Name</label>
 					<input
 						type='text'

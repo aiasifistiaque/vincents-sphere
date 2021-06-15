@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import userLoginAction from '../store/actions/userActions/userLoginAction';
 import ButtonLoading from '../components/ButtonLoading';
 import AgreeTerms from '../components/AgreeTerms';
-import { ErrorText } from '../components';
+import { ErrorText, TextButton } from '../components';
 import validateEmail from '../functions/validateEmail';
 
 const login = () => {
@@ -90,6 +90,14 @@ const login = () => {
 						onChange={e => setPassword(e.target.value)}
 						onKeyPress={e => handleKeyPress(e)}
 					/>
+
+					<a
+						href='/forgotpassword'
+						className='forgot-password'
+						style={{ textDecorationLine: 'none' }}>
+						Forgot Password?
+					</a>
+
 					<div className='login-button' onClick={loginButtonPressed}>
 						{tokenSelector.loading ? <ButtonLoading /> : <p>Login</p>}
 					</div>

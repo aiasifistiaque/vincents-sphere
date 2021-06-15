@@ -183,3 +183,72 @@ a {
 		}
 	}
 }
+
+.reset-password {
+	padding: 15vh 10%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	flex-wrap: wrap;
+	background-color: white;
+	flex-direction: column;
+}
+
+.edit-reset-input {
+	margin: 1em 0;
+	//background-color: rgba(crimson, 0.1);
+	display: flex;
+	flex-direction: column;
+
+	label {
+		margin-right: 1em;
+	}
+
+	input {
+		width: 20%;
+		min-width: 600px;
+		margin-bottom: 0;
+		height: 50px;
+		padding: 10px 20px;
+		background-color: #f1f1f1;
+		border: none;
+		letter-spacing: 2px;
+		&:focus {
+			outline: 2px solid black;
+		}
+		@media screen and (max-width: $medium-screen) {
+			min-width: 500px;
+		}
+
+		@media screen and (max-width: $small-screen) {
+			min-width: 450px;
+		}
+
+		@media screen and (max-width: $x-small-screen) {
+			min-width: 300px;
+		}
+		@media screen and (max-width: 320px) {
+			min-width: 250px;
+		}
+	}
+}
+
+.ppp {
+	min-width: 600px;
+	margin-bottom: 1em;
+	@media screen and (max-width: $medium-screen) {
+		min-width: 500px;
+	}
+
+	@media screen and (max-width: $small-screen) {
+		min-width: 450px;
+	}
+
+	@media screen and (max-width: $x-small-screen) {
+		min-width: 300px;
+	}
+	@media screen and (max-width: 320px) {
+		min-width: 250px;
+	}
+}
