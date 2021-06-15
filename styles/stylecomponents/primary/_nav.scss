@@ -19,6 +19,7 @@ $nav-item-padding: 0.4em 1em;
 	display: flex;
 	color: whitesmoke;
 	z-index: 19;
+	//padding: 2em 0;
 	@media only screen and (max-width: $medium-screen) {
 		min-height: 4em;
 	}
@@ -82,8 +83,10 @@ $nav-item-padding: 0.4em 1em;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	//flex: 1;
+	flex: 1;
 	margin-left: 4.5%;
+	//min-height: 2em;
+	//background-color: blue;
 	cursor: pointer;
 	@media only screen and(max-width:$medium-screen) {
 		padding: 5px 0;
