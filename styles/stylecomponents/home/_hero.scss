@@ -76,9 +76,18 @@
 			letter-spacing: 2px;
 		}
 
-		&:hover {
-			background-color: whitesmoke;
-			color: black;
+		@media only screen and(min-width:$large-screen) {
+			&:hover {
+				background-color: whitesmoke;
+				color: black;
+			}
+		}
+
+		@media only screen and (max-width: $large-screen) {
+			transition: 0.2s;
+			&:active {
+				background-color: #d5d5d5;
+			}
 		}
 	}
 }

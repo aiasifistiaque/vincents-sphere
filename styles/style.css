@@ -107,6 +107,7 @@ div {
   display: -ms-flexbox;
   display: flex;
   color: whitesmoke;
+  z-index: 19;
 }
 
 @media only screen and (max-width: 768px) {
@@ -126,6 +127,12 @@ div {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+  .v-nav {
+    padding: 1em 0;
+  }
 }
 
 .nav-brand-item {
@@ -165,6 +172,12 @@ div {
   border-bottom: 1px solid white;
 }
 
+@media only screen and (max-width: 768px) {
+  .v-navitem {
+    margin: 1em 0;
+  }
+}
+
 .nav-dd {
   background-color: black;
   padding: 2px 0;
@@ -176,6 +189,12 @@ div {
 
 .nav-dd:hover {
   border-bottom: 1px solid white;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-dd {
+    margin: 1em 0;
+  }
 }
 
 .nav-dd-item {
@@ -197,11 +216,14 @@ div {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   margin-left: 4.5%;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-brand-logo {
+    padding: 5px 0;
+  }
 }
 
 .nav-item-custom {
@@ -382,9 +404,21 @@ div {
   letter-spacing: 2px;
 }
 
-.home-hero .hero-action-button:hover {
-  background-color: whitesmoke;
-  color: black;
+@media only screen and (min-width: 992px) {
+  .home-hero .hero-action-button:hover {
+    background-color: whitesmoke;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .home-hero .hero-action-button {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .home-hero .hero-action-button:active {
+    background-color: #d5d5d5;
+  }
 }
 
 .section-arrows {
@@ -1572,9 +1606,21 @@ div {
           box-sizing: border-box;
 }
 
-.login-button:hover {
-  background-color: #e5e5e5;
-  color: black;
+@media only screen and (min-width: 992px) {
+  .login-button:hover {
+    background-color: #d5d5d5;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .login-button {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .login-button:active {
+    background-color: #a5a5a5;
+  }
 }
 
 .login-button p {
@@ -1614,9 +1660,21 @@ div {
   margin: 0;
 }
 
-.long-button:hover {
-  background-color: #e5e5e5;
-  color: black;
+@media only screen and (min-width: 992px) {
+  .long-button:hover {
+    background-color: #d5d5d5;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .long-button {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .long-button:active {
+    background-color: #a5a5a5;
+  }
 }
 
 .long-button p {
@@ -1677,9 +1735,21 @@ div {
           box-sizing: border-box;
 }
 
-.black-button:hover {
-  background-color: #e5e5e5;
-  color: black;
+@media only screen and (min-width: 992px) {
+  .black-button:hover {
+    background-color: #d5d5d5;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .black-button {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .black-button:active {
+    background-color: #a5a5a5;
+  }
 }
 
 .black-button p {
@@ -1718,9 +1788,21 @@ div {
   background-color: crimson;
 }
 
-.cancel-button:hover {
-  background-color: #e5e5e5;
-  color: black;
+@media only screen and (min-width: 992px) {
+  .cancel-button:hover {
+    background-color: #d5d5d5;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .cancel-button {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .cancel-button:active {
+    background-color: #a5a5a5;
+  }
 }
 
 .cancel-button p {
@@ -3526,7 +3608,6 @@ div {
   transition: 0.2s;
   cursor: pointer;
   margin: 1em 4% 10vh 5%;
-  border: 2px solid black;
   color: whitesmoke;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -3536,9 +3617,18 @@ div {
           justify-content: center;
 }
 
-.load-more-button:hover {
-  background-color: white;
-  color: black;
+@media only screen and (min-width: 992px) {
+  .load-more-button:hover {
+    background-color: #d5d5d5;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .load-more-button:active {
+    background-color: #d5d5d5;
+    opacity: 0.5;
+  }
 }
 
 .load-more-button p {

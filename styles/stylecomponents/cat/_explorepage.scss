@@ -68,15 +68,25 @@
 	transition: 0.2s;
 	cursor: pointer;
 	margin: 1em 4% 10vh 5%;
-	border: 2px solid black;
+	//border: 2px solid black;
 	color: whitesmoke;
 	align-items: center;
 	justify-content: center;
 
-	&:hover {
-		background-color: white;
-		color: black;
+	@media only screen and(min-width:$large-screen) {
+		&:hover {
+			background-color: #d5d5d5;
+			color: black;
+		}
 	}
+
+	@media only screen and (max-width: $large-screen) {
+		&:active {
+			background-color: #d5d5d5;
+			opacity: 0.5;
+		}
+	}
+
 	p {
 		padding: 0;
 		margin: 0;

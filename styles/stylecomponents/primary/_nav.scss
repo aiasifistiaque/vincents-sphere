@@ -14,11 +14,11 @@ $nav-item-padding: 0.4em 1em;
 .v-navbar {
 	background-color: black;
 	align-items: center;
-	//padding: 0 3%;
 	height: 10vh;
 	min-height: 4em;
 	display: flex;
 	color: whitesmoke;
+	z-index: 19;
 	@media only screen and (max-width: $medium-screen) {
 		min-height: 4em;
 	}
@@ -29,6 +29,10 @@ $nav-item-padding: 0.4em 1em;
 	flex: 4;
 	justify-content: space-between;
 	color: whitesmoke;
+
+	@media only screen and (max-width: $medium-screen) {
+		padding: 1em 0;
+	}
 }
 
 .nav-brand-item {
@@ -51,12 +55,18 @@ $nav-item-padding: 0.4em 1em;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	@media only screen and(max-width:$medium-screen) {
+		margin: 1em 0;
+	}
 }
 
 .nav-dd {
 	background-color: $color-black;
 	padding: 2px 0;
 	@include nav-item-hover;
+	@media only screen and(max-width:$medium-screen) {
+		margin: 1em 0;
+	}
 }
 
 .nav-dd-item {
@@ -72,15 +82,19 @@ $nav-item-padding: 0.4em 1em;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	flex: 1;
+	//flex: 1;
 	margin-left: 4.5%;
 	cursor: pointer;
+	@media only screen and(max-width:$medium-screen) {
+		padding: 5px 0;
+	}
 }
 
 .nav-item-custom {
 	display: flex;
 	color: $color-light;
 	margin: 0 0.2em;
+
 	padding: $nav-item-padding;
 	cursor: pointer;
 	transition: 0.2s;

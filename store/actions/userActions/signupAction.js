@@ -33,8 +33,8 @@ const signupAction = (name, email, password) => async dispatch => {
 		dispatch({
 			type: 'USER_REGISTER_FAIL',
 			payload:
-				error.response && error.response.data.message
-					? error.response.data.message
+				error.response && error.response.data
+					? error.response.data
 					: error.message,
 		});
 	}

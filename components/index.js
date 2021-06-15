@@ -43,6 +43,7 @@ export const ErrorText = ({ children }) => {
 				backgroundColor: 'rgba(200,20,60,.1)',
 				padding: '10px 20px',
 				marginBottom: '10px',
+				maxWidth: 300,
 			}}>
 			<p
 				style={{
@@ -51,6 +52,7 @@ export const ErrorText = ({ children }) => {
 					color: 'crimson',
 					fontSize: '.7em',
 					fontWeight: '700',
+					textTransform: 'capitalize',
 				}}>
 				{children}
 			</p>

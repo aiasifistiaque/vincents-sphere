@@ -96,11 +96,7 @@ const login = () => {
 					{validationError ? (
 						<ErrorText>{validationErrorText}</ErrorText>
 					) : (
-						tokenSelector.error && (
-							<ErrorText>
-								{tokenSelector.error && 'Email or Password is incorrect'}
-							</ErrorText>
-						)
+						tokenSelector.error && <ErrorText>{tokenSelector.error}</ErrorText>
 					)}
 					<AgreeTerms />
 					<br />
