@@ -38,15 +38,22 @@ export const CancelButton = ({ onClick, children, style }) => {
 
 export const ErrorText = ({ children }) => {
 	return (
-		<p
+		<div
 			style={{
-				margin: 0,
-				padding: 0,
-				color: 'crimson',
-				fontSize: '.7em',
-				fontWeight: '700',
+				backgroundColor: 'rgba(200,20,60,.1)',
+				padding: '10px 20px',
+				marginBottom: '10px',
 			}}>
-			{children}
-		</p>
+			<p
+				style={{
+					margin: 0,
+					padding: 0,
+					color: 'crimson',
+					fontSize: '.7em',
+					fontWeight: '700',
+				}}>
+				{children}
+			</p>
+		</div>
 	);
 };

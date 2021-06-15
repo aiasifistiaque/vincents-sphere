@@ -1,5 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import ProductWrapper from '../product/ProductWrapper';
 
 const GiftProductUpdated = ({ product }) => {
 	const router = useRouter();
@@ -9,11 +11,13 @@ const GiftProductUpdated = ({ product }) => {
 			style={{
 				backgroundImage: `url('${product.image}')`,
 			}}>
-			<div
-				onClick={() => router.push('/giftbox')}
-				className='new-gift-card-text'>
-				<h2>{product.name} Gift Box</h2>
-			</div>
+			<Link href={`/giftbox?image=${product.image}`} passHref>
+				<ProductWrapper>
+					<div className='new-gift-card-text'>
+						<h2>{product.name} Gift Box</h2>
+					</div>
+				</ProductWrapper>
+			</Link>
 		</div>
 	);
 };

@@ -41,7 +41,7 @@ const MyOrdersUpdated = () => {
 	}, [orders]);
 
 	if (pageLoading) return <Loading />;
-	else if (error) return <NetworkError />;
+	if (error) return <NetworkError />;
 	else
 		return (
 			<div className='my-orders'>

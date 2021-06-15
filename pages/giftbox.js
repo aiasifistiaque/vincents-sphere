@@ -3,14 +3,17 @@ import { ProductPage } from '../components/Page';
 import Image from 'next/image';
 import { LongButton } from '../components';
 import { giftBoxes } from '../data/giftData';
+import { useRouter } from 'next/router';
 
 const giftbox = () => {
+	const router = useRouter();
+	const image = router.query.image;
 	return (
 		<ProductPage>
 			<div className='page-product'>
 				<div className='product-image'>
 					<Image
-						src='/giftbox/Womens Day Special.jpeg'
+						src={router.query.image || '/giftbox/Womens Day Special.jpeg'}
 						alt="Women's Day Special"
 						width={600}
 						height={500}

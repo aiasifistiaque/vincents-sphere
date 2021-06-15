@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import userLoginAction from '../store/actions/userActions/userLoginAction';
 import ButtonLoading from '../components/ButtonLoading';
 import AgreeTerms from '../components/AgreeTerms';
+import { ErrorText } from '../components';
+import validateEmail from '../functions/validateEmail';
 
 const login = () => {
 	const router = useRouter();
@@ -23,6 +25,8 @@ const login = () => {
 		if (isLoggedIn) {
 			if (router.query.page == 'cart') {
 				Router.replace('/cart');
+			} else if ((router.query.page = 'product')) {
+				Router.replace(`/product/${router.query.id}`);
 			}
 			Router.replace('/');
 		}
@@ -31,20 +35,34 @@ const login = () => {
 	const dispatch = useDispatch();
 	const tokenSelector = useSelector(state => state.token);
 
+	const handleKeyPress = e => {
+		if (e.code === 'Enter') {
+			loginButtonPressed();
+		}
+	};
+
 	const loginButtonPressed = () => {
+		const emailValid = validateEmail(email);
 		setValidationError(false);
-		if (email.length < 5) {
+		if (email.length < 1) {
 			setValidationError(true);
-			setValidationErrorText('email is not valid');
+			setValidationErrorText('Email is Required');
+		} else if (!emailValid) {
+			setValidationError(true);
+			setValidationErrorText('Email is incorrectly formatted');
 		} else if (password.length < 1) {
 			setValidationError(true);
-			setValidationErrorText('password is required');
+			setValidationErrorText('Passowrd is required');
 		} else {
 			dispatch(
 				userLoginAction(
 					email,
 					password,
-					router.query.page == 'cart' ? '/cart' : '/'
+					router.query.page == 'cart'
+						? '/cart'
+						: router.query.page == 'product'
+						? `/product/${router.query.id}`
+						: '/'
 				)
 			);
 			setLoading(tokenSelector.loading);
@@ -62,6 +80,7 @@ const login = () => {
 						placeholder='email *'
 						value={email}
 						onChange={e => setEmail(e.target.value)}
+						onKeyPress={e => handleKeyPress(e)}
 					/>
 					<label>Password</label>
 					<input
@@ -69,18 +88,22 @@ const login = () => {
 						placeholder='password *'
 						value={password}
 						onChange={e => setPassword(e.target.value)}
+						onKeyPress={e => handleKeyPress(e)}
 					/>
 					<div className='login-button' onClick={loginButtonPressed}>
 						{tokenSelector.loading ? <ButtonLoading /> : <p>Login</p>}
 					</div>
-					<AgreeTerms />
 					{validationError ? (
-						<p style={{ color: 'crimson' }}>{validationErrorText}</p>
+						<ErrorText>{validationErrorText}</ErrorText>
 					) : (
-						<p style={{ color: 'crimson' }}>
-							{tokenSelector.error && 'Email/Password invalid'}
-						</p>
+						tokenSelector.error && (
+							<ErrorText>
+								{tokenSelector.error && 'Email or Password is incorrect'}
+							</ErrorText>
+						)
 					)}
+					<AgreeTerms />
+					<br />
 
 					<p>
 						New Customer?{' '}

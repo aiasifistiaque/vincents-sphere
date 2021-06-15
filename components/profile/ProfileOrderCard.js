@@ -14,7 +14,7 @@ const ProfileOrderCard = ({ order }) => {
 			<p>Date: {getUnixToDate(order.createdAt)}</p>
 			<p>Total: ৳{order.totalPrice}</p>
 			<p>Paid: {order.isPaid ? 'yes' : 'no'}</p>
-			<p>Delivered: {order.isDelivered ? 'yes' : 'no'}</p>
+			<p style={{ textTransform: 'capitalize' }}>Status: {order.status}</p>
 
 			<AdminPanelButton href={`/order/${order._id}`}>
 				View Details

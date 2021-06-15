@@ -23,7 +23,11 @@ const NewReview = ({
 		return (
 			<div>
 				<p>log in to write a review</p>
-				<LongButton onClick={() => router.push('/login')}>Log in</LongButton>
+
+				<LongButton
+					onClick={() => router.push(`/login?page=product&id=${product._id}`)}>
+					Log in
+				</LongButton>
 			</div>
 		);
 	} else

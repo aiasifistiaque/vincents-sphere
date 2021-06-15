@@ -17,16 +17,53 @@ const signup = () => {
 	const [validationError, setValidationError] = useState(false);
 	const [validationErrorText, setValidationErrorText] = useState('');
 
+	function validateEmail(email) {
+		var re = /\S+@\S+\.\S+/;
+		return re.test(email);
+	}
+
+	const handleKeyPress = e => {
+		console.log(e);
+		if (e.code === 'Enter') {
+			registerUser();
+		}
+	};
+
 	const registerUser = () => {
 		setValidationError(false);
 
-		if (password != confirm) {
+		const emailValidate = validateEmail(email);
+
+		if (name.length < 1) {
+			setValidationErrorText('Name is Required');
+			setValidationError(true);
+		} else if (name.length < 4) {
+			setValidationErrorText('Name must be 4 characters long');
+			setValidationError(true);
+		} else if (email.length < 1) {
+			setValidationErrorText('Email is Required');
+			setValidationError(true);
+		} else if (!emailValidate) {
+			setValidationError(true);
+			setValidationErrorText('Email is incorrectly formatted');
+		} else if (password.length < 1) {
+			setValidationErrorText('Password is Required');
+			setValidationError(true);
+		} else if (password.length < 1) {
+			setValidationError(true);
+			setValidationErrorText('Passwords is required');
+			return;
+		} else if (password.length < 7) {
+			setValidationError(true);
+			setValidationErrorText('Passwords must be 6 characters long');
+			return;
+		} else if (password != confirm) {
 			setValidationError(true);
 			setValidationErrorText('Passwords do not match');
 			return;
 		} else if (name.length < 4 || email.length < 3 || password.length < 4) {
 			setValidationError(true);
-			setValidationErrorText('there was an error');
+			setValidationErrorText('Incomplete Details');
 		} else {
 			dispatch(signupAction(name, email, password));
 		}
@@ -43,6 +80,7 @@ const signup = () => {
 						placeholder='name'
 						value={name}
 						onChange={e => setName(e.target.value)}
+						onKeyPress={e => handleKeyPress(e)}
 					/>
 					<label>Email</label>
 					<input
@@ -50,6 +88,7 @@ const signup = () => {
 						placeholder='email'
 						value={email}
 						onChange={e => setEmail(e.target.value)}
+						onKeyPress={e => handleKeyPress(e)}
 					/>
 					<label>Password</label>
 					<input
@@ -57,6 +96,7 @@ const signup = () => {
 						placeholder='password'
 						value={password}
 						onChange={e => setPassword(e.target.value)}
+						onKeyPress={e => handleKeyPress(e)}
 					/>
 					<label>Confirm Password</label>
 
@@ -65,6 +105,7 @@ const signup = () => {
 						placeholder='confirm'
 						value={confirm}
 						onChange={e => setConfirm(e.target.value)}
+						onKeyPress={e => handleKeyPress(e)}
 					/>
 
 					{signupSelector.loading ? (
@@ -73,6 +114,13 @@ const signup = () => {
 						<div className='login-button' onClick={registerUser}>
 							<p>Register</p>
 						</div>
+					)}
+					{validationError ? (
+						<ErrorText>{validationErrorText}</ErrorText>
+					) : (
+						signupSelector.error && (
+							<ErrorText>{signupSelector.error}</ErrorText>
+						)
 					)}
 					<AgreeTerms />
 					<br />
@@ -84,11 +132,6 @@ const signup = () => {
 						</Link>
 					</p>
 				</div>
-				{validationError ? (
-					<ErrorText>{validationErrorText}</ErrorText>
-				) : (
-					<ErrorText>{signupSelector.error}</ErrorText>
-				)}
 			</div>
 		</Page>
 	);
