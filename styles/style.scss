@@ -32,6 +32,10 @@ body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	::selection {
+		color: black;
+		background: rgba($color-pink, 0.5);
+	}
 }
 
 a {
