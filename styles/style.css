@@ -1044,6 +1044,7 @@ div {
   letter-spacing: 2px;
   min-width: 300px;
   margin-bottom: 2em;
+  margin-right: 2em;
 }
 
 .footer .footer-address-section h3 {
@@ -1056,6 +1057,11 @@ div {
   font-size: 0.9em;
   margin: 0.5em 0;
   padding: 0;
+}
+
+.footer .footer-address-section a {
+  margin: 0.5em 0;
+  font-size: 0.9em;
 }
 
 .footer .footer-link-section {
@@ -2818,6 +2824,10 @@ div {
 }
 
 .ad-card-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -2953,6 +2963,10 @@ div {
 }
 
 .admin-panel-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -3555,6 +3569,15 @@ div {
   font-size: 1.1em;
   line-height: 1.5em;
   margin-bottom: 1.2em;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-page h3 {
+    font-size: 1.5em;
+  }
+  .about-page p {
+    font-size: 0.9em;
+  }
 }
 
 .about-team {
@@ -4409,6 +4432,7 @@ div {
       align-self: center;
   justify-self: center;
   margin-bottom: 10px;
+  padding: 0 4%;
 }
 
 .edit-pro-input-div input {
@@ -4423,6 +4447,26 @@ div {
 
 .edit-pro-input-div input:focus {
   outline: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .edit-pro-input-div {
+    width: 100%;
+  }
+  .edit-pro-input-div input {
+    width: 100%;
+    min-width: 300px;
+  }
+}
+
+.product-wrapper {
+  color: inherit;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.product-wrapper:hover {
+  color: inherit;
 }
 
 html,

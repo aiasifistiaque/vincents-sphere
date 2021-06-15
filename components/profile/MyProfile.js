@@ -4,6 +4,7 @@ import useGetProfile from '../../hooks/useGetProfile';
 import Loading from '../Loading';
 import { LongButton } from '..';
 import { useRouter } from 'next/router';
+import AdminPanelButton from '../buttons/AdminPanelButton';
 
 const MyProfile = () => {
 	const { user, loading } = useGetProfile();
@@ -23,11 +24,7 @@ const MyProfile = () => {
 			</div>
 
 			{user.role == 'admin' && (
-				<Link href='/admin'>
-					<div className='admin-panel-button'>
-						<p>Go to admin panel</p>
-					</div>
-				</Link>
+				<AdminPanelButton href='/admin'>Go to admin panel</AdminPanelButton>
 			)}
 		</div>
 	);

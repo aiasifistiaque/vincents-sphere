@@ -26,6 +26,7 @@ $profile-page-box-padding: 1.5em;
 }
 
 .admin-panel-button {
+	@include btn-text-unselect;
 	display: inline-flex;
 	//padding: 10px 20px;
 	background-color: whitesmoke;

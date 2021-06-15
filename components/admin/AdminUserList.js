@@ -7,6 +7,7 @@ import {
 	AdminListCard,
 	AText,
 	AButton,
+	ANButton,
 } from './AdminListCard';
 import { getUnixToDate } from '../../functions';
 import getAllUserAction from '../../store/actions/userActions/getAllUserAction';
@@ -79,9 +80,7 @@ const AdminUserList = () => {
 							<AText>{user.email}</AText>
 							<AText>Role: {user.role}</AText>
 							<AText>Joined: {getUnixToDate(user.createdAt)}</AText>
-							<AButton onClick={() => Router.push(`/aduser/${user._id}`)}>
-								Details
-							</AButton>
+							<ANButton href={`/aduser/${user._id}`}>Details</ANButton>
 						</AdminListCard>
 					))}
 					<div>

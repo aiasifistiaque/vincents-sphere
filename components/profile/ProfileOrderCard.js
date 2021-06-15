@@ -1,6 +1,7 @@
 import React from 'react';
 import { getUnixToDate } from '../../functions';
 import { useRouter } from 'next/router';
+import AdminPanelButton from '../buttons/AdminPanelButton';
 
 const ProfileOrderCard = ({ order }) => {
 	const router = useRouter();
@@ -14,11 +15,10 @@ const ProfileOrderCard = ({ order }) => {
 			<p>Total: ৳{order.totalPrice}</p>
 			<p>Paid: {order.isPaid ? 'yes' : 'no'}</p>
 			<p>Delivered: {order.isDelivered ? 'yes' : 'no'}</p>
-			<div
-				className='admin-panel-button'
-				onClick={() => router.push(`/order/${order._id}`)}>
-				<p>View Details</p>
-			</div>
+
+			<AdminPanelButton href={`/order/${order._id}`}>
+				View Details
+			</AdminPanelButton>
 		</div>
 	);
 };

@@ -8,6 +8,7 @@ import {
 	AdminListCard,
 	AText,
 	AButton,
+	ANButton,
 } from './AdminListCard';
 import { getUnixToDate } from '../../functions';
 import { general } from '../../constants';
@@ -101,9 +102,7 @@ const OrderListUpdated = () => {
 							</AText>
 							<AText>{order.isPaid ? 'Paid' : 'Not Paid'}</AText>
 							<AText>{order.status && order.status}</AText>
-							<AButton onClick={() => Router.push(`/adorder/${order._id}`)}>
-								Details
-							</AButton>
+							<ANButton href={`/adorder/${order._id}`}>Details</ANButton>
 						</AdminListCard>
 					))}
 					<div>

@@ -9,6 +9,7 @@ import {
 } from '../../store/actions/cartActions/cartActions';
 import ShareIcon from './ShareIcon';
 import { useRouter } from 'next/router';
+import ProductWrapper from './ProductWrapper';
 
 const CardIconSection = ({ product }) => {
 	const dispatch = useDispatch();
@@ -36,12 +37,15 @@ const CardIconSection = ({ product }) => {
 				/>
 				<ShareIcon className='v-pc-icons' product={product} />
 			</div>
-			<FontAwesomeIcon
-				icon={faChevronRight}
-				height={35}
-				className='v-pc-icons'
-				onClick={() => router.push(`/product/${product._id}`)}
-			/>
+			<Link href={`/product/${product._id}`} passHref>
+				<ProductWrapper>
+					<FontAwesomeIcon
+						icon={faChevronRight}
+						height={35}
+						className='v-pc-icons'
+					/>
+				</ProductWrapper>
+			</Link>
 		</div>
 	);
 };

@@ -10,6 +10,7 @@ import {
 	AdminListContainer,
 	AText,
 	AButton,
+	ANButton,
 } from './AdminListCard';
 import AdminSort from './AdminSort';
 import { productSort } from '../../data/sortData';
@@ -97,11 +98,7 @@ const ProductListUpdated = () => {
 							</AText>
 							<AText>{product.category}</AText>
 							<AText>Stock: {product.countInStock}</AText>
-							<AButton
-								style={{ color: 'dodgerblue', cursor: 'pointer' }}
-								onClick={() => Router.push(`/adproduct/${product._id}`)}>
-								Details
-							</AButton>
+							<ANButton href={`/adproduct/${product._id}`}>Details</ANButton>
 						</AdminListCard>
 					))}
 					<div>

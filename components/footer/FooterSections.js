@@ -8,13 +8,9 @@ const FooterSections = ({ data }) => {
 		<div className='footer-sections'>
 			<h5>{data.header}</h5>
 			{data.items.map((item, i) => (
-				<a
-					key={i}
-					onClick={() => {
-						router.push(item.to || '');
-					}}>
-					{item.name}
-				</a>
+				<Link href={item.to || ''} key={i}>
+					<a>{item.name}</a>
+				</Link>
 			))}
 		</div>
 	);

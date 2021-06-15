@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import ProductWrapper from '../product/ProductWrapper';
 
 export const AdminListCard = ({ children, seen }) => {
 	return (
@@ -27,5 +29,17 @@ export const AButton = ({ children, onClick }) => {
 		<div className='ad-card-button' onClick={onClick}>
 			<p>{children}</p>
 		</div>
+	);
+};
+
+export const ANButton = ({ children, href }) => {
+	return (
+		<Link href={href} passHref>
+			<ProductWrapper>
+				<div className='ad-card-button'>
+					<p>{children}</p>
+				</div>
+			</ProductWrapper>
+		</Link>
 	);
 };
