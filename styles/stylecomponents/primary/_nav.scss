@@ -22,7 +22,9 @@ $nav-item-padding: 0.4em 1em;
 	color: whitesmoke;
 	z-index: 19;
 	//padding: 2em 0;
+
 	@media only screen and (max-width: $medium-screen) {
+		height: 4em;
 		min-height: 4em;
 	}
 }
@@ -94,8 +96,14 @@ $nav-item-padding: 0.4em 1em;
 	//min-height: 2em;
 	//background-color: blue;
 	cursor: pointer;
-	@media only screen and(max-width:$medium-screen) {
+	@media only screen and(max-width:360px) {
+		padding: 3px 0;
+		//background-color: red;
+	}
+
+	@media only screen and(max-width:320px) {
 		padding: 5px 0;
+		//background-color: red;
 	}
 }
 
@@ -148,5 +156,19 @@ $nav-item-padding: 0.4em 1em;
 		border-radius: 500px;
 		color: $color-black;
 		margin-left: 2px;
+	}
+}
+
+.custom-toggler {
+	color: red;
+	border: 1px solid red;
+}
+
+.nav-toggle-v {
+	background-color: red;
+	border: 1px solid red;
+	border: none;
+	&:active:after {
+		border: none;
 	}
 }

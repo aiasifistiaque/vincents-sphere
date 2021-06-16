@@ -8,7 +8,7 @@
 
 .page-product {
 	display: flex;
-	padding: 12vh 4% 0 4%;
+	padding: 12vh $hp 0 $hp;
 	flex: 1;
 	color: $black-color;
 	flex-wrap: wrap;
@@ -29,7 +29,7 @@
 		color: black;
 
 		@media only screen and(min-width:$large-screen) {
-			margin-right: 10%;
+			//margin-right: 10%;
 		}
 
 		@media only screen and(max-width:$medium-screen) {

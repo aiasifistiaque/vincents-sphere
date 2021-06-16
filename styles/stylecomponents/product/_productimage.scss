@@ -6,9 +6,10 @@
 		min-width: 250px;
 	}
 	@media only screen and(max-width:$medium-screen) {
+		$mrg: -$hp - 2;
 		margin: 0;
 		min-width: 100%;
-		margin: -5vh -5% 0 -5%;
+		margin: -5vh $mrg 0 $mrg;
 		overflow: hidden;
 		box-sizing: border-box;
 	}

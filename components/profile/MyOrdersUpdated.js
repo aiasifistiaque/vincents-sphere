@@ -27,7 +27,7 @@ const MyOrdersUpdated = () => {
 		if (page == 0) {
 			setPageLoading(true);
 			setEnd(false);
-			setTotal([]);
+			//setTotal([]);
 		}
 		let newOrders = [];
 		if (total.length > 0 && page > 0) {
@@ -37,7 +37,7 @@ const MyOrdersUpdated = () => {
 			setTotal(orders);
 		}
 		setPageLoading(false);
-		if (!loading && orders.length == 0) setEnd(true);
+		if (!loading && !pageLoading && orders.length == 0) setEnd(true);
 	}, [orders]);
 
 	if (pageLoading) return <Loading />;
@@ -52,18 +52,24 @@ const MyOrdersUpdated = () => {
 				{select == 'Current' ? (
 					<TextButton
 						onClick={() => {
-							setSelect('Past');
 							setTotal([]);
+							setEnd(false);
 							setPageLoading(true);
+							setPage(0);
+							setEnd(false);
+
+							setSelect('Past');
 						}}>
 						View Past Orders
 					</TextButton>
 				) : (
 					<TextButton
 						onClick={() => {
-							setSelect('Current');
 							setTotal([]);
+							setEnd(false);
 							setPageLoading(true);
+							setPage(0);
+							setSelect('Current');
 						}}>
 						View Current Orders
 					</TextButton>

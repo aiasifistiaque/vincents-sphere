@@ -8,7 +8,6 @@ const NavBrand = () => {
 	return (
 		<div className='nav-brand-logo'>
 			<Image
-				src="Vincent's Sphere"
 				src='/vlogo.png'
 				height={50}
 				width={50}

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { categories } from '../../constants';
 import BNavLogged from './BNavLogged';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 import BNavItem from './BNavItem';
 import NavSearch from './NavSearch';
 
@@ -37,8 +37,19 @@ export default function BNavbar({ searchActive, searchOn, searchOff }) {
 
 			<Navbar.Toggle
 				aria-controls='basic-navbar-nav'
-				style={{ margin: '0 4%' }}
-			/>
+				className='nav-toggle-v'
+				style={{
+					color: 'white',
+					alignItems: 'center',
+					justifyContent: 'center',
+					border: 'none',
+					margin: '0 2%',
+				}}>
+				<FontAwesomeIcon
+					icon={faBars}
+					style={{ height: 20, color: 'whitesmoke' }}
+				/>
+			</Navbar.Toggle>
 
 			<Navbar.Collapse id='basic-navbar-nav' className='v-nav-collapse'>
 				<Nav className='v-nav'>
@@ -51,7 +62,9 @@ export default function BNavbar({ searchActive, searchOn, searchOff }) {
 							<NavDropdown.Item
 								key={i}
 								href={`/cat/${cat.name}`}
-								style={{ padding: '10px 15px' }}>
+								style={{
+									padding: '10px 15px',
+								}}>
 								{cat.name}
 							</NavDropdown.Item>
 						))}
