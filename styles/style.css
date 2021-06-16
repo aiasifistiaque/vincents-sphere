@@ -601,7 +601,7 @@ div {
 
 @media only screen and (max-width: 768px) {
   .section-card .section-card-text h6 {
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
 }
 
@@ -630,7 +630,7 @@ div {
 
 @media only screen and (max-width: 768px) {
   .section-card .section-card-text .section-sub-category {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 }
 
