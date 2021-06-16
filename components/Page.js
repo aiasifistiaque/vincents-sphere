@@ -117,11 +117,19 @@ export const ProductPage = ({ children, title, product }) => {
 				searchOn={() => setSearchActive(true)}
 				searchOff={() => setSearchActive(false)}
 			/>
+
+			<MessengerCustomerChat
+				pageId='110218757538456'
+				appId='197156552292706'
+				themeColor='black'
+				//htmlRef={window.location.pathname}
+			/>
 			<Search active={searchActive} off={() => setSearchActive(false)} />
 
 			<MessengerCustomerChat
 				pageId='110218757538456'
 				appId='197156552292706'
+				themeColor='black'
 				//htmlRef={window.location.pathname}
 			/>
 
