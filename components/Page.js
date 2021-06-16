@@ -129,7 +129,7 @@ export const ProductPage = ({ children, title, product }) => {
 			<MessengerCustomerChat
 				pageId='110218757538456'
 				appId='197156552292706'
-				themeColor='black'
+				themeColor='#00000'
 				//htmlRef={window.location.pathname}
 			/>
 
