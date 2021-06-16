@@ -305,7 +305,7 @@ div {
 .home-hero {
   margin-top: 8vh;
   min-height: 90vh;
-  background-image: url("../../../public/hero.jpeg");
+  background-image: url("../../../public/bg2.jpeg");
   background-color: #313234;
   background-position: center;
   background-repeat: no-repeat;
@@ -519,6 +519,7 @@ div {
   background-color: white;
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
   border-radius: 4px;
   -ms-flex-item-align: center;
       align-self: center;
@@ -4705,6 +4706,12 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   background-color: #313234;
+}
+
+.v-contain-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: black;
 }
 
 .opacity-5 {

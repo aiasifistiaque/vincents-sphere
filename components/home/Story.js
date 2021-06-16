@@ -14,7 +14,7 @@ const Story = () => {
 		<div className='story-section'>
 			<div className='story-image'>
 				<Image
-					src='/storyimage.jpg'
+					src='/storyimage.jpeg'
 					height={500}
 					width={500}
 					className='v-image'
