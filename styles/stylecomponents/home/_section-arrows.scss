@@ -16,7 +16,9 @@
 	}
 
 	.arrows {
-		padding: 1% 1.35%;
+		height: 40px;
+		width: 40px;
+		//padding: 1% 1.35%;
 		border-radius: 500px;
 		//transition: 0.3s;
 		background-color: white;
@@ -30,7 +32,7 @@
 
 		&:hover {
 			background-color: rgba(white, 1);
-			transform: scale(1.5);
+			transform: scale(2);
 		}
 
 		@media only screen and(max-width: $medium-screen) {

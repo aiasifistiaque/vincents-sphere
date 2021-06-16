@@ -36,6 +36,18 @@
 		@include hero-text-pad;
 		border-top: 5px solid black;
 		border-bottom: 5px solid black;
+		//white-space: nowrap;
+
+		@media only screen and (max-width: 450px) {
+			//padding-right: 0;
+			letter-spacing: 5px;
+			white-space: nowrap;
+		}
+		@media only screen and (max-width: 450px) {
+			//padding-right: 0;
+			letter-spacing: 5px;
+			white-space: pre-wrap;
+		}
 	}
 
 	h2 {
