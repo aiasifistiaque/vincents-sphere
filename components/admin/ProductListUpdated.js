@@ -85,7 +85,7 @@ const ProductListUpdated = () => {
 					{total.map((product, i) => (
 						<AdminListCard key={i}>
 							<Image
-								alt={produce.name}
+								alt={product.name}
 								src={product.image}
 								height={100}
 								width={100}
