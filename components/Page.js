@@ -44,7 +44,7 @@ const Page = ({ children, title }) => {
 
 			<main onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>
-				<div
+				{/* <div
 					style={{
 						display: 'flex',
 						flex: 1,
@@ -59,7 +59,7 @@ const Page = ({ children, title }) => {
 						appId='777093836325354'
 						htmlRef={'https://vincentsphere.com'}
 					/>
-				</div>
+				</div> */}
 
 				<Footer />
 			</main>
