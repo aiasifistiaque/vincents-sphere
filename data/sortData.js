@@ -12,6 +12,16 @@ export const productSort = [
 	'Sub category',
 ];
 
-export const orderSort = ['Newest', 'Oldest', 'Pending', 'Completed'];
+export const orderSort = [
+	'Newest',
+	'Oldest',
+	'New Orders',
+	'Confirmed',
+	'Ready For Shipping',
+	'Shipped',
+	'Completed',
+	'Archived',
+	'Cancelled',
+];
 
 export const userSort = ['All', 'User', 'Admin'];

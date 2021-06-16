@@ -21,7 +21,12 @@ const ProductsOnDisplay = ({ product }) => {
 						/>
 						<div className='section-card-text'>
 							<p className='section-sub-category'>{product.subCategory}</p>
-							<h6>{product.name}</h6>
+
+							<h6>
+								{product.name.length > 32
+									? `${product.name.substring(0, 32)}...`
+									: product.name}
+							</h6>
 							<h6 className='section-size-text'>{product.size}</h6>
 						</div>
 					</div>

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 const sortItems = [
-	'order placed',
+	'Order Placed',
 	'confirmed',
 	'paid',
 	'ready for shipping',
 	'shipped',
-	'received',
 	'completed',
 	'archived',
+	'cancelled',
 ];
 
 const OrderStatusSelect = ({ sortValue, setSortValue }) => {
