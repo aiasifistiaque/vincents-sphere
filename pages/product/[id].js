@@ -12,6 +12,7 @@ import ProductDetailsUpdated from '../../components/product/ProductDetailsUpdate
 import UpdatedProductDetails from '../../components/product/UpdatedProductDetails';
 import Head from 'next/head';
 import ReviewSection from '../../components/review/ReviewSection';
+import PageError from '../../components/PageError';
 
 const Product = () => {
 	const router = useRouter();
@@ -23,7 +24,7 @@ const Product = () => {
 	const { id } = router.query;
 	const dispatch = useDispatch();
 
-	const { product, loading } = useSelector(state => state.getAProduct);
+	const { product, loading, error } = useSelector(state => state.getAProduct);
 	const { cartItems } = useSelector(state => state.cart);
 
 	useEffect(() => {
@@ -45,11 +46,13 @@ const Product = () => {
 
 	if (loading) return <PageLoading />;
 
+	if (error) return <PageError />;
+
 	return (
-		<ProductPage title={product.name}>
+		<ProductPage title={product.name} product={product}>
 			<Head>
-				<title>{product.name}</title>
-				<meta property='og:title' content={product.name} key='title' />
+				{/* <title>{product.name}</title>
+				<meta property='og:title' content={product.name} key='title' /> */}
 			</Head>
 			{
 				//<ProductMeta product={product} />

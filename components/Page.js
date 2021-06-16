@@ -69,14 +69,48 @@ export const LoadingPage = ({ children }) => {
 	return <div className='page'>{children}</div>;
 };
 
-export const ProductPage = ({ children, title }) => {
+export const ProductPage = ({ children, title, product }) => {
 	const [searchActive, setSearchActive] = useState(false);
 
 	return (
 		<div>
 			<Head>
-				<title>{"Vincent's Sphere"}</title>
-				<link rel='icon' href='/favicon.ico' />
+				{product != null && (
+					<>
+						<title>{title}</title>
+						<link rel='icon' href='/favicon.ico' />
+						<meta name='title' content={product.name || ''} />
+
+						<meta property='og:title' content={product.name || ''} />
+
+						<meta
+							property='og:description'
+							content={product.description || ''}
+							key='title'
+						/>
+
+						<meta
+							property='og:image:secure'
+							content={product.image || ''}
+							key='title'
+						/>
+
+						<meta
+							property='og:image:secure_url'
+							content={product.image || ''}
+							key='title'
+						/>
+
+						<meta
+							property='og:image:secure'
+							content={product.image || ''}
+							key='title'
+						/>
+						<meta property='og:image:type' content='image/jpeg' />
+						<meta property='og:image:width' content='400' />
+						<meta property='og:image:height' content='300' />
+					</>
+				)}
 			</Head>
 			<BNavbar
 				searchActive={searchActive}
@@ -84,6 +118,12 @@ export const ProductPage = ({ children, title }) => {
 				searchOff={() => setSearchActive(false)}
 			/>
 			<Search active={searchActive} off={() => setSearchActive(false)} />
+
+			<MessengerCustomerChat
+				pageId='110218757538456'
+				appId='197156552292706'
+				//htmlRef={window.location.pathname}
+			/>
 
 			<div onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>
