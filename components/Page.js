@@ -44,7 +44,7 @@ const Page = ({ children, title }) => {
 
 			<main onClick={() => setSearchActive(false)}>
 				<div className='page'>{children}</div>
-				{/* <div
+				<div
 					style={{
 						display: 'flex',
 						flex: 1,
@@ -52,14 +52,12 @@ const Page = ({ children, title }) => {
 						padding: '0 4%',
 						justifyContent: 'flex-end',
 					}}>
-					<h1>Messenger</h1>
-
 					<MessengerCustomerChat
 						pageId='110218757538456'
-						appId='777093836325354'
-						htmlRef={'https://vincentsphere.com'}
+						appId='197156552292706'
+						//htmlRef={window.location.pathname}
 					/>
-				</div> */}
+				</div>
 
 				<Footer />
 			</main>
