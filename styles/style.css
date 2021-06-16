@@ -4749,7 +4749,7 @@ a {
 .v-contain-image {
   -o-object-fit: contain;
      object-fit: contain;
-  background-color: black;
+  background-color: #f9f9f9;
 }
 
 .opacity-5 {

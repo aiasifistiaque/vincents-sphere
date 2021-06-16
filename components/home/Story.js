@@ -18,7 +18,7 @@ const Story = () => {
 					src='/storyimage.jpeg'
 					height={500}
 					width={500}
-					className='v-image'
+					className='v-contain-image'
 				/>
 			</div>
 
