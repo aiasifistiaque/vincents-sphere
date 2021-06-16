@@ -599,6 +599,12 @@ div {
   text-overflow: ellipsis;
 }
 
+@media only screen and (max-width: 768px) {
+  .section-card .section-card-text h6 {
+    font-size: 0.7em;
+  }
+}
+
 .section-card .section-card-text p {
   margin: 0;
   padding: 0;
@@ -620,6 +626,12 @@ div {
           text-decoration-color: #fb3290;
   color: #fb3290;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  .section-card .section-card-text .section-sub-category {
+    font-size: 0.6em;
+  }
 }
 
 .section-card .section-card-text .section-size-text {
