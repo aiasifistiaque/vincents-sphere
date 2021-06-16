@@ -7,8 +7,13 @@ const Hero = () => {
 	const router = useRouter();
 	return (
 		<div className='home-hero'>
-			<h1>Vincent’s Sphere</h1>
-			<h2>Handcrafted Happiness for all...</h2>
+			<div className='htc'>
+				<h1>Vincent’s Sphere</h1>
+			</div>
+			<div className='htc'>
+				<h2>Handcrafted Happiness for all...</h2>
+			</div>
+
 			<Link href='/explore' passHref>
 				<ProductWrapper>
 					<div className='hero-action-button'>

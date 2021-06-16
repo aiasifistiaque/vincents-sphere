@@ -19,19 +19,40 @@
 	text-transform: uppercase;
 	border-bottom: 5px solid black;
 
+	@mixin hero-text-pad {
+		padding: 0 5px 0 10px;
+		background-color: rgba($color-pink, 0.85);
+		color: black;
+
+		//	background-color: black;
+		//	color: $color-pink;
+	}
+
 	h1 {
 		font-size: 3.5em;
 		font-weight: 500;
 		margin: 0.2em 0;
 		letter-spacing: 10px;
+		@include hero-text-pad;
+		border-top: 5px solid black;
+		border-bottom: 5px solid black;
 	}
 
 	h2 {
 		font-size: 1.8em;
-		font-weight: 200;
+		font-weight: 300;
 		letter-spacing: 5px;
 		margin: 0;
-		padding: 0;
+
+		//border-top: 5px solid black;
+		//border-bottom: 5px solid black;
+
+		@include hero-text-pad;
+	}
+
+	.htc {
+		//background-color: red;
+		//margin: 2em;
 	}
 
 	@media only screen and(max-width: $medium-screen) {
@@ -74,6 +95,7 @@
 			font-size: 1em;
 			//text-transform: capitalize;
 			letter-spacing: 2px;
+			//color: $color-pink;
 		}
 
 		@media only screen and(min-width:$large-screen) {

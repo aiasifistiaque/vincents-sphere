@@ -170,9 +170,10 @@ div {
     font-size: 0.9em;
     margin: 0;
     padding: 0;
+    border-color: #fb3290;
   }
   .v-navitem:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fb3290;
   }
 }
 
@@ -193,9 +194,10 @@ div {
     font-size: 0.9em;
     margin: 0;
     padding: 0;
+    border-color: #fb3290;
   }
   .nav-dd:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fb3290;
   }
 }
 
@@ -340,14 +342,21 @@ div {
   font-weight: 500;
   margin: 0.2em 0;
   letter-spacing: 10px;
+  padding: 0 5px 0 10px;
+  background-color: rgba(251, 50, 144, 0.85);
+  color: black;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
 }
 
 .home-hero h2 {
   font-size: 1.8em;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 5px;
   margin: 0;
-  padding: 0;
+  padding: 0 5px 0 10px;
+  background-color: rgba(251, 50, 144, 0.85);
+  color: black;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3792,6 +3801,7 @@ div {
   font-size: 0.9em;
   margin: 0;
   padding: 0;
+  border-color: #fb3290;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3802,7 +3812,7 @@ div {
 }
 
 .a-navitem:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fb3290;
 }
 
 .a-nav-collapse {

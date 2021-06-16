@@ -13,6 +13,7 @@ const CartItem = ({ product, index }) => {
 					margin: '0 5px',
 				}}>
 				<Image
+					alt={product.name}
 					src={product.image}
 					height={80}
 					width={100}
