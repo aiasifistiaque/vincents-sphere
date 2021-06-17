@@ -89,3 +89,7 @@ export const api = {
 export const general = {
 	takaSymbol: '৳',
 };
+
+export const colors = {
+	pink: '#fb3290',
+};

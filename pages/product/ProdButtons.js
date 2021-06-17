@@ -4,6 +4,7 @@ import {
 	ProdPageButton,
 	ProdFavButton,
 } from '../../components/product/ProdButtons';
+import OutOfStockButton from '../../components/buttons/OutOfStockButton';
 
 const ProdButtons = ({ itemPresent, addLoading, item, product, stock }) => {
 	return (
@@ -17,17 +18,7 @@ const ProdButtons = ({ itemPresent, addLoading, item, product, stock }) => {
 					<ProdPageButton title='Add to Cart' product={product} />
 				)
 			) : (
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						marginRight: 20,
-						padding: '10px 20px',
-						backgroundColor: 'whitesmoke',
-						cursor: 'not-allowed',
-					}}>
-					<span style={{ color: 'crimson' }}>Out Of Stock</span>
-				</div>
+				<OutOfStockButton>Out Of Stock</OutOfStockButton>
 			)}
 			<ProdFavButton product={product} />
 		</div>

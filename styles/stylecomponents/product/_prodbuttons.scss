@@ -83,3 +83,18 @@
 		margin-right: 10px;
 	}
 }
+
+.out-of-stock-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: crimson;
+	background-color: whitesmoke;
+	cursor: not-allowed;
+	padding: 10px 20px;
+	white-space: nowrap;
+	margin-right: 10px;
+	p {
+		@include n-m-p;
+	}
+}

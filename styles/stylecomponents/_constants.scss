@@ -8,7 +8,7 @@ $extra-large: 1200px;
 $x-small-screen: 500px;
 $small-screen: 600px;
 $medium-screen: 768px;
-$large-screen: 992px;
+$large-screen: 996px;
 $x-large-screen: 1200px;
 
 //colors
@@ -29,5 +29,11 @@ $padding-horizontal-half: $padding-horizontal/2;
 $card-width: 300px;
 $hp: 5%;
 
+$hp-big: 5%;
+
 //
 $box-shadow-one: 0 0 25px rgba(black, 0.1);
+
+$navbar-height: 4em;
+
+$hero-padding-top: $navbar-height;

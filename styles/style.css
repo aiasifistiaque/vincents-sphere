@@ -117,106 +117,6 @@ div {
   }
 }
 
-.v-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  color: whitesmoke;
-}
-
-@media only screen and (max-width: 768px) {
-  .v-nav {
-    padding: 1em 0;
-  }
-}
-
-.nav-brand-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  color: #fff;
-  font-size: 2em;
-  font-weight: 300;
-  cursor: pointer;
-  margin: 0;
-}
-
-.nav-brand-item h1 {
-  margin: 0;
-  padding: 0;
-}
-
-.v-navitem {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-@media only screen and (min-width: 992px) {
-  .v-navitem {
-    letter-spacing: 2px;
-    font-size: 0.9em;
-    margin: 0;
-    padding: 0;
-    border-color: #fb3290;
-  }
-  .v-navitem:hover {
-    border-bottom: 1px solid #fb3290;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .v-navitem {
-    margin: 0.5em 0;
-  }
-}
-
-.nav-dd {
-  background-color: black;
-  padding: 2px 0;
-}
-
-@media only screen and (min-width: 992px) {
-  .nav-dd {
-    letter-spacing: 2px;
-    font-size: 0.9em;
-    margin: 0;
-    padding: 0;
-    border-color: #fb3290;
-  }
-  .nav-dd:hover {
-    border-bottom: 1px solid #fb3290;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .nav-dd {
-    margin: 0.5em 0;
-  }
-}
-
-.nav-dd-item {
-  padding: 10px 20px;
-}
-
-.v-nav-collapse {
-  padding: 0% 4.5%;
-  background-color: black;
-}
-
 .nav-brand-logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -244,6 +144,106 @@ div {
   .nav-brand-logo {
     padding: 5px 0;
   }
+}
+
+.nav-brand-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 0;
+}
+
+.nav-brand-item h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.v-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 996px) {
+  .v-nav {
+    padding: 1em 0;
+  }
+}
+
+.v-navitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 996px) {
+  .v-navitem {
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+  }
+  .v-navitem:hover {
+    border-bottom: 1px solid #fb3290;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .v-navitem {
+    margin: 0.5em 0;
+  }
+}
+
+.nav-dd {
+  background-color: black;
+  padding: 2px 0;
+}
+
+@media only screen and (min-width: 996px) {
+  .nav-dd {
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-dd:hover {
+    border-bottom: 1px solid #fb3290;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-dd {
+    margin: 0.5em 0;
+  }
+}
+
+.nav-dd-item {
+  padding: 10px 20px;
+}
+
+.v-nav-collapse {
+  padding: 0% 4.5%;
+  background-color: black;
 }
 
 .nav-item-custom {
@@ -327,7 +327,7 @@ div {
 }
 
 .home-hero {
-  margin-top: 8vh;
+  margin-top: 4em;
   min-height: 90vh;
   background-image: url("../../../public/bg2.jpeg");
   background-color: #313234;
@@ -460,14 +460,14 @@ div {
   letter-spacing: 2px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 996px) {
   .home-hero .hero-action-button:hover {
     background-color: whitesmoke;
     color: black;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .home-hero .hero-action-button {
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -1256,13 +1256,16 @@ div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .page-product {
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 12vh 5% 0 5%;
+  padding: 12vh 0 0 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1272,12 +1275,13 @@ div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
+  background-color: white;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .page-product {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1290,6 +1294,7 @@ div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 100vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1297,23 +1302,25 @@ div {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin: 1em;
+  margin: 1em 5% 1em 5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: black;
-}
-
-@media only screen and (max-width: 768px) {
-  .page-product .product-details {
-    margin: 1em 0;
-  }
+  box-sizing: border-box;
 }
 
 .page-product .product-details h1 {
   margin: 0;
   padding: 0;
+  font-size: 2em;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 996px) {
+  .page-product .product-details h1 {
+    font-size: 1.8em;
+  }
 }
 
 .page-product .product-details h2 {
@@ -1328,7 +1335,20 @@ div {
   margin: 0;
   padding: 0;
   margin-bottom: 16px;
-  font-size: 24px;
+  font-size: 1.1em;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.page-product .product-details .price-text {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: black;
+}
+
+@media only screen and (max-width: 996px) {
+  .page-product .product-details .price-text {
+    font-size: 1.3em;
+  }
 }
 
 .page-product .product-details h5 {
@@ -1342,10 +1362,9 @@ div {
 .page-product .product-details p {
   margin: 0;
   padding: 0;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-weight: 500;
   margin: 16px 0;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .page-product .product-details h3 {
@@ -1356,20 +1375,21 @@ div {
 .product-image {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 1em;
+  margin: 1em 0 1em 5%;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .product-image {
-    min-width: 250px;
+    margin: -4em 0 0 0;
+    min-width: 100vw;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .product-image {
-    margin: 0;
-    min-width: 100%;
-    margin: -5vh -7% 0 -7%;
+    min-width: 100vw;
+    margin: -4em 0 0 0;
     overflow: hidden;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -1396,7 +1416,7 @@ div {
   padding: 10vh 4% 0 4%;
   min-height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1644,6 +1664,29 @@ div {
   margin-right: 10px;
 }
 
+.out-of-stock-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: crimson;
+  background-color: whitesmoke;
+  cursor: not-allowed;
+  padding: 10px 20px;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.out-of-stock-button p {
+  margin: 0;
+  padding: 0;
+}
+
 .login-button {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -1671,14 +1714,14 @@ div {
           box-sizing: border-box;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 996px) {
   .login-button:hover {
     background-color: #d5d5d5;
     color: black;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .login-button {
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -1725,14 +1768,14 @@ div {
   margin: 0;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 996px) {
   .long-button:hover {
     background-color: #d5d5d5;
     color: black;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .long-button {
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -1800,14 +1843,14 @@ div {
           box-sizing: border-box;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 996px) {
   .black-button:hover {
     background-color: #d5d5d5;
     color: black;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .black-button {
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -1853,14 +1896,14 @@ div {
   background-color: crimson;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 996px) {
   .cancel-button:hover {
     background-color: #d5d5d5;
     color: black;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .cancel-button {
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -2446,7 +2489,7 @@ div {
           box-sizing: border-box;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .admin-product {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2468,7 +2511,7 @@ div {
           flex-direction: column;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .admin-product .admin-product-image {
     min-width: 250px;
   }
@@ -3098,7 +3141,7 @@ div {
 }
 
 .profile-page {
-  margin: 15vh 4%;
+  margin: 15vh 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3151,6 +3194,51 @@ div {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+.admin-panel-button-alt {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: whitesmoke;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: black;
+}
+
+.admin-panel-button-alt:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.admin-panel-button-alt p {
+  color: dodgerblue;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.admin-panel-button-alt P {
+  color: whitesmoke;
+}
+
+.admin-panel-button-alt:hover {
+  background-color: #d5d5d5;
+}
+
+.admin-panel-button-alt:hover p {
+  color: black;
 }
 
 .my-profile {
@@ -3694,14 +3782,14 @@ div {
           justify-content: center;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 996px) {
   .load-more-button:hover {
     background-color: #d5d5d5;
     color: black;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .load-more-button:active {
     background-color: #d5d5d5;
     opacity: 0.5;
@@ -3845,7 +3933,7 @@ div {
   font-size: 0.9em;
   margin: 0;
   padding: 0;
-  border-color: #fb3290;
+  border-bottom: 1px solid transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4515,7 +4603,7 @@ div {
   font-size: 0.9em;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 996px) {
   .review-item-container {
     width: 100%;
     margin: 1em 0;

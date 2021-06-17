@@ -3,7 +3,12 @@ import { general } from '../../constants';
 import ProdButtons from '../../pages/product/ProdButtons';
 import ReviewStar from '../review/ReviewStar';
 
-const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
+const ProductDetailsUpdatedTwo = ({
+	product,
+	addLoading,
+	itemPresent,
+	item,
+}) => {
 	//console.log(product);
 	return (
 		<div
@@ -30,30 +35,29 @@ const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
 			</div>
 
 			<div>
-				<h5>Notes: {product.note}</h5>
+				<h4 className='price-text'>
+					Price: {general.takaSymbol}
+					{product.price}
+				</h4>
+				<ProdButtons
+					itemPresent={itemPresent}
+					addLoading={addLoading}
+					product={product}
+					item={item}
+					stock={product.countInStock || 0}
+				/>
+				{product.countInStock == 0 ? (
+					<p style={{ color: 'crimson' }}>Out of stock</p>
+				) : (
+					<p>In Stock: {product.countInStock}</p>
+				)}
+			</div>
 
+			<div>
 				<ThisText>Category: {product.category}</ThisText>
 				<ThisText>Sub Category:{product.subCategory}</ThisText>
 			</div>
-
-			{product.countInStock == 0 ? (
-				<p style={{ color: 'crimson' }}>Out of stock</p>
-			) : (
-				<p>In Stock: {product.countInStock}</p>
-			)}
-
-			<h4 className='price-text'>
-				Price: {general.takaSymbol}
-				{product.price}
-			</h4>
-
-			<ProdButtons
-				itemPresent={itemPresent}
-				addLoading={addLoading}
-				product={product}
-				item={item}
-				stock={product.countInStock || 0}
-			/>
+			<h5>Notes: {product.note}</h5>
 		</div>
 	);
 };
@@ -62,4 +66,4 @@ const ThisText = ({ children }) => {
 	return <p style={{ margin: 0, padding: 0, fontSize: '.9em' }}>{children}</p>;
 };
 
-export default ProductDetailsUpdated;
+export default ProductDetailsUpdatedTwo;

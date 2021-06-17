@@ -11,9 +11,7 @@ const getAProduct = id => async dispatch => {
 		dispatch({
 			type: 'GET_A_PRODUCT_FAIL',
 			payload:
-				error.response && error.response.data.message
-					? error.response.data.message
-					: error.message,
+				error.response && error.response ? error.response : error.message,
 		});
 	}
 };

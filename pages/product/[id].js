@@ -10,9 +10,9 @@ import ProductSection from '../../components/product/ProductSection';
 import PictureFullScreen from '../../components/product/PictureFullScreen';
 import ProductDetailsUpdated from '../../components/product/ProductDetailsUpdated';
 import UpdatedProductDetails from '../../components/product/UpdatedProductDetails';
-import Head from 'next/head';
 import ReviewSection from '../../components/review/ReviewSection';
 import PageError from '../../components/PageError';
+import PageNotFound from '../../components/error/PageNotFound';
 
 const Product = () => {
 	const router = useRouter();
@@ -46,18 +46,10 @@ const Product = () => {
 
 	if (loading) return <PageLoading />;
 
-	if (error) return <PageError />;
+	if (error) return <PageNotFound />;
 
 	return (
 		<ProductPage title={product.name} product={product}>
-			<Head>
-				{/* <title>{product.name}</title>
-				<meta property='og:title' content={product.name} key='title' /> */}
-			</Head>
-			{
-				//<ProductMeta product={product} />
-			}
-
 			<PictureFullScreen
 				open={openPic}
 				close={() => setOpenPic(false)}

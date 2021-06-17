@@ -2,16 +2,20 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import useGetSingleOrder from '../../hooks/useGetSingleOrder';
 import Page from '../../components/Page';
-import Loading from '../../components/Loading';
 import { OrderDetails, OrderSummary } from '../../components/order';
 import PageLoading from '../../components/PageLoading';
+import PageNotFound from '../../components/error/PageNotFound';
 
 const order = () => {
 	const router = useRouter();
 	const { id } = router.query;
 	const status = router.query.status;
-	const { order, loading } = useGetSingleOrder(id);
+	const { order, loading, error } = useGetSingleOrder(id);
+
 	if (loading) return <PageLoading />;
+
+	if (error) return <PageNotFound />;
+
 	return (
 		<Page>
 			<div className='order-details-page page-vertical-padding'>

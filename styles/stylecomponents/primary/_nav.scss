@@ -6,7 +6,7 @@ $nav-item-padding: 0.4em 1em;
 	font-size: 0.9em;
 	@include n-m-p;
 
-	border-color: $color-pink;
+	border-bottom: 1px solid transparent;
 
 	&:hover {
 		border-bottom: 1px solid $color-pink;
@@ -21,7 +21,6 @@ $nav-item-padding: 0.4em 1em;
 	display: flex;
 	color: whitesmoke;
 	z-index: 19;
-	//padding: 2em 0;
 
 	@media only screen and (max-width: $medium-screen) {
 		height: 4em;
@@ -29,29 +28,16 @@ $nav-item-padding: 0.4em 1em;
 	}
 }
 
+@import './navbarlogo';
+
 .v-nav {
 	display: flex;
 	flex: 4;
 	justify-content: space-between;
 	color: whitesmoke;
 
-	@media only screen and (max-width: $medium-screen) {
+	@media only screen and (max-width: $large-screen) {
 		padding: 1em 0;
-	}
-}
-
-.nav-brand-item {
-	display: flex;
-	flex: 1;
-	color: $color-light;
-	font-size: 2em;
-	font-weight: 300;
-	cursor: pointer;
-	margin: 0;
-
-	h1 {
-		margin: 0;
-		padding: 0;
 	}
 }
 
@@ -85,26 +71,6 @@ $nav-item-padding: 0.4em 1em;
 .v-nav-collapse {
 	padding: 0% 4.5%;
 	background-color: black;
-}
-
-.nav-brand-logo {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex: 1;
-	margin-left: 4.5%;
-	//min-height: 2em;
-	//background-color: blue;
-	cursor: pointer;
-	@media only screen and(max-width:360px) {
-		padding: 3px 0;
-		//background-color: red;
-	}
-
-	@media only screen and(max-width:320px) {
-		padding: 5px 0;
-		//background-color: red;
-	}
 }
 
 .nav-item-custom {

@@ -12,7 +12,7 @@ $profile-page-box-padding: 1.5em;
 }
 
 .profile-page {
-	margin: 15vh 4%;
+	margin: 15vh $hp-big;
 	display: flex;
 	flex: 1;
 	flex-wrap: wrap;
@@ -25,7 +25,7 @@ $profile-page-box-padding: 1.5em;
 	}
 }
 
-.admin-panel-button {
+@mixin admin-button {
 	@include btn-text-unselect;
 	display: inline-flex;
 	//padding: 10px 20px;
@@ -45,6 +45,25 @@ $profile-page-box-padding: 1.5em;
 		color: dodgerblue;
 		@include n-m-p;
 		text-align: center;
+	}
+}
+
+.admin-panel-button {
+	@include admin-button();
+}
+
+.admin-panel-button-alt {
+	@include admin-button();
+
+	background-color: black;
+	P {
+		color: whitesmoke;
+	}
+	&:hover {
+		background-color: #d5d5d5;
+		p {
+			color: black;
+		}
 	}
 }
 
