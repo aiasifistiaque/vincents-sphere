@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import wordShortner from '../../../backend/functions/nameShortner';
+import wordShortner from '../../functions/wordShortner';
 
 const SearchProducts = ({ product, admin }) => {
 	return (
