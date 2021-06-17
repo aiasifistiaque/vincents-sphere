@@ -1,8 +1,8 @@
+import React, { useEffect } from 'react';
 import '../styles/style.scss';
 import { Provider } from 'react-redux';
 import store from '../store';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
