@@ -18,8 +18,12 @@ const PageNotFound = () => {
 					justifyContent: 'center',
 					flexDirection: 'column',
 				}}>
-				<div style={{ marginTop: '8em', marginBottom: '2em' }}>
-					<FontAwesomeIcon icon={faHeartBroken} height={80} />
+				<div style={{ marginTop: '7em', marginBottom: '2em' }}>
+					<FontAwesomeIcon
+						icon={faHeartBroken}
+						height={100}
+						style={{ minHeight: 80, width: 80 }}
+					/>
 				</div>
 				<h4
 					style={{

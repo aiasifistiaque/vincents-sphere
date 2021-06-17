@@ -1,6 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+	faPhoneAlt,
+	faEnvelope as faEnvelopeAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 const FooterAddressSection = () => {
 	return (
@@ -11,7 +14,7 @@ const FooterAddressSection = () => {
 				01312-795919
 			</p>
 			<a className='footer-mail' href='mailto:support@vincentsphere.com'>
-				<FontAwesomeIcon icon={faEnvelope} className='v-footer-icon' />
+				<FontAwesomeIcon icon={faEnvelopeAlt} className='v-footer-icon' />
 				support@vincentsphere.com
 			</a>
 		</div>

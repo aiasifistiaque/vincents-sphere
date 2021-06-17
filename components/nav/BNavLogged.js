@@ -22,9 +22,6 @@ const BNavLogged = () => {
 		return (
 			<>
 				<BNavItem href='/login'>Log In</BNavItem>
-				{
-					//<BNavItem href='/signup'>Register</BNavItem>
-				}
 			</>
 		);
 };

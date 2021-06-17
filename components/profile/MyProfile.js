@@ -1,14 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
 import useGetProfile from '../../hooks/useGetProfile';
 import Loading from '../Loading';
-import { LongButton, TextButton } from '..';
-import { useRouter } from 'next/router';
+import { LongButton } from '..';
 import AdminPanelButton from '../buttons/AdminPanelButton';
 
 const MyProfile = () => {
 	const { user, loading } = useGetProfile();
-	const router = useRouter();
+
 	if (loading) return <Loading />;
 	return (
 		<div className='my-profile'>

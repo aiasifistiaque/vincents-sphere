@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import wordShortner from '../../../backend/functions/nameShortner';
 
 const SearchProducts = ({ product, admin }) => {
 	return (
@@ -20,7 +21,7 @@ const SearchProducts = ({ product, admin }) => {
 				</div>
 
 				<div className='spc-section'>
-					<p className='spc-name'>{product.name}</p>
+					<p className='spc-name'>{wordShortner(product.name, 30)}</p>
 				</div>
 				<div className='spc-section'>
 					<p className='card-price'>৳{product.price}</p>

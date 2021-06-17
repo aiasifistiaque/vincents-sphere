@@ -246,37 +246,6 @@ div {
   background-color: black;
 }
 
-.nav-item-custom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #fff;
-  margin: 0 0.2em;
-  padding: 0.4em 1em;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  border-radius: 2px;
-  min-width: 100px;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.nav-item-custom:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.nav-item-custom p {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
 .v-nav-icon-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -492,7 +461,7 @@ div {
 }
 
 .section-arrows .arrow-icon {
-  height: 20px;
+  height: 16px;
   color: #393131;
 }
 
@@ -506,6 +475,8 @@ div {
   height: 40px;
   width: 40px;
   border-radius: 500px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   background-color: white;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -520,7 +491,10 @@ div {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-  border: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .section-arrows .arrows:hover {
@@ -566,7 +540,8 @@ div {
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
   max-width: 300px;
-  border-radius: 4px;
+  overflow: hidden;
+  border-radius: 10px;
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
@@ -702,13 +677,14 @@ div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   background-size: cover;
   background-position: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3703,6 +3679,8 @@ div {
   align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3755,13 +3733,19 @@ div {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0 4%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+.explore-card {
+  min-width: 300px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  float: bottom;
 }
 
 .load-more-button {
@@ -3804,10 +3788,6 @@ div {
   color: #fff;
   font-weight: 500;
   color: inherit;
-}
-
-.explore-card {
-  min-width: 300px;
 }
 
 .about-page {
@@ -4728,19 +4708,22 @@ div {
 }
 
 html,
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-html ::-moz-selection,
 body ::-moz-selection {
   color: black;
   background: rgba(251, 50, 144, 0.5);
 }
 
-html ::selection,
 body ::selection {
   color: black;
   background: rgba(251, 50, 144, 0.5);

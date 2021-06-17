@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Page from '../components/Page';
 import useGetProfile from '../hooks/useGetProfile';
 import Loading from '../components/Loading';
-import NetworkError from '../components/NetworkError';
+import PageNotFound from '../components/error/PageNotFound';
 import { LongButton } from '../components';
 import axios from 'axios';
 import { api } from '../constants';
@@ -51,7 +51,7 @@ const editprofile = () => {
 
 	if (loading) return <Loading />;
 
-	if (error) return <NetworkError />;
+	if (error) return <PageNotFound />;
 
 	return (
 		<Page>

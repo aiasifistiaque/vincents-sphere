@@ -72,18 +72,20 @@ const OurTeam = () => {
 					<h6>{item.name}</h6>
 					<p>{item.post}</p>
 					<div className='team-icons-container'>
-						<FontAwesomeIcon
-							icon={faFacebookSquare}
-							className='team-icons'
-							height={22}
-							onClick={() => {}}
-						/>
-						<FontAwesomeIcon
-							icon={faInstagram}
-							className='team-icons'
-							height={23}
-							onClick={() => {}}
-						/>
+						<a target='_blank' href={item.facebook} rel='noopener noreferrer'>
+							<FontAwesomeIcon
+								icon={faFacebookSquare}
+								className='team-icons'
+								height={22}
+							/>
+						</a>
+						<a target='_blank' href={item.instagram} rel='noopener noreferrer'>
+							<FontAwesomeIcon
+								icon={faInstagram}
+								className='team-icons'
+								height={23}
+							/>
+						</a>
 					</div>
 				</div>
 			))}

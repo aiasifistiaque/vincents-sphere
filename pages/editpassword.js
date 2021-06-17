@@ -3,11 +3,12 @@ import Page from '../components/Page';
 import useGetProfile from '../hooks/useGetProfile';
 import Loading from '../components/Loading';
 import NetworkError from '../components/NetworkError';
-import { LongButton, SuccessText, ErrorText, TextButton } from '../components';
+import { LongButton, SuccessText, ErrorText } from '../components';
 import axios from 'axios';
 import { api } from '../constants';
 import { useRouter } from 'next/router';
 import AdminPanelButton from '../components/buttons/AdminPanelButton';
+import PageNotFound from '../components/error/PageNotFound';
 
 const editprofile = () => {
 	const { user, loading, error } = useGetProfile();
@@ -77,7 +78,7 @@ const editprofile = () => {
 
 	if (loading) return <Loading />;
 
-	if (error) return <NetworkError />;
+	if (error) return <PageNotFound />;
 
 	return (
 		<Page>

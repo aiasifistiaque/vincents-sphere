@@ -4,6 +4,7 @@ import CardIconSection from '../product/CardIconSection';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import ProductWrapper from '../product/ProductWrapper';
+import CardImageWrapper from '../buttons/CardImageWrapper';
 
 const ProductsOnDisplay = ({ product }) => {
 	const router = useRouter();
@@ -12,13 +13,16 @@ const ProductsOnDisplay = ({ product }) => {
 			<Link href={`/product/${product._id}`} passHref>
 				<ProductWrapper>
 					<div>
-						<Image
-							src={product.image}
-							alt={product.name}
-							width={400}
-							height={400}
-							className='v-image'
-						/>
+						<CardImageWrapper>
+							<Image
+								src={product.image}
+								alt={product.name}
+								width={400}
+								height={400}
+								className='v-image'
+							/>
+						</CardImageWrapper>
+
 						<div className='section-card-text'>
 							<p className='section-sub-category'>{product.subCategory}</p>
 

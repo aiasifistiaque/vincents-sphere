@@ -48,6 +48,7 @@ $nav-item-padding: 0.4em 1em;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+
 	@media only screen and(max-width:$medium-screen) {
 		margin: 0.5em 0;
 	}
@@ -73,34 +74,8 @@ $nav-item-padding: 0.4em 1em;
 	background-color: black;
 }
 
-.nav-item-custom {
-	display: flex;
-	color: $color-light;
-	margin: 0 0.2em;
-
-	padding: $nav-item-padding;
-	cursor: pointer;
-	transition: 0.2s;
-	border-radius: 2px;
-	min-width: 100px;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-
-	&:hover {
-		background-color: $primary-hover;
-	}
-
-	p {
-		padding: 0;
-		margin: 0;
-		text-align: center;
-	}
-}
-
 .v-nav-icon-container {
 	display: flex;
-	//align-items: center;
 	cursor: pointer;
 }
 

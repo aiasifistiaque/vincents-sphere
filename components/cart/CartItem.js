@@ -22,12 +22,12 @@ const CartItem = ({ product, index }) => {
 			</div>
 
 			<Containers flex={2}>
-				<h6>
-					{product.name} x {product.qty}
-				</h6>
+				<h6>{product.name}</h6>
 			</Containers>
 			<Containers flex={2}>
-				<p>৳{product.price}</p>
+				<p>
+					৳{product.price} x {product.qty}
+				</p>
 			</Containers>
 			<Containers flex={0}>
 				<CartQtyButton product={product}>{product.qty}</CartQtyButton>
