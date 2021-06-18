@@ -76,6 +76,7 @@ export const api = {
 	dashboard: `${server}/dashboard`,
 	upload: `${server}/upload`,
 
+	//review route
 	review: `${server}/review`,
 
 	config: {
