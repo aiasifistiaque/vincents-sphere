@@ -549,9 +549,14 @@ div {
   transition: 0.1s;
 }
 
-.section-card:hover {
-  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+@media only screen and (min-width: 996px) {
+  .section-card:hover {
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+    z-index: 8;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -4460,6 +4465,13 @@ div {
   text-align: justify;
 }
 
+@media only screen and (max-width: 768px) {
+  .story-text p {
+    text-align: left;
+    line-height: 1.6;
+  }
+}
+
 .featured-text {
   border-bottom: 2px solid rgba(0, 0, 0, 0.6);
   margin: 2em 8% 2em 8%;
@@ -4707,6 +4719,48 @@ div {
   color: inherit;
 }
 
+.terms {
+  padding: 15vh 5%;
+  line-height: 2em;
+}
+
+.terms h1 {
+  margin: 1em 0;
+}
+
+.terms h2 {
+  margin: 1em 0;
+  padding: 0;
+}
+
+.terms h3 {
+  font-size: 1.5em;
+  margin: 1.5em 0 0.5em 0;
+}
+
+.terms li {
+  margin: 2em 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .terms p {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+}
+
+.terms a {
+  color: #fb3290;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.terms a:hover {
+  color: #fb3290;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 html,
 * {
   -webkit-box-sizing: border-box;
@@ -4799,29 +4853,6 @@ a {
   margin-bottom: 1px;
   height: 16px;
   margin-right: 10px;
-}
-
-.terms {
-  padding: 15vh 5%;
-  line-height: 2em;
-}
-
-.terms h1 {
-  margin: 1em 0;
-}
-
-.terms h2 {
-  margin: 1em 0;
-  padding: 0;
-}
-
-.terms h3 {
-  font-size: 1.5em;
-  margin: 1.5em 0 0.5em 0;
-}
-
-.terms li {
-  margin: 2em 0;
 }
 
 .page-vertical-padding {
@@ -5019,6 +5050,18 @@ a {
 @media screen and (max-width: 320px) {
   .ppp {
     min-width: 250px;
+  }
+}
+
+.custom-text {
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .custom-text p {
+    font-size: 0.9em;
   }
 }
 /*# sourceMappingURL=style.css.map */
