@@ -85,7 +85,11 @@ const Search = ({ active, off }) => {
 						onClick={() => {
 							inputRef.current.focus();
 						}}>
-						<FontAwesomeIcon icon={faSearch} className='search-icon-dd' />
+						<FontAwesomeIcon
+							icon={faSearch}
+							height={20}
+							className='search-icon-dd'
+						/>
 					</div>
 				) : (
 					<div
@@ -94,7 +98,11 @@ const Search = ({ active, off }) => {
 							setSearchString('');
 							inputRef.current.focus();
 						}}>
-						<FontAwesomeIcon icon={faTimes} className='sc-close-icon' />
+						<FontAwesomeIcon
+							icon={faTimes}
+							height={30}
+							className='sc-close-icon'
+						/>
 					</div>
 				)}
 			</div>

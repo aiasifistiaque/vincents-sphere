@@ -1942,6 +1942,18 @@ div {
   display: -ms-flexbox;
   display: flex;
   color: black;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+
+.login-page .login-form input::-webkit-outer-spin-button,
+.login-page .login-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.login-page .login-form input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 .login-page .login-form h3 {
@@ -4682,6 +4694,18 @@ div {
   justify-self: center;
   margin-bottom: 10px;
   padding: 0 4%;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+
+.edit-pro-input-div input::-webkit-outer-spin-button,
+.edit-pro-input-div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.edit-pro-input-div input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 .edit-pro-input-div input {

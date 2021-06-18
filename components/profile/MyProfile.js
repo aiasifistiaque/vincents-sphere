@@ -3,8 +3,10 @@ import useGetProfile from '../../hooks/useGetProfile';
 import Loading from '../Loading';
 import { LongButton } from '..';
 import AdminPanelButton from '../buttons/AdminPanelButton';
+import { useRouter } from 'next/router';
 
 const MyProfile = () => {
+	const router = useRouter();
 	const { user, loading } = useGetProfile();
 
 	if (loading) return <Loading />;

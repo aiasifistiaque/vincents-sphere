@@ -19,6 +19,7 @@
 	justify-self: center;
 	margin-bottom: 10px;
 	padding: 0 4%;
+	@include remove-input-arrow;
 
 	input {
 		width: 100%;

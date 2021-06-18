@@ -40,7 +40,6 @@ const editprofile = () => {
 				.put(api.editUser, { name: name, phone, phone }, config)
 				.then(res => {
 					router.push('/profile');
-					//setBtnLoading(false);
 				})
 				.catch(e => {
 					console.log(e);
