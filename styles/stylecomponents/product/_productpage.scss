@@ -8,7 +8,7 @@
 }
 
 .page-product {
-	width: 100vw;
+	max-width: 100vw;
 	display: flex;
 	padding: 12vh 0 0 0;
 	flex: 1;
@@ -18,6 +18,7 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	background-color: white;
+	box-sizing: border-box;
 
 	@media only screen and(max-width:$large-screen) {
 		flex-direction: column;
@@ -26,10 +27,9 @@
 	//product details section beside image
 	.product-details {
 		display: flex;
-		max-width: 100vw;
 		flex-direction: column;
 		flex: 1;
-		margin: 1em $hp 1em $hp;
+		padding: 1em $hp 1em $hp;
 		box-sizing: border-box;
 		color: black;
 		box-sizing: border-box;
