@@ -12,7 +12,7 @@ const profile = () => {
 	else if (!isLoggedIn) return <PageNotFound />;
 
 	return (
-		<Page>
+		<Page title='Profile'>
 			<div className='profile-page'>
 				<h3>My Profile</h3>
 				<MyProfile />

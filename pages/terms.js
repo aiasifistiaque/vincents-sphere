@@ -3,7 +3,7 @@ import Page from '../components/Page';
 
 const terms = () => {
 	return (
-		<Page>
+		<Page title='Terms of Use'>
 			<div className='terms'>
 				<h1>SHOP RULES</h1>
 				<h3>Replacement and Return Policy :</h3>

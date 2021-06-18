@@ -3,7 +3,7 @@ import Page from '../components/Page';
 
 const privacy = () => {
 	return (
-		<Page>
+		<Page title="Privacy Policy | Vicnent's Sphere">
 			<div className='terms'>
 				<h1 style={{ marginTop: 0 }}>PRIVACY POLICY</h1>
 				<p>Last updated: Jun 01, 2021</p>

@@ -17,7 +17,7 @@ const order = () => {
 	if (error) return <PageNotFound />;
 
 	return (
-		<Page>
+		<Page title={`Vincent's Sphere | Order #${order._id}`}>
 			<div className='order-details-page page-vertical-padding'>
 				<div style={{ flex: 6 }}>
 					<OrderDetails order={order} status={status} />

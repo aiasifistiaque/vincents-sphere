@@ -81,7 +81,7 @@ const editprofile = () => {
 	if (error) return <PageNotFound />;
 
 	return (
-		<Page>
+		<Page title="Vincent's Sphere | Edit User Profile">
 			<div className='edit-profile'>
 				<div className='edit-pro-input-div'>
 					<div

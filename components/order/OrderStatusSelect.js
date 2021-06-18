@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const sortItems = [
 	'Order Placed',
 	'confirmed',
-	'paid',
 	'ready for shipping',
 	'shipped',
 	'completed',

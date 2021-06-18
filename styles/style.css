@@ -3665,6 +3665,10 @@ div {
 }
 
 .footer-section-icons .footer-icons-container .footer-icons {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   color: black;
   height: 30px;
   cursor: pointer;
@@ -3677,6 +3681,26 @@ div {
 }
 
 .footer-section-icons .footer-icons-container .footer-icons:hover {
+  color: #fb3290;
+}
+
+.back-to-top-icon {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: black;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 15px;
+  border-radius: 2px;
+}
+
+.back-to-top-icon:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.back-to-top-icon:hover {
   color: #fb3290;
 }
 

@@ -70,7 +70,7 @@ const login = () => {
 	};
 
 	return (
-		<Page>
+		<Page title='login'>
 			<div className='login-page'>
 				<div className='login-form'>
 					<h3>Login</h3>

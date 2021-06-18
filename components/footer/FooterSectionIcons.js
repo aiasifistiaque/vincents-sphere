@@ -4,6 +4,7 @@ import {
 	faFacebookSquare,
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
+import { Container } from '@material-ui/core';
 
 const data = [
 	{
@@ -28,6 +29,7 @@ const FooterSectionIcons = () => {
 						key={i}
 						icon={item.icon}
 						className='footer-icons'
+						height={30}
 						onClick={() => window.open(item.to)}
 					/>
 				))}

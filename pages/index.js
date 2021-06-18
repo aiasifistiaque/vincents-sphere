@@ -10,7 +10,7 @@ import SectionTitle from '../components/home/SectionTitle';
 
 export default function Home() {
 	return (
-		<Page>
+		<Page title="Vincent's Sphere | Home">
 			<Hero />
 
 			<br />

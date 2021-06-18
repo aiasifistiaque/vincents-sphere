@@ -43,7 +43,7 @@ const explore = () => {
 	}, [page, sort]);
 
 	return (
-		<Page>
+		<Page title="Vincent's Sphere | Explore">
 			<div className='explore-page'>
 				<div>
 					<h3>Explore</h3>

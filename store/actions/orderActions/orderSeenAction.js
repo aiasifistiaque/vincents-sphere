@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { api } from '../../../constants';
 
-const editOrderAction = (order, value, paid) => async dispatch => {
+const orderSeenAction = id => async dispatch => {
 	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
 	try {
-		dispatch({ type: 'GET_AN_ORDER_REQUEST' });
+		dispatch({ type: 'ORDER_SEEN_REQUEST' });
 		const config = {
 			headers: {
 				'Content-Type': 'application/json',
@@ -14,19 +14,18 @@ const editOrderAction = (order, value, paid) => async dispatch => {
 		};
 
 		const { data } = await axios.put(
-			api.order,
+			api.changeSeen,
 			{
-				id: order._id,
-				status: value || order.status,
-				paid: paid || order.isPaid,
+				id: id,
+				seen: 1,
 			},
 			config
 		);
 
-		dispatch({ type: 'GET_AN_ORDER_SUCCESS', payload: data });
+		dispatch({ type: 'ORDER_SEEN_SUCCESS', payload: data });
 	} catch (error) {
 		dispatch({
-			type: 'GET_AN_ORDER_FAIL',
+			type: 'ORDER_SEEN_FAIL',
 			payload:
 				error.response && error.response.data.message
 					? error.response.data.message
@@ -35,4 +34,4 @@ const editOrderAction = (order, value, paid) => async dispatch => {
 	}
 };
 
-export default editOrderAction;
+export default orderSeenAction;

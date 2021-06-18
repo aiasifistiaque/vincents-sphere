@@ -5,13 +5,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import AdminPageLayout from '../../components/admin/AdminPageLayout';
 import { OrderDetails as OD, OrderSummary as OS } from '../../components/order';
 import OrderEdit from '../../components/order/OrderEdit';
-import axios from 'axios';
-import { api } from '../../constants';
 import getAnOrder from '../../store/actions/orderActions/getAnOrder';
 import { TextButton } from '../../components';
 import Link from 'next/link';
 import ProductWrapper from '../../components/product/ProductWrapper';
 import PageNotAuthorized from '../../components/error/PageNotAuthorized';
+import orderSeenAction from '../../store/actions/orderActions/orderSeenAction';
+import editOrderAction from '../../store/actions/orderActions/editOrderAction';
+import Container from '../../components/buttons/Container';
 
 const adorder = () => {
 	const dispatch = useDispatch();
@@ -22,68 +23,28 @@ const adorder = () => {
 	const [edit, setEdit] = useState(false);
 	const [value, setValue] = useState('');
 	const [paid, setPaid] = useState();
+	const [pageLoading, setPageLoading] = useState(true);
 
 	useEffect(() => {
-		if (id != undefined) dispatch(getAnOrder(id));
+		if (id != undefined) {
+			dispatch(getAnOrder(id));
+			dispatch(orderSeenAction(id));
+		}
 	}, [id]);
 
 	useEffect(() => {
 		if (!loading) {
 			setThisOrder(order);
+			setPageLoading(false);
+			setEdit(false);
 		}
 	}, [loading]);
 
-	useEffect(() => {
-		const config = {
-			headers: {
-				'Content-Type': 'application/json',
-				authorization: JSON.parse(localStorage.getItem('vincenttoken')),
-			},
-		};
-		id != undefined &&
-			axios
-				.put(
-					api.changeSeen,
-					{
-						id: id,
-						seen: 1,
-					},
-					config
-				)
-				.then(res => console.log(res))
-				.catch(e => console.log(e));
-	}, [id]);
-
 	const editOrder = async () => {
-		const config = {
-			headers: {
-				'Content-Type': 'application/json',
-				authorization: JSON.parse(localStorage.getItem('vincenttoken')),
-			},
-		};
-		try {
-			const { data } = await axios.put(
-				api.order,
-				{
-					id: order._id,
-					status: value || order.status,
-					paid: paid || order.isPaid,
-				},
-				config
-			);
-			if (data) {
-				setThisOrder(data);
-
-				setEdit(false);
-			} else {
-				colsole.log(data);
-			}
-		} catch (e) {
-			console.log(e);
-		}
+		dispatch(editOrderAction(order, value, paid));
 	};
 
-	if (loading) return <Loading />;
+	if (pageLoading) return <Loading />;
 
 	if (error) return <PageNotAuthorized />;
 
@@ -106,7 +67,11 @@ const adorder = () => {
 						<OS order={thisOrder} />
 					)}
 
-					{edit ? (
+					{loading ? (
+						<Container center margin='1em'>
+							<h6>Saving...</h6>
+						</Container>
+					) : edit ? (
 						<EditingButton
 							cancelEdit={() => setEdit(false)}
 							saveEdit={editOrder}
@@ -114,20 +79,13 @@ const adorder = () => {
 					) : (
 						<>
 							<EditButton setEdit={() => setEdit(true)} />
-							<div
-								style={{
-									display: 'flex',
-									margin: '0 1em',
-
-									justifyContent: 'flex-end',
-								}}>
+							<Container right margin='0 1em'>
 								<Link href={`/aduser/${order.user._id}`} passHref>
 									<ProductWrapper>
-										{' '}
 										<TextButton onClick={() => {}}>Customer Details</TextButton>
 									</ProductWrapper>
 								</Link>
-							</div>
+							</Container>
 						</>
 					)}
 				</div>

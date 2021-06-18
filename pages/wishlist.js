@@ -6,7 +6,7 @@ const wishlist = () => {
 	const { favItems } = useSelector(state => state.favItems);
 
 	return (
-		<Page>
+		<Page title="Wishlist | Vincent's Sphere">
 			<div className='explore-page'>
 				<h1>Wishlist</h1>
 			</div>

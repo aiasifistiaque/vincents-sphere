@@ -70,7 +70,7 @@ const signup = () => {
 	};
 
 	return (
-		<Page>
+		<Page title='Register'>
 			<div className='login-page'>
 				<div className='login-form'>
 					<h3>Register</h3>

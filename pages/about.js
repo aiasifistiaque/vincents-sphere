@@ -10,7 +10,7 @@ import {
 
 const about = () => {
 	return (
-		<Page>
+		<Page title="About | Vincent's Sphere">
 			<div className='about-page'>
 				<OurTeam />
 				<h3>About Us</h3>

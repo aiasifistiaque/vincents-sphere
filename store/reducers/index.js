@@ -20,24 +20,32 @@ import {
 	getAnOrderReducer,
 	adminSearchOrderReducer,
 	getUserOrderReducer,
+	orderSeenReducer,
 } from './orderReducer';
 import { favItemReducer } from './favItemReducer';
 
 const rootReducer = combineReducers({
 	auth: authReducer,
-	getAllProducts: getAllProductsReducer,
-	getAProduct: getAProductReducer,
 	cart: cartReducer,
 	token: userLoginReducer,
 	signup: userSignupReducer,
-	getAllOrders: getAllOrdersReducer,
-	getAnOrder: getAnOrderReducer,
+
+	//item reducers
 	categoryProduct: getCategoryProductReducer,
 	favItems: favItemReducer,
+	getAllProducts: getAllProductsReducer,
+	getAProduct: getAProductReducer,
+
+	//user reducers
 	getAllUsers: getAllUserReducer,
 	singleUser: getSingleUserReducer,
 	emailUser: emailUserReducer,
+
+	//order reducers
+	orderSeen: orderSeenReducer,
 	userOrders: getUserOrderReducer,
+	getAllOrders: getAllOrdersReducer,
+	getAnOrder: getAnOrderReducer,
 
 	//admin search
 	adminSearchOrder: adminSearchOrderReducer,

@@ -51,7 +51,7 @@ const cat = () => {
 	if (initialLoading) return <PageLoading />;
 
 	return (
-		<Page>
+		<Page title={`Vincent's Shpere | Categories`}>
 			<div className='category-page'>
 				<h1>{cat.title}</h1>
 				<h4>{cat.subtitle}</h4>

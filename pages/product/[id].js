@@ -49,7 +49,9 @@ const Product = () => {
 	if (error) return <PageNotFound />;
 
 	return (
-		<ProductPage title={product.name} product={product}>
+		<ProductPage
+			title={`${product.name} | Vincent's Sphere #${product._id}`}
+			product={product}>
 			<PictureFullScreen
 				open={openPic}
 				close={() => setOpenPic(false)}

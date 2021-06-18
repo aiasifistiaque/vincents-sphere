@@ -44,7 +44,7 @@ const checkout = () => {
 	if (!isLoggedIn) return <Loading />;
 
 	return (
-		<Page>
+		<Page title='Checkout'>
 			<div className='login-page'>
 				<div className='login-form'>
 					<h3>Shipping</h3>

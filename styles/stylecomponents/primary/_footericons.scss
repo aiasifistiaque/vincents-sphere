@@ -1,5 +1,22 @@
 //@include
 
+@mixin footer-icn($height) {
+	@include btn-text-unselect;
+	color: black;
+	height: $height;
+	cursor: pointer;
+	margin-left: 15px;
+	border-radius: 2px;
+
+	&:nth-of-type(1) {
+		margin-left: 0;
+	}
+
+	&:hover {
+		color: $color-pink;
+	}
+}
+
 .footer-section-icons {
 	display: flex;
 	flex-direction: column;
@@ -22,23 +39,12 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-
 		.footer-icons {
-			color: black;
-			height: 30px;
-			cursor: pointer;
-			//padding: 5px 10px;
-			margin-left: 15px;
-			border-radius: 2px;
-
-			&:nth-of-type(1) {
-				margin-left: 0;
-			}
-
-			&:hover {
-				//background-color: $color-pink;
-				color: $color-pink;
-			}
+			@include footer-icn(30px);
 		}
 	}
+}
+
+.back-to-top-icon {
+	@include footer-icn(40px);
 }

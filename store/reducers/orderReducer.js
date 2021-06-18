@@ -75,3 +75,41 @@ export const adminSearchOrderReducer = (
 			return state;
 	}
 };
+
+/*change seen status when 
+admin opens an order*/
+export const orderSeenReducer = (
+	state = { seen: false, loading: true },
+	action
+) => {
+	switch (action.type) {
+		case 'ORDER_SEEN_REQUEST':
+			return { loading: true, seen: 2 };
+		case 'ORDER_SEEN_SUCCESS':
+			return { loading: false, seen: 1 };
+		case 'ORDER_SEEN_FAIL':
+			return { loading: false, error: action.payload, seen: 2 };
+
+		default:
+			return state;
+	}
+};
+
+/*order being edited
+by admin*/
+export const editOrderReducer = (
+	state = { edit: false, loading: false },
+	action
+) => {
+	switch (action.type) {
+		case 'EDIT_ORDER_REQUEST':
+			return { loading: true, edit: true, order: {} };
+		case 'EDIT_ORDER_SUCCESS':
+			return { loading: false, edit: false, order: action.payload };
+		case 'EDIT_ORDER_FAIL':
+			return { loading: false, error: action.payload, edit: false };
+
+		default:
+			return state;
+	}
+};
