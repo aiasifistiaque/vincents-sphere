@@ -1,0 +1,33 @@
+.terms {
+	padding: 15vh 5%;
+	line-height: 2em;
+	h1 {
+		margin: 1em 0;
+	}
+	h2 {
+		margin: 1em 0;
+		padding: 0;
+	}
+	h3 {
+		font-size: 1.5em;
+		margin: 1.5em 0 0.5em 0;
+	}
+	li {
+		margin: 2em 0;
+	}
+	p {
+		@media only screen and (max-width: $medium-screen) {
+			font-size: 0.9em;
+			line-height: 1.6;
+		}
+	}
+	a {
+		color: $color-pink;
+		text-decoration-line: none;
+
+		&:hover {
+			color: $color-pink;
+			text-decoration-line: underline;
+		}
+	}
+}

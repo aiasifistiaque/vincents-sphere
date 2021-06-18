@@ -27,7 +27,7 @@ const terms = () => {
 					If you want us to dispatch your parcel a couple of days later then let
 					us know right away while placing the order. But we can not hold the
 					parcel for more than 3 days. There will be exceptions according to our
-					stock and we will let you know in that case
+					stock and we will let you know in that case.
 				</p>
 				<h3>Payments</h3>
 				<p>

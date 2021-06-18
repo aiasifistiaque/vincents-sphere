@@ -11,12 +11,13 @@ import getAnOrder from '../../store/actions/orderActions/getAnOrder';
 import { TextButton } from '../../components';
 import Link from 'next/link';
 import ProductWrapper from '../../components/product/ProductWrapper';
+import PageNotAuthorized from '../../components/error/PageNotAuthorized';
 
 const adorder = () => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const { id } = router.query;
-	const { order, loading } = useSelector(state => state.getAnOrder);
+	const { order, loading, error } = useSelector(state => state.getAnOrder);
 	const [thisOrder, setThisOrder] = useState({});
 	const [edit, setEdit] = useState(false);
 	const [value, setValue] = useState('');
@@ -83,6 +84,8 @@ const adorder = () => {
 	};
 
 	if (loading) return <Loading />;
+
+	if (error) return <PageNotAuthorized />;
 
 	return (
 		<AdminPageLayout>

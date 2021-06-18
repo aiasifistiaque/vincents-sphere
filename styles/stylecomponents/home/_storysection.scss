@@ -44,6 +44,10 @@
 		@include n-m-p;
 		margin: 1em 0;
 		text-align: justify;
+		@media only screen and (max-width: $medium-screen) {
+			text-align: left;
+			line-height: 1.6;
+		}
 	}
 }
 

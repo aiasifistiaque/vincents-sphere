@@ -25,6 +25,7 @@
 @import './stylecomponents/product/review';
 @import './stylecomponents/profile/editprofile';
 @import './stylecomponents/enhancements/enhancements';
+@import './stylecomponents/terms/terms';
 
 html,
 * {
@@ -96,25 +97,6 @@ a {
 	margin-bottom: 1px;
 	height: 16px;
 	margin-right: 10px;
-}
-
-.terms {
-	padding: 15vh 5%;
-	line-height: 2em;
-	h1 {
-		margin: 1em 0;
-	}
-	h2 {
-		margin: 1em 0;
-		padding: 0;
-	}
-	h3 {
-		font-size: 1.5em;
-		margin: 1.5em 0 0.5em 0;
-	}
-	li {
-		margin: 2em 0;
-	}
 }
 
 .page-vertical-padding {
@@ -258,5 +240,16 @@ a {
 	}
 	@media screen and (max-width: 320px) {
 		min-width: 250px;
+	}
+}
+
+.custom-text {
+	font-size: 1.1em;
+	margin: 0;
+	padding: 0;
+	@media only screen and(max-width:$medium-screen) {
+		p {
+			font-size: 0.9em;
+		}
 	}
 }
