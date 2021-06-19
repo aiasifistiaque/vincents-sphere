@@ -13,11 +13,6 @@ const useIsLoggedIn = () => {
 		const items = JSON.parse(localStorage.getItem('vincentfav'));
 
 		if (token != null) {
-			if (items != undefined) {
-				if (items.length < 1) {
-					dispatch(resetFav(token));
-				}
-			}
 			setAuthToken(() => token);
 			setIsLoggedIn(() => true);
 		} else {

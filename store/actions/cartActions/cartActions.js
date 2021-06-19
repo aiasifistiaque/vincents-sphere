@@ -120,8 +120,8 @@ export const removeFromFav = product => async (dispatch, getState) => {
 	}
 };
 
-export const resetFav = token => async (dispatch, getState) => {
-	//const token = JSON.parse(localStorage.getItem('vincenttoken'));
+export const resetFav = () => async (dispatch, getState) => {
+	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
 	const config = {
 		headers: { 'Content-Type': 'application/json', authorization: token },
