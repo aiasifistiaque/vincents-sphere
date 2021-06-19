@@ -3,24 +3,18 @@ import Page from '../components/Page';
 import useIsLoggedIn from '../hooks/useIsLoggedIn';
 import Loading from '../components/Loading';
 import { useRouter } from 'next/router';
-import useAddNewOrder from '../hooks/useAddNewOrder';
-import { useDispatch } from 'react-redux';
-import { emptyCart } from '../store/actions/cartActions/cartActions';
 import ShippingForm from '../components/cart/ShippingForm';
-import PageNotFound from '../components/error/PageNotFound';
 
 const checkout = () => {
-	const dispatch = useDispatch();
 	const [address, setAddress] = useState('');
 	const [phone, setPhone] = useState('');
 	const [city, setCity] = useState('');
 	const [postCode, setPostCode] = useState('');
-	const [paymentMethod, setPaymentMethod] = useState('cash');
-	const [submit, setSubmit] = useState(false);
 	const router = useRouter();
 	const [error, setError] = useState(false);
 	const [errorMsg, setErrorMsg] = useState('');
 	const [orderLoading, setOrderLoading] = useState(false);
+	const router = useRouter();
 
 	const { loading, isLoggedIn } = useIsLoggedIn();
 
