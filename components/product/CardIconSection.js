@@ -64,7 +64,8 @@ const CardIconSection = ({ product }) => {
 						margin: '0 .5em',
 						borderRadius: 100,
 						paddingLeft: '1em',
-					}}>
+					}}
+					onClick={() => setBanner(false)}>
 					<p
 						style={{
 							margin: 0,
@@ -75,7 +76,7 @@ const CardIconSection = ({ product }) => {
 						}}>
 						Log in to add to wishlist
 					</p>
-					<FontAwesomeIcon
+					{/* <FontAwesomeIcon
 						onClick={() => setBanner(false)}
 						icon={faTimes}
 						style={{
@@ -84,7 +85,7 @@ const CardIconSection = ({ product }) => {
 							borderRadius: 100,
 						}}
 						className='v-pc-icons'
-					/>
+					/> */}
 				</div>
 			) : (
 				<div style={{ display: 'flex' }}>
