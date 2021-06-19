@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { api } from '../../../constants';
+
 const CART_ADD_ITEM = 'CART_ADD_ITEM';
 const CART_REMOVE_ITEM = 'CART_REMOVE_ITEM';
 const CART_SAVE_SHIPPING_ADDRESS = 'CART_SAVE_SHIPPING_ADDRESS';
@@ -67,26 +70,71 @@ export const savePaymentMethod = data => dispatch => {
 
 export const addToFav = product => async (dispatch, getState) => {
 	//const { data } = await axios.get(`/api/products/${id}`);
+	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
-	dispatch({
-		type: 'ADD_FAV_ITEM',
-		payload: product._id,
-	});
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			authorization: token,
+		},
+	};
 
-	localStorage.setItem(
-		'vincentfav',
-		JSON.stringify(getState().favItems.favItems)
-	);
+	try {
+		const { data } = await axios.post(
+			`${api.addWish}/${product._id}`,
+			{},
+			config
+		);
+		dispatch({
+			type: 'ADD_FAV_ITEM',
+			payload: product._id,
+		});
+		localStorage.setItem('vincentfav', JSON.stringify(data.wishlist));
+	} catch (e) {
+		console.log(e);
+	}
 };
 
-export const removeFromFav = product => (dispatch, getState) => {
-	dispatch({
-		type: 'REMOVE_FAV_ITEM',
-		payload: product._id,
-	});
+export const removeFromFav = product => async (dispatch, getState) => {
+	const token = JSON.parse(localStorage.getItem('vincenttoken'));
 
-	localStorage.setItem(
-		'vincentfav',
-		JSON.stringify(getState().favItems.favItems)
-	);
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			authorization: token,
+		},
+	};
+	try {
+		const { data } = await axios.post(
+			`${api.deleteWish}/${product._id}`,
+			{},
+			config
+		);
+		dispatch({
+			type: 'REMOVE_FAV_ITEM',
+			payload: product._id,
+		});
+		localStorage.setItem('vincentfav', JSON.stringify(data.wishlist));
+	} catch (e) {
+		console.log(e);
+	}
+};
+
+export const resetFav = token => async (dispatch, getState) => {
+	//const token = JSON.parse(localStorage.getItem('vincenttoken'));
+
+	const config = {
+		headers: { 'Content-Type': 'application/json', authorization: token },
+	};
+	try {
+		const { data } = await axios.get(api.getWish, config);
+
+		dispatch({
+			type: 'RESET_FAV_ITEM',
+			payload: data.wishlist,
+		});
+		localStorage.setItem('vincentfav', JSON.stringify(data.wishlist));
+	} catch (e) {
+		console.log(e);
+	}
 };

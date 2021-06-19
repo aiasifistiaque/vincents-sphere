@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Page from '../components/Page';
 import useIsLoggedIn from '../hooks/useIsLoggedIn';
 import Loading from '../components/Loading';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import useAddNewOrder from '../hooks/useAddNewOrder';
 import { useDispatch } from 'react-redux';
 import { emptyCart } from '../store/actions/cartActions/cartActions';
@@ -56,8 +56,16 @@ const checkout = () => {
 		}
 	};
 
+	useEffect(() => {
+		if (!isLoggedIn && !loading) router.push('/login?page=cart');
+	}, [loading]);
+
+	if (!isLoggedIn) {
+		router.push('/login?page=cart');
+		return <Loading />;
+	}
+
 	if (loading) return <Loading />;
-	if (!isLoggedIn) return <PageNotFound />;
 
 	return (
 		<Page title='Checkout'>

@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import userLoginAction from '../store/actions/userActions/userLoginAction';
 import ButtonLoading from '../components/ButtonLoading';
 import AgreeTerms from '../components/AgreeTerms';
-import { ErrorText, TextButton } from '../components';
+import { ErrorText } from '../components';
 import validateEmail from '../functions/validateEmail';
 
 const login = () => {

@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 
 const giftbox = () => {
 	const router = useRouter();
-	const image = router.query.image;
 	return (
 		<ProductPage>
 			<div className='page-product'>
@@ -41,7 +40,7 @@ const giftbox = () => {
 						customizable.
 					</p>
 					<hr />
-					giftBoxe
+
 					{giftBoxes.map((box, i) => (
 						<div style={{ margin: '1.5em 0' }} key={i}>
 							<h6>{box.title}</h6>

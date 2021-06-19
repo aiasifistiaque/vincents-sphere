@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faHeart } from '@fortawesome/free-solid-svg-icons';
+import {
+	faChevronRight,
+	faHeart,
+	faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -10,10 +14,15 @@ import {
 import ShareIcon from './ShareIcon';
 import { useRouter } from 'next/router';
 import ProductWrapper from './ProductWrapper';
+import useIsLoggedIn from '../../hooks/useIsLoggedIn';
 
 const CardIconSection = ({ product }) => {
 	const dispatch = useDispatch();
 	const router = useRouter();
+
+	const { loading, isLoggedIn } = useIsLoggedIn();
+
+	const [banner, setBanner] = useState(false);
 
 	const { favItems } = useSelector(state => state.favItems);
 	const [fav, setFav] = useState(false);
@@ -24,19 +33,70 @@ const CardIconSection = ({ product }) => {
 		} else setFav(false);
 	}, [favItems]);
 
+	const bannerClosed = () => {
+		setBanner(false);
+		console.log('close banner');
+	};
+
+	const onLikePress = () => {
+		if (!isLoggedIn) {
+			setBanner(true);
+			setTimeout(bannerClosed, 2500);
+		} else {
+			fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product));
+		}
+	};
+
+	if (loading) return null;
+
 	return (
 		<div className='v-pc-icon-contaner'>
-			<div style={{ display: 'flex' }}>
-				<FontAwesomeIcon
-					icon={faHeart}
-					height={35}
-					className={fav ? 'v-pc-icons favd' : 'v-pc-icons'}
-					onClick={() =>
-						fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product))
-					}
-				/>
-				<ShareIcon className='v-pc-icons' product={product} />
-			</div>
+			{banner ? (
+				<div
+					style={{
+						transition: 'ease-out .5s',
+						overflow: 'hidden',
+						backgroundColor: 'rgba(0,0,0,1)',
+						display: 'flex',
+						flex: 1,
+						alignItems: 'center',
+						justifyContent: 'space-between',
+						margin: '0 .5em',
+						borderRadius: 100,
+						paddingLeft: '1em',
+					}}>
+					<p
+						style={{
+							margin: 0,
+							padding: 0,
+							fontSize: '.6em',
+							color: 'whitesmoke',
+							whiteSpace: 'nowrap',
+						}}>
+						Log in to add to wishlist
+					</p>
+					<FontAwesomeIcon
+						onClick={() => setBanner(false)}
+						icon={faTimes}
+						style={{
+							color: 'black',
+							backgroundColor: 'whitesmoke',
+							borderRadius: 100,
+						}}
+						className='v-pc-icons'
+					/>
+				</div>
+			) : (
+				<div style={{ display: 'flex' }}>
+					<FontAwesomeIcon
+						icon={faHeart}
+						height={35}
+						className={fav ? 'v-pc-icons favd' : 'v-pc-icons'}
+						onClick={onLikePress}
+					/>
+					<ShareIcon className='v-pc-icons' product={product} />
+				</div>
+			)}
 			<Link href={`/product/${product._id}`} passHref>
 				<ProductWrapper>
 					<FontAwesomeIcon

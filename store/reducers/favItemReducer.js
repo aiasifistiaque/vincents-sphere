@@ -19,6 +19,14 @@ export const favItemReducer = (state = { favItems: [] }, action) => {
 				...state,
 				favItems: state.favItems.filter(x => x !== action.payload),
 			};
+		case 'RESET_FAV_ICON':
+			return {
+				favItems: action.payload,
+			};
+		case 'REMOVE_FAV_ICON':
+			return {
+				favItems: [],
+			};
 
 		default:
 			return state;

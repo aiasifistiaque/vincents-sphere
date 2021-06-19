@@ -8,9 +8,6 @@ const ProfileOrderCard = ({ order }) => {
 	return (
 		<div className='order-card'>
 			<p>ID: VC-{order._id}</p>
-			{
-				//<td>{order.createdAt}</td>
-			}
 			<p>Date: {getUnixToDate(order.createdAt)}</p>
 			<p>Total: ৳{order.totalPrice}</p>
 			<p>Paid: {order.isPaid ? 'yes' : 'no'}</p>

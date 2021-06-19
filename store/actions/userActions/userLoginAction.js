@@ -2,6 +2,7 @@
 
 import { api } from '../../../constants';
 import axios from 'axios';
+import { resetFav } from '../cartActions/cartActions';
 
 const userLoginAction = (email, password, redirect) => async dispatch => {
 	try {
@@ -24,7 +25,15 @@ const userLoginAction = (email, password, redirect) => async dispatch => {
 
 		localStorage.setItem('vincenttoken', JSON.stringify(data));
 
+		const conf = {
+			headers: {
+				'Content-Type': 'application/json',
+				authorization: data,
+			},
+		};
+
 		document.location.href = redirect;
+		dispatch(resetFav(data));
 	} catch (error) {
 		dispatch({
 			type: 'USER_LOGIN_FAIL',

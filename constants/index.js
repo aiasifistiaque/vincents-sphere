@@ -78,6 +78,9 @@ export const api = {
 
 	//review route
 	review: `${server}/review`,
+	addWish: `${server}/review/addtowishlist`,
+	deleteWish: `${server}/review/deletefromwishlist`,
+	getWish: `${server}/review/getwishlist`,
 
 	config: {
 		headers: {

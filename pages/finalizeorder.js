@@ -7,11 +7,8 @@ import ShippingDetails from '../components/cart/ShippingDetails';
 import ShadowContainerVertical from '../components/buttons/ShadowContainerVertical';
 import useAddNewOrder from '../hooks/useAddNewOrder';
 import useIsLoggedIn from '../hooks/useIsLoggedIn';
-import { useDispatch } from 'react-redux';
-import { emptyCart } from '../store/actions/cartActions/cartActions';
 import { useRouter } from 'next/router';
 import HeadingText from '../components/texts/HeadingText';
-import { LongButton } from '../components';
 
 const finalizeorder = () => {
 	const [shipping, setShipping] = useState({});
