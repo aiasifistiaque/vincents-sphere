@@ -54,7 +54,6 @@ const checkout = () => {
 	}, [loading]);
 
 	if (!isLoggedIn) {
-		router.push('/login?page=cart');
 		return <Loading />;
 	}
 
