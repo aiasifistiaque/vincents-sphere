@@ -52,20 +52,7 @@ const CardIconSection = ({ product }) => {
 	return (
 		<div className='v-pc-icon-contaner'>
 			{banner ? (
-				<div
-					style={{
-						transition: 'ease-out 1s',
-						overflow: 'hidden',
-						backgroundColor: 'rgba(0,0,0,1)',
-						display: 'flex',
-						flex: 1,
-						alignItems: 'center',
-						justifyContent: 'space-between',
-						margin: '0 .5em',
-						borderRadius: 100,
-						paddingLeft: '1em',
-					}}
-					onClick={() => setBanner(false)}>
+				<div className='card-banner' onClick={() => setBanner(false)}>
 					<p
 						style={{
 							margin: 0,

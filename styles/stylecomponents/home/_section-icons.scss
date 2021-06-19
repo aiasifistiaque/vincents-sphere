@@ -6,6 +6,22 @@
 	width: 100%;
 }
 
+.card-banner {
+	transition: ease-in-out 1s;
+	overflow: hidden;
+	background-color: black;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 0.5em;
+	border-radius: 100px;
+	padding-left: 1em;
+	@media only screen and (max-width: $medium-screen) {
+		transition: 0;
+	}
+}
+
 .v-pc-icons {
 	height: 35px;
 	width: 2.3em;
