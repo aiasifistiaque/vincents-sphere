@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Page from '../components/Page';
 import useIsLoggedIn from '../hooks/useIsLoggedIn';
 import Loading from '../components/Loading';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import useAddNewOrder from '../hooks/useAddNewOrder';
 import { useDispatch } from 'react-redux';
 import { emptyCart } from '../store/actions/cartActions/cartActions';
+import ShippingForm from '../components/cart/ShippingForm';
+import PageNotFound from '../components/error/PageNotFound';
 
 const checkout = () => {
 	const dispatch = useDispatch();
@@ -15,77 +17,65 @@ const checkout = () => {
 	const [postCode, setPostCode] = useState('');
 	const [paymentMethod, setPaymentMethod] = useState('cash');
 	const [submit, setSubmit] = useState(false);
+	const router = useRouter();
+	const [error, setError] = useState(false);
+	const [errorMsg, setErrorMsg] = useState('');
+	const [orderLoading, setOrderLoading] = useState(false);
 
 	const { loading, isLoggedIn } = useIsLoggedIn();
-	const { id, orderLoading, success, error, errorMsg } = useAddNewOrder(
-		submit,
-		{ address: address, city: city, postalCode: postCode, phone: phone },
-		paymentMethod
-	);
 
-	useEffect(() => {
-		if (!isLoggedIn && !loading) Router.push('/login?page=cart');
-	}, [loading]);
-
-	useEffect(() => {
-		//setLoading(true);
-		if (!orderLoading) setSubmit(false);
-		if (success) {
-			//localStorage.setItem('vincentcart', JSON.stringify([]));
-			dispatch(emptyCart());
-			Router.replace(`/order/${id}?status=new`);
+	const submitPressed = () => {
+		setOrderLoading(true);
+		if (address.length < 1) {
+			setError(true);
+			setErrorMsg('Address is required');
+			setOrderLoading(false);
+		} else if (city.length < 1) {
+			setError(true);
+			setErrorMsg('City is required');
+			setOrderLoading(false);
+		} else if (postCode.length < 4) {
+			setError(true);
+			setErrorMsg('Wrong Postcode');
+		} else if (phone.length < 7) {
+			setError(true);
+			setErrorMsg('Please provide a valid phone number');
+			setOrderLoading(false);
 		} else {
-			//setLoading(false);
+			localStorage.setItem(
+				'vincentshipping',
+				JSON.stringify({
+					address: address,
+					city: city,
+					postalCode: postCode,
+					phone: phone,
+				})
+			);
+			router.replace('/finalizeorder');
+			//setOrderLoading(false);
 		}
-	}, [orderLoading, success]);
+	};
 
 	if (loading) return <Loading />;
-
-	if (!isLoggedIn) return <Loading />;
+	if (!isLoggedIn) return <PageNotFound />;
 
 	return (
 		<Page title='Checkout'>
-			<div className='login-page'>
-				<div className='login-form'>
-					<h3>Shipping</h3>
-					<label>Address</label>
-					<input
-						type='text'
-						placeholder='address'
-						value={address}
-						onChange={e => setAddress(e.target.value)}
-					/>
-					<label>City</label>
-					<input
-						type='text'
-						placeholder='city'
-						value={city}
-						onChange={e => setCity(e.target.value)}
-					/>
-					<label>Phone Number</label>
-					<input
-						type='number'
-						placeholder='phone'
-						value={phone}
-						onChange={e => setPhone(e.target.value)}
-						required
-					/>
-					<label>Post Code</label>
-					<input
-						type='text'
-						placeholder='post code'
-						value={postCode}
-						onChange={e => setPostCode(e.target.value)}
-					/>
-					<label>Payment Method</label>
-					<input type='text' placeholder='cash on delivery' disabled />
-					<div
-						className='login-button'
-						onClick={() => (!orderLoading ? setSubmit(true) : null)}>
-						<p>{orderLoading ? 'loading...' : 'Confirm'}</p>
-					</div>
-					{error && <p style={{ color: 'crimson' }}>{errorMsg}</p>}
-				</div>
+			<div className='checkout-page'>
+				<ShippingForm
+					address={address}
+					setAddress={e => setAddress(e)}
+					city={city}
+					setCity={e => setCity(e)}
+					phone={phone}
+					setPhone={e => setPhone(e)}
+					postCode={postCode}
+					setPostCode={e => setPostCode(e)}
+					error={error}
+					errorMsg={errorMsg}
+					orderLoading={orderLoading}
+					submit={submitPressed}
+				/>
 			</div>
 		</Page>
 	);

@@ -1,5 +1,28 @@
 @import './loginbutton';
 
+%login-inputs {
+	width: 25em;
+	padding: 0 0.8em;
+	margin: 0.2em 0 1.5em 0;
+	border: none;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(black, 0.2);
+	letter-spacing: 2px;
+
+	&::placeholder {
+		letter-spacing: 2px;
+		text-transform: capitalize;
+	}
+
+	&:focus {
+		outline: 2px solid black;
+	}
+
+	@media only screen and (max-width: $medium-screen) {
+		width: 15em;
+	}
+}
+
 .login-page {
 	margin: 15vh 5%;
 	display: flex;
@@ -23,28 +46,13 @@
 		}
 
 		input {
+			@extend %login-inputs;
 			height: 45px;
-			width: 25em;
-			padding: 0 0.8em;
-			margin: 0.2em 0 1.5em 0;
-			border: none;
-			background-color: white;
-			box-shadow: 0 0 10px rgba(black, 0.2);
-			//border: 1px solid black;
-			letter-spacing: 2px;
+		}
 
-			&::placeholder {
-				letter-spacing: 2px;
-				text-transform: capitalize;
-			}
-
-			&:focus {
-				outline: 2px solid black;
-			}
-
-			@media only screen and (max-width: $medium-screen) {
-				width: 15em;
-			}
+		textarea {
+			@extend %login-inputs;
+			padding: 0.5em 0.8em;
 		}
 
 		a {
@@ -55,7 +63,6 @@
 }
 
 .forgot-password {
-	//align-self: flex-end;
 	margin-top: -1em;
 	margin-bottom: 1em;
 	font-size: 0.8em;

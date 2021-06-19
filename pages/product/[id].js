@@ -45,8 +45,8 @@ const Product = () => {
 	}, [cartItems, id]);
 
 	if (loading) return <PageLoading />;
-
 	if (error) return <PageNotFound />;
+	if (product.status != 'visible') return <PageNotFound />;
 
 	return (
 		<ProductPage

@@ -4,7 +4,6 @@ import {
 	faFacebookSquare,
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
-import { Container } from '@material-ui/core';
 
 const data = [
 	{

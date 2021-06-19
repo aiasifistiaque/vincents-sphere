@@ -1,9 +1,7 @@
 import React from 'react';
-import DeleteFromCart from './DeleteFromCart';
 import Image from 'next/image';
-import CartQtyButton from './CartQtyButton';
 
-const CartItem = ({ product, index }) => {
+const CartItemCheckout = ({ product }) => {
 	return (
 		<div className='cart-item'>
 			<div
@@ -15,8 +13,8 @@ const CartItem = ({ product, index }) => {
 				<Image
 					alt={product.name}
 					src={product.image}
-					height={60}
-					width={80}
+					height={80}
+					width={100}
 					className='v-image'
 				/>
 				<p></p>
@@ -29,12 +27,6 @@ const CartItem = ({ product, index }) => {
 				<p>
 					৳{product.price} x {product.qty}
 				</p>
-			</Containers>
-			<Containers flex={0}>
-				<CartQtyButton product={product}>{product.qty}</CartQtyButton>
-			</Containers>
-			<Containers flex={0}>
-				<DeleteFromCart product={product} index={index} />
 			</Containers>
 		</div>
 	);
@@ -55,4 +47,4 @@ const Containers = ({ flex, children }) => {
 	);
 };
 
-export default CartItem;
+export default CartItemCheckout;

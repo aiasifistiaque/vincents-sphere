@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useGetSingleOrder from '../../hooks/useGetSingleOrder';
 import Page from '../../components/Page';
 import { OrderDetails, OrderSummary } from '../../components/order';
 import PageLoading from '../../components/PageLoading';
 import PageNotFound from '../../components/error/PageNotFound';
+import { useDispatch } from 'react-redux';
+import { emptyCart } from '../../store/actions/cartActions/cartActions';
 
 const order = () => {
 	const router = useRouter();
 	const { id } = router.query;
 	const status = router.query.status;
 	const { order, loading, error } = useGetSingleOrder(id);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (status == 'new') {
+			dispatch(emptyCart());
+		}
+	}, [status]);
 
 	if (loading) return <PageLoading />;
 

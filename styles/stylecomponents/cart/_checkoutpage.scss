@@ -1,0 +1,13 @@
+//@include
+
+.checkout-page {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.checkout-cart {
+	background-color: white;
+	padding: 15vh 4%;
+	//max-height: 100vh;
+	overflow: scroll;
+}

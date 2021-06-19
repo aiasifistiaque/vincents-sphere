@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard';
 import { useSelector, useDispatch } from 'react-redux';
 import getAllProducts from '../store/actions/productActions/getAllProducts';
 import Loading from '../components/Loading';
+import PageNotFound from '../components/error/PageNotFound';
 
 const allproducts = () => {
 	const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const allproducts = () => {
 	}, [dispatch]);
 
 	if (loading) return <Loading />;
+
+	if (error) return <PageNotFound />;
 
 	return (
 		<Page>

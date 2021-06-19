@@ -34,7 +34,7 @@ const useAddNewOrder = (submit, address, paymentMethod) => {
 					{
 						orderItems: items,
 						shippingAddress: address,
-						paymentMethod: paymentMethod,
+						paymentMethod: 'cash',
 						itemPrice: totalPrice,
 						vat: 0,
 						shippingPrice: 0,
