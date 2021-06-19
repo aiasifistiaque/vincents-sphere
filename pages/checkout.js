@@ -10,7 +10,6 @@ const checkout = () => {
 	const [phone, setPhone] = useState('');
 	const [city, setCity] = useState('');
 	const [postCode, setPostCode] = useState('');
-	const router = useRouter();
 	const [error, setError] = useState(false);
 	const [errorMsg, setErrorMsg] = useState('');
 	const [orderLoading, setOrderLoading] = useState(false);
