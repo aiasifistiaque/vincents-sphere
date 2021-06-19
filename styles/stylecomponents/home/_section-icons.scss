@@ -7,7 +7,9 @@
 }
 
 .card-banner {
-	transition: ease-in-out 1s;
+	transition: ease-in 0.5s;
+	@media only screen and (min-width: $medium-screen) {
+	}
 	overflow: hidden;
 	background-color: black;
 	display: flex;
@@ -17,9 +19,7 @@
 	margin: 0 0.5em;
 	border-radius: 100px;
 	padding-left: 1em;
-	@media only screen and (max-width: $medium-screen) {
-		transition: 0;
-	}
+	cursor: pointer;
 }
 
 .v-pc-icons {
