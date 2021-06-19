@@ -10,21 +10,42 @@ import HeadingContainer from '../../components/admin/HeadingContainer';
 import ProductEdit from '../../components/admin/ProductEdit';
 import AdminProductDetails from '../../components/admin/AdminProductDetails';
 import { CustomInput, CustomUpload } from '../../components/admin/CustomInputs';
+import changeProductPictureAction from '../../store/actions/productActions/changeProductPictureAction';
+import NetworkErrorPage from '../../components/error/NetworkErrorPage';
 
 const adproduct = () => {
 	const router = useRouter();
 	const [edit, setEdit] = useState(false);
 	const { id } = router.query;
 	const dispatch = useDispatch();
-	const { product, loading } = useSelector(state => state.getAProduct);
+	const { product, loading, error } = useSelector(state => state.getAProduct);
 	const [change, setChange] = useState(false);
 	const [image, setImage] = useState();
+	const [pageLoading, setPageLoading] = useState(false);
+	const [thisProduct, setThisProduct] = useState({});
 
 	useEffect(() => {
+		setPageLoading(true);
 		if (id != undefined) dispatch(getAProduct(id));
 	}, [id]);
 
-	if (loading) return <Loading />;
+	useEffect(() => {
+		if (!loading && !error) {
+			setThisProduct(product);
+			setEdit(false);
+			setChange(false);
+			setPageLoading(false);
+			setImage();
+		}
+	}, [loading]);
+
+	const changePic = () => {
+		dispatch(changeProductPictureAction(product._id, image));
+	};
+
+	if (pageLoading) return <Loading />;
+
+	if (error) return <NetworkErrorPage />;
 
 	return (
 		<AdminPageLayout>
@@ -37,22 +58,36 @@ const adproduct = () => {
 
 			<div className='admin-product' style={{ padding: 0, margin: 0 }}>
 				<div className='admin-product-image'>
-					<Image
-						src={product.image}
-						alt={product.name}
-						width={400}
-						height={350}
-						className='v-image'
-					/>
+					{loading ? (
+						<h2>Processing...</h2>
+					) : (
+						<Image
+							src={
+								thisProduct.image ||
+								'/dream catcher/handmade Dream Catcher price 500 taka.jpg'
+							}
+							alt={thisProduct.name}
+							width={400}
+							height={350}
+							className='v-image'
+						/>
+					)}
+
 					<div style={{ margin: '1em 0' }}>
-						{/* {change ? (
-							<div style={{ display: 'flex', flexDirection: 'column' }}>
+						{change ? (
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+								}}>
 								<CustomUpload value={image} setValue={e => setImage(e)}>
-									Select
+									Select Picture
 								</CustomUpload>
-								<div style={{ margin: '1em 0 0 0' }}>
-									<CustomButton>Change</CustomButton>
-								</div>
+
+								<CustomButton onClick={!loading && changePic}>
+									{!loading ? 'Change' : 'loading...'}
+								</CustomButton>
+
 								<CancelButton onClick={() => setChange(false)}>
 									Cancel
 								</CancelButton>
@@ -61,14 +96,14 @@ const adproduct = () => {
 							<LongButton onClick={() => setChange(true)}>
 								Change Photo
 							</LongButton>
-						)} */}
+						)}
 					</div>
 				</div>
 
 				{edit ? (
-					<ProductEdit product={product} cancel={() => setEdit(false)} />
+					<ProductEdit product={thisProduct} cancel={() => setEdit(false)} />
 				) : (
-					<AdminProductDetails product={product} />
+					<AdminProductDetails product={thisProduct} />
 				)}
 			</div>
 		</AdminPageLayout>

@@ -6,7 +6,7 @@ import ProductWrapper from '../product/ProductWrapper';
 
 const CatProductsOnDIsplay = ({ product }) => {
 	return (
-		<div className='section-card' style={{ marginLeft: 0 }}>
+		<div className='section-card' style={{ alignSelf: 'flex-start' }}>
 			<Link href={`/product/${product._id}`} passHref>
 				<ProductWrapper>
 					<Image

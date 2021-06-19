@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import TextLinkWrapper from '../texts/TextLinkWrapper';
 
 const CartItemCheckout = ({ product }) => {
 	return (
@@ -21,7 +23,11 @@ const CartItemCheckout = ({ product }) => {
 			</div>
 
 			<Containers flex={2}>
-				<h6>{product.name}</h6>
+				<Link href={`/product/${product.product}`} passHref>
+					<TextLinkWrapper>
+						<h6>{product.name}</h6>
+					</TextLinkWrapper>
+				</Link>
 			</Containers>
 			<Containers flex={2}>
 				<p>

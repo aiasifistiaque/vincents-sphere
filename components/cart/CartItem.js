@@ -2,6 +2,8 @@ import React from 'react';
 import DeleteFromCart from './DeleteFromCart';
 import Image from 'next/image';
 import CartQtyButton from './CartQtyButton';
+import Link from 'next/link';
+import TextLinkWrapper from '../texts/TextLinkWrapper';
 
 const CartItem = ({ product, index }) => {
 	return (
@@ -19,11 +21,14 @@ const CartItem = ({ product, index }) => {
 					width={80}
 					className='v-image'
 				/>
-				<p></p>
 			</div>
 
 			<Containers flex={2}>
-				<h6>{product.name}</h6>
+				<Link href={`/product/${product.product}`} passHref>
+					<TextLinkWrapper>
+						<h6>{product.name}</h6>
+					</TextLinkWrapper>
+				</Link>
 			</Containers>
 			<Containers flex={2}>
 				<p>

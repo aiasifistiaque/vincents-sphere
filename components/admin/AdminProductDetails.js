@@ -16,6 +16,9 @@ const AdminProductDetails = ({ product }) => {
 			<h6 style={{ margin: '1em 0', fontSize: '.8em' }}>
 				Status: {product.status}
 			</h6>
+			<h6 style={{ margin: '0 0', fontSize: '.8em' }}>
+				Wishlisted: {product.wishlisted}
+			</h6>
 
 			<hr />
 			<p>{product.description}</p>

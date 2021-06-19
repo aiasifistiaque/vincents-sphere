@@ -46,6 +46,7 @@ const Product = () => {
 
 	if (loading) return <PageLoading />;
 	if (error) return <PageNotFound />;
+	if (product == null) return <PageNotFound />;
 	if (product.status != 'visible') return <PageNotFound />;
 
 	return (

@@ -253,3 +253,13 @@ a {
 		}
 	}
 }
+
+.text-link-wrapper {
+	color: black;
+	text-decoration-line: none;
+
+	&:hover {
+		text-decoration-line: underline;
+		color: black;
+	}
+}

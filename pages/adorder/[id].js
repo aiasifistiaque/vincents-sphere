@@ -52,7 +52,7 @@ const adorder = () => {
 		<AdminPageLayout>
 			<div className='order-details-page'>
 				<div style={{ flex: 6 }}>
-					<OD order={thisOrder} />
+					<OD order={thisOrder} admin />
 				</div>
 				<div className='order-summary-edit'>
 					{edit ? (

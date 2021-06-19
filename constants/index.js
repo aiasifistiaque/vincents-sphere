@@ -56,6 +56,9 @@ export const api = {
 	order: `${server}/order`,
 	userorder: `${server}/order/userorder`,
 
+	//change product picture
+	changeProductPicture: `${server}/products/changepicture`,
+
 	allusers: `${server}/profile/getallusers`,
 	profile: `${server}/profile`,
 	anUser: `${server}/profile/getanuser`,
@@ -86,6 +89,11 @@ export const api = {
 		headers: {
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
+		},
+	},
+	fileConfig: {
+		headers: {
+			'Content-Type': 'multipart/form-data',
 		},
 	},
 };
