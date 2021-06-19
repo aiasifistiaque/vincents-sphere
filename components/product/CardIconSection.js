@@ -54,7 +54,7 @@ const CardIconSection = ({ product }) => {
 			{banner ? (
 				<div
 					style={{
-						transition: 'ease-out .5s',
+						transition: 'ease-out 1s',
 						overflow: 'hidden',
 						backgroundColor: 'rgba(0,0,0,1)',
 						display: 'flex',
