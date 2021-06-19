@@ -74,23 +74,13 @@ const CardIconSection = ({ product }) => {
 						}}>
 						Log in to add to wishlist
 					</p>
-					{/* <FontAwesomeIcon
-						onClick={() => setBanner(false)}
-						icon={faTimes}
-						style={{
-							color: 'black',
-							backgroundColor: 'whitesmoke',
-							borderRadius: 100,
-						}}
-						className='v-pc-icons'
-					/> */}
 				</div>
 			) : (
 				<div style={{ display: 'flex' }}>
 					<FontAwesomeIcon
 						icon={faHeart}
 						height={35}
-						className={color ? 'v-pc-icons favd' : 'v-pc-icons'}
+						className={color ? 'favd' : 'v-pc-icons'}
 						onClick={onLikePress}
 					/>
 					<ShareIcon className='v-pc-icons' product={product} />

@@ -70,7 +70,7 @@ export const ProdFavButton = ({ product }) => {
 			}}>
 			<FontAwesomeIcon
 				icon={faHeart}
-				className={color ? 'icon favd' : 'icon'}
+				className={color ? 'icon ffavd' : 'icon'}
 			/>
 			<span>Add to Wishlist</span>
 		</div>
