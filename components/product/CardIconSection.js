@@ -41,7 +41,7 @@ const CardIconSection = ({ product }) => {
 	const onLikePress = () => {
 		if (!isLoggedIn) {
 			setBanner(true);
-			setTimeout(bannerClosed, 2500);
+			setTimeout(bannerClosed, 5000);
 		} else {
 			fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product));
 		}
