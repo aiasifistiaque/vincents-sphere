@@ -29,11 +29,16 @@ export const ProdFavButton = ({ product }) => {
 	const [fav, setFav] = useState(false);
 	const { loading, isLoggedIn } = useIsLoggedIn();
 	const [banner, setBanner] = useState(false);
+	const [color, setColor] = useState(false);
 
 	useEffect(() => {
 		if (favItems.find(x => x == product._id)) {
 			setFav(true);
-		} else setFav(false);
+			setColor(true);
+		} else {
+			setFav(false);
+			setColor(false);
+		}
 	}, [favItems]);
 
 	if (banner)
@@ -54,10 +59,19 @@ export const ProdFavButton = ({ product }) => {
 			className='prod-fav-button'
 			onClick={() => {
 				if (isLoggedIn) {
-					fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product));
+					if (fav) {
+						setColor(false);
+						dispatch(removeFromFav(product));
+					} else {
+						setColor(true);
+						dispatch(addToFav(product));
+					}
 				} else setBanner(true);
 			}}>
-			<FontAwesomeIcon icon={faHeart} className={fav ? 'icon favd' : 'icon'} />
+			<FontAwesomeIcon
+				icon={faHeart}
+				className={color ? 'icon favd' : 'icon'}
+			/>
 			<span>Add to Wishlist</span>
 		</div>
 	);

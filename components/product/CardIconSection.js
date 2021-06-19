@@ -26,11 +26,16 @@ const CardIconSection = ({ product }) => {
 
 	const { favItems } = useSelector(state => state.favItems);
 	const [fav, setFav] = useState(false);
+	const [color, setColor] = useState(false);
 
 	useEffect(() => {
 		if (favItems.find(x => x == product._id)) {
 			setFav(true);
-		} else setFav(false);
+			setColor(true);
+		} else {
+			setFav(false);
+			setColor(false);
+		}
 	}, [favItems]);
 
 	const bannerClosed = () => {
@@ -43,7 +48,13 @@ const CardIconSection = ({ product }) => {
 			setBanner(true);
 			setTimeout(bannerClosed, 5000);
 		} else {
-			fav ? dispatch(removeFromFav(product)) : dispatch(addToFav(product));
+			if (fav) {
+				setColor(false);
+				dispatch(removeFromFav(product));
+			} else {
+				setColor(true);
+				dispatch(addToFav(product));
+			}
 		}
 	};
 
@@ -79,7 +90,7 @@ const CardIconSection = ({ product }) => {
 					<FontAwesomeIcon
 						icon={faHeart}
 						height={35}
-						className={fav ? 'v-pc-icons favd' : 'v-pc-icons'}
+						className={color ? 'v-pc-icons favd' : 'v-pc-icons'}
 						onClick={onLikePress}
 					/>
 					<ShareIcon className='v-pc-icons' product={product} />
