@@ -1,6 +1,7 @@
 import React from 'react';
 import { general } from '../../constants';
 import getUnixToDate from '../../functions/unixToDate';
+import PriceTable from '../texts/PriceTable';
 
 const OrderSummaryItems = ({ order, edit }) => {
 	return (
@@ -10,22 +11,22 @@ const OrderSummaryItems = ({ order, edit }) => {
 				ID- {order._id}
 			</p>
 			<p>Date: {getUnixToDate(order.createdAt)}</p>
-			<p>
-				Items: {general.takaSymbol}
+			<PriceTable title='Items' margin='1em 1em .5em 0'>
 				{order.totalPrice}
-			</p>
-			<p>
-				VAT: {general.takaSymbol}
+			</PriceTable>
+			<PriceTable title='Vat' margin='.5em 1em .5em 0'>
 				{order.vat}
-			</p>
-			<p>
-				Shipping: {general.takaSymbol}
+			</PriceTable>
+			<PriceTable title='Shipping' margin='.5em 1em 0 0'>
 				{order.shippingPrice}
-			</p>
-			<p>
-				Total: {general.takaSymbol}
+			</PriceTable>
+			<div style={{ margin: '0 1em 0 0' }}>
+				<hr />
+			</div>
+
+			<PriceTable title='Total' margin='0 1em 2em 0'>
 				{order.totalPrice}
-			</p>
+			</PriceTable>
 		</>
 	);
 };

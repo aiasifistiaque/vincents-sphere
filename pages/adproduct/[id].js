@@ -9,7 +9,7 @@ import { CustomButton, LongButton, CancelButton } from '../../components';
 import HeadingContainer from '../../components/admin/HeadingContainer';
 import ProductEdit from '../../components/admin/ProductEdit';
 import AdminProductDetails from '../../components/admin/AdminProductDetails';
-import { CustomInput, CustomUpload } from '../../components/admin/CustomInputs';
+import { CustomUpload } from '../../components/admin/CustomInputs';
 import changeProductPictureAction from '../../store/actions/productActions/changeProductPictureAction';
 import NetworkErrorPage from '../../components/error/NetworkErrorPage';
 
@@ -36,6 +36,8 @@ const adproduct = () => {
 			setChange(false);
 			setPageLoading(false);
 			setImage();
+		} else {
+			error && setPageLoading(false);
 		}
 	}, [loading]);
 
@@ -84,9 +86,11 @@ const adproduct = () => {
 									Select Picture
 								</CustomUpload>
 
-								<CustomButton onClick={!loading && changePic}>
-									{!loading ? 'Change' : 'loading...'}
-								</CustomButton>
+								{image != null && (
+									<CustomButton onClick={!loading && changePic}>
+										{!loading ? 'Change' : 'loading...'}
+									</CustomButton>
+								)}
 
 								<CancelButton onClick={() => setChange(false)}>
 									Cancel
