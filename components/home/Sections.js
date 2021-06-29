@@ -14,7 +14,7 @@ const Sections = ({ section }) => {
 	const scrollRef = useRef(null);
 	const scrollDist = 310;
 
-	const { products, loading } = useGetCategoryProducts(section.name);
+	const { products, loading } = useGetCategoryProducts(section.target);
 
 	const scroll = scrollOffset => {
 		scrollRef.current.scrollLeft += scrollOffset;

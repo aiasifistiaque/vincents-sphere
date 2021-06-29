@@ -22,8 +22,8 @@ export default class MyDocument extends Document {
           `,
 						}}
 					/>
-					<meta name='description' content="Vincent's Sphere"></meta>
-					<meta name='description' content='thinkcrypt.io'></meta>
+					{/* <meta name='description' content="Vincent's Sphere"></meta>
+				<meta name='description' content='thinkcrypt.io'></meta> */}
 				</Head>
 				<body>
 					<Main />

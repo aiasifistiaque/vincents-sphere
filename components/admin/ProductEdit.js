@@ -112,7 +112,7 @@ const ProductEdit = ({ product, cancel }) => {
 
 			<div style={{ display: 'flex', margin: '1em 0' }}>
 				{loading ? (
-					<CustomButton onClick={() => {}}>loding...</CustomButton>
+					<CustomButton onClick={() => {}}>loading...</CustomButton>
 				) : (
 					<>
 						<CustomButton onClick={onSave}>Save</CustomButton>

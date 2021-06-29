@@ -1,14 +1,16 @@
 //
 
 export const backend = 'https://vincent-backend.herokuapp.com/api';
-export const backendFile = 'https://vincent-backend.herokuapp.com';
+export const backendFile = 'https://api-vincentsphere.herokuapp.com';
+
+export const production = 'https://api-vincentsphere.herokuapp.com/api';
 
 export const dev = 'http://localhost:5000/api';
 const domain = '';
 const frontDev = 'https://vincents-sphere.vercel.app/';
 
 export const frontend = frontDev;
-const server = backend;
+const server = production;
 
 export const sizes = {
 	displayCard: {
@@ -19,30 +21,35 @@ export const sizes = {
 
 export const categories = [
 	{
-		name: 'Candles',
-		title: 'Handicrafted Scented Candles',
-		subtitle: 'With over hundreds of candles to choose from',
+		name: 'Scented Candles',
+		target: 'Candles',
+		title: 'Handcrafted Scented Candles',
+		subtitle: 'With over hundreds of fragrances to choose from',
 	},
 	{
-		name: 'Bathsalt',
-		title: 'Aroma Therapy Bath Salts',
+		name: 'Bath Salts',
+		target: 'Bathsalt',
+		title: 'Aromatherapy Bath Salts',
 		subtitle: 'To soothe your mind, body & spirit',
 	},
 
 	{
-		name: 'Satin Mask',
-		title: 'Satin Mask',
+		name: 'Satin Masks',
+		target: 'Satin Mask',
+		title: 'Satin Masks',
 		subtitle: 'To keep your hair healthy, silky & smooth',
 	},
 	{
-		name: 'Satin Scrunchie',
+		name: 'Satin Scrunchies',
+		target: 'Satin Scrunchie',
 		title: 'Satin Scrunchies',
 		subtitle: 'To keep your hair healthy, silky & smooth',
 	},
 	{
-		name: 'Dream Catcher',
-		title: 'Dream Catcher',
-		subtitle: 'For a healthy sleep',
+		name: 'Dream Catchers',
+		target: 'Dream Catcher',
+		title: 'Dream Catchers',
+		subtitle: 'For a night of healthy sleep',
 	},
 ];
 

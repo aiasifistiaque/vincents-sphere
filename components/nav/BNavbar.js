@@ -61,7 +61,7 @@ export default function BNavbar({ searchActive, searchOn, searchOff }) {
 						{categories.map((cat, i) => (
 							<NavDropdown.Item
 								key={i}
-								href={`/cat/${cat.name}`}
+								href={`/cat/${cat.target}`}
 								style={{
 									padding: '10px 15px',
 								}}>

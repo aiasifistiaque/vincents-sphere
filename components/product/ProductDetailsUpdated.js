@@ -33,7 +33,7 @@ const ProductDetailsUpdated = ({ product, addLoading, itemPresent, item }) => {
 				<h5>Notes: {product.note}</h5>
 
 				<ThisText>Category: {product.category}</ThisText>
-				<ThisText>Sub Category:{product.subCategory}</ThisText>
+				<ThisText>Sub Category: {product.subCategory}</ThisText>
 			</div>
 
 			{product.countInStock == 0 ? (

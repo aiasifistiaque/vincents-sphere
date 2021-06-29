@@ -80,11 +80,13 @@ const adproduct = () => {
 							<div
 								style={{
 									display: 'flex',
-									alignItems: 'center',
+									//alignItems: 'center',
+									flexDirection: 'column',
 								}}>
 								<CustomUpload value={image} setValue={e => setImage(e)}>
 									Select Picture
 								</CustomUpload>
+								<br />
 
 								{image != null && (
 									<CustomButton onClick={!loading && changePic}>

@@ -504,9 +504,6 @@ div {
 }
 
 @media only screen and (max-width: 768px) {
-  .section-arrows .arrows {
-    padding: 3.5% 4.2%;
-  }
   .section-arrows .arrows:hover {
     -webkit-transform: none;
             transform: none;
@@ -657,21 +654,60 @@ div {
   width: 100%;
 }
 
+.card-banner {
+  overflow: hidden;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0.5em;
+  border-radius: 100px;
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .card-banner {
+    -webkit-transition: ease-in 0.5s;
+    transition: ease-in 0.5s;
+  }
+}
+
 .v-pc-icons {
-  height: 35px;
-  width: 2.3em;
-  margin: 0.2em;
-  padding: 0.5em;
+  height: 20px;
+  width: 20px;
+  margin: 0.8em 10px;
   color: black;
   cursor: pointer;
 }
 
 .v-pc-icons:hover {
   border-radius: 500px;
-  background-color: whitesmoke;
 }
 
 .favd {
+  height: 20px;
+  width: 20px;
+  margin: 0.8em 10px;
+  color: black;
+  cursor: pointer;
+  color: #fb3290;
+}
+
+.favd:hover {
+  border-radius: 500px;
+}
+
+.ffavd {
   color: #fb3290;
 }
 
@@ -1091,6 +1127,7 @@ div {
   color: #fb3290;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+  margin: 0 5px;
 }
 
 .footer-c a:hover {
@@ -1907,6 +1944,47 @@ div {
   color: crimson;
 }
 
+.login-page .login-form input, .login-page .login-form textarea {
+  width: 25em;
+  padding: 0 0.8em;
+  margin: 0.2em 0 1.5em 0;
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+.login-page .login-form input::-webkit-input-placeholder, .login-page .login-form textarea::-webkit-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input:-ms-input-placeholder, .login-page .login-form textarea:-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input::-ms-input-placeholder, .login-page .login-form textarea::-ms-input-placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input::placeholder, .login-page .login-form textarea::placeholder {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.login-page .login-form input:focus, .login-page .login-form textarea:focus {
+  outline: 2px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-page .login-form input, .login-page .login-form textarea {
+    width: 15em;
+  }
+}
+
 .login-page {
   margin: 15vh 5%;
   display: -webkit-box;
@@ -1964,44 +2042,10 @@ div {
 
 .login-page .login-form input {
   height: 45px;
-  width: 25em;
-  padding: 0 0.8em;
-  margin: 0.2em 0 1.5em 0;
-  border: none;
-  background-color: white;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  letter-spacing: 2px;
 }
 
-.login-page .login-form input::-webkit-input-placeholder {
-  letter-spacing: 2px;
-  text-transform: capitalize;
-}
-
-.login-page .login-form input:-ms-input-placeholder {
-  letter-spacing: 2px;
-  text-transform: capitalize;
-}
-
-.login-page .login-form input::-ms-input-placeholder {
-  letter-spacing: 2px;
-  text-transform: capitalize;
-}
-
-.login-page .login-form input::placeholder {
-  letter-spacing: 2px;
-  text-transform: capitalize;
-}
-
-.login-page .login-form input:focus {
-  outline: 2px solid black;
-}
-
-@media only screen and (max-width: 768px) {
-  .login-page .login-form input {
-    width: 15em;
-  }
+.login-page .login-form textarea {
+  padding: 0.5em 0.8em;
 }
 
 .login-page .login-form a {
@@ -2020,6 +2064,20 @@ div {
 .forgot-password:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.checkout-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.checkout-cart {
+  background-color: white;
+  padding: 15vh 4%;
+  overflow: scroll;
 }
 
 .cart-page {
@@ -2066,6 +2124,25 @@ div {
   .shopping-cart h3 {
     margin: 0 4%;
   }
+}
+
+.cart-item-vertical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: white;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 20px rgba(57, 49, 49, 0.05);
+          box-shadow: 0 0 20px rgba(57, 49, 49, 0.05);
+  border-radius: 4px;
 }
 
 .cart-item {
@@ -2117,7 +2194,7 @@ div {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
-  min-width: 360px;
+  min-width: 300px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -5111,5 +5188,17 @@ a {
   .custom-text p {
     font-size: 0.9em;
   }
+}
+
+.text-link-wrapper {
+  color: black;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.text-link-wrapper:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */

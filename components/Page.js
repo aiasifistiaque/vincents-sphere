@@ -79,31 +79,32 @@ export const ProductPage = ({ children, title, product }) => {
 					<>
 						<title>{title}</title>
 						<link rel='icon' href='/favicon.ico' />
-						<meta name='title' content={product.name || ''} />
+						<meta name='title' content={product.name} />
+						<meta name='description' content={product.name} />
 
-						<meta property='og:title' content={product.name || ''} />
+						<meta property='og:title' content={product.name} />
 
 						<meta
 							property='og:description'
-							content={product.description || ''}
+							content={product.description}
 							key='title'
 						/>
 
 						<meta
 							property='og:image:secure'
-							content={product.image || ''}
+							content={product.image}
 							key='title'
 						/>
 
 						<meta
 							property='og:image:secure_url'
-							content={product.image || ''}
+							content={product.image}
 							key='title'
 						/>
 
 						<meta
 							property='og:image:secure'
-							content={product.image || ''}
+							content={product.image}
 							key='title'
 						/>
 						<meta property='og:image:type' content='image/jpeg' />

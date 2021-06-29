@@ -11,8 +11,8 @@ import PictureFullScreen from '../../components/product/PictureFullScreen';
 import ProductDetailsUpdated from '../../components/product/ProductDetailsUpdated';
 import UpdatedProductDetails from '../../components/product/UpdatedProductDetails';
 import ReviewSection from '../../components/review/ReviewSection';
-import PageError from '../../components/PageError';
 import PageNotFound from '../../components/error/PageNotFound';
+import Head from 'next/head';
 
 const Product = () => {
 	const router = useRouter();
@@ -53,6 +53,10 @@ const Product = () => {
 		<ProductPage
 			title={`${product.name} | Vincent's Sphere #${product._id}`}
 			product={product}>
+			<Head>
+				<meta name='description' content={product.name} />
+			</Head>
+
 			<PictureFullScreen
 				open={openPic}
 				close={() => setOpenPic(false)}
