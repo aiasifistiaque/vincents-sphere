@@ -31,20 +31,22 @@ const Story = () => {
 				</div>
 
 				<p>
-					Hi, I am Mauli Rahman. I am a Business Student by choice and an Art
-					Enthusiast by talent. Also, I am a scented candle freak. But scented
-					candles were rare in Bangladesh. I remember buying candle-making kits
-					and make some candles at home for myself and my friends & family. That
-					is when I thought of turning my passion into a business
+					Mauli Rahman is currently a business student with a strong passion for
+					art. After struggling to find high quality scented candles in
+					Bangladesh, Mauli took it upon herself to hand craft scented candles
+					for herself. What initially started off as making candles using
+					candle-making kits for her friends, and family, quickly turned into a
+					successful business!
 				</p>
 				<p>
-					At the end of 2019, I started my journey of Vincent's Sphere. I
-					started small, only with 30 candles to be exact, and which sold out
-					just within 2 days. Ever since then, there was no looking back. As we
-					are growing, I got my two best friends on board with me to deal with
-					the now increased workload. Flash forward to now, Vincents's Sphere is
-					a full-fledged brand of Scented Candles, Skincare, and Handmade Goods
-					loved by all.
+					Vincent’s Sphere was brought to life in late 2019, starting off with
+					merely 30 candles that sold out within 2 days! Ever since then, there
+					was no looking back for Mauli and her new brand. As her business began
+					to flourish due to high demands, she got two of her best friends to
+					get on board to manage the increased influx of clients! Flash forward
+					to the present, Vincent’s Sphere has made its name as a fully-fledged
+					brand of divine scented candles, skincare, and other handmade goods
+					cherished by many.
 				</p>
 				<LongButton onClick={() => router.push('/about')}>
 					Learn More

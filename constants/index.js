@@ -22,32 +22,32 @@ export const sizes = {
 export const categories = [
 	{
 		name: 'Scented Candles',
-		target: 'Candles',
+		target: 'Scented Candles',
 		title: 'Handcrafted Scented Candles',
 		subtitle: 'With over hundreds of fragrances to choose from',
 	},
 	{
 		name: 'Bath Salts',
-		target: 'Bathsalt',
+		target: 'Bath Salts',
 		title: 'Aromatherapy Bath Salts',
 		subtitle: 'To soothe your mind, body & spirit',
 	},
 
 	{
 		name: 'Satin Masks',
-		target: 'Satin Mask',
+		target: 'Satin Masks',
 		title: 'Satin Masks',
 		subtitle: 'To keep your hair healthy, silky & smooth',
 	},
 	{
 		name: 'Satin Scrunchies',
-		target: 'Satin Scrunchie',
+		target: 'Satin Scrunchies',
 		title: 'Satin Scrunchies',
 		subtitle: 'To keep your hair healthy, silky & smooth',
 	},
 	{
 		name: 'Dream Catchers',
-		target: 'Dream Catcher',
+		target: 'Dream Catchers',
 		title: 'Dream Catchers',
 		subtitle: 'For a night of healthy sleep',
 	},
