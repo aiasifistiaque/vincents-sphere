@@ -26,11 +26,11 @@ const cat = () => {
 	useEffect(() => {
 		if (id != undefined) {
 			dispatch(getCategoryProduct(id, page));
-			if (id == 'Candles') setCat(categories[0]);
-			else if (id == 'Bathsalt') setCat(categories[1]);
-			else if (id == 'Satin Mask') setCat(categories[2]);
-			else if (id == 'Satin Scrunchie') setCat(categories[3]);
-			else if (id == 'Dream Catcher') setCat(categories[4]);
+			if (id == 'Scented Candles') setCat(categories[0]);
+			else if (id == 'Bath Salts') setCat(categories[1]);
+			else if (id == 'Satin Masks') setCat(categories[2]);
+			else if (id == 'Satin Scrunchies') setCat(categories[3]);
+			else if (id == 'Dream Catchers') setCat(categories[4]);
 		}
 	}, [id, page]);
 
