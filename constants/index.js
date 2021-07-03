@@ -37,7 +37,7 @@ export const categories = [
 		name: 'Satin Masks',
 		target: 'Satin Masks',
 		title: 'Satin Masks',
-		subtitle: 'To keep your hair healthy, silky & smooth',
+		subtitle: 'Made from easy breathable, soft & smooth satin',
 	},
 	{
 		name: 'Satin Scrunchies',
