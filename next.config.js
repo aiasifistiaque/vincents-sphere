@@ -28,7 +28,7 @@ const securityHeaders = [
 	},
 	{
 		key: 'Content-Security-Policy',
-		value: 'nonace',
+		value: 'nonce',
 	},
 ];
 
