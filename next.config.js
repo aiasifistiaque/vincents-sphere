@@ -26,6 +26,10 @@ const securityHeaders = [
 		key: 'X-Frame-Options',
 		value: 'ALLOW-FROM https://www.facebook.com/ https://www.messenger.com/',
 	},
+	{
+		key: 'Content-Security-Policy',
+		value: 'nonace',
+	},
 ];
 
 module.exports = {
