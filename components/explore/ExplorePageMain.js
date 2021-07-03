@@ -23,7 +23,10 @@ const ExplorePageMain = ({
 				{end ? (
 					<EndOfResult />
 				) : (
-					<LoadMoreButton loading={btnLoading} onClick={onLoadMore} />
+					<LoadMoreButton
+						loading={btnLoading}
+						onClick={!btnLoading ? onLoadMore : () => {}}
+					/>
 				)}
 			</>
 		);

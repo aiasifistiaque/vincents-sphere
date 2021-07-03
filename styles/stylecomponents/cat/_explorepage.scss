@@ -72,6 +72,7 @@
 	color: whitesmoke;
 	align-items: center;
 	justify-content: center;
+	@include btn-text-unselect;
 
 	@media only screen and(min-width:$large-screen) {
 		&:hover {
