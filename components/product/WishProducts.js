@@ -17,6 +17,7 @@ const WishProducts = ({ id }) => {
 			<Link href={`/product/${product._id}`} passHref>
 				<ProductWrapper>
 					<Image
+						unoptimized={true}
 						src={product.image || '/hero.jpg'}
 						alt={product.name}
 						width={300}

@@ -13,6 +13,7 @@ const PictureFullScreen = ({ open, close, product }) => {
 				</div>
 				<div className='image-fs-container'>
 					<Image
+						unoptimized={true}
 						src={product.image || dummyItem.image}
 						alt={product.name}
 						width={600}

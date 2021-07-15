@@ -15,6 +15,7 @@ const ProductsOnDisplay = ({ product }) => {
 					<div>
 						<CardImageWrapper>
 							<Image
+								unoptimized={true}
 								src={product.image}
 								alt={product.name}
 								width={400}

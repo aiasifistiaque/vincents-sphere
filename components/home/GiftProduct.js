@@ -12,6 +12,7 @@ const GiftProduct = ({ product }) => {
 				<ProductWrapper>
 					<div>
 						<Image
+							unoptimized={true}
 							src={product.image}
 							alt={product.name}
 							width={600}

@@ -104,7 +104,13 @@ const ReviewItem = ({ review }) => {
 	return (
 		<div className='review-item-container'>
 			<div style={{ display: 'flex', alignItems: 'center' }}>
-				<Image src='/reviewpp.png' alt='review' height={30} width={30} />
+				<Image
+					unoptimized={true}
+					src='/reviewpp.png'
+					alt='review'
+					height={30}
+					width={30}
+				/>
 				<h6>{review.name}</h6>
 			</div>
 

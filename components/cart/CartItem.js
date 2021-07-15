@@ -15,6 +15,7 @@ const CartItem = ({ product, index }) => {
 					margin: '0 5px',
 				}}>
 				<Image
+					unoptimized={true}
 					alt={product.name}
 					src={product.image}
 					height={60}

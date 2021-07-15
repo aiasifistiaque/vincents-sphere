@@ -13,6 +13,7 @@ const RelatedProductsOnDisplay = ({ product }) => {
 					cursor: 'pointer',
 				}}>
 				<Image
+					unoptimized={true}
 					src={product.image}
 					alt={product.name}
 					width={200}

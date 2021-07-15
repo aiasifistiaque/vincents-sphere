@@ -27,6 +27,7 @@ const OurTeam = () => {
 				<div className='team-container' key={i}>
 					<div className='team-image'>
 						<Image
+							unoptimized={true}
 							alt='item'
 							src={item.image}
 							height={300}

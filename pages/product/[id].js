@@ -66,6 +66,7 @@ const Product = () => {
 			<div className='page-product'>
 				<div className='product-image'>
 					<Image
+						unoptimized={true}
 						src={product.image || dummyItem.image}
 						alt={product.name}
 						width={600}

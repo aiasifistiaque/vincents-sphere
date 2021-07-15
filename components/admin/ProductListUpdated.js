@@ -84,6 +84,7 @@ const ProductListUpdated = () => {
 					{total.map((product, i) => (
 						<AdminListCard key={i}>
 							<Image
+								unoptimized={true}
 								alt={product.name}
 								src={product.image}
 								height={100}

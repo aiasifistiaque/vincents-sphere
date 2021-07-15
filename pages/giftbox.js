@@ -12,6 +12,7 @@ const giftbox = () => {
 			<div className='page-product'>
 				<div className='product-image'>
 					<Image
+						unoptimized={true}
 						src={router.query.image || '/giftbox/Womens Day Special.jpeg'}
 						alt="Women's Day Special"
 						width={600}

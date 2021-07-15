@@ -64,6 +64,7 @@ const adproduct = () => {
 						<h2>Processing...</h2>
 					) : (
 						<Image
+							unoptimized={true}
 							src={
 								thisProduct.image ||
 								'/dream catcher/handmade Dream Catcher price 500 taka.jpg'

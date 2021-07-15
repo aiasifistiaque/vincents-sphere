@@ -12,6 +12,7 @@ const SearchProducts = ({ product, admin }) => {
 			<div className='search-prod-card'>
 				<div className='spc-image-container'>
 					<Image
+						unoptimized={true}
 						src={product.image}
 						alt={product.name}
 						width={60}

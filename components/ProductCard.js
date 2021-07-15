@@ -10,6 +10,7 @@ const ProductCard = ({ product }) => {
 			className='page-section-card'
 			onClick={() => router.push(`/product/${product._id}`)}>
 			<Image
+				unoptimized={true}
 				src={product.image}
 				alt={product.name}
 				width={300}
